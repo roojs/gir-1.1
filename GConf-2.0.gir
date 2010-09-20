@@ -1,0 +1,2675 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="GLib" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <package name="gconf-2.0"/>
+  <namespace name="GConf"
+             version="2.0"
+             shared-library="libgconf-2.so.4"
+             c:prefix="GConf">
+    <record name="ChangeSet"
+            c:type="GConfChangeSet"
+            glib:type-name="GConfChangeSet"
+            glib:get-type="gconf_change_set_get_type">
+      <constructor name="new" c:identifier="gconf_change_set_new">
+        <return-value transfer-ownership="full">
+          <type name="ChangeSet" c:type="GConfChangeSet*"/>
+        </return-value>
+      </constructor>
+      <method name="ref" c:identifier="gconf_change_set_ref">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="unref" c:identifier="gconf_change_set_unref">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="clear" c:identifier="gconf_change_set_clear">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="size" c:identifier="gconf_change_set_size">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="remove" c:identifier="gconf_change_set_remove">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="foreach" c:identifier="gconf_change_set_foreach">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="func"
+                     transfer-ownership="none"
+                     scope="call"
+                     closure="2">
+            <type name="ChangeSetForeachFunc"
+                  c:type="GConfChangeSetForeachFunc"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="check_value" c:identifier="gconf_change_set_check_value">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="value_retloc" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue**"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set" c:identifier="gconf_change_set_set">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_nocopy" c:identifier="gconf_change_set_set_nocopy">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="unset" c:identifier="gconf_change_set_unset">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_float" c:identifier="gconf_change_set_set_float">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="double" c:type="gdouble"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_int" c:identifier="gconf_change_set_set_int">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_string" c:identifier="gconf_change_set_set_string">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_bool" c:identifier="gconf_change_set_set_bool">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_schema" c:identifier="gconf_change_set_set_schema">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="Schema" c:type="GConfSchema*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_list" c:identifier="gconf_change_set_set_list">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="list_type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+          <parameter name="list" transfer-ownership="none">
+            <type name="GLib.SList" c:type="GSList*">
+              <type name="any" c:type="gpointer"/>
+            </type>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_pair" c:identifier="gconf_change_set_set_pair">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="car_type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+          <parameter name="cdr_type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+          <parameter name="address_of_car" transfer-ownership="none">
+            <type name="any" c:type="gconstpointer"/>
+          </parameter>
+          <parameter name="address_of_cdr" transfer-ownership="none">
+            <type name="any" c:type="gconstpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_user_data"
+              c:identifier="gconf_change_set_set_user_data">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="dnotify" transfer-ownership="none" scope="call">
+            <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_user_data"
+              c:identifier="gconf_change_set_get_user_data">
+        <return-value transfer-ownership="none">
+          <type name="any" c:type="gpointer"/>
+        </return-value>
+      </method>
+    </record>
+    <callback name="ChangeSetForeachFunc" c:type="GConfChangeSetForeachFunc">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="cs" transfer-ownership="none">
+          <type name="ChangeSet" c:type="GConfChangeSet*"/>
+        </parameter>
+        <parameter name="key" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="value" transfer-ownership="none">
+          <type name="Value" c:type="GConfValue*"/>
+        </parameter>
+        <parameter name="user_data" transfer-ownership="none" closure="3">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <class name="Client"
+           c:type="GConfClient"
+           parent="GObject.Object"
+           glib:type-name="GConfClient"
+           glib:get-type="gconf_client_get_type"
+           glib:type-struct="ClientClass">
+      <function name="get_default" c:identifier="gconf_client_get_default">
+        <return-value transfer-ownership="full">
+          <type name="Client" c:type="GConfClient*"/>
+        </return-value>
+      </function>
+      <function name="get_for_engine"
+                c:identifier="gconf_client_get_for_engine">
+        <return-value transfer-ownership="full">
+          <type name="Client" c:type="GConfClient*"/>
+        </return-value>
+        <parameters>
+          <parameter name="engine" transfer-ownership="none">
+            <type name="Engine" c:type="GConfEngine*"/>
+          </parameter>
+        </parameters>
+      </function>
+      <function name="set_global_default_error_handler"
+                c:identifier="gconf_client_set_global_default_error_handler">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="func" transfer-ownership="none" scope="call">
+            <type name="ClientErrorHandlerFunc"
+                  c:type="GConfClientErrorHandlerFunc"/>
+          </parameter>
+        </parameters>
+      </function>
+      <method name="add_dir" c:identifier="gconf_client_add_dir" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="dir" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="preload" transfer-ownership="none">
+            <type name="ClientPreloadType" c:type="GConfClientPreloadType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove_dir"
+              c:identifier="gconf_client_remove_dir"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="dir" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="notify_add"
+              c:identifier="gconf_client_notify_add"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+        <parameters>
+          <parameter name="namespace_section" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="func"
+                     transfer-ownership="none"
+                     scope="notified"
+                     closure="3"
+                     destroy="4">
+            <type name="ClientNotifyFunc" c:type="GConfClientNotifyFunc"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="destroy_notify"
+                     transfer-ownership="none"
+                     scope="call">
+            <type name="GLib.FreeFunc" c:type="GFreeFunc"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="notify_remove" c:identifier="gconf_client_notify_remove">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="cnxn" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="notify" c:identifier="gconf_client_notify">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_error_handling"
+              c:identifier="gconf_client_set_error_handling">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="mode" transfer-ownership="none">
+            <type name="ClientErrorHandlingMode"
+                  c:type="GConfClientErrorHandlingMode"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="clear_cache" c:identifier="gconf_client_clear_cache">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="preload" c:identifier="gconf_client_preload" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="dirname" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="type" transfer-ownership="none">
+            <type name="ClientPreloadType" c:type="GConfClientPreloadType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set" c:identifier="gconf_client_set" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get" c:identifier="gconf_client_get" throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Value" c:type="GConfValue*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_without_default"
+              c:identifier="gconf_client_get_without_default"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Value" c:type="GConfValue*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_entry"
+              c:identifier="gconf_client_get_entry"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Entry" c:type="GConfEntry*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="locale" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="use_schema_default" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_default_from_schema"
+              c:identifier="gconf_client_get_default_from_schema"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Value" c:type="GConfValue*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="unset" c:identifier="gconf_client_unset" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="recursive_unset"
+              c:identifier="gconf_client_recursive_unset"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="flags" transfer-ownership="none">
+            <type name="UnsetFlags" c:type="GConfUnsetFlags"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="all_entries"
+              c:identifier="gconf_client_all_entries"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="GLib.SList" c:type="GSList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <parameter name="dir" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="all_dirs" c:identifier="gconf_client_all_dirs" throws="1">
+        <return-value transfer-ownership="full">
+          <type name="GLib.SList" c:type="GSList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <parameter name="dir" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="suggest_sync"
+              c:identifier="gconf_client_suggest_sync"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="dir_exists"
+              c:identifier="gconf_client_dir_exists"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="dir" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="key_is_writable"
+              c:identifier="gconf_client_key_is_writable"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_float"
+              c:identifier="gconf_client_get_float"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="double" c:type="gdouble"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_int" c:identifier="gconf_client_get_int" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_string"
+              c:identifier="gconf_client_get_string"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_bool" c:identifier="gconf_client_get_bool" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_schema"
+              c:identifier="gconf_client_get_schema"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Schema" c:type="GConfSchema*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_list" c:identifier="gconf_client_get_list" throws="1">
+        <return-value transfer-ownership="full">
+          <type name="GLib.SList" c:type="GSList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="list_type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_pair" c:identifier="gconf_client_get_pair" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="car_type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+          <parameter name="cdr_type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+          <parameter name="car_retloc" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="cdr_retloc" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_float"
+              c:identifier="gconf_client_set_float"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="double" c:type="gdouble"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_int" c:identifier="gconf_client_set_int" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_string"
+              c:identifier="gconf_client_set_string"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_bool" c:identifier="gconf_client_set_bool" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_schema"
+              c:identifier="gconf_client_set_schema"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="Schema" c:type="GConfSchema*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_list" c:identifier="gconf_client_set_list" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="list_type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+          <parameter name="list" transfer-ownership="none">
+            <type name="GLib.SList" c:type="GSList*">
+              <type name="any" c:type="gpointer"/>
+            </type>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_pair" c:identifier="gconf_client_set_pair" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="car_type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+          <parameter name="cdr_type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+          <parameter name="address_of_car" transfer-ownership="none">
+            <type name="any" c:type="gconstpointer"/>
+          </parameter>
+          <parameter name="address_of_cdr" transfer-ownership="none">
+            <type name="any" c:type="gconstpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="error" c:identifier="gconf_client_error">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="error" transfer-ownership="none">
+            <type name="GLib.Error" c:type="GError*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="unreturned_error"
+              c:identifier="gconf_client_unreturned_error">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="error" transfer-ownership="none">
+            <type name="GLib.Error" c:type="GError*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="value_changed" c:identifier="gconf_client_value_changed">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="commit_change_set"
+              c:identifier="gconf_client_commit_change_set"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="cs" transfer-ownership="none">
+            <type name="ChangeSet" c:type="GConfChangeSet*"/>
+          </parameter>
+          <parameter name="remove_committed" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="reverse_change_set"
+              c:identifier="gconf_client_reverse_change_set"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="ChangeSet" c:type="GConfChangeSet*"/>
+        </return-value>
+        <parameters>
+          <parameter name="cs" transfer-ownership="none">
+            <type name="ChangeSet" c:type="GConfChangeSet*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="change_set_from_currentv"
+              c:identifier="gconf_client_change_set_from_currentv"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="ChangeSet" c:type="GConfChangeSet*"/>
+        </return-value>
+        <parameters>
+          <parameter name="keys" transfer-ownership="none">
+            <array c:type="gchar**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="change_set_from_current"
+              c:identifier="gconf_client_change_set_from_current"
+              introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="ChangeSet" c:type="GConfChangeSet*"/>
+        </return-value>
+        <parameters>
+          <parameter name="err" transfer-ownership="none">
+            <type name="GLib.Error" c:type="GError**"/>
+          </parameter>
+          <parameter name="first_key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter transfer-ownership="none">
+            <varargs>
+            </varargs>
+          </parameter>
+        </parameters>
+      </method>
+      <field name="object">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="engine">
+        <type name="Engine" c:type="GConfEngine*"/>
+      </field>
+      <field name="error_mode">
+        <type name="ClientErrorHandlingMode"
+              c:type="GConfClientErrorHandlingMode"/>
+      </field>
+      <field name="dir_hash">
+        <type name="GLib.HashTable" c:type="GHashTable*"/>
+      </field>
+      <field name="cache_hash">
+        <type name="GLib.HashTable" c:type="GHashTable*"/>
+      </field>
+      <field name="listeners">
+        <type name="Listeners" c:type="GConfListeners*"/>
+      </field>
+      <field name="notify_list">
+        <type name="GLib.SList" c:type="GSList*">
+          <type name="any" c:type="gpointer"/>
+        </type>
+      </field>
+      <field name="notify_handler">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="pending_notify_count">
+        <type name="int" c:type="int"/>
+      </field>
+      <field name="cache_dirs">
+        <type name="GLib.HashTable" c:type="GHashTable*"/>
+      </field>
+      <field name="pad2">
+        <type name="int" c:type="int"/>
+      </field>
+      <glib:signal name="error">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="unreturned-error">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="value-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <record name="ClientClass"
+            c:type="GConfClientClass"
+            glib:is-gtype-struct-for="Client">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="value_changed">
+        <callback name="value_changed" c:type="value_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="client" transfer-ownership="none">
+              <type name="Client" c:type="GConfClient*"/>
+            </parameter>
+            <parameter name="key" transfer-ownership="none">
+              <type name="utf8" c:type="gchar*"/>
+            </parameter>
+            <parameter name="value" transfer-ownership="none">
+              <type name="Value" c:type="GConfValue*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="unreturned_error">
+        <callback name="unreturned_error" c:type="unreturned_error">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="client" transfer-ownership="none">
+              <type name="Client" c:type="GConfClient*"/>
+            </parameter>
+            <parameter name="error" transfer-ownership="none">
+              <type name="GLib.Error" c:type="GError*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="error">
+        <callback name="error" c:type="error">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="client" transfer-ownership="none">
+              <type name="Client" c:type="GConfClient*"/>
+            </parameter>
+            <parameter name="error" transfer-ownership="none">
+              <type name="GLib.Error" c:type="GError*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="pad1">
+        <type name="GLib.Func" c:type="GFunc"/>
+      </field>
+      <field name="pad2">
+        <type name="GLib.Func" c:type="GFunc"/>
+      </field>
+      <field name="pad3">
+        <type name="GLib.Func" c:type="GFunc"/>
+      </field>
+    </record>
+    <callback name="ClientErrorHandlerFunc"
+              c:type="GConfClientErrorHandlerFunc">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="client" transfer-ownership="none">
+          <type name="Client" c:type="GConfClient*"/>
+        </parameter>
+        <parameter name="error" transfer-ownership="none">
+          <type name="GLib.Error" c:type="GError*"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <enumeration name="ClientErrorHandlingMode"
+                 glib:type-name="GConfClientErrorHandlingMode"
+                 glib:get-type="gconf_client_error_handling_mode_get_type"
+                 c:type="GConfClientErrorHandlingMode">
+      <member name="handle_none"
+              value="0"
+              c:identifier="GCONF_CLIENT_HANDLE_NONE"
+              glib:nick="handle-none"/>
+      <member name="handle_unreturned"
+              value="1"
+              c:identifier="GCONF_CLIENT_HANDLE_UNRETURNED"
+              glib:nick="handle-unreturned"/>
+      <member name="handle_all"
+              value="2"
+              c:identifier="GCONF_CLIENT_HANDLE_ALL"
+              glib:nick="handle-all"/>
+    </enumeration>
+    <callback name="ClientNotifyFunc" c:type="GConfClientNotifyFunc">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="client" transfer-ownership="none">
+          <type name="Client" c:type="GConfClient*"/>
+        </parameter>
+        <parameter name="cnxn_id" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+        <parameter name="entry" transfer-ownership="none">
+          <type name="Entry" c:type="GConfEntry*"/>
+        </parameter>
+        <parameter name="user_data" transfer-ownership="none" closure="3">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <enumeration name="ClientPreloadType"
+                 glib:type-name="GConfClientPreloadType"
+                 glib:get-type="gconf_client_preload_type_get_type"
+                 c:type="GConfClientPreloadType">
+      <member name="preload_none"
+              value="0"
+              c:identifier="GCONF_CLIENT_PRELOAD_NONE"
+              glib:nick="preload-none"/>
+      <member name="preload_onelevel"
+              value="1"
+              c:identifier="GCONF_CLIENT_PRELOAD_ONELEVEL"
+              glib:nick="preload-onelevel"/>
+      <member name="preload_recursive"
+              value="2"
+              c:identifier="GCONF_CLIENT_PRELOAD_RECURSIVE"
+              glib:nick="preload-recursive"/>
+    </enumeration>
+    <record name="Engine" c:type="GConfEngine">
+      <method name="unref" c:identifier="gconf_engine_unref">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="ref" c:identifier="gconf_engine_ref">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="set_user_data" c:identifier="gconf_engine_set_user_data">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="dnotify" transfer-ownership="none" scope="call">
+            <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_user_data" c:identifier="gconf_engine_get_user_data">
+        <return-value transfer-ownership="none">
+          <type name="any" c:type="gpointer"/>
+        </return-value>
+      </method>
+      <method name="notify_add"
+              c:identifier="gconf_engine_notify_add"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+        <parameters>
+          <parameter name="namespace_section" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="func"
+                     transfer-ownership="none"
+                     scope="call"
+                     closure="3">
+            <type name="NotifyFunc" c:type="GConfNotifyFunc"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="notify_remove" c:identifier="gconf_engine_notify_remove">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="cnxn" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get" c:identifier="gconf_engine_get" throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Value" c:type="GConfValue*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_without_default"
+              c:identifier="gconf_engine_get_without_default"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Value" c:type="GConfValue*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_entry"
+              c:identifier="gconf_engine_get_entry"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Entry" c:type="GConfEntry*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="locale" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="use_schema_default" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_with_locale"
+              c:identifier="gconf_engine_get_with_locale"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Value" c:type="GConfValue*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="locale" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_default_from_schema"
+              c:identifier="gconf_engine_get_default_from_schema"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Value" c:type="GConfValue*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set" c:identifier="gconf_engine_set" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="unset" c:identifier="gconf_engine_unset" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="associate_schema"
+              c:identifier="gconf_engine_associate_schema"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="schema_key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="all_entries"
+              c:identifier="gconf_engine_all_entries"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="GLib.SList" c:type="GSList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <parameter name="dir" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="all_dirs" c:identifier="gconf_engine_all_dirs" throws="1">
+        <return-value transfer-ownership="full">
+          <type name="GLib.SList" c:type="GSList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <parameter name="dir" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="suggest_sync"
+              c:identifier="gconf_engine_suggest_sync"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="dir_exists"
+              c:identifier="gconf_engine_dir_exists"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="dir" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove_dir"
+              c:identifier="gconf_engine_remove_dir"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="dir" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="key_is_writable"
+              c:identifier="gconf_engine_key_is_writable"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_float"
+              c:identifier="gconf_engine_get_float"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="double" c:type="gdouble"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_int" c:identifier="gconf_engine_get_int" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_string"
+              c:identifier="gconf_engine_get_string"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_bool" c:identifier="gconf_engine_get_bool" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_schema"
+              c:identifier="gconf_engine_get_schema"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Schema" c:type="GConfSchema*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_list" c:identifier="gconf_engine_get_list" throws="1">
+        <return-value transfer-ownership="full">
+          <type name="GLib.SList" c:type="GSList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="list_type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_pair" c:identifier="gconf_engine_get_pair" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="car_type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+          <parameter name="cdr_type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+          <parameter name="car_retloc" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="cdr_retloc" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_float"
+              c:identifier="gconf_engine_set_float"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="double" c:type="gdouble"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_int" c:identifier="gconf_engine_set_int" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_string"
+              c:identifier="gconf_engine_set_string"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_bool" c:identifier="gconf_engine_set_bool" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_schema"
+              c:identifier="gconf_engine_set_schema"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="Schema" c:type="GConfSchema*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_list" c:identifier="gconf_engine_set_list" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="list_type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+          <parameter name="list" transfer-ownership="none">
+            <type name="GLib.SList" c:type="GSList*">
+              <type name="any" c:type="gpointer"/>
+            </type>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_pair" c:identifier="gconf_engine_set_pair" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="car_type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+          <parameter name="cdr_type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+          <parameter name="address_of_car" transfer-ownership="none">
+            <type name="any" c:type="gconstpointer"/>
+          </parameter>
+          <parameter name="address_of_cdr" transfer-ownership="none">
+            <type name="any" c:type="gconstpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="commit_change_set"
+              c:identifier="gconf_engine_commit_change_set"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="cs" transfer-ownership="none">
+            <type name="ChangeSet" c:type="GConfChangeSet*"/>
+          </parameter>
+          <parameter name="remove_committed" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="reverse_change_set"
+              c:identifier="gconf_engine_reverse_change_set"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="ChangeSet" c:type="GConfChangeSet*"/>
+        </return-value>
+        <parameters>
+          <parameter name="cs" transfer-ownership="none">
+            <type name="ChangeSet" c:type="GConfChangeSet*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="change_set_from_currentv"
+              c:identifier="gconf_engine_change_set_from_currentv"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="ChangeSet" c:type="GConfChangeSet*"/>
+        </return-value>
+        <parameters>
+          <parameter name="keys" transfer-ownership="none">
+            <array c:type="gchar**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="change_set_from_current"
+              c:identifier="gconf_engine_change_set_from_current"
+              introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="ChangeSet" c:type="GConfChangeSet*"/>
+        </return-value>
+        <parameters>
+          <parameter name="err" transfer-ownership="none">
+            <type name="GLib.Error" c:type="GError**"/>
+          </parameter>
+          <parameter name="first_key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter transfer-ownership="none">
+            <varargs>
+            </varargs>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <record name="Entry"
+            c:type="GConfEntry"
+            glib:type-name="GConfEntry"
+            glib:get-type="gconf_entry_get_type">
+      <field name="key" writable="1">
+        <type name="utf8" c:type="char*"/>
+      </field>
+      <field name="value" writable="1">
+        <type name="Value" c:type="GConfValue*"/>
+      </field>
+      <constructor name="new" c:identifier="gconf_entry_new">
+        <return-value transfer-ownership="full">
+          <type name="Entry" c:type="GConfEntry*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_nocopy" c:identifier="gconf_entry_new_nocopy">
+        <return-value transfer-ownership="full">
+          <type name="Entry" c:type="GConfEntry*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="full">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="val" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_key" c:identifier="gconf_entry_get_key">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_value" c:identifier="gconf_entry_get_value">
+        <return-value transfer-ownership="full">
+          <type name="Value" c:type="GConfValue*"/>
+        </return-value>
+      </method>
+      <method name="get_schema_name"
+              c:identifier="gconf_entry_get_schema_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_is_default" c:identifier="gconf_entry_get_is_default">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_is_writable"
+              c:identifier="gconf_entry_get_is_writable">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="copy" c:identifier="gconf_entry_copy">
+        <return-value transfer-ownership="full">
+          <type name="Entry" c:type="GConfEntry*"/>
+        </return-value>
+      </method>
+      <method name="free" c:identifier="gconf_entry_free">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="ref" c:identifier="gconf_entry_ref">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="unref" c:identifier="gconf_entry_unref">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="steal_value" c:identifier="gconf_entry_steal_value">
+        <return-value transfer-ownership="full">
+          <type name="Value" c:type="GConfValue*"/>
+        </return-value>
+      </method>
+      <method name="set_value" c:identifier="gconf_entry_set_value">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="val" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_value_nocopy"
+              c:identifier="gconf_entry_set_value_nocopy">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="val" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_schema_name"
+              c:identifier="gconf_entry_set_schema_name">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_is_default" c:identifier="gconf_entry_set_is_default">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="is_default" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_is_writable"
+              c:identifier="gconf_entry_set_is_writable">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="is_writable" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="equal" c:identifier="gconf_entry_equal">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="b" transfer-ownership="none">
+            <type name="Entry" c:type="GConfEntry*"/>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <record name="EnumStringPair" c:type="GConfEnumStringPair">
+      <field name="enum_value" writable="1">
+        <type name="int" c:type="gint"/>
+      </field>
+      <field name="str" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+    </record>
+    <enumeration name="Error"
+                 glib:type-name="GConfError"
+                 glib:get-type="gconf_error_get_type"
+                 c:type="GConfError"
+                 glib:error-quark="gconf_error_quark">
+      <member name="success"
+              value="0"
+              c:identifier="GCONF_ERROR_SUCCESS"
+              glib:nick="success"/>
+      <member name="failed"
+              value="1"
+              c:identifier="GCONF_ERROR_FAILED"
+              glib:nick="failed"/>
+      <member name="no_server"
+              value="2"
+              c:identifier="GCONF_ERROR_NO_SERVER"
+              glib:nick="no-server"/>
+      <member name="no_permission"
+              value="3"
+              c:identifier="GCONF_ERROR_NO_PERMISSION"
+              glib:nick="no-permission"/>
+      <member name="bad_address"
+              value="4"
+              c:identifier="GCONF_ERROR_BAD_ADDRESS"
+              glib:nick="bad-address"/>
+      <member name="bad_key"
+              value="5"
+              c:identifier="GCONF_ERROR_BAD_KEY"
+              glib:nick="bad-key"/>
+      <member name="parse_error"
+              value="6"
+              c:identifier="GCONF_ERROR_PARSE_ERROR"
+              glib:nick="parse-error"/>
+      <member name="corrupt"
+              value="7"
+              c:identifier="GCONF_ERROR_CORRUPT"
+              glib:nick="corrupt"/>
+      <member name="type_mismatch"
+              value="8"
+              c:identifier="GCONF_ERROR_TYPE_MISMATCH"
+              glib:nick="type-mismatch"/>
+      <member name="is_dir"
+              value="9"
+              c:identifier="GCONF_ERROR_IS_DIR"
+              glib:nick="is-dir"/>
+      <member name="is_key"
+              value="10"
+              c:identifier="GCONF_ERROR_IS_KEY"
+              glib:nick="is-key"/>
+      <member name="overridden"
+              value="11"
+              c:identifier="GCONF_ERROR_OVERRIDDEN"
+              glib:nick="overridden"/>
+      <member name="oaf_error"
+              value="12"
+              c:identifier="GCONF_ERROR_OAF_ERROR"
+              glib:nick="oaf-error"/>
+      <member name="local_engine"
+              value="13"
+              c:identifier="GCONF_ERROR_LOCAL_ENGINE"
+              glib:nick="local-engine"/>
+      <member name="lock_failed"
+              value="14"
+              c:identifier="GCONF_ERROR_LOCK_FAILED"
+              glib:nick="lock-failed"/>
+      <member name="no_writable_database"
+              value="15"
+              c:identifier="GCONF_ERROR_NO_WRITABLE_DATABASE"
+              glib:nick="no-writable-database"/>
+      <member name="in_shutdown"
+              value="16"
+              c:identifier="GCONF_ERROR_IN_SHUTDOWN"
+              glib:nick="in-shutdown"/>
+    </enumeration>
+    <record name="Listeners" c:type="GConfListeners">
+      <constructor name="new" c:identifier="gconf_listeners_new">
+        <return-value transfer-ownership="full">
+          <type name="Listeners" c:type="GConfListeners*"/>
+        </return-value>
+      </constructor>
+      <method name="free" c:identifier="gconf_listeners_free">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="add" c:identifier="gconf_listeners_add">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+        <parameters>
+          <parameter name="listen_point" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="listener_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="destroy_notify"
+                     transfer-ownership="none"
+                     scope="call">
+            <type name="GLib.FreeFunc" c:type="GFreeFunc"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove" c:identifier="gconf_listeners_remove">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="cnxn_id" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="notify" c:identifier="gconf_listeners_notify">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="all_above" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="call"
+                     closure="3">
+            <type name="ListenersCallback" c:type="GConfListenersCallback"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="count" c:identifier="gconf_listeners_count">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="foreach" c:identifier="gconf_listeners_foreach">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="call"
+                     closure="2">
+            <type name="ListenersForeach" c:type="GConfListenersForeach"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_data" c:identifier="gconf_listeners_get_data">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="cnxn_id" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="listener_data_p" transfer-ownership="none">
+            <type name="any" c:type="gpointer*"/>
+          </parameter>
+          <parameter name="location_p" transfer-ownership="none">
+            <array c:type="gchar**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove_if" c:identifier="gconf_listeners_remove_if">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="predicate"
+                     transfer-ownership="none"
+                     scope="call"
+                     closure="2">
+            <type name="ListenersPredicate" c:type="GConfListenersPredicate"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <callback name="ListenersCallback" c:type="GConfListenersCallback">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="listeners" transfer-ownership="none">
+          <type name="Listeners" c:type="GConfListeners*"/>
+        </parameter>
+        <parameter name="all_above_key" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="cnxn_id" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+        <parameter name="listener_data" transfer-ownership="none">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+        <parameter name="user_data" transfer-ownership="none" closure="4">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <callback name="ListenersForeach" c:type="GConfListenersForeach">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="location" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="cnxn_id" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+        <parameter name="listener_data" transfer-ownership="none">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+        <parameter name="user_data" transfer-ownership="none" closure="3">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <callback name="ListenersPredicate" c:type="GConfListenersPredicate">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="location" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="cnxn_id" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+        <parameter name="listener_data" transfer-ownership="none">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+        <parameter name="user_data" transfer-ownership="none" closure="3">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <record name="MetaInfo" c:type="GConfMetaInfo">
+      <field name="schema" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="mod_user" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="mod_time" writable="1">
+        <type name="GLib.Time" c:type="GTime"/>
+      </field>
+      <constructor name="new" c:identifier="gconf_meta_info_new">
+        <return-value transfer-ownership="full">
+          <type name="MetaInfo" c:type="GConfMetaInfo*"/>
+        </return-value>
+      </constructor>
+      <method name="get_schema" c:identifier="gconf_meta_info_get_schema">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_mod_user" c:identifier="gconf_meta_info_get_mod_user">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="mod_time" c:identifier="gconf_meta_info_mod_time">
+        <return-value transfer-ownership="full">
+          <type name="GLib.Time" c:type="GTime"/>
+        </return-value>
+      </method>
+      <method name="free" c:identifier="gconf_meta_info_free">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="set_schema" c:identifier="gconf_meta_info_set_schema">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="schema_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_mod_user" c:identifier="gconf_meta_info_set_mod_user">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="mod_user" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_mod_time" c:identifier="gconf_meta_info_set_mod_time">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="mod_time" transfer-ownership="none">
+            <type name="GLib.Time" c:type="GTime"/>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <callback name="NotifyFunc" c:type="GConfNotifyFunc">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="conf" transfer-ownership="none">
+          <type name="Engine" c:type="GConfEngine*"/>
+        </parameter>
+        <parameter name="cnxn_id" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+        <parameter name="entry" transfer-ownership="none">
+          <type name="Entry" c:type="GConfEntry*"/>
+        </parameter>
+        <parameter name="user_data" transfer-ownership="none" closure="3">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <record name="Schema" c:type="GConfSchema">
+      <constructor name="new" c:identifier="gconf_schema_new">
+        <return-value transfer-ownership="full">
+          <type name="Schema" c:type="GConfSchema*"/>
+        </return-value>
+      </constructor>
+      <method name="free" c:identifier="gconf_schema_free">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="copy" c:identifier="gconf_schema_copy">
+        <return-value transfer-ownership="full">
+          <type name="Schema" c:type="GConfSchema*"/>
+        </return-value>
+      </method>
+      <method name="set_type" c:identifier="gconf_schema_set_type">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_list_type" c:identifier="gconf_schema_set_list_type">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_car_type" c:identifier="gconf_schema_set_car_type">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_cdr_type" c:identifier="gconf_schema_set_cdr_type">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_locale" c:identifier="gconf_schema_set_locale">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="locale" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_short_desc" c:identifier="gconf_schema_set_short_desc">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="desc" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_long_desc" c:identifier="gconf_schema_set_long_desc">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="desc" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_owner" c:identifier="gconf_schema_set_owner">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="owner" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_default_value"
+              c:identifier="gconf_schema_set_default_value">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="val" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_default_value_nocopy"
+              c:identifier="gconf_schema_set_default_value_nocopy">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="val" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_list_type" c:identifier="gconf_schema_get_list_type">
+        <return-value transfer-ownership="full">
+          <type name="ValueType" c:type="GConfValueType"/>
+        </return-value>
+      </method>
+      <method name="get_car_type" c:identifier="gconf_schema_get_car_type">
+        <return-value transfer-ownership="full">
+          <type name="ValueType" c:type="GConfValueType"/>
+        </return-value>
+      </method>
+      <method name="get_cdr_type" c:identifier="gconf_schema_get_cdr_type">
+        <return-value transfer-ownership="full">
+          <type name="ValueType" c:type="GConfValueType"/>
+        </return-value>
+      </method>
+      <method name="get_locale" c:identifier="gconf_schema_get_locale">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_short_desc" c:identifier="gconf_schema_get_short_desc">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_long_desc" c:identifier="gconf_schema_get_long_desc">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_owner" c:identifier="gconf_schema_get_owner">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_default_value"
+              c:identifier="gconf_schema_get_default_value">
+        <return-value transfer-ownership="full">
+          <type name="Value" c:type="GConfValue*"/>
+        </return-value>
+      </method>
+    </record>
+    <bitfield name="UnsetFlags"
+              glib:type-name="GConfUnsetFlags"
+              glib:get-type="gconf_unset_flags_get_type"
+              c:type="GConfUnsetFlags">
+      <member name="names"
+              value="1"
+              c:identifier="GCONF_UNSET_INCLUDING_SCHEMA_NAMES"
+              glib:nick="names"/>
+    </bitfield>
+    <record name="Value"
+            c:type="GConfValue"
+            glib:type-name="GConfValue"
+            glib:get-type="gconf_value_get_type">
+      <field name="type" writable="1">
+        <type name="ValueType" c:type="GConfValueType"/>
+      </field>
+      <constructor name="new" c:identifier="gconf_value_new">
+        <return-value transfer-ownership="full">
+          <type name="Value" c:type="GConfValue*"/>
+        </return-value>
+        <parameters>
+          <parameter name="type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_from_string"
+                   c:identifier="gconf_value_new_from_string"
+                   throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Value" c:type="GConfValue*"/>
+        </return-value>
+        <parameters>
+          <parameter name="type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+          <parameter name="str" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_string" c:identifier="gconf_value_get_string">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_int" c:identifier="gconf_value_get_int">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="get_float" c:identifier="gconf_value_get_float">
+        <return-value transfer-ownership="none">
+          <type name="double" c:type="double"/>
+        </return-value>
+      </method>
+      <method name="get_list_type" c:identifier="gconf_value_get_list_type">
+        <return-value transfer-ownership="full">
+          <type name="ValueType" c:type="GConfValueType"/>
+        </return-value>
+      </method>
+      <method name="get_list" c:identifier="gconf_value_get_list">
+        <return-value transfer-ownership="full">
+          <type name="GLib.SList" c:type="GSList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+      </method>
+      <method name="get_car" c:identifier="gconf_value_get_car">
+        <return-value transfer-ownership="full">
+          <type name="Value" c:type="GConfValue*"/>
+        </return-value>
+      </method>
+      <method name="get_cdr" c:identifier="gconf_value_get_cdr">
+        <return-value transfer-ownership="full">
+          <type name="Value" c:type="GConfValue*"/>
+        </return-value>
+      </method>
+      <method name="get_bool" c:identifier="gconf_value_get_bool">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_schema" c:identifier="gconf_value_get_schema">
+        <return-value transfer-ownership="full">
+          <type name="Schema" c:type="GConfSchema*"/>
+        </return-value>
+      </method>
+      <method name="copy" c:identifier="gconf_value_copy">
+        <return-value transfer-ownership="full">
+          <type name="Value" c:type="GConfValue*"/>
+        </return-value>
+      </method>
+      <method name="free" c:identifier="gconf_value_free">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="set_int" c:identifier="gconf_value_set_int">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="the_int" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_string" c:identifier="gconf_value_set_string">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="the_str" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_float" c:identifier="gconf_value_set_float">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="the_float" transfer-ownership="none">
+            <type name="double" c:type="gdouble"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_bool" c:identifier="gconf_value_set_bool">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="the_bool" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_schema" c:identifier="gconf_value_set_schema">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="sc" transfer-ownership="none">
+            <type name="Schema" c:type="GConfSchema*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_schema_nocopy"
+              c:identifier="gconf_value_set_schema_nocopy">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="sc" transfer-ownership="none">
+            <type name="Schema" c:type="GConfSchema*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_car" c:identifier="gconf_value_set_car">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="car" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_car_nocopy" c:identifier="gconf_value_set_car_nocopy">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="car" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_cdr" c:identifier="gconf_value_set_cdr">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="cdr" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_cdr_nocopy" c:identifier="gconf_value_set_cdr_nocopy">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="cdr" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_list_type" c:identifier="gconf_value_set_list_type">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="type" transfer-ownership="none">
+            <type name="ValueType" c:type="GConfValueType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_list_nocopy"
+              c:identifier="gconf_value_set_list_nocopy">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="list" transfer-ownership="none">
+            <type name="GLib.SList" c:type="GSList*">
+              <type name="any" c:type="gpointer"/>
+            </type>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_list" c:identifier="gconf_value_set_list">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="list" transfer-ownership="none">
+            <type name="GLib.SList" c:type="GSList*">
+              <type name="any" c:type="gpointer"/>
+            </type>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="to_string" c:identifier="gconf_value_to_string">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="compare" c:identifier="gconf_value_compare">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+        <parameters>
+          <parameter name="value_b" transfer-ownership="none">
+            <type name="Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="encode" c:identifier="gconf_value_encode">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+    </record>
+    <enumeration name="ValueType"
+                 glib:type-name="GConfValueType"
+                 glib:get-type="gconf_value_type_get_type"
+                 c:type="GConfValueType">
+      <member name="invalid"
+              value="0"
+              c:identifier="GCONF_VALUE_INVALID"
+              glib:nick="invalid"/>
+      <member name="string"
+              value="1"
+              c:identifier="GCONF_VALUE_STRING"
+              glib:nick="string"/>
+      <member name="int"
+              value="2"
+              c:identifier="GCONF_VALUE_INT"
+              glib:nick="int"/>
+      <member name="float"
+              value="3"
+              c:identifier="GCONF_VALUE_FLOAT"
+              glib:nick="float"/>
+      <member name="bool"
+              value="4"
+              c:identifier="GCONF_VALUE_BOOL"
+              glib:nick="bool"/>
+      <member name="schema"
+              value="5"
+              c:identifier="GCONF_VALUE_SCHEMA"
+              glib:nick="schema"/>
+      <member name="list"
+              value="6"
+              c:identifier="GCONF_VALUE_LIST"
+              glib:nick="list"/>
+      <member name="pair"
+              value="7"
+              c:identifier="GCONF_VALUE_PAIR"
+              glib:nick="pair"/>
+    </enumeration>
+    <function name="concat_dir_and_key"
+              c:identifier="gconf_concat_dir_and_key">
+      <return-value transfer-ownership="full">
+        <type name="utf8" c:type="gchar*"/>
+      </return-value>
+      <parameters>
+        <parameter name="dir" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="key" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="debug_shutdown" c:identifier="gconf_debug_shutdown">
+      <return-value transfer-ownership="none">
+        <type name="int" c:type="int"/>
+      </return-value>
+    </function>
+    <function name="engine_get_default"
+              c:identifier="gconf_engine_get_default">
+      <return-value transfer-ownership="full">
+        <type name="Engine" c:type="GConfEngine*"/>
+      </return-value>
+    </function>
+    <function name="engine_get_for_address"
+              c:identifier="gconf_engine_get_for_address"
+              throws="1">
+      <return-value transfer-ownership="full">
+        <type name="Engine" c:type="GConfEngine*"/>
+      </return-value>
+      <parameters>
+        <parameter name="address" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="engine_get_for_addresses"
+              c:identifier="gconf_engine_get_for_addresses"
+              throws="1">
+      <return-value transfer-ownership="full">
+        <type name="Engine" c:type="GConfEngine*"/>
+      </return-value>
+      <parameters>
+        <parameter name="addresses" transfer-ownership="none">
+          <type name="GLib.SList" c:type="GSList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="enum_to_string" c:identifier="gconf_enum_to_string">
+      <return-value transfer-ownership="none">
+        <type name="utf8" c:type="gchar*"/>
+      </return-value>
+      <parameters>
+        <parameter name="lookup_table" transfer-ownership="none">
+          <type name="EnumStringPair" c:type="GConfEnumStringPair"/>
+        </parameter>
+        <parameter name="enum_value" transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="escape_key" c:identifier="gconf_escape_key">
+      <return-value transfer-ownership="full">
+        <type name="utf8" c:type="char*"/>
+      </return-value>
+      <parameters>
+        <parameter name="arbitrary_text" transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </parameter>
+        <parameter name="len" transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="init" c:identifier="gconf_init" throws="1">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="argc" transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </parameter>
+        <parameter name="argv" transfer-ownership="none">
+          <array c:type="char**">
+            <type name="utf8"/>
+          </array>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="is_initialized" c:identifier="gconf_is_initialized">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+    </function>
+    <function name="key_is_below" c:identifier="gconf_key_is_below">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="above" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="below" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="schema_get_type" c:identifier="gconf_schema_get_type">
+      <return-value transfer-ownership="full">
+        <type name="ValueType" c:type="GConfValueType"/>
+      </return-value>
+      <parameters>
+        <parameter name="schema" transfer-ownership="none">
+          <type name="Schema" c:type="GConfSchema*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="string_to_enum" c:identifier="gconf_string_to_enum">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="lookup_table" transfer-ownership="none">
+          <type name="EnumStringPair" c:type="GConfEnumStringPair"/>
+        </parameter>
+        <parameter name="str" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="enum_value_retloc"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <type name="int" c:type="gint*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="unescape_key" c:identifier="gconf_unescape_key">
+      <return-value transfer-ownership="full">
+        <type name="utf8" c:type="char*"/>
+      </return-value>
+      <parameters>
+        <parameter name="escaped_key" transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </parameter>
+        <parameter name="len" transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="unique_key" c:identifier="gconf_unique_key">
+      <return-value transfer-ownership="full">
+        <type name="utf8" c:type="gchar*"/>
+      </return-value>
+    </function>
+    <function name="valid_key" c:identifier="gconf_valid_key">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="key" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="why_invalid" transfer-ownership="none">
+          <array c:type="gchar**">
+            <type name="utf8"/>
+          </array>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="value_decode" c:identifier="gconf_value_decode">
+      <return-value transfer-ownership="full">
+        <type name="Value" c:type="GConfValue*"/>
+      </return-value>
+      <parameters>
+        <parameter name="encoded" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+      </parameters>
+    </function>
+  </namespace>
+</repository>

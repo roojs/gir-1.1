@@ -1,0 +1,2360 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="Atk" version="1.0"/>
+  <include name="GLib" version="2.0"/>
+  <include name="GModule" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <include name="Gdk" version="2.0"/>
+  <include name="GdkPixbuf" version="2.0"/>
+  <include name="Gio" version="2.0"/>
+  <include name="Gtk" version="2.0"/>
+  <include name="Pango" version="1.0"/>
+  <include name="cairo" version="1.0"/>
+  <include name="xlib" version="2.0"/>
+  <package name="gtk+-2.0"/>
+  <package name="vte"/>
+  <namespace name="Vte"
+             version="1.0"
+             shared-library="libvte.so.9"
+             c:prefix="Vte">
+    <record name="CharAttributes" c:type="_VteCharAttributes">
+    </record>
+    <constant name="MAJOR_VERSION" value="0">
+      <type name="int"/>
+    </constant>
+    <constant name="MICRO_VERSION" value="1">
+      <type name="int"/>
+    </constant>
+    <constant name="MINOR_VERSION" value="25">
+      <type name="int"/>
+    </constant>
+    <class name="Pty"
+           c:type="VtePty"
+           parent="GObject.Object"
+           glib:type-name="VtePty"
+           glib:get-type="vte_pty_get_type"
+           glib:type-struct="PtyClass">
+      <implements name="Gio.Initable"/>
+      <constructor name="new" c:identifier="vte_pty_new" throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Pty" c:type="VtePty*"/>
+        </return-value>
+        <parameters>
+          <parameter name="flags" transfer-ownership="none">
+            <type name="PtyFlags" c:type="VtePtyFlags"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_foreign"
+                   c:identifier="vte_pty_new_foreign"
+                   throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Pty" c:type="VtePty*"/>
+        </return-value>
+        <parameters>
+          <parameter name="fd" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_fd" c:identifier="vte_pty_get_fd">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="close" c:identifier="vte_pty_close">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="child_setup" c:identifier="vte_pty_child_setup">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="get_size" c:identifier="vte_pty_get_size" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="rows"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int" c:type="int*"/>
+          </parameter>
+          <parameter name="columns"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int" c:type="int*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_size" c:identifier="vte_pty_set_size" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="rows" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+          <parameter name="columns" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_utf8" c:identifier="vte_pty_set_utf8" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="utf8" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_term" c:identifier="vte_pty_set_term">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="emulation" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="fd"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <property name="flags"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="PtyFlags" c:type="VtePtyFlags"/>
+      </property>
+      <property name="term" writable="1" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+    </class>
+    <record name="PtyClass"
+            c:type="VtePtyClass"
+            glib:is-gtype-struct-for="Pty">
+    </record>
+    <enumeration name="PtyError"
+                 version="0.26"
+                 glib:type-name="VtePtyError"
+                 glib:get-type="vte_pty_error_get_type"
+                 c:type="VtePtyError"
+                 glib:error-quark="vte_pty_error_quark">
+      <member name="pty_helper_failed"
+              value="0"
+              c:identifier="VTE_PTY_ERROR_PTY_HELPER_FAILED"
+              glib:nick="pty-helper-failed"/>
+      <member name="pty98_failed"
+              value="1"
+              c:identifier="VTE_PTY_ERROR_PTY98_FAILED"
+              glib:nick="pty98-failed"/>
+    </enumeration>
+    <bitfield name="PtyFlags"
+              version="0.26"
+              glib:type-name="VtePtyFlags"
+              glib:get-type="vte_pty_flags_get_type"
+              c:type="VtePtyFlags">
+      <member name="no_lastlog"
+              value="1"
+              c:identifier="VTE_PTY_NO_LASTLOG"
+              glib:nick="no-lastlog"/>
+      <member name="no_utmp"
+              value="2"
+              c:identifier="VTE_PTY_NO_UTMP"
+              glib:nick="no-utmp"/>
+      <member name="no_wtmp"
+              value="4"
+              c:identifier="VTE_PTY_NO_WTMP"
+              glib:nick="no-wtmp"/>
+      <member name="no_helper"
+              value="8"
+              c:identifier="VTE_PTY_NO_HELPER"
+              glib:nick="no-helper"/>
+      <member name="no_fallback"
+              value="16"
+              c:identifier="VTE_PTY_NO_FALLBACK"
+              glib:nick="no-fallback"/>
+      <member name="default"
+              value="0"
+              c:identifier="VTE_PTY_DEFAULT"
+              glib:nick="default"/>
+    </bitfield>
+    <class name="Reaper"
+           c:type="VteReaper"
+           parent="GObject.Object"
+           glib:type-name="VteReaper"
+           glib:get-type="vte_reaper_get_type"
+           glib:type-struct="ReaperClass">
+      <doc xml:whitespace="preserve">The reaper object.</doc>
+      <function name="get" c:identifier="vte_reaper_get">
+        <return-value transfer-ownership="full">
+          <type name="Reaper" c:type="VteReaper*"/>
+        </return-value>
+      </function>
+      <function name="add_child" c:identifier="vte_reaper_add_child">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+        <parameters>
+          <parameter name="pid" transfer-ownership="none">
+            <type name="GLib.Pid" c:type="GPid"/>
+          </parameter>
+        </parameters>
+      </function>
+      <glib:signal name="child-exited">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <record name="ReaperClass"
+            c:type="_VteReaperClass"
+            glib:is-gtype-struct-for="Reaper">
+    </record>
+    <callback name="SelectionFunc" c:type="VteSelectionFunc">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="terminal" transfer-ownership="none">
+          <type name="Terminal" c:type="VteTerminal*"/>
+        </parameter>
+        <parameter name="column" transfer-ownership="none">
+          <type name="long" c:type="glong"/>
+        </parameter>
+        <parameter name="row" transfer-ownership="none">
+          <type name="long" c:type="glong"/>
+        </parameter>
+        <parameter name="data" transfer-ownership="none">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <class name="Terminal"
+           c:type="VteTerminal"
+           parent="Gtk.Widget"
+           glib:type-name="VteTerminal"
+           glib:get-type="vte_terminal_get_type"
+           glib:type-struct="TerminalClass">
+      <doc xml:whitespace="preserve">All of these fields should be considered read-only and deprecated.</doc>
+      <implements name="Atk.ImplementorIface"/>
+      <implements name="Gtk.Buildable"/>
+      <constructor name="new" c:identifier="vte_terminal_new">
+        <return-value transfer-ownership="full">
+          <type name="Terminal" c:type="GtkWidget*"/>
+        </return-value>
+      </constructor>
+      <method name="pty_new" c:identifier="vte_terminal_pty_new" throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Pty" c:type="VtePty*"/>
+        </return-value>
+        <parameters>
+          <parameter name="flags" transfer-ownership="none">
+            <type name="PtyFlags" c:type="VtePtyFlags"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="watch_child" c:identifier="vte_terminal_watch_child">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="child_pid" transfer-ownership="none">
+            <type name="GLib.Pid" c:type="GPid"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="fork_command_full"
+              c:identifier="vte_terminal_fork_command_full"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="pty_flags" transfer-ownership="none">
+            <type name="PtyFlags" c:type="VtePtyFlags"/>
+          </parameter>
+          <parameter name="working_directory" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="argv" transfer-ownership="none">
+            <array c:type="char**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+          <parameter name="envv" transfer-ownership="none">
+            <array c:type="char**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+          <parameter name="spawn_flags" transfer-ownership="none">
+            <type name="GLib.SpawnFlags" c:type="GSpawnFlags"/>
+          </parameter>
+          <parameter name="child_setup"
+                     transfer-ownership="none"
+                     scope="call"
+                     closure="7">
+            <type name="GLib.SpawnChildSetupFunc"
+                  c:type="GSpawnChildSetupFunc"/>
+          </parameter>
+          <parameter name="child_setup_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="child_pid" transfer-ownership="none">
+            <type name="GLib.Pid" c:type="GPid*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="feed" c:identifier="vte_terminal_feed">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="data" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="length" transfer-ownership="none">
+            <type name="long" c:type="glong"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="feed_child" c:identifier="vte_terminal_feed_child">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="text" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="length" transfer-ownership="none">
+            <type name="long" c:type="glong"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="feed_child_binary"
+              c:identifier="vte_terminal_feed_child_binary">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="data" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="length" transfer-ownership="none">
+            <type name="long" c:type="glong"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="copy_clipboard" c:identifier="vte_terminal_copy_clipboard">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="paste_clipboard"
+              c:identifier="vte_terminal_paste_clipboard">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="copy_primary" c:identifier="vte_terminal_copy_primary">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="paste_primary" c:identifier="vte_terminal_paste_primary">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="select_all" c:identifier="vte_terminal_select_all">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="select_none" c:identifier="vte_terminal_select_none">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="set_size" c:identifier="vte_terminal_set_size">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="columns" transfer-ownership="none">
+            <type name="long" c:type="glong"/>
+          </parameter>
+          <parameter name="rows" transfer-ownership="none">
+            <type name="long" c:type="glong"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_audible_bell"
+              c:identifier="vte_terminal_set_audible_bell">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="is_audible" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_audible_bell"
+              c:identifier="vte_terminal_get_audible_bell">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="set_visible_bell"
+              c:identifier="vte_terminal_set_visible_bell">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="is_visible" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_visible_bell"
+              c:identifier="vte_terminal_get_visible_bell">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="set_scroll_background"
+              c:identifier="vte_terminal_set_scroll_background">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="scroll" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_scroll_on_output"
+              c:identifier="vte_terminal_set_scroll_on_output">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="scroll" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_scroll_on_keystroke"
+              c:identifier="vte_terminal_set_scroll_on_keystroke">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="scroll" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_color_dim" c:identifier="vte_terminal_set_color_dim">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="dim" transfer-ownership="none">
+            <type name="Gdk.Color" c:type="GdkColor*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_color_bold" c:identifier="vte_terminal_set_color_bold">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="bold" transfer-ownership="none">
+            <type name="Gdk.Color" c:type="GdkColor*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_color_foreground"
+              c:identifier="vte_terminal_set_color_foreground">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="foreground" transfer-ownership="none">
+            <type name="Gdk.Color" c:type="GdkColor*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_color_background"
+              c:identifier="vte_terminal_set_color_background">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="background" transfer-ownership="none">
+            <type name="Gdk.Color" c:type="GdkColor*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_color_cursor"
+              c:identifier="vte_terminal_set_color_cursor">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="cursor_background" transfer-ownership="none">
+            <type name="Gdk.Color" c:type="GdkColor*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_color_highlight"
+              c:identifier="vte_terminal_set_color_highlight">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="highlight_background" transfer-ownership="none">
+            <type name="Gdk.Color" c:type="GdkColor*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_colors" c:identifier="vte_terminal_set_colors">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="foreground" transfer-ownership="none">
+            <type name="Gdk.Color" c:type="GdkColor*"/>
+          </parameter>
+          <parameter name="background" transfer-ownership="none">
+            <type name="Gdk.Color" c:type="GdkColor*"/>
+          </parameter>
+          <parameter name="palette" transfer-ownership="none">
+            <type name="Gdk.Color" c:type="GdkColor*"/>
+          </parameter>
+          <parameter name="palette_size" transfer-ownership="none">
+            <type name="long" c:type="glong"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_default_colors"
+              c:identifier="vte_terminal_set_default_colors">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="set_background_image"
+              c:identifier="vte_terminal_set_background_image">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="image" transfer-ownership="none">
+            <type name="GdkPixbuf.Pixbuf" c:type="GdkPixbuf*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_background_image_file"
+              c:identifier="vte_terminal_set_background_image_file">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="path" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_background_tint_color"
+              c:identifier="vte_terminal_set_background_tint_color">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="color" transfer-ownership="none">
+            <type name="Gdk.Color" c:type="GdkColor*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_background_saturation"
+              c:identifier="vte_terminal_set_background_saturation">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="saturation" transfer-ownership="none">
+            <type name="double" c:type="double"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_background_transparent"
+              c:identifier="vte_terminal_set_background_transparent">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="transparent" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_opacity" c:identifier="vte_terminal_set_opacity">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="opacity" transfer-ownership="none">
+            <type name="uint16" c:type="guint16"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_cursor_blink_mode"
+              c:identifier="vte_terminal_set_cursor_blink_mode">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="mode" transfer-ownership="none">
+            <type name="TerminalCursorBlinkMode"
+                  c:type="VteTerminalCursorBlinkMode"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_cursor_blink_mode"
+              c:identifier="vte_terminal_get_cursor_blink_mode">
+        <return-value transfer-ownership="full">
+          <type name="TerminalCursorBlinkMode"
+                c:type="VteTerminalCursorBlinkMode"/>
+        </return-value>
+      </method>
+      <method name="set_cursor_shape"
+              c:identifier="vte_terminal_set_cursor_shape">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="shape" transfer-ownership="none">
+            <type name="TerminalCursorShape" c:type="VteTerminalCursorShape"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_cursor_shape"
+              c:identifier="vte_terminal_get_cursor_shape">
+        <return-value transfer-ownership="full">
+          <type name="TerminalCursorShape" c:type="VteTerminalCursorShape"/>
+        </return-value>
+      </method>
+      <method name="set_scrollback_lines"
+              c:identifier="vte_terminal_set_scrollback_lines">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="lines" transfer-ownership="none">
+            <type name="long" c:type="glong"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="im_append_menuitems"
+              c:identifier="vte_terminal_im_append_menuitems">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="menushell" transfer-ownership="none">
+            <type name="Gtk.MenuShell" c:type="GtkMenuShell*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_font" c:identifier="vte_terminal_set_font">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="font_desc" transfer-ownership="none">
+            <type name="Pango.FontDescription" c:type="PangoFontDescription*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_font_from_string"
+              c:identifier="vte_terminal_set_font_from_string">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="name" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_font" c:identifier="vte_terminal_get_font">
+        <return-value transfer-ownership="none">
+          <type name="Pango.FontDescription" c:type="PangoFontDescription*"/>
+        </return-value>
+      </method>
+      <method name="set_allow_bold" c:identifier="vte_terminal_set_allow_bold">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="allow_bold" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_allow_bold" c:identifier="vte_terminal_get_allow_bold">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_has_selection"
+              c:identifier="vte_terminal_get_has_selection">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="set_word_chars" c:identifier="vte_terminal_set_word_chars">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="spec" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="is_word_char" c:identifier="vte_terminal_is_word_char">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="c" transfer-ownership="none">
+            <type name="GLib.unichar" c:type="gunichar"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_backspace_binding"
+              c:identifier="vte_terminal_set_backspace_binding">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="binding" transfer-ownership="none">
+            <type name="TerminalEraseBinding"
+                  c:type="VteTerminalEraseBinding"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_delete_binding"
+              c:identifier="vte_terminal_set_delete_binding">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="binding" transfer-ownership="none">
+            <type name="TerminalEraseBinding"
+                  c:type="VteTerminalEraseBinding"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_mouse_autohide"
+              c:identifier="vte_terminal_set_mouse_autohide">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="setting" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_mouse_autohide"
+              c:identifier="vte_terminal_get_mouse_autohide">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="reset" c:identifier="vte_terminal_reset">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="clear_tabstops" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+          <parameter name="clear_history" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_text" c:identifier="vte_terminal_get_text">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+        <parameters>
+          <parameter name="is_selected"
+                     transfer-ownership="none"
+                     scope="call"
+                     closure="2">
+            <type name="SelectionFunc" c:type="VteSelectionFunc"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="attributes" transfer-ownership="none">
+            <array name="GLib.Array" c:type="GArray*">
+              <type name="any" c:type="gpointer"/>
+            </array>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_text_include_trailing_spaces"
+              c:identifier="vte_terminal_get_text_include_trailing_spaces">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+        <parameters>
+          <parameter name="is_selected"
+                     transfer-ownership="none"
+                     scope="call"
+                     closure="2">
+            <type name="SelectionFunc" c:type="VteSelectionFunc"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="attributes" transfer-ownership="none">
+            <array name="GLib.Array" c:type="GArray*">
+              <type name="any" c:type="gpointer"/>
+            </array>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_text_range" c:identifier="vte_terminal_get_text_range">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+        <parameters>
+          <parameter name="start_row" transfer-ownership="none">
+            <type name="long" c:type="glong"/>
+          </parameter>
+          <parameter name="start_col" transfer-ownership="none">
+            <type name="long" c:type="glong"/>
+          </parameter>
+          <parameter name="end_row" transfer-ownership="none">
+            <type name="long" c:type="glong"/>
+          </parameter>
+          <parameter name="end_col" transfer-ownership="none">
+            <type name="long" c:type="glong"/>
+          </parameter>
+          <parameter name="is_selected"
+                     transfer-ownership="none"
+                     scope="call"
+                     closure="6">
+            <type name="SelectionFunc" c:type="VteSelectionFunc"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="attributes" transfer-ownership="none">
+            <array name="GLib.Array" c:type="GArray*">
+              <type name="any" c:type="gpointer"/>
+            </array>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_cursor_position"
+              c:identifier="vte_terminal_get_cursor_position">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="column"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="long" c:type="glong*"/>
+          </parameter>
+          <parameter name="row"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="long" c:type="glong*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="match_clear_all"
+              c:identifier="vte_terminal_match_clear_all">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="match_add_gregex"
+              c:identifier="vte_terminal_match_add_gregex">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+        <parameters>
+          <parameter name="regex" transfer-ownership="none">
+            <type name="GLib.Regex" c:type="GRegex*"/>
+          </parameter>
+          <parameter name="flags" transfer-ownership="none">
+            <type name="GLib.RegexMatchFlags" c:type="GRegexMatchFlags"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="match_set_cursor"
+              c:identifier="vte_terminal_match_set_cursor">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="tag" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+          <parameter name="cursor" transfer-ownership="none">
+            <type name="Gdk.Cursor" c:type="GdkCursor*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="match_set_cursor_type"
+              c:identifier="vte_terminal_match_set_cursor_type">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="tag" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+          <parameter name="cursor_type" transfer-ownership="none">
+            <type name="Gdk.CursorType" c:type="GdkCursorType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="match_set_cursor_name"
+              c:identifier="vte_terminal_match_set_cursor_name">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="tag" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+          <parameter name="cursor_name" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="match_remove" c:identifier="vte_terminal_match_remove">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="tag" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="match_check" c:identifier="vte_terminal_match_check">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+        <parameters>
+          <parameter name="column" transfer-ownership="none">
+            <type name="long" c:type="glong"/>
+          </parameter>
+          <parameter name="row" transfer-ownership="none">
+            <type name="long" c:type="glong"/>
+          </parameter>
+          <parameter name="tag"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int" c:type="int*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="search_set_gregex"
+              c:identifier="vte_terminal_search_set_gregex">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="regex" transfer-ownership="none">
+            <type name="GLib.Regex" c:type="GRegex*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="search_get_gregex"
+              c:identifier="vte_terminal_search_get_gregex">
+        <return-value transfer-ownership="full">
+          <type name="GLib.Regex" c:type="GRegex*"/>
+        </return-value>
+      </method>
+      <method name="search_set_wrap_around"
+              c:identifier="vte_terminal_search_set_wrap_around">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="wrap_around" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="search_get_wrap_around"
+              c:identifier="vte_terminal_search_get_wrap_around">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="search_find_previous"
+              c:identifier="vte_terminal_search_find_previous">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="search_find_next"
+              c:identifier="vte_terminal_search_find_next">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="set_emulation" c:identifier="vte_terminal_set_emulation">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="emulation" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_emulation" c:identifier="vte_terminal_get_emulation">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_default_emulation"
+              c:identifier="vte_terminal_get_default_emulation">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="set_encoding" c:identifier="vte_terminal_set_encoding">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="codeset" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_encoding" c:identifier="vte_terminal_get_encoding">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_status_line"
+              c:identifier="vte_terminal_get_status_line">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="set_pty_object" c:identifier="vte_terminal_set_pty_object">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="pty" transfer-ownership="none">
+            <type name="Pty" c:type="VtePty*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_pty_object" c:identifier="vte_terminal_get_pty_object">
+        <return-value transfer-ownership="full">
+          <type name="Pty" c:type="VtePty*"/>
+        </return-value>
+      </method>
+      <method name="get_adjustment" c:identifier="vte_terminal_get_adjustment">
+        <return-value transfer-ownership="full">
+          <type name="Gtk.Adjustment" c:type="GtkAdjustment*"/>
+        </return-value>
+      </method>
+      <method name="get_char_width" c:identifier="vte_terminal_get_char_width">
+        <return-value transfer-ownership="none">
+          <type name="long" c:type="glong"/>
+        </return-value>
+      </method>
+      <method name="get_char_height"
+              c:identifier="vte_terminal_get_char_height">
+        <return-value transfer-ownership="none">
+          <type name="long" c:type="glong"/>
+        </return-value>
+      </method>
+      <method name="get_row_count" c:identifier="vte_terminal_get_row_count">
+        <return-value transfer-ownership="none">
+          <type name="long" c:type="glong"/>
+        </return-value>
+      </method>
+      <method name="get_column_count"
+              c:identifier="vte_terminal_get_column_count">
+        <return-value transfer-ownership="none">
+          <type name="long" c:type="glong"/>
+        </return-value>
+      </method>
+      <method name="get_window_title"
+              c:identifier="vte_terminal_get_window_title">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_icon_title" c:identifier="vte_terminal_get_icon_title">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_child_exit_status"
+              c:identifier="vte_terminal_get_child_exit_status">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="write_contents"
+              c:identifier="vte_terminal_write_contents"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="stream" transfer-ownership="none">
+            <type name="Gio.OutputStream" c:type="GOutputStream*"/>
+          </parameter>
+          <parameter name="flags" transfer-ownership="none">
+            <type name="TerminalWriteFlags" c:type="VteTerminalWriteFlags"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_cursor_blinks"
+              c:identifier="vte_terminal_set_cursor_blinks">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="blink" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_using_xft" c:identifier="vte_terminal_get_using_xft">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="match_add" c:identifier="vte_terminal_match_add">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+        <parameters>
+          <parameter name="match" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_char_descent"
+              c:identifier="vte_terminal_get_char_descent">
+        <return-value transfer-ownership="none">
+          <type name="long" c:type="glong"/>
+        </return-value>
+      </method>
+      <method name="get_char_ascent"
+              c:identifier="vte_terminal_get_char_ascent">
+        <return-value transfer-ownership="none">
+          <type name="long" c:type="glong"/>
+        </return-value>
+      </method>
+      <method name="set_font_full" c:identifier="vte_terminal_set_font_full">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="font_desc" transfer-ownership="none">
+            <type name="Pango.FontDescription" c:type="PangoFontDescription*"/>
+          </parameter>
+          <parameter name="antialias" transfer-ownership="none">
+            <type name="TerminalAntiAlias" c:type="VteTerminalAntiAlias"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_font_from_string_full"
+              c:identifier="vte_terminal_set_font_from_string_full">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="name" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="antialias" transfer-ownership="none">
+            <type name="TerminalAntiAlias" c:type="VteTerminalAntiAlias"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="fork_command" c:identifier="vte_terminal_fork_command">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="pid_t"/>
+        </return-value>
+        <parameters>
+          <parameter name="command" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="argv" transfer-ownership="none">
+            <array c:type="char**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+          <parameter name="envv" transfer-ownership="none">
+            <array c:type="char**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+          <parameter name="working_directory" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="lastlog" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+          <parameter name="utmp" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+          <parameter name="wtmp" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="forkpty" c:identifier="vte_terminal_forkpty">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="pid_t"/>
+        </return-value>
+        <parameters>
+          <parameter name="envv" transfer-ownership="none">
+            <array c:type="char**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+          <parameter name="working_directory" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="lastlog" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+          <parameter name="utmp" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+          <parameter name="wtmp" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_padding" c:identifier="vte_terminal_get_padding">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="xpad"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int" c:type="int*"/>
+          </parameter>
+          <parameter name="ypad"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int" c:type="int*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_pty" c:identifier="vte_terminal_set_pty">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="pty_master" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_pty" c:identifier="vte_terminal_get_pty">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <property name="allow-bold" writable="1" transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="audible-bell" writable="1" transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="background-image-file"
+                writable="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="background-image-pixbuf"
+                writable="1"
+                transfer-ownership="none">
+        <type name="GdkPixbuf.Pixbuf" c:type="GdkPixbuf"/>
+      </property>
+      <property name="background-opacity"
+                writable="1"
+                transfer-ownership="none">
+        <type name="double" c:type="gdouble"/>
+      </property>
+      <property name="background-saturation"
+                writable="1"
+                transfer-ownership="none">
+        <type name="double" c:type="gdouble"/>
+      </property>
+      <property name="background-tint-color"
+                writable="1"
+                transfer-ownership="none">
+        <type name="Gdk.Color" c:type="GdkColor"/>
+      </property>
+      <property name="background-transparent"
+                writable="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="backspace-binding"
+                writable="1"
+                transfer-ownership="none">
+        <type name="TerminalEraseBinding" c:type="VteTerminalEraseBinding"/>
+      </property>
+      <property name="cursor-blink-mode"
+                writable="1"
+                transfer-ownership="none">
+        <type name="TerminalCursorBlinkMode"
+              c:type="VteTerminalCursorBlinkMode"/>
+      </property>
+      <property name="cursor-shape" writable="1" transfer-ownership="none">
+        <type name="TerminalCursorShape" c:type="VteTerminalCursorShape"/>
+      </property>
+      <property name="delete-binding" writable="1" transfer-ownership="none">
+        <type name="TerminalEraseBinding" c:type="VteTerminalEraseBinding"/>
+      </property>
+      <property name="emulation" writable="1" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="encoding" writable="1" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="font-desc" writable="1" transfer-ownership="none">
+        <type name="Pango.FontDescription" c:type="PangoFontDescription"/>
+      </property>
+      <property name="icon-title" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="pointer-autohide" writable="1" transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="pty" writable="1" transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <property name="pty-object" writable="1" transfer-ownership="none">
+        <type name="Pty" c:type="VtePty"/>
+      </property>
+      <property name="scroll-background"
+                writable="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="scroll-on-keystroke"
+                writable="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="scroll-on-output" writable="1" transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="scrollback-lines" writable="1" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <property name="visible-bell" writable="1" transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="window-title" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="word-chars" writable="1" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <field name="widget">
+        <type name="Gtk.Widget" c:type="GtkWidget"/>
+      </field>
+      <field name="adjustment">
+        <type name="Gtk.Adjustment" c:type="GtkAdjustment*"/>
+      </field>
+      <field name="char_width">
+        <type name="long" c:type="glong"/>
+      </field>
+      <field name="char_height">
+        <type name="long" c:type="glong"/>
+      </field>
+      <field name="char_ascent">
+        <type name="long" c:type="glong"/>
+      </field>
+      <field name="char_descent">
+        <type name="long" c:type="glong"/>
+      </field>
+      <field name="row_count">
+        <type name="long" c:type="glong"/>
+      </field>
+      <field name="column_count">
+        <type name="long" c:type="glong"/>
+      </field>
+      <field name="window_title">
+        <type name="utf8" c:type="char*"/>
+      </field>
+      <field name="icon_title">
+        <type name="utf8" c:type="char*"/>
+      </field>
+      <field name="pvt">
+        <type name="TerminalPrivate" c:type="VteTerminalPrivate*"/>
+      </field>
+      <glib:signal name="beep">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="char-size-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="child-exited">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="commit">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="contents-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="copy-clipboard">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="cursor-moved">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="decrease-font-size">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="deiconify-window">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="emulation-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="encoding-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="eof">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="icon-title-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="iconify-window">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="increase-font-size">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="lower-window">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="maximize-window">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="move-window">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="paste-clipboard">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="raise-window">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="refresh-window">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="resize-window">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="restore-window">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="selection-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="set-scroll-adjustments">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="Gtk.Adjustment" c:type="GtkAdjustment"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="Gtk.Adjustment" c:type="GtkAdjustment"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="status-line-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="text-deleted">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="text-inserted">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="text-modified">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="text-scrolled">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="window-title-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+    </class>
+    <class name="TerminalAccessible"
+           c:type="VteTerminalAccessible"
+           parent="Gtk.Accessible"
+           glib:type-name="VteTerminalAccessible"
+           glib:get-type="vte_terminal_accessible_get_type"
+           glib:type-struct="TerminalAccessibleClass">
+      <doc xml:whitespace="preserve">The accessible peer for #VteTerminal.</doc>
+      <implements name="Atk.Action"/>
+      <implements name="Atk.Component"/>
+      <implements name="Atk.Text"/>
+      <constructor name="new" c:identifier="vte_terminal_accessible_new">
+        <return-value transfer-ownership="full">
+          <type name="TerminalAccessible" c:type="AtkObject*"/>
+        </return-value>
+        <parameters>
+          <parameter name="terminal" transfer-ownership="none">
+            <type name="Terminal" c:type="VteTerminal*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <field name="parent">
+        <type name="Gtk.Accessible" c:type="GtkAccessible"/>
+      </field>
+    </class>
+    <record name="TerminalAccessibleClass"
+            c:type="VteTerminalAccessibleClass"
+            glib:is-gtype-struct-for="TerminalAccessible">
+      <field name="parent_class">
+        <type name="Gtk.AccessibleClass" c:type="GtkAccessibleClass"/>
+      </field>
+    </record>
+    <class name="TerminalAccessibleFactory"
+           c:type="VteTerminalAccessibleFactory"
+           parent="Atk.ObjectFactory"
+           glib:type-name="VteTerminalAccessibleFactory"
+           glib:get-type="vte_terminal_accessible_factory_get_type"
+           glib:type-struct="TerminalAccessibleFactoryClass">
+      <constructor name="new"
+                   c:identifier="vte_terminal_accessible_factory_new">
+        <return-value transfer-ownership="full">
+          <type name="TerminalAccessibleFactory" c:type="AtkObjectFactory*"/>
+        </return-value>
+      </constructor>
+      <field name="parent">
+        <type name="Atk.ObjectFactory" c:type="AtkObjectFactory"/>
+      </field>
+    </class>
+    <record name="TerminalAccessibleFactoryClass"
+            c:type="VteTerminalAccessibleFactoryClass"
+            glib:is-gtype-struct-for="TerminalAccessibleFactory">
+      <field name="parent">
+        <type name="Atk.ObjectFactoryClass" c:type="AtkObjectFactoryClass"/>
+      </field>
+    </record>
+    <enumeration name="TerminalAntiAlias"
+                 glib:type-name="VteTerminalAntiAlias"
+                 glib:get-type="vte_terminal_anti_alias_get_type"
+                 c:type="VteTerminalAntiAlias">
+      <doc xml:whitespace="preserve">An enumeration describing which anti-alias setting to use.</doc>
+      <member name="use_default"
+              value="0"
+              c:identifier="VTE_ANTI_ALIAS_USE_DEFAULT"
+              glib:nick="use-default"/>
+      <member name="force_enable"
+              value="1"
+              c:identifier="VTE_ANTI_ALIAS_FORCE_ENABLE"
+              glib:nick="force-enable"/>
+      <member name="force_disable"
+              value="2"
+              c:identifier="VTE_ANTI_ALIAS_FORCE_DISABLE"
+              glib:nick="force-disable"/>
+    </enumeration>
+    <record name="TerminalClass"
+            c:type="VteTerminalClass"
+            glib:is-gtype-struct-for="Terminal">
+      <doc xml:whitespace="preserve">All of these fields should be considered read-only, except for derived classes.</doc>
+      <field name="parent_class">
+        <type name="Gtk.WidgetClass" c:type="GtkWidgetClass"/>
+      </field>
+      <field name="eof">
+        <callback name="eof" c:type="eof">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="child_exited">
+        <callback name="child_exited" c:type="child_exited">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="emulation_changed">
+        <callback name="emulation_changed" c:type="emulation_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="encoding_changed">
+        <callback name="encoding_changed" c:type="encoding_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="char_size_changed">
+        <callback name="char_size_changed" c:type="char_size_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+            <parameter name="char_width" transfer-ownership="none">
+              <type name="uint" c:type="guint"/>
+            </parameter>
+            <parameter name="char_height" transfer-ownership="none">
+              <type name="uint" c:type="guint"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="window_title_changed">
+        <callback name="window_title_changed" c:type="window_title_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="icon_title_changed">
+        <callback name="icon_title_changed" c:type="icon_title_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="selection_changed">
+        <callback name="selection_changed" c:type="selection_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="contents_changed">
+        <callback name="contents_changed" c:type="contents_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="cursor_moved">
+        <callback name="cursor_moved" c:type="cursor_moved">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="status_line_changed">
+        <callback name="status_line_changed" c:type="status_line_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="commit">
+        <callback name="commit" c:type="commit">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+            <parameter name="text" transfer-ownership="none">
+              <type name="utf8" c:type="gchar*"/>
+            </parameter>
+            <parameter name="size" transfer-ownership="none">
+              <type name="uint" c:type="guint"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="deiconify_window">
+        <callback name="deiconify_window" c:type="deiconify_window">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="iconify_window">
+        <callback name="iconify_window" c:type="iconify_window">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="raise_window">
+        <callback name="raise_window" c:type="raise_window">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="lower_window">
+        <callback name="lower_window" c:type="lower_window">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="refresh_window">
+        <callback name="refresh_window" c:type="refresh_window">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="restore_window">
+        <callback name="restore_window" c:type="restore_window">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="maximize_window">
+        <callback name="maximize_window" c:type="maximize_window">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="resize_window">
+        <callback name="resize_window" c:type="resize_window">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+            <parameter name="width" transfer-ownership="none">
+              <type name="uint" c:type="guint"/>
+            </parameter>
+            <parameter name="height" transfer-ownership="none">
+              <type name="uint" c:type="guint"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="move_window">
+        <callback name="move_window" c:type="move_window">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+            <parameter name="x" transfer-ownership="none">
+              <type name="uint" c:type="guint"/>
+            </parameter>
+            <parameter name="y" transfer-ownership="none">
+              <type name="uint" c:type="guint"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="increase_font_size">
+        <callback name="increase_font_size" c:type="increase_font_size">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="decrease_font_size">
+        <callback name="decrease_font_size" c:type="decrease_font_size">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="text_modified">
+        <callback name="text_modified" c:type="text_modified">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="text_inserted">
+        <callback name="text_inserted" c:type="text_inserted">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="text_deleted">
+        <callback name="text_deleted" c:type="text_deleted">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="text_scrolled">
+        <callback name="text_scrolled" c:type="text_scrolled">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+            <parameter name="delta" transfer-ownership="none">
+              <type name="int" c:type="gint"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="copy_clipboard">
+        <callback name="copy_clipboard" c:type="copy_clipboard">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="paste_clipboard">
+        <callback name="paste_clipboard" c:type="paste_clipboard">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="set_scroll_adjustments">
+        <callback name="set_scroll_adjustments"
+                  c:type="set_scroll_adjustments">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="widget" transfer-ownership="none">
+              <type name="Gtk.Widget" c:type="GtkWidget*"/>
+            </parameter>
+            <parameter name="hadjustment" transfer-ownership="none">
+              <type name="Gtk.Adjustment" c:type="GtkAdjustment*"/>
+            </parameter>
+            <parameter name="vadjustment" transfer-ownership="none">
+              <type name="Gtk.Adjustment" c:type="GtkAdjustment*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="beep">
+        <callback name="beep" c:type="beep">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="terminal" transfer-ownership="none">
+              <type name="Terminal" c:type="VteTerminal*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="reserved3">
+        <callback name="reserved3" c:type="vte_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="reserved4">
+        <callback name="reserved4" c:type="vte_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="eof_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="child_exited_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="emulation_changed_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="encoding_changed_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="char_size_changed_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="window_title_changed_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="icon_title_changed_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="selection_changed_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="contents_changed_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="cursor_moved_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="status_line_changed_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="commit_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="deiconify_window_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="iconify_window_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="raise_window_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="lower_window_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="refresh_window_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="restore_window_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="maximize_window_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="resize_window_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="move_window_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="increase_font_size_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="decrease_font_size_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="text_modified_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="text_inserted_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="text_deleted_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="text_scrolled_signal">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="reserved1">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="reserved2">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="reserved3">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="reserved4">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="reserved5">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="reserved6">
+        <type name="uint" c:type="guint"/>
+      </field>
+    </record>
+    <enumeration name="TerminalCursorBlinkMode"
+                 glib:type-name="VteTerminalCursorBlinkMode"
+                 glib:get-type="vte_terminal_cursor_blink_mode_get_type"
+                 c:type="VteTerminalCursorBlinkMode">
+      <doc xml:whitespace="preserve">An enumerated type which can be used to indicate the cursor blink mode
+for the terminal.</doc>
+      <member name="system"
+              value="0"
+              c:identifier="VTE_CURSOR_BLINK_SYSTEM"
+              glib:nick="system"/>
+      <member name="on"
+              value="1"
+              c:identifier="VTE_CURSOR_BLINK_ON"
+              glib:nick="on"/>
+      <member name="off"
+              value="2"
+              c:identifier="VTE_CURSOR_BLINK_OFF"
+              glib:nick="off"/>
+    </enumeration>
+    <enumeration name="TerminalCursorShape"
+                 glib:type-name="VteTerminalCursorShape"
+                 glib:get-type="vte_terminal_cursor_shape_get_type"
+                 c:type="VteTerminalCursorShape">
+      <doc xml:whitespace="preserve">An enumerated type which can be used to indicate what should the terminal
+draw at the cursor position.</doc>
+      <member name="block"
+              value="0"
+              c:identifier="VTE_CURSOR_SHAPE_BLOCK"
+              glib:nick="block"/>
+      <member name="ibeam"
+              value="1"
+              c:identifier="VTE_CURSOR_SHAPE_IBEAM"
+              glib:nick="ibeam"/>
+      <member name="underline"
+              value="2"
+              c:identifier="VTE_CURSOR_SHAPE_UNDERLINE"
+              glib:nick="underline"/>
+    </enumeration>
+    <enumeration name="TerminalEraseBinding"
+                 glib:type-name="VteTerminalEraseBinding"
+                 glib:get-type="vte_terminal_erase_binding_get_type"
+                 c:type="VteTerminalEraseBinding">
+      <doc xml:whitespace="preserve">An enumerated type which can be used to indicate which string the terminal
+should send to an application when the user presses the Delete or Backspace
+keys.</doc>
+      <member name="auto"
+              value="0"
+              c:identifier="VTE_ERASE_AUTO"
+              glib:nick="auto"/>
+      <member name="ascii_backspace"
+              value="1"
+              c:identifier="VTE_ERASE_ASCII_BACKSPACE"
+              glib:nick="ascii-backspace"/>
+      <member name="ascii_delete"
+              value="2"
+              c:identifier="VTE_ERASE_ASCII_DELETE"
+              glib:nick="ascii-delete"/>
+      <member name="delete_sequence"
+              value="3"
+              c:identifier="VTE_ERASE_DELETE_SEQUENCE"
+              glib:nick="delete-sequence"/>
+      <member name="tty"
+              value="4"
+              c:identifier="VTE_ERASE_TTY"
+              glib:nick="tty"/>
+    </enumeration>
+    <record name="TerminalPrivate" c:type="VteTerminalPrivate">
+    </record>
+    <enumeration name="TerminalWriteFlags"
+                 glib:type-name="VteTerminalWriteFlags"
+                 glib:get-type="vte_terminal_write_flags_get_type"
+                 c:type="VteTerminalWriteFlags">
+      <doc xml:whitespace="preserve">A flag type to determine how terminal contents should be written
+to an output stream.</doc>
+      <member name="default"
+              value="0"
+              c:identifier="VTE_TERMINAL_WRITE_DEFAULT"
+              glib:nick="default"/>
+    </enumeration>
+    <constant name="VTE_VTE_H_INSIDE__" value="1">
+      <type name="int"/>
+    </constant>
+    <record name="char_attributes" c:type="vte_char_attributes">
+      <field name="row" writable="1">
+        <type name="long" c:type="long"/>
+      </field>
+      <field name="column" writable="1">
+        <type name="long" c:type="long"/>
+      </field>
+      <field name="fore" writable="1">
+        <type name="Gdk.Color" c:type="GdkColor"/>
+      </field>
+      <field name="back" writable="1">
+        <type name="Gdk.Color" c:type="GdkColor"/>
+      </field>
+      <field name="underline" writable="1" bits="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="strikethrough" writable="1" bits="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+    </record>
+  </namespace>
+</repository>

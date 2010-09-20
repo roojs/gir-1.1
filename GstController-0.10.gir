@@ -1,0 +1,867 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="GLib" version="2.0"/>
+  <include name="GModule" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <include name="Gst" version="0.10"/>
+  <include name="libxml2" version="2.0"/>
+  <package name="gobject-2.0"/>
+  <package name="gstreamer-0.10"/>
+  <package name="gstreamer-controller-0.10"/>
+  <namespace name="GstController"
+             version="0.10"
+             shared-library="libgstcontroller-0.10.so.0"
+             c:prefix="GstController">
+    <record name="Class" c:type="GstControllerClass">
+      <field name="parent_class" writable="1">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="_gst_reserved" writable="1">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="4">
+          <type name="any"/>
+        </array>
+      </field>
+    </record>
+    <class name="GstControlSource"
+           c:type="GstControlSource"
+           parent="GObject.Object"
+           abstract="1"
+           glib:type-name="GstControlSource"
+           glib:get-type="gst_control_source_get_type"
+           glib:type-struct="GstControlSourceClass">
+      <doc xml:whitespace="preserve">The instance structure of #GstControlSource.</doc>
+      <method name="get_value" c:identifier="gst_control_source_get_value">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="Gst.ClockTime" c:type="GstClockTime"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="GObject.Value" c:type="GValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_value_array"
+              c:identifier="gst_control_source_get_value_array">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="Gst.ClockTime" c:type="GstClockTime"/>
+          </parameter>
+          <parameter name="value_array" transfer-ownership="none">
+            <type name="GstValueArray" c:type="GstValueArray*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="bind" c:identifier="gst_control_source_bind">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="pspec" transfer-ownership="none">
+            <type name="GObject.ParamSpec" c:type="GParamSpec*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <field name="parent">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="get_value">
+        <type name="GstControlSourceGetValue"
+              c:type="GstControlSourceGetValue"/>
+      </field>
+      <field name="get_value_array">
+        <type name="GstControlSourceGetValueArray"
+              c:type="GstControlSourceGetValueArray"/>
+      </field>
+      <field name="bound">
+        <type name="boolean" c:type="gboolean"/>
+      </field>
+      <field name="_gst_reserved">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="4">
+          <type name="any"/>
+        </array>
+      </field>
+    </class>
+    <callback name="GstControlSourceBind" c:type="GstControlSourceBind">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="self" transfer-ownership="none">
+          <type name="GstControlSource" c:type="GstControlSource*"/>
+        </parameter>
+        <parameter name="pspec" transfer-ownership="none">
+          <type name="GObject.ParamSpec" c:type="GParamSpec*"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <record name="GstControlSourceClass"
+            c:type="GstControlSourceClass"
+            glib:is-gtype-struct-for="GstControlSource">
+      <doc xml:whitespace="preserve">The class structure of #GstControlSource.</doc>
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="bind">
+        <type name="GstControlSourceBind" c:type="GstControlSourceBind"/>
+      </field>
+      <field name="_gst_reserved">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="4">
+          <type name="any"/>
+        </array>
+      </field>
+    </record>
+    <callback name="GstControlSourceGetValue"
+              c:type="GstControlSourceGetValue">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="self" transfer-ownership="none">
+          <type name="GstControlSource" c:type="GstControlSource*"/>
+        </parameter>
+        <parameter name="timestamp" transfer-ownership="none">
+          <type name="Gst.ClockTime" c:type="GstClockTime"/>
+        </parameter>
+        <parameter name="value" transfer-ownership="none">
+          <type name="GObject.Value" c:type="GValue*"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <callback name="GstControlSourceGetValueArray"
+              c:type="GstControlSourceGetValueArray">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="self" transfer-ownership="none">
+          <type name="GstControlSource" c:type="GstControlSource*"/>
+        </parameter>
+        <parameter name="timestamp" transfer-ownership="none">
+          <type name="Gst.ClockTime" c:type="GstClockTime"/>
+        </parameter>
+        <parameter name="value_array" transfer-ownership="none">
+          <type name="GstValueArray" c:type="GstValueArray*"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <class name="GstController"
+           c:type="GstController"
+           parent="GObject.Object"
+           glib:type-name="GstController"
+           glib:get-type="gst_controller_get_type">
+      <doc xml:whitespace="preserve">The instance structure of GstController</doc>
+      <constructor name="new_list"
+                   c:identifier="gst_controller_new_list"
+                   introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="GstController" c:type="GstController*"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="GObject.Object" c:type="GObject*"/>
+          </parameter>
+          <parameter name="list" transfer-ownership="none">
+            <type name="GLib.List" c:type="GList*">
+              <type name="any" c:type="gpointer"/>
+            </type>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new"
+                   c:identifier="gst_controller_new"
+                   introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="GstController" c:type="GstController*"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="GObject.Object" c:type="GObject*"/>
+          </parameter>
+          <parameter transfer-ownership="none">
+            <varargs>
+            </varargs>
+          </parameter>
+        </parameters>
+      </constructor>
+      <function name="init" c:identifier="gst_controller_init">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="argc"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int" c:type="int*"/>
+          </parameter>
+          <parameter name="argv" transfer-ownership="none">
+            <type name="utf8" c:type="char***"/>
+          </parameter>
+        </parameters>
+      </function>
+      <method name="remove_properties_list"
+              c:identifier="gst_controller_remove_properties_list"
+              introspectable="0">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="list" transfer-ownership="none">
+            <type name="GLib.List" c:type="GList*">
+              <type name="any" c:type="gpointer"/>
+            </type>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove_properties"
+              c:identifier="gst_controller_remove_properties"
+              introspectable="0">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter transfer-ownership="none">
+            <varargs>
+            </varargs>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_disabled" c:identifier="gst_controller_set_disabled">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="disabled" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_property_disabled"
+              c:identifier="gst_controller_set_property_disabled">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="property_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="disabled" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_control_source"
+              c:identifier="gst_controller_set_control_source">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="property_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="csource" transfer-ownership="none">
+            <type name="GstControlSource" c:type="GstControlSource*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_control_source"
+              c:identifier="gst_controller_get_control_source">
+        <return-value transfer-ownership="full">
+          <type name="GstControlSource" c:type="GstControlSource*"/>
+        </return-value>
+        <parameters>
+          <parameter name="property_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="suggest_next_sync"
+              c:identifier="gst_controller_suggest_next_sync">
+        <return-value transfer-ownership="full">
+          <type name="Gst.ClockTime" c:type="GstClockTime"/>
+        </return-value>
+      </method>
+      <method name="sync_values" c:identifier="gst_controller_sync_values">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="Gst.ClockTime" c:type="GstClockTime"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get" c:identifier="gst_controller_get">
+        <return-value transfer-ownership="full">
+          <type name="GObject.Value" c:type="GValue*"/>
+        </return-value>
+        <parameters>
+          <parameter name="property_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="Gst.ClockTime" c:type="GstClockTime"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_value_arrays"
+              c:identifier="gst_controller_get_value_arrays">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="Gst.ClockTime" c:type="GstClockTime"/>
+          </parameter>
+          <parameter name="value_arrays" transfer-ownership="none">
+            <type name="GLib.SList" c:type="GSList*">
+              <type name="any" c:type="gpointer"/>
+            </type>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_value_array"
+              c:identifier="gst_controller_get_value_array">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="Gst.ClockTime" c:type="GstClockTime"/>
+          </parameter>
+          <parameter name="value_array" transfer-ownership="none">
+            <type name="GstValueArray" c:type="GstValueArray*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set" c:identifier="gst_controller_set">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="property_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="Gst.ClockTime" c:type="GstClockTime"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="GObject.Value" c:type="GValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_from_list" c:identifier="gst_controller_set_from_list">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="property_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="timedvalues" transfer-ownership="none">
+            <type name="GLib.SList" c:type="GSList*">
+              <type name="any" c:type="gpointer"/>
+            </type>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="unset" c:identifier="gst_controller_unset">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="property_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="Gst.ClockTime" c:type="GstClockTime"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="unset_all" c:identifier="gst_controller_unset_all">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="property_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_all"
+              c:identifier="gst_controller_get_all"
+              introspectable="0">
+        <return-value transfer-ownership="none">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <parameter name="property_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_interpolation_mode"
+              c:identifier="gst_controller_set_interpolation_mode">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="property_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="mode" transfer-ownership="none">
+            <type name="GstInterpolateMode" c:type="GstInterpolateMode"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="control-rate" writable="1" transfer-ownership="none">
+        <type name="uint64" c:type="guint64"/>
+      </property>
+      <field name="parent">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="properties">
+        <type name="GLib.List" c:type="GList*">
+          <type name="any" c:type="gpointer"/>
+        </type>
+      </field>
+      <field name="lock">
+        <type name="GLib.Mutex" c:type="GMutex*"/>
+      </field>
+      <field name="object">
+        <type name="GObject.Object" c:type="GObject*"/>
+      </field>
+      <field name="priv">
+        <type name="Private" c:type="GstControllerPrivate*"/>
+      </field>
+      <field name="_gst_reserved">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="3">
+          <type name="any"/>
+        </array>
+      </field>
+    </class>
+    <enumeration name="GstInterpolateMode" c:type="GstInterpolateMode">
+      <doc xml:whitespace="preserve">The various interpolation modes available.</doc>
+      <member name="none" value="0" c:identifier="GST_INTERPOLATE_NONE"/>
+      <member name="trigger" value="1" c:identifier="GST_INTERPOLATE_TRIGGER"/>
+      <member name="linear" value="2" c:identifier="GST_INTERPOLATE_LINEAR"/>
+      <member name="quadratic"
+              value="3"
+              c:identifier="GST_INTERPOLATE_QUADRATIC"/>
+      <member name="cubic" value="4" c:identifier="GST_INTERPOLATE_CUBIC"/>
+      <member name="user" value="5" c:identifier="GST_INTERPOLATE_USER"/>
+    </enumeration>
+    <class name="GstInterpolationControlSource"
+           c:type="GstInterpolationControlSource"
+           parent="GstControlSource"
+           glib:type-name="GstInterpolationControlSource"
+           glib:get-type="gst_interpolation_control_source_get_type"
+           glib:type-struct="GstInterpolationControlSourceClass">
+      <doc xml:whitespace="preserve">The instance structure of #GstControlSource.</doc>
+      <constructor name="new"
+                   c:identifier="gst_interpolation_control_source_new">
+        <return-value transfer-ownership="full">
+          <type name="GstInterpolationControlSource"
+                c:type="GstInterpolationControlSource*"/>
+        </return-value>
+      </constructor>
+      <method name="set_interpolation_mode"
+              c:identifier="gst_interpolation_control_source_set_interpolation_mode">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="mode" transfer-ownership="none">
+            <type name="GstInterpolateMode" c:type="GstInterpolateMode"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set" c:identifier="gst_interpolation_control_source_set">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="Gst.ClockTime" c:type="GstClockTime"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="GObject.Value" c:type="GValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_from_list"
+              c:identifier="gst_interpolation_control_source_set_from_list">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="timedvalues" transfer-ownership="none">
+            <type name="GLib.SList" c:type="GSList*">
+              <type name="any" c:type="gpointer"/>
+            </type>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="unset"
+              c:identifier="gst_interpolation_control_source_unset">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="Gst.ClockTime" c:type="GstClockTime"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="unset_all"
+              c:identifier="gst_interpolation_control_source_unset_all">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="get_all"
+              c:identifier="gst_interpolation_control_source_get_all"
+              introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+      </method>
+      <method name="get_count"
+              c:identifier="gst_interpolation_control_source_get_count">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <field name="parent">
+        <type name="GstControlSource" c:type="GstControlSource"/>
+      </field>
+      <field name="lock">
+        <type name="GLib.Mutex" c:type="GMutex*"/>
+      </field>
+      <field name="priv">
+        <type name="GstInterpolationControlSourcePrivate"
+              c:type="GstInterpolationControlSourcePrivate*"/>
+      </field>
+      <field name="_gst_reserved">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="4">
+          <type name="any"/>
+        </array>
+      </field>
+    </class>
+    <record name="GstInterpolationControlSourceClass"
+            c:type="GstInterpolationControlSourceClass"
+            glib:is-gtype-struct-for="GstInterpolationControlSource">
+      <field name="parent_class">
+        <type name="GstControlSourceClass" c:type="GstControlSourceClass"/>
+      </field>
+      <field name="_gst_reserved">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="4">
+          <type name="any"/>
+        </array>
+      </field>
+    </record>
+    <record name="GstInterpolationControlSourcePrivate"
+            c:type="GstInterpolationControlSourcePrivate">
+    </record>
+    <class name="GstLFOControlSource"
+           c:type="GstLFOControlSource"
+           parent="GstControlSource"
+           glib:type-name="GstLFOControlSource"
+           glib:get-type="gst_lfo_control_source_get_type"
+           glib:type-struct="GstLFOControlSourceClass">
+      <doc xml:whitespace="preserve">The instance structure of #GstControlSource.</doc>
+      <constructor name="new" c:identifier="gst_lfo_control_source_new">
+        <return-value transfer-ownership="full">
+          <type name="GstLFOControlSource" c:type="GstLFOControlSource*"/>
+        </return-value>
+      </constructor>
+      <property name="amplitude" writable="1" transfer-ownership="none">
+        <type name="GObject.Value" c:type="GValue"/>
+      </property>
+      <property name="frequency" writable="1" transfer-ownership="none">
+        <type name="double" c:type="gdouble"/>
+      </property>
+      <property name="offset" writable="1" transfer-ownership="none">
+        <type name="GObject.Value" c:type="GValue"/>
+      </property>
+      <property name="timeshift" writable="1" transfer-ownership="none">
+        <type name="uint64" c:type="guint64"/>
+      </property>
+      <property name="waveform" writable="1" transfer-ownership="none">
+        <type name="GstLFOWaveform" c:type="GstLFOWaveform"/>
+      </property>
+      <field name="parent">
+        <type name="GstControlSource" c:type="GstControlSource"/>
+      </field>
+      <field name="priv">
+        <type name="GstLFOControlSourcePrivate"
+              c:type="GstLFOControlSourcePrivate*"/>
+      </field>
+      <field name="lock">
+        <type name="GLib.Mutex" c:type="GMutex*"/>
+      </field>
+      <field name="_gst_reserved">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="4">
+          <type name="any"/>
+        </array>
+      </field>
+    </class>
+    <record name="GstLFOControlSourceClass"
+            c:type="GstLFOControlSourceClass"
+            glib:is-gtype-struct-for="GstLFOControlSource">
+      <field name="parent_class">
+        <type name="GstControlSourceClass" c:type="GstControlSourceClass"/>
+      </field>
+      <field name="_gst_reserved">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="4">
+          <type name="any"/>
+        </array>
+      </field>
+    </record>
+    <record name="GstLFOControlSourcePrivate"
+            c:type="GstLFOControlSourcePrivate">
+    </record>
+    <enumeration name="GstLFOWaveform"
+                 glib:type-name="GstLFOWaveform"
+                 glib:get-type="gst_lfo_waveform_get_type"
+                 c:type="GstLFOWaveform">
+      <doc xml:whitespace="preserve">The various waveform modes available.</doc>
+      <member name="sine"
+              value="0"
+              c:identifier="Sine waveform (default)"
+              glib:nick="sine"/>
+      <member name="square"
+              value="1"
+              c:identifier="Square waveform"
+              glib:nick="square"/>
+      <member name="saw"
+              value="2"
+              c:identifier="Saw waveform"
+              glib:nick="saw"/>
+      <member name="reverse_saw"
+              value="3"
+              c:identifier="Reverse saw waveform"
+              glib:nick="reverse-saw"/>
+      <member name="triangle"
+              value="4"
+              c:identifier="Triangle waveform"
+              glib:nick="triangle"/>
+    </enumeration>
+    <record name="GstTimedValue" c:type="GstTimedValue">
+      <doc xml:whitespace="preserve">Structure for saving a timestamp and a value.</doc>
+      <field name="timestamp" writable="1">
+        <type name="Gst.ClockTime" c:type="GstClockTime"/>
+      </field>
+      <field name="value" writable="1">
+        <type name="GObject.Value" c:type="GValue"/>
+      </field>
+    </record>
+    <record name="GstValueArray" c:type="GstValueArray">
+      <doc xml:whitespace="preserve">Structure to receive multiple values at once.</doc>
+      <field name="property_name" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="nbsamples" writable="1">
+        <type name="int" c:type="gint"/>
+      </field>
+      <field name="sample_interval" writable="1">
+        <type name="Gst.ClockTime" c:type="GstClockTime"/>
+      </field>
+      <field name="values" writable="1">
+        <type name="any" c:type="gpointer*"/>
+      </field>
+    </record>
+    <record name="Private" c:type="GstControllerPrivate">
+    </record>
+    <function name="gst_object_control_properties"
+              c:identifier="gst_object_control_properties"
+              introspectable="0">
+      <return-value transfer-ownership="full">
+        <type name="GstController" c:type="GstController*"/>
+      </return-value>
+      <parameters>
+        <parameter name="object" transfer-ownership="none">
+          <type name="GObject.Object" c:type="GObject*"/>
+        </parameter>
+        <parameter transfer-ownership="none">
+          <varargs>
+          </varargs>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_object_get_control_rate"
+              c:identifier="gst_object_get_control_rate">
+      <return-value transfer-ownership="full">
+        <type name="Gst.ClockTime" c:type="GstClockTime"/>
+      </return-value>
+      <parameters>
+        <parameter name="object" transfer-ownership="none">
+          <type name="GObject.Object" c:type="GObject*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_object_get_control_source"
+              c:identifier="gst_object_get_control_source">
+      <return-value transfer-ownership="full">
+        <type name="GstControlSource" c:type="GstControlSource*"/>
+      </return-value>
+      <parameters>
+        <parameter name="object" transfer-ownership="none">
+          <type name="GObject.Object" c:type="GObject*"/>
+        </parameter>
+        <parameter name="property_name" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_object_get_controller"
+              c:identifier="gst_object_get_controller">
+      <return-value transfer-ownership="full">
+        <type name="GstController" c:type="GstController*"/>
+      </return-value>
+      <parameters>
+        <parameter name="object" transfer-ownership="none">
+          <type name="GObject.Object" c:type="GObject*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_object_get_value_array"
+              c:identifier="gst_object_get_value_array">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="object" transfer-ownership="none">
+          <type name="GObject.Object" c:type="GObject*"/>
+        </parameter>
+        <parameter name="timestamp" transfer-ownership="none">
+          <type name="Gst.ClockTime" c:type="GstClockTime"/>
+        </parameter>
+        <parameter name="value_array" transfer-ownership="none">
+          <type name="GstValueArray" c:type="GstValueArray*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_object_get_value_arrays"
+              c:identifier="gst_object_get_value_arrays">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="object" transfer-ownership="none">
+          <type name="GObject.Object" c:type="GObject*"/>
+        </parameter>
+        <parameter name="timestamp" transfer-ownership="none">
+          <type name="Gst.ClockTime" c:type="GstClockTime"/>
+        </parameter>
+        <parameter name="value_arrays" transfer-ownership="none">
+          <type name="GLib.SList" c:type="GSList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_object_set_control_rate"
+              c:identifier="gst_object_set_control_rate">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="object" transfer-ownership="none">
+          <type name="GObject.Object" c:type="GObject*"/>
+        </parameter>
+        <parameter name="control_rate" transfer-ownership="none">
+          <type name="Gst.ClockTime" c:type="GstClockTime"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_object_set_control_source"
+              c:identifier="gst_object_set_control_source">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="object" transfer-ownership="none">
+          <type name="GObject.Object" c:type="GObject*"/>
+        </parameter>
+        <parameter name="property_name" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="csource" transfer-ownership="none">
+          <type name="GstControlSource" c:type="GstControlSource*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_object_set_controller"
+              c:identifier="gst_object_set_controller">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="object" transfer-ownership="none">
+          <type name="GObject.Object" c:type="GObject*"/>
+        </parameter>
+        <parameter name="controller" transfer-ownership="none">
+          <type name="GstController" c:type="GstController*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_object_suggest_next_sync"
+              c:identifier="gst_object_suggest_next_sync">
+      <return-value transfer-ownership="full">
+        <type name="Gst.ClockTime" c:type="GstClockTime"/>
+      </return-value>
+      <parameters>
+        <parameter name="object" transfer-ownership="none">
+          <type name="GObject.Object" c:type="GObject*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_object_sync_values"
+              c:identifier="gst_object_sync_values">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="object" transfer-ownership="none">
+          <type name="GObject.Object" c:type="GObject*"/>
+        </parameter>
+        <parameter name="timestamp" transfer-ownership="none">
+          <type name="Gst.ClockTime" c:type="GstClockTime"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_object_uncontrol_properties"
+              c:identifier="gst_object_uncontrol_properties"
+              introspectable="0">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="object" transfer-ownership="none">
+          <type name="GObject.Object" c:type="GObject*"/>
+        </parameter>
+        <parameter transfer-ownership="none">
+          <varargs>
+          </varargs>
+        </parameter>
+      </parameters>
+    </function>
+  </namespace>
+</repository>

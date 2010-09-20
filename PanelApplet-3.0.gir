@@ -1,0 +1,618 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="Atk" version="1.0"/>
+  <include name="GConf" version="2.0"/>
+  <include name="GLib" version="2.0"/>
+  <include name="GModule" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <include name="Gdk" version="2.0"/>
+  <include name="GdkPixbuf" version="2.0"/>
+  <include name="Gio" version="2.0"/>
+  <include name="Gtk" version="2.0"/>
+  <include name="Pango" version="1.0"/>
+  <include name="cairo" version="1.0"/>
+  <namespace name="PanelApplet"
+             version="3.0"
+             shared-library="libpanel-applet-3.so.0"
+             c:prefix="PanelApplet">
+    <enumeration name="BackgroundType"
+                 glib:type-name="PanelAppletBackgroundType"
+                 glib:get-type="panel_applet_background_type_get_type"
+                 c:type="PanelAppletBackgroundType">
+      <member name="no_background"
+              value="0"
+              c:identifier="PANEL_NO_BACKGROUND"
+              glib:nick="no-background"/>
+      <member name="color_background"
+              value="1"
+              c:identifier="PANEL_COLOR_BACKGROUND"
+              glib:nick="color-background"/>
+      <member name="pixmap_background"
+              value="2"
+              c:identifier="PANEL_PIXMAP_BACKGROUND"
+              glib:nick="pixmap-background"/>
+    </enumeration>
+    <record name="Class" c:type="PanelAppletClass">
+      <field name="event_box_class" writable="1">
+        <type name="Gtk.EventBoxClass" c:type="GtkEventBoxClass"/>
+      </field>
+      <field name="change_orient">
+        <type name="any" c:type="pointer"/>
+      </field>
+      <field name="change_size">
+        <type name="any" c:type="pointer"/>
+      </field>
+      <field name="change_background">
+        <type name="any" c:type="pointer"/>
+      </field>
+      <field name="move_focus_out_of_applet">
+        <type name="any" c:type="pointer"/>
+      </field>
+    </record>
+    <constant name="FACTORY_SERVICE_NAME" value="org.gnome.panel.applet.%s">
+      <type name="utf8"/>
+    </constant>
+    <class name="Factory"
+           c:type="PanelAppletFactory"
+           parent="GObject.Object"
+           glib:type-name="PanelAppletFactory"
+           glib:get-type="panel_applet_factory_get_type"
+           glib:type-struct="FactoryClass">
+      <constructor name="new" c:identifier="panel_applet_factory_new">
+        <return-value transfer-ownership="full">
+          <type name="Factory" c:type="PanelAppletFactory*"/>
+        </return-value>
+        <parameters>
+          <parameter name="applet_id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="applet_type" transfer-ownership="none">
+            <type name="GType" c:type="GType"/>
+          </parameter>
+          <parameter name="closure" transfer-ownership="none">
+            <type name="GObject.Closure" c:type="GClosure*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <function name="main" c:identifier="panel_applet_factory_main">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+        <parameters>
+          <parameter name="factory_id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="out_process" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+          <parameter name="applet_type" transfer-ownership="none">
+            <type name="GType" c:type="GType"/>
+          </parameter>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="call"
+                     closure="4">
+            <type name="FactoryCallback" c:type="PanelAppletFactoryCallback"/>
+          </parameter>
+          <parameter name="data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </function>
+      <method name="register_service"
+              c:identifier="panel_applet_factory_register_service">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+    </class>
+    <callback name="FactoryCallback" c:type="PanelAppletFactoryCallback">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="applet" transfer-ownership="none">
+          <type name="PanelApplet" c:type="PanelApplet*"/>
+        </parameter>
+        <parameter name="iid" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="user_data" transfer-ownership="none" closure="2">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <record name="FactoryClass"
+            c:type="PanelAppletFactoryClass"
+            glib:is-gtype-struct-for="Factory">
+    </record>
+    <bitfield name="Flags"
+              glib:type-name="PanelAppletFlags"
+              glib:get-type="panel_applet_flags_get_type"
+              c:type="PanelAppletFlags">
+      <member name="flags_none"
+              value="0"
+              c:identifier="PANEL_APPLET_FLAGS_NONE"
+              glib:nick="flags-none"/>
+      <member name="expand_major"
+              value="1"
+              c:identifier="PANEL_APPLET_EXPAND_MAJOR"
+              glib:nick="expand-major"/>
+      <member name="expand_minor"
+              value="2"
+              c:identifier="PANEL_APPLET_EXPAND_MINOR"
+              glib:nick="expand-minor"/>
+      <member name="has_handle"
+              value="4"
+              c:identifier="PANEL_APPLET_HAS_HANDLE"
+              glib:nick="has-handle"/>
+    </bitfield>
+    <constant name="OBJECT_PATH" value="/org/gnome/panel/applet/%s/%d">
+      <type name="utf8"/>
+    </constant>
+    <enumeration name="Orient"
+                 glib:type-name="PanelAppletOrient"
+                 glib:get-type="panel_applet_orient_get_type"
+                 c:type="PanelAppletOrient">
+      <member name="up"
+              value="0"
+              c:identifier="PANEL_APPLET_ORIENT_UP"
+              glib:nick="up"/>
+      <member name="down"
+              value="1"
+              c:identifier="PANEL_APPLET_ORIENT_DOWN"
+              glib:nick="down"/>
+      <member name="left"
+              value="2"
+              c:identifier="PANEL_APPLET_ORIENT_LEFT"
+              glib:nick="left"/>
+      <member name="right"
+              value="3"
+              c:identifier="PANEL_APPLET_ORIENT_RIGHT"
+              glib:nick="right"/>
+    </enumeration>
+    <class name="PanelApplet"
+           c:type="PanelApplet"
+           parent="Gtk.EventBox"
+           glib:type-name="PanelApplet"
+           glib:get-type="panel_applet_get_type">
+      <implements name="Atk.ImplementorIface"/>
+      <implements name="Gtk.Buildable"/>
+      <constructor name="new" c:identifier="panel_applet_new">
+        <return-value transfer-ownership="full">
+          <type name="PanelApplet" c:type="GtkWidget*"/>
+        </return-value>
+      </constructor>
+      <method name="get_orient" c:identifier="panel_applet_get_orient">
+        <return-value transfer-ownership="full">
+          <type name="Orient" c:type="PanelAppletOrient"/>
+        </return-value>
+      </method>
+      <method name="get_size" c:identifier="panel_applet_get_size">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="get_background" c:identifier="panel_applet_get_background">
+        <return-value transfer-ownership="full">
+          <type name="BackgroundType" c:type="PanelAppletBackgroundType"/>
+        </return-value>
+        <parameters>
+          <parameter name="color" transfer-ownership="none">
+            <type name="Gdk.Color" c:type="GdkColor*"/>
+          </parameter>
+          <parameter name="pixmap" transfer-ownership="none">
+            <type name="Gdk.Pixmap" c:type="GdkPixmap**"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_background_widget"
+              c:identifier="panel_applet_set_background_widget">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="widget" transfer-ownership="none">
+            <type name="Gtk.Widget" c:type="GtkWidget*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_preferences_key"
+              c:identifier="panel_applet_get_preferences_key">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="add_preferences"
+              c:identifier="panel_applet_add_preferences"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="schema_dir" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_flags" c:identifier="panel_applet_get_flags">
+        <return-value transfer-ownership="full">
+          <type name="Flags" c:type="PanelAppletFlags"/>
+        </return-value>
+      </method>
+      <method name="set_flags" c:identifier="panel_applet_set_flags">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="flags" transfer-ownership="none">
+            <type name="Flags" c:type="PanelAppletFlags"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_size_hints" c:identifier="panel_applet_set_size_hints">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="size_hints"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="none">
+            <type name="int" c:type="int*"/>
+          </parameter>
+          <parameter name="n_elements" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+          <parameter name="base_size" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_locked_down"
+              c:identifier="panel_applet_get_locked_down">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="request_focus" c:identifier="panel_applet_request_focus">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="setup_menu" c:identifier="panel_applet_setup_menu">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="xml" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="action_group" transfer-ownership="none">
+            <type name="Gtk.ActionGroup" c:type="GtkActionGroup*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="setup_menu_from_file"
+              c:identifier="panel_applet_setup_menu_from_file">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="filename" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="action_group" transfer-ownership="none">
+            <type name="Gtk.ActionGroup" c:type="GtkActionGroup*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_xid" c:identifier="panel_applet_get_xid">
+        <return-value transfer-ownership="none">
+          <type name="uint32" c:type="guint32"/>
+        </return-value>
+        <parameters>
+          <parameter name="screen" transfer-ownership="none">
+            <type name="Gdk.Screen" c:type="GdkScreen*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_object_path"
+              c:identifier="panel_applet_get_object_path">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="gconf_get_full_key"
+              c:identifier="panel_applet_gconf_get_full_key">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="gconf_set_bool"
+              c:identifier="panel_applet_gconf_set_bool"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="the_bool" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="gconf_set_int"
+              c:identifier="panel_applet_gconf_set_int"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="the_int" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="gconf_set_string"
+              c:identifier="panel_applet_gconf_set_string"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="the_string" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="gconf_set_float"
+              c:identifier="panel_applet_gconf_set_float"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="the_float" transfer-ownership="none">
+            <type name="double" c:type="gdouble"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="gconf_set_list"
+              c:identifier="panel_applet_gconf_set_list"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="list_type" transfer-ownership="none">
+            <type name="GConf.ValueType" c:type="GConfValueType"/>
+          </parameter>
+          <parameter name="list" transfer-ownership="none">
+            <type name="GLib.SList" c:type="GSList*">
+              <type name="any" c:type="gpointer"/>
+            </type>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="gconf_set_value"
+              c:identifier="panel_applet_gconf_set_value"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="GConf.Value" c:type="GConfValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="gconf_get_bool"
+              c:identifier="panel_applet_gconf_get_bool"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="gconf_get_int"
+              c:identifier="panel_applet_gconf_get_int"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="gconf_get_string"
+              c:identifier="panel_applet_gconf_get_string"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="gconf_get_float"
+              c:identifier="panel_applet_gconf_get_float"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="double" c:type="gdouble"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="gconf_get_list"
+              c:identifier="panel_applet_gconf_get_list"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="GLib.SList" c:type="GSList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="list_type" transfer-ownership="none">
+            <type name="GConf.ValueType" c:type="GConfValueType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="gconf_get_value"
+              c:identifier="panel_applet_gconf_get_value"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="GConf.Value" c:type="GConfValue*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="background" writable="1" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="closure"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="any" c:type="gpointer"/>
+      </property>
+      <property name="connection"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="Gio.DBusConnection" c:type="GDBusConnection"/>
+      </property>
+      <property name="flags" writable="1" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <property name="id"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="locked" writable="1" transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="locked-down" writable="1" transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="orient" writable="1" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <property name="prefs-key" writable="1" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="size" writable="1" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <property name="size-hints" writable="1" transfer-ownership="none">
+        <type name="any" c:type="gpointer"/>
+      </property>
+      <field name="event_box">
+        <type name="Gtk.EventBox" c:type="GtkEventBox"/>
+      </field>
+      <field name="priv">
+        <type name="Private" c:type="PanelAppletPrivate*"/>
+      </field>
+      <glib:signal name="change-background">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="BackgroundType" c:type="PanelAppletBackgroundType"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="Gdk.Color" c:type="GdkColor"/>
+          </parameter>
+          <parameter name="p1" transfer-ownership="none">
+            <type name="Gdk.Pixmap" c:type="GdkPixmap"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="change-orient">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="change-size">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="move-focus-out-of-applet">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="Gtk.DirectionType" c:type="GtkDirectionType"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <record name="Private" c:type="PanelAppletPrivate">
+    </record>
+  </namespace>
+</repository>

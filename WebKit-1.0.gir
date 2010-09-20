@@ -1,0 +1,4120 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="Atk" version="1.0"/>
+  <include name="GLib" version="2.0"/>
+  <include name="GModule" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <include name="Gdk" version="2.0"/>
+  <include name="GdkPixbuf" version="2.0"/>
+  <include name="Gio" version="2.0"/>
+  <include name="Gtk" version="2.0"/>
+  <include name="JSCore" version="1.0"/>
+  <include name="Pango" version="1.0"/>
+  <include name="Soup" version="2.4"/>
+  <include name="cairo" version="1.0"/>
+  <include name="xlib" version="2.0"/>
+  <package name="gobject-2.0"/>
+  <package name="gtk+-2.0"/>
+  <package name="webkit-1.0"/>
+  <namespace name="WebKit"
+             version="1.0"
+             shared-library="libwebkit-1.0.so.2"
+             c:prefix="WebKit">
+    <enumeration name="CacheModel"
+                 glib:type-name="WebKitCacheModel"
+                 glib:get-type="webkit_cache_model_get_type"
+                 c:type="WebKitCacheModel">
+      <member name="document_viewer"
+              value="1"
+              c:identifier="WEBKIT_CACHE_MODEL_DOCUMENT_VIEWER"
+              glib:nick="document-viewer"/>
+      <member name="web_browser"
+              value="2"
+              c:identifier="WEBKIT_CACHE_MODEL_WEB_BROWSER"
+              glib:nick="web-browser"/>
+    </enumeration>
+    <class name="Download"
+           c:type="WebKitDownload"
+           parent="GObject.Object"
+           glib:type-name="WebKitDownload"
+           glib:get-type="webkit_download_get_type"
+           glib:type-struct="DownloadClass">
+      <constructor name="new" c:identifier="webkit_download_new">
+        <return-value transfer-ownership="full">
+          <type name="Download" c:type="WebKitDownload*"/>
+        </return-value>
+        <parameters>
+          <parameter name="request" transfer-ownership="none">
+            <type name="NetworkRequest" c:type="WebKitNetworkRequest*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="start" c:identifier="webkit_download_start">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="cancel" c:identifier="webkit_download_cancel">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="get_uri" c:identifier="webkit_download_get_uri">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_network_request"
+              c:identifier="webkit_download_get_network_request">
+        <return-value transfer-ownership="full">
+          <type name="NetworkRequest" c:type="WebKitNetworkRequest*"/>
+        </return-value>
+      </method>
+      <method name="get_network_response"
+              c:identifier="webkit_download_get_network_response">
+        <return-value transfer-ownership="full">
+          <type name="NetworkResponse" c:type="WebKitNetworkResponse*"/>
+        </return-value>
+      </method>
+      <method name="get_suggested_filename"
+              c:identifier="webkit_download_get_suggested_filename">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_destination_uri"
+              c:identifier="webkit_download_get_destination_uri">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_destination_uri"
+              c:identifier="webkit_download_set_destination_uri">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="destination_uri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_progress" c:identifier="webkit_download_get_progress">
+        <return-value transfer-ownership="none">
+          <type name="double" c:type="gdouble"/>
+        </return-value>
+      </method>
+      <method name="get_elapsed_time"
+              c:identifier="webkit_download_get_elapsed_time">
+        <return-value transfer-ownership="none">
+          <type name="double" c:type="gdouble"/>
+        </return-value>
+      </method>
+      <method name="get_total_size"
+              c:identifier="webkit_download_get_total_size">
+        <return-value transfer-ownership="none">
+          <type name="uint64" c:type="guint64"/>
+        </return-value>
+      </method>
+      <method name="get_current_size"
+              c:identifier="webkit_download_get_current_size">
+        <return-value transfer-ownership="none">
+          <type name="uint64" c:type="guint64"/>
+        </return-value>
+      </method>
+      <method name="get_status" c:identifier="webkit_download_get_status">
+        <return-value transfer-ownership="full">
+          <type name="DownloadStatus" c:type="WebKitDownloadStatus"/>
+        </return-value>
+      </method>
+      <property name="current-size" transfer-ownership="none">
+        <type name="uint64" c:type="guint64"/>
+      </property>
+      <property name="destination-uri" writable="1" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="network-request"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="NetworkRequest" c:type="WebKitNetworkRequest"/>
+      </property>
+      <property name="network-response"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="NetworkResponse" c:type="WebKitNetworkResponse"/>
+      </property>
+      <property name="progress" transfer-ownership="none">
+        <type name="double" c:type="gdouble"/>
+      </property>
+      <property name="status" transfer-ownership="none">
+        <type name="DownloadStatus" c:type="WebKitDownloadStatus"/>
+      </property>
+      <property name="suggested-filename" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="total-size" transfer-ownership="none">
+        <type name="uint64" c:type="guint64"/>
+      </property>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="DownloadPrivate" c:type="WebKitDownloadPrivate*"/>
+      </field>
+      <glib:signal name="error">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="p1" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <record name="DownloadClass"
+            c:type="WebKitDownloadClass"
+            glib:is-gtype-struct-for="Download">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="webkit_reserved0">
+        <callback name="webkit_reserved0" c:type="_webkit_reserved0">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <enumeration name="DownloadError"
+                 glib:type-name="WebKitDownloadError"
+                 glib:get-type="webkit_download_error_get_type"
+                 c:type="WebKitDownloadError">
+      <member name="cancelled_by_user"
+              value="0"
+              c:identifier="WEBKIT_DOWNLOAD_ERROR_CANCELLED_BY_USER"
+              glib:nick="cancelled-by-user"/>
+      <member name="destination"
+              value="1"
+              c:identifier="WEBKIT_DOWNLOAD_ERROR_DESTINATION"
+              glib:nick="destination"/>
+      <member name="network"
+              value="2"
+              c:identifier="WEBKIT_DOWNLOAD_ERROR_NETWORK"
+              glib:nick="network"/>
+    </enumeration>
+    <record name="DownloadPrivate" c:type="WebKitDownloadPrivate">
+    </record>
+    <enumeration name="DownloadStatus"
+                 glib:type-name="WebKitDownloadStatus"
+                 glib:get-type="webkit_download_status_get_type"
+                 c:type="WebKitDownloadStatus">
+      <member name="error"
+              value="-1"
+              c:identifier="WEBKIT_DOWNLOAD_STATUS_ERROR"
+              glib:nick="error"/>
+      <member name="created"
+              value="0"
+              c:identifier="WEBKIT_DOWNLOAD_STATUS_CREATED"
+              glib:nick="created"/>
+      <member name="started"
+              value="1"
+              c:identifier="WEBKIT_DOWNLOAD_STATUS_STARTED"
+              glib:nick="started"/>
+      <member name="cancelled"
+              value="2"
+              c:identifier="WEBKIT_DOWNLOAD_STATUS_CANCELLED"
+              glib:nick="cancelled"/>
+      <member name="finished"
+              value="3"
+              c:identifier="WEBKIT_DOWNLOAD_STATUS_FINISHED"
+              glib:nick="finished"/>
+    </enumeration>
+    <enumeration name="EditingBehavior"
+                 glib:type-name="WebKitEditingBehavior"
+                 glib:get-type="webkit_editing_behavior_get_type"
+                 c:type="WebKitEditingBehavior">
+      <member name="mac"
+              value="0"
+              c:identifier="WEBKIT_EDITING_BEHAVIOR_MAC"
+              glib:nick="mac"/>
+      <member name="windows"
+              value="1"
+              c:identifier="WEBKIT_EDITING_BEHAVIOR_WINDOWS"
+              glib:nick="windows"/>
+    </enumeration>
+    <class name="HitTestResult"
+           c:type="WebKitHitTestResult"
+           parent="GObject.Object"
+           glib:type-name="WebKitHitTestResult"
+           glib:get-type="webkit_hit_test_result_get_type"
+           glib:type-struct="HitTestResultClass">
+      <property name="context"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="HitTestResultContext" c:type="WebKitHitTestResultContext"/>
+      </property>
+      <property name="image-uri"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="link-uri"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="media-uri"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="HitTestResultPrivate"
+              c:type="WebKitHitTestResultPrivate*"/>
+      </field>
+    </class>
+    <record name="HitTestResultClass"
+            c:type="WebKitHitTestResultClass"
+            glib:is-gtype-struct-for="HitTestResult">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="webkit_reserved0">
+        <callback name="webkit_reserved0" c:type="_webkit_reserved0">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <bitfield name="HitTestResultContext"
+              glib:type-name="WebKitHitTestResultContext"
+              glib:get-type="webkit_hit_test_result_context_get_type"
+              c:type="WebKitHitTestResultContext">
+      <member name="document"
+              value="2"
+              c:identifier="WEBKIT_HIT_TEST_RESULT_CONTEXT_DOCUMENT"
+              glib:nick="document"/>
+      <member name="link"
+              value="4"
+              c:identifier="WEBKIT_HIT_TEST_RESULT_CONTEXT_LINK"
+              glib:nick="link"/>
+      <member name="image"
+              value="8"
+              c:identifier="WEBKIT_HIT_TEST_RESULT_CONTEXT_IMAGE"
+              glib:nick="image"/>
+      <member name="media"
+              value="16"
+              c:identifier="WEBKIT_HIT_TEST_RESULT_CONTEXT_MEDIA"
+              glib:nick="media"/>
+      <member name="selection"
+              value="32"
+              c:identifier="WEBKIT_HIT_TEST_RESULT_CONTEXT_SELECTION"
+              glib:nick="selection"/>
+      <member name="editable"
+              value="64"
+              c:identifier="WEBKIT_HIT_TEST_RESULT_CONTEXT_EDITABLE"
+              glib:nick="editable"/>
+    </bitfield>
+    <record name="HitTestResultPrivate" c:type="WebKitHitTestResultPrivate">
+    </record>
+    <enumeration name="LoadStatus"
+                 glib:type-name="WebKitLoadStatus"
+                 glib:get-type="webkit_load_status_get_type"
+                 c:type="WebKitLoadStatus">
+      <member name="provisional"
+              value="0"
+              c:identifier="WEBKIT_LOAD_PROVISIONAL"
+              glib:nick="provisional"/>
+      <member name="committed"
+              value="1"
+              c:identifier="WEBKIT_LOAD_COMMITTED"
+              glib:nick="committed"/>
+      <member name="finished"
+              value="2"
+              c:identifier="WEBKIT_LOAD_FINISHED"
+              glib:nick="finished"/>
+      <member name="first_visually_non_empty_layout"
+              value="3"
+              c:identifier="WEBKIT_LOAD_FIRST_VISUALLY_NON_EMPTY_LAYOUT"
+              glib:nick="first-visually-non-empty-layout"/>
+      <member name="failed"
+              value="4"
+              c:identifier="WEBKIT_LOAD_FAILED"
+              glib:nick="failed"/>
+    </enumeration>
+    <constant name="MAJOR_VERSION" value="1">
+      <type name="int"/>
+    </constant>
+    <constant name="MICRO_VERSION" value="22">
+      <type name="int"/>
+    </constant>
+    <constant name="MINOR_VERSION" value="1">
+      <type name="int"/>
+    </constant>
+    <enumeration name="NavigationResponse"
+                 glib:type-name="WebKitNavigationResponse"
+                 glib:get-type="webkit_navigation_response_get_type"
+                 c:type="WebKitNavigationResponse">
+      <member name="accept"
+              value="0"
+              c:identifier="WEBKIT_NAVIGATION_RESPONSE_ACCEPT"
+              glib:nick="accept"/>
+      <member name="ignore"
+              value="1"
+              c:identifier="WEBKIT_NAVIGATION_RESPONSE_IGNORE"
+              glib:nick="ignore"/>
+      <member name="download"
+              value="2"
+              c:identifier="WEBKIT_NAVIGATION_RESPONSE_DOWNLOAD"
+              glib:nick="download"/>
+    </enumeration>
+    <enumeration name="NetworkError"
+                 glib:type-name="WebKitNetworkError"
+                 glib:get-type="webkit_network_error_get_type"
+                 c:type="WebKitNetworkError"
+                 glib:error-quark="webkit_network_error_quark">
+      <member name="failed"
+              value="399"
+              c:identifier="WEBKIT_NETWORK_ERROR_FAILED"
+              glib:nick="failed"/>
+      <member name="transport"
+              value="300"
+              c:identifier="WEBKIT_NETWORK_ERROR_TRANSPORT"
+              glib:nick="transport"/>
+      <member name="unknown_protocol"
+              value="301"
+              c:identifier="WEBKIT_NETWORK_ERROR_UNKNOWN_PROTOCOL"
+              glib:nick="unknown-protocol"/>
+      <member name="cancelled"
+              value="302"
+              c:identifier="WEBKIT_NETWORK_ERROR_CANCELLED"
+              glib:nick="cancelled"/>
+      <member name="file_does_not_exist"
+              value="303"
+              c:identifier="WEBKIT_NETWORK_ERROR_FILE_DOES_NOT_EXIST"
+              glib:nick="file-does-not-exist"/>
+    </enumeration>
+    <class name="NetworkRequest"
+           c:type="WebKitNetworkRequest"
+           parent="GObject.Object"
+           glib:type-name="WebKitNetworkRequest"
+           glib:get-type="webkit_network_request_get_type"
+           glib:type-struct="NetworkRequestClass">
+      <constructor name="new" c:identifier="webkit_network_request_new">
+        <return-value transfer-ownership="full">
+          <type name="NetworkRequest" c:type="WebKitNetworkRequest*"/>
+        </return-value>
+        <parameters>
+          <parameter name="uri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="set_uri" c:identifier="webkit_network_request_set_uri">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="uri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_uri" c:identifier="webkit_network_request_get_uri">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_message"
+              c:identifier="webkit_network_request_get_message">
+        <return-value transfer-ownership="full">
+          <type name="Soup.Message" c:type="SoupMessage*"/>
+        </return-value>
+      </method>
+      <property name="message"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="Soup.Message" c:type="SoupMessage"/>
+      </property>
+      <property name="uri" writable="1" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="NetworkRequestPrivate"
+              c:type="WebKitNetworkRequestPrivate*"/>
+      </field>
+    </class>
+    <record name="NetworkRequestClass"
+            c:type="WebKitNetworkRequestClass"
+            glib:is-gtype-struct-for="NetworkRequest">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="webkit_reserved0">
+        <callback name="webkit_reserved0" c:type="_webkit_reserved0">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="NetworkRequestPrivate" c:type="WebKitNetworkRequestPrivate">
+    </record>
+    <class name="NetworkResponse"
+           c:type="WebKitNetworkResponse"
+           parent="GObject.Object"
+           glib:type-name="WebKitNetworkResponse"
+           glib:get-type="webkit_network_response_get_type"
+           glib:type-struct="NetworkResponseClass">
+      <constructor name="new" c:identifier="webkit_network_response_new">
+        <return-value transfer-ownership="full">
+          <type name="NetworkResponse" c:type="WebKitNetworkResponse*"/>
+        </return-value>
+        <parameters>
+          <parameter name="uri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="set_uri" c:identifier="webkit_network_response_set_uri">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="uri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_uri" c:identifier="webkit_network_response_get_uri">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_message"
+              c:identifier="webkit_network_response_get_message">
+        <return-value transfer-ownership="full">
+          <type name="Soup.Message" c:type="SoupMessage*"/>
+        </return-value>
+      </method>
+      <property name="message"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="Soup.Message" c:type="SoupMessage"/>
+      </property>
+      <property name="uri" writable="1" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="NetworkResponsePrivate"
+              c:type="WebKitNetworkResponsePrivate*"/>
+      </field>
+    </class>
+    <record name="NetworkResponseClass"
+            c:type="WebKitNetworkResponseClass"
+            glib:is-gtype-struct-for="NetworkResponse">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="webkit_reserved0">
+        <callback name="webkit_reserved0" c:type="_webkit_reserved0">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="NetworkResponsePrivate"
+            c:type="WebKitNetworkResponsePrivate">
+    </record>
+    <enumeration name="PluginError"
+                 glib:type-name="WebKitPluginError"
+                 glib:get-type="webkit_plugin_error_get_type"
+                 c:type="WebKitPluginError"
+                 glib:error-quark="webkit_plugin_error_quark">
+      <member name="failed"
+              value="299"
+              c:identifier="WEBKIT_PLUGIN_ERROR_FAILED"
+              glib:nick="failed"/>
+      <member name="cannot_find_plugin"
+              value="200"
+              c:identifier="WEBKIT_PLUGIN_ERROR_CANNOT_FIND_PLUGIN"
+              glib:nick="cannot-find-plugin"/>
+      <member name="cannot_load_plugin"
+              value="201"
+              c:identifier="WEBKIT_PLUGIN_ERROR_CANNOT_LOAD_PLUGIN"
+              glib:nick="cannot-load-plugin"/>
+      <member name="java_unavailable"
+              value="202"
+              c:identifier="WEBKIT_PLUGIN_ERROR_JAVA_UNAVAILABLE"
+              glib:nick="java-unavailable"/>
+      <member name="connection_cancelled"
+              value="203"
+              c:identifier="WEBKIT_PLUGIN_ERROR_CONNECTION_CANCELLED"
+              glib:nick="connection-cancelled"/>
+      <member name="will_handle_load"
+              value="204"
+              c:identifier="WEBKIT_PLUGIN_ERROR_WILL_HANDLE_LOAD"
+              glib:nick="will-handle-load"/>
+    </enumeration>
+    <enumeration name="PolicyError"
+                 glib:type-name="WebKitPolicyError"
+                 glib:get-type="webkit_policy_error_get_type"
+                 c:type="WebKitPolicyError"
+                 glib:error-quark="webkit_policy_error_quark">
+      <member name="failed"
+              value="199"
+              c:identifier="WEBKIT_POLICY_ERROR_FAILED"
+              glib:nick="failed"/>
+      <member name="cannot_show_mime_type"
+              value="100"
+              c:identifier="WEBKIT_POLICY_ERROR_CANNOT_SHOW_MIME_TYPE"
+              glib:nick="cannot-show-mime-type"/>
+      <member name="cannot_show_url"
+              value="101"
+              c:identifier="WEBKIT_POLICY_ERROR_CANNOT_SHOW_URL"
+              glib:nick="cannot-show-url"/>
+      <member name="frame_load_interrupted_by_policy_change"
+              value="102"
+              c:identifier="WEBKIT_POLICY_ERROR_FRAME_LOAD_INTERRUPTED_BY_POLICY_CHANGE"
+              glib:nick="frame-load-interrupted-by-policy-change"/>
+      <member name="cannot_use_restricted_port"
+              value="103"
+              c:identifier="WEBKIT_POLICY_ERROR_CANNOT_USE_RESTRICTED_PORT"
+              glib:nick="cannot-use-restricted-port"/>
+    </enumeration>
+    <class name="SecurityOrigin"
+           c:type="WebKitSecurityOrigin"
+           parent="GObject.Object"
+           glib:type-name="WebKitSecurityOrigin"
+           glib:get-type="webkit_security_origin_get_type"
+           glib:type-struct="SecurityOriginClass">
+      <method name="get_protocol"
+              c:identifier="webkit_security_origin_get_protocol">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_host" c:identifier="webkit_security_origin_get_host">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_port" c:identifier="webkit_security_origin_get_port">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="get_web_database_usage"
+              c:identifier="webkit_security_origin_get_web_database_usage">
+        <return-value transfer-ownership="none">
+          <type name="uint64" c:type="guint64"/>
+        </return-value>
+      </method>
+      <method name="get_web_database_quota"
+              c:identifier="webkit_security_origin_get_web_database_quota">
+        <return-value transfer-ownership="none">
+          <type name="uint64" c:type="guint64"/>
+        </return-value>
+      </method>
+      <method name="set_web_database_quota"
+              c:identifier="webkit_security_origin_set_web_database_quota">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="quota" transfer-ownership="none">
+            <type name="uint64" c:type="guint64"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_all_web_databases"
+              c:identifier="webkit_security_origin_get_all_web_databases"
+              introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+      </method>
+      <property name="host" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="port" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <property name="protocol" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="web-database-quota"
+                writable="1"
+                transfer-ownership="none">
+        <type name="uint64" c:type="guint64"/>
+      </property>
+      <property name="web-database-usage" transfer-ownership="none">
+        <type name="uint64" c:type="guint64"/>
+      </property>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="SecurityOriginPrivate"
+              c:type="WebKitSecurityOriginPrivate*"/>
+      </field>
+    </class>
+    <record name="SecurityOriginClass"
+            c:type="WebKitSecurityOriginClass"
+            glib:is-gtype-struct-for="SecurityOrigin">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved4">
+        <callback name="webkit_reserved4" c:type="_webkit_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="SecurityOriginPrivate" c:type="WebKitSecurityOriginPrivate">
+    </record>
+    <class name="SoupAuthDialog"
+           c:type="WebKitSoupAuthDialog"
+           parent="GObject.Object"
+           glib:type-name="WebKitSoupAuthDialog"
+           glib:get-type="webkit_soup_auth_dialog_get_type"
+           glib:type-struct="SoupAuthDialogClass">
+      <implements name="Soup.SessionFeature"/>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <glib:signal name="current-toplevel">
+        <return-value transfer-ownership="full">
+          <type name="Gtk.Widget" c:type="GtkWidget"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="Soup.Message" c:type="SoupMessage"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <record name="SoupAuthDialogClass"
+            c:type="WebKitSoupAuthDialogClass"
+            glib:is-gtype-struct-for="SoupAuthDialog">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="current_toplevel">
+        <callback name="current_toplevel" c:type="current_toplevel">
+          <return-value transfer-ownership="full">
+            <type name="Gtk.Widget" c:type="GtkWidget*"/>
+          </return-value>
+          <parameters>
+            <parameter name="feature" transfer-ownership="none">
+              <type name="SoupAuthDialog" c:type="WebKitSoupAuthDialog*"/>
+            </parameter>
+            <parameter name="message" transfer-ownership="none">
+              <type name="Soup.Message" c:type="SoupMessage*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+    </record>
+    <constant name="USER_AGENT_MAJOR_VERSION" value="531">
+      <type name="int"/>
+    </constant>
+    <constant name="USER_AGENT_MINOR_VERSION" value="2">
+      <type name="int"/>
+    </constant>
+    <class name="WebBackForwardList"
+           c:type="WebKitWebBackForwardList"
+           parent="GObject.Object"
+           glib:type-name="WebKitWebBackForwardList"
+           glib:get-type="webkit_web_back_forward_list_get_type"
+           glib:type-struct="WebBackForwardListClass">
+      <constructor name="new_with_web_view"
+                   c:identifier="webkit_web_back_forward_list_new_with_web_view">
+        <return-value transfer-ownership="full">
+          <type name="WebBackForwardList" c:type="WebKitWebBackForwardList*"/>
+        </return-value>
+        <parameters>
+          <parameter name="web_view" transfer-ownership="none">
+            <type name="WebView" c:type="WebKitWebView*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="go_forward"
+              c:identifier="webkit_web_back_forward_list_go_forward">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="go_back"
+              c:identifier="webkit_web_back_forward_list_go_back">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="contains_item"
+              c:identifier="webkit_web_back_forward_list_contains_item">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="history_item" transfer-ownership="none">
+            <type name="WebHistoryItem" c:type="WebKitWebHistoryItem*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="go_to_item"
+              c:identifier="webkit_web_back_forward_list_go_to_item">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="history_item" transfer-ownership="none">
+            <type name="WebHistoryItem" c:type="WebKitWebHistoryItem*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_forward_list_with_limit"
+              c:identifier="webkit_web_back_forward_list_get_forward_list_with_limit"
+              introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <parameter name="limit" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_back_list_with_limit"
+              c:identifier="webkit_web_back_forward_list_get_back_list_with_limit"
+              introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <parameter name="limit" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_back_item"
+              c:identifier="webkit_web_back_forward_list_get_back_item">
+        <return-value transfer-ownership="full">
+          <type name="WebHistoryItem" c:type="WebKitWebHistoryItem*"/>
+        </return-value>
+      </method>
+      <method name="get_current_item"
+              c:identifier="webkit_web_back_forward_list_get_current_item">
+        <return-value transfer-ownership="full">
+          <type name="WebHistoryItem" c:type="WebKitWebHistoryItem*"/>
+        </return-value>
+      </method>
+      <method name="get_forward_item"
+              c:identifier="webkit_web_back_forward_list_get_forward_item">
+        <return-value transfer-ownership="full">
+          <type name="WebHistoryItem" c:type="WebKitWebHistoryItem*"/>
+        </return-value>
+      </method>
+      <method name="get_nth_item"
+              c:identifier="webkit_web_back_forward_list_get_nth_item">
+        <return-value transfer-ownership="full">
+          <type name="WebHistoryItem" c:type="WebKitWebHistoryItem*"/>
+        </return-value>
+        <parameters>
+          <parameter name="index" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_back_length"
+              c:identifier="webkit_web_back_forward_list_get_back_length">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <method name="get_forward_length"
+              c:identifier="webkit_web_back_forward_list_get_forward_length">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <method name="get_limit"
+              c:identifier="webkit_web_back_forward_list_get_limit">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <method name="set_limit"
+              c:identifier="webkit_web_back_forward_list_set_limit">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="limit" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_item"
+              c:identifier="webkit_web_back_forward_list_add_item">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="history_item" transfer-ownership="none">
+            <type name="WebHistoryItem" c:type="WebKitWebHistoryItem*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="WebBackForwardListPrivate"
+              c:type="WebKitWebBackForwardListPrivate*"/>
+      </field>
+    </class>
+    <record name="WebBackForwardListClass"
+            c:type="WebKitWebBackForwardListClass"
+            glib:is-gtype-struct-for="WebBackForwardList">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="webkit_reserved0">
+        <callback name="webkit_reserved0" c:type="_webkit_reserved0">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="WebBackForwardListPrivate"
+            c:type="WebKitWebBackForwardListPrivate">
+    </record>
+    <class name="WebDataSource"
+           c:type="WebKitWebDataSource"
+           parent="GObject.Object"
+           glib:type-name="WebKitWebDataSource"
+           glib:get-type="webkit_web_data_source_get_type"
+           glib:type-struct="WebDataSourceClass">
+      <constructor name="new" c:identifier="webkit_web_data_source_new">
+        <return-value transfer-ownership="full">
+          <type name="WebDataSource" c:type="WebKitWebDataSource*"/>
+        </return-value>
+      </constructor>
+      <constructor name="new_with_request"
+                   c:identifier="webkit_web_data_source_new_with_request">
+        <return-value transfer-ownership="full">
+          <type name="WebDataSource" c:type="WebKitWebDataSource*"/>
+        </return-value>
+        <parameters>
+          <parameter name="request" transfer-ownership="none">
+            <type name="NetworkRequest" c:type="WebKitNetworkRequest*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_web_frame"
+              c:identifier="webkit_web_data_source_get_web_frame">
+        <return-value transfer-ownership="full">
+          <type name="WebFrame" c:type="WebKitWebFrame*"/>
+        </return-value>
+      </method>
+      <method name="get_initial_request"
+              c:identifier="webkit_web_data_source_get_initial_request">
+        <return-value transfer-ownership="full">
+          <type name="NetworkRequest" c:type="WebKitNetworkRequest*"/>
+        </return-value>
+      </method>
+      <method name="get_request"
+              c:identifier="webkit_web_data_source_get_request">
+        <return-value transfer-ownership="full">
+          <type name="NetworkRequest" c:type="WebKitNetworkRequest*"/>
+        </return-value>
+      </method>
+      <method name="get_encoding"
+              c:identifier="webkit_web_data_source_get_encoding">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="is_loading"
+              c:identifier="webkit_web_data_source_is_loading">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_data" c:identifier="webkit_web_data_source_get_data">
+        <return-value transfer-ownership="full">
+          <type name="GLib.String" c:type="GString*"/>
+        </return-value>
+      </method>
+      <method name="get_main_resource"
+              c:identifier="webkit_web_data_source_get_main_resource">
+        <return-value transfer-ownership="full">
+          <type name="WebResource" c:type="WebKitWebResource*"/>
+        </return-value>
+      </method>
+      <method name="get_unreachable_uri"
+              c:identifier="webkit_web_data_source_get_unreachable_uri">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_subresources"
+              c:identifier="webkit_web_data_source_get_subresources"
+              introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+      </method>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="WebDataSourcePrivate"
+              c:type="WebKitWebDataSourcePrivate*"/>
+      </field>
+    </class>
+    <record name="WebDataSourceClass"
+            c:type="WebKitWebDataSourceClass"
+            glib:is-gtype-struct-for="WebDataSource">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="webkit_reserved0">
+        <callback name="webkit_reserved0" c:type="_webkit_reserved0">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="WebDataSourcePrivate" c:type="WebKitWebDataSourcePrivate">
+    </record>
+    <class name="WebDatabase"
+           c:type="WebKitWebDatabase"
+           parent="GObject.Object"
+           glib:type-name="WebKitWebDatabase"
+           glib:get-type="webkit_web_database_get_type"
+           glib:type-struct="WebDatabaseClass">
+      <method name="get_security_origin"
+              c:identifier="webkit_web_database_get_security_origin">
+        <return-value transfer-ownership="full">
+          <type name="SecurityOrigin" c:type="WebKitSecurityOrigin*"/>
+        </return-value>
+      </method>
+      <method name="get_name" c:identifier="webkit_web_database_get_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_display_name"
+              c:identifier="webkit_web_database_get_display_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_expected_size"
+              c:identifier="webkit_web_database_get_expected_size">
+        <return-value transfer-ownership="none">
+          <type name="uint64" c:type="guint64"/>
+        </return-value>
+      </method>
+      <method name="get_size" c:identifier="webkit_web_database_get_size">
+        <return-value transfer-ownership="none">
+          <type name="uint64" c:type="guint64"/>
+        </return-value>
+      </method>
+      <method name="get_filename"
+              c:identifier="webkit_web_database_get_filename">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="remove" c:identifier="webkit_web_database_remove">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <property name="display-name" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="expected-size" transfer-ownership="none">
+        <type name="uint64" c:type="guint64"/>
+      </property>
+      <property name="filename" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="name"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="security-origin"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="SecurityOrigin" c:type="WebKitSecurityOrigin"/>
+      </property>
+      <property name="size" transfer-ownership="none">
+        <type name="uint64" c:type="guint64"/>
+      </property>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="WebDatabasePrivate" c:type="WebKitWebDatabasePrivate*"/>
+      </field>
+    </class>
+    <record name="WebDatabaseClass"
+            c:type="WebKitWebDatabaseClass"
+            glib:is-gtype-struct-for="WebDatabase">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved4">
+        <callback name="webkit_reserved4" c:type="_webkit_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="WebDatabasePrivate" c:type="WebKitWebDatabasePrivate">
+    </record>
+    <class name="WebFrame"
+           c:type="WebKitWebFrame"
+           parent="GObject.Object"
+           glib:type-name="WebKitWebFrame"
+           glib:get-type="webkit_web_frame_get_type"
+           glib:type-struct="WebFrameClass">
+      <constructor name="new" c:identifier="webkit_web_frame_new">
+        <return-value transfer-ownership="full">
+          <type name="WebFrame" c:type="WebKitWebFrame*"/>
+        </return-value>
+        <parameters>
+          <parameter name="web_view" transfer-ownership="none">
+            <type name="WebView" c:type="WebKitWebView*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_web_view" c:identifier="webkit_web_frame_get_web_view">
+        <return-value transfer-ownership="full">
+          <type name="WebView" c:type="WebKitWebView*"/>
+        </return-value>
+      </method>
+      <method name="get_name" c:identifier="webkit_web_frame_get_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_title" c:identifier="webkit_web_frame_get_title">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_uri" c:identifier="webkit_web_frame_get_uri">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_parent" c:identifier="webkit_web_frame_get_parent">
+        <return-value transfer-ownership="full">
+          <type name="WebFrame" c:type="WebKitWebFrame*"/>
+        </return-value>
+      </method>
+      <method name="load_uri" c:identifier="webkit_web_frame_load_uri">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="uri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="load_string" c:identifier="webkit_web_frame_load_string">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="content" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="mime_type" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="encoding" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="base_uri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="load_alternate_string"
+              c:identifier="webkit_web_frame_load_alternate_string">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="content" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="base_url" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="unreachable_url" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="load_request" c:identifier="webkit_web_frame_load_request">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="request" transfer-ownership="none">
+            <type name="NetworkRequest" c:type="WebKitNetworkRequest*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="stop_loading" c:identifier="webkit_web_frame_stop_loading">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="reload" c:identifier="webkit_web_frame_reload">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="find_frame" c:identifier="webkit_web_frame_find_frame">
+        <return-value transfer-ownership="full">
+          <type name="WebFrame" c:type="WebKitWebFrame*"/>
+        </return-value>
+        <parameters>
+          <parameter name="name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_global_context"
+              c:identifier="webkit_web_frame_get_global_context">
+        <return-value transfer-ownership="full">
+          <type name="JSCore.GlobalContextRef" c:type="JSGlobalContextRef"/>
+        </return-value>
+      </method>
+      <method name="print_full"
+              c:identifier="webkit_web_frame_print_full"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Gtk.PrintOperationResult"
+                c:type="GtkPrintOperationResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="operation" transfer-ownership="none">
+            <type name="Gtk.PrintOperation" c:type="GtkPrintOperation*"/>
+          </parameter>
+          <parameter name="action" transfer-ownership="none">
+            <type name="Gtk.PrintOperationAction"
+                  c:type="GtkPrintOperationAction"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="print" c:identifier="webkit_web_frame_print">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="get_load_status"
+              c:identifier="webkit_web_frame_get_load_status">
+        <return-value transfer-ownership="full">
+          <type name="LoadStatus" c:type="WebKitLoadStatus"/>
+        </return-value>
+      </method>
+      <method name="get_horizontal_scrollbar_policy"
+              c:identifier="webkit_web_frame_get_horizontal_scrollbar_policy">
+        <return-value transfer-ownership="full">
+          <type name="Gtk.PolicyType" c:type="GtkPolicyType"/>
+        </return-value>
+      </method>
+      <method name="get_vertical_scrollbar_policy"
+              c:identifier="webkit_web_frame_get_vertical_scrollbar_policy">
+        <return-value transfer-ownership="full">
+          <type name="Gtk.PolicyType" c:type="GtkPolicyType"/>
+        </return-value>
+      </method>
+      <method name="get_data_source"
+              c:identifier="webkit_web_frame_get_data_source">
+        <return-value transfer-ownership="full">
+          <type name="WebDataSource" c:type="WebKitWebDataSource*"/>
+        </return-value>
+      </method>
+      <method name="get_provisional_data_source"
+              c:identifier="webkit_web_frame_get_provisional_data_source">
+        <return-value transfer-ownership="full">
+          <type name="WebDataSource" c:type="WebKitWebDataSource*"/>
+        </return-value>
+      </method>
+      <method name="get_security_origin"
+              c:identifier="webkit_web_frame_get_security_origin">
+        <return-value transfer-ownership="full">
+          <type name="SecurityOrigin" c:type="WebKitSecurityOrigin*"/>
+        </return-value>
+      </method>
+      <method name="get_network_response"
+              c:identifier="webkit_web_frame_get_network_response">
+        <return-value transfer-ownership="full">
+          <type name="NetworkResponse" c:type="WebKitNetworkResponse*"/>
+        </return-value>
+      </method>
+      <property name="horizontal-scrollbar-policy" transfer-ownership="none">
+        <type name="Gtk.PolicyType" c:type="GtkPolicyType"/>
+      </property>
+      <property name="load-status" transfer-ownership="none">
+        <type name="LoadStatus" c:type="WebKitLoadStatus"/>
+      </property>
+      <property name="name" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="title" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="uri" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="vertical-scrollbar-policy" transfer-ownership="none">
+        <type name="Gtk.PolicyType" c:type="GtkPolicyType"/>
+      </property>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="WebFramePrivate" c:type="WebKitWebFramePrivate*"/>
+      </field>
+      <glib:signal name="cleared">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="hovering-over-link">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="load-committed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="load-done">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="scrollbars-policy-changed">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="title-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <record name="WebFrameClass"
+            c:type="WebKitWebFrameClass"
+            glib:is-gtype-struct-for="WebFrame">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved4">
+        <callback name="webkit_reserved4" c:type="_webkit_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved5">
+        <callback name="webkit_reserved5" c:type="_webkit_reserved5">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved6">
+        <callback name="webkit_reserved6" c:type="_webkit_reserved6">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="WebFramePrivate" c:type="WebKitWebFramePrivate">
+    </record>
+    <class name="WebHistoryItem"
+           c:type="WebKitWebHistoryItem"
+           parent="GObject.Object"
+           glib:type-name="WebKitWebHistoryItem"
+           glib:get-type="webkit_web_history_item_get_type"
+           glib:type-struct="WebHistoryItemClass">
+      <constructor name="new" c:identifier="webkit_web_history_item_new">
+        <return-value transfer-ownership="full">
+          <type name="WebHistoryItem" c:type="WebKitWebHistoryItem*"/>
+        </return-value>
+      </constructor>
+      <constructor name="new_with_data"
+                   c:identifier="webkit_web_history_item_new_with_data">
+        <return-value transfer-ownership="full">
+          <type name="WebHistoryItem" c:type="WebKitWebHistoryItem*"/>
+        </return-value>
+        <parameters>
+          <parameter name="uri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="title" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_title"
+              c:identifier="webkit_web_history_item_get_title">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_alternate_title"
+              c:identifier="webkit_web_history_item_get_alternate_title">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_alternate_title"
+              c:identifier="webkit_web_history_item_set_alternate_title">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="title" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_uri" c:identifier="webkit_web_history_item_get_uri">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_original_uri"
+              c:identifier="webkit_web_history_item_get_original_uri">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_last_visited_time"
+              c:identifier="webkit_web_history_item_get_last_visited_time">
+        <return-value transfer-ownership="none">
+          <type name="double" c:type="gdouble"/>
+        </return-value>
+      </method>
+      <method name="copy" c:identifier="webkit_web_history_item_copy">
+        <return-value transfer-ownership="full">
+          <type name="WebHistoryItem" c:type="WebKitWebHistoryItem*"/>
+        </return-value>
+      </method>
+      <property name="alternate-title" writable="1" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="last-visited-time" transfer-ownership="none">
+        <type name="double" c:type="gdouble"/>
+      </property>
+      <property name="original-uri" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="title" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="uri" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="WebHistoryItemPrivate"
+              c:type="WebKitWebHistoryItemPrivate*"/>
+      </field>
+    </class>
+    <record name="WebHistoryItemClass"
+            c:type="WebKitWebHistoryItemClass"
+            glib:is-gtype-struct-for="WebHistoryItem">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="webkit_reserved0">
+        <callback name="webkit_reserved0" c:type="_webkit_reserved0">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="WebHistoryItemPrivate" c:type="WebKitWebHistoryItemPrivate">
+    </record>
+    <class name="WebInspector"
+           c:type="WebKitWebInspector"
+           parent="GObject.Object"
+           glib:type-name="WebKitWebInspector"
+           glib:get-type="webkit_web_inspector_get_type"
+           glib:type-struct="WebInspectorClass">
+      <method name="get_web_view"
+              c:identifier="webkit_web_inspector_get_web_view">
+        <return-value transfer-ownership="full">
+          <type name="WebView" c:type="WebKitWebView*"/>
+        </return-value>
+      </method>
+      <method name="get_inspected_uri"
+              c:identifier="webkit_web_inspector_get_inspected_uri">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="inspect_coordinates"
+              c:identifier="webkit_web_inspector_inspect_coordinates">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="x" transfer-ownership="none">
+            <type name="double" c:type="gdouble"/>
+          </parameter>
+          <parameter name="y" transfer-ownership="none">
+            <type name="double" c:type="gdouble"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="show" c:identifier="webkit_web_inspector_show">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="close" c:identifier="webkit_web_inspector_close">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <property name="inspected-uri" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="javascript-profiling-enabled"
+                writable="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="timeline-profiling-enabled"
+                writable="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="web-view" transfer-ownership="none">
+        <type name="WebView" c:type="WebKitWebView"/>
+      </property>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="WebInspectorPrivate" c:type="WebKitWebInspectorPrivate*"/>
+      </field>
+      <glib:signal name="attach-window">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="close-window">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="detach-window">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="finished">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="inspect-web-view">
+        <return-value transfer-ownership="full">
+          <type name="WebView" c:type="WebKitWebView"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebView" c:type="WebKitWebView"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="show-window">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </glib:signal>
+    </class>
+    <record name="WebInspectorClass"
+            c:type="WebKitWebInspectorClass"
+            glib:is-gtype-struct-for="WebInspector">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved4">
+        <callback name="webkit_reserved4" c:type="_webkit_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="WebInspectorPrivate" c:type="WebKitWebInspectorPrivate">
+    </record>
+    <class name="WebNavigationAction"
+           c:type="WebKitWebNavigationAction"
+           parent="GObject.Object"
+           glib:type-name="WebKitWebNavigationAction"
+           glib:get-type="webkit_web_navigation_action_get_type"
+           glib:type-struct="WebNavigationActionClass">
+      <method name="get_reason"
+              c:identifier="webkit_web_navigation_action_get_reason">
+        <return-value transfer-ownership="full">
+          <type name="WebNavigationReason" c:type="WebKitWebNavigationReason"/>
+        </return-value>
+      </method>
+      <method name="set_reason"
+              c:identifier="webkit_web_navigation_action_set_reason">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="reason" transfer-ownership="none">
+            <type name="WebNavigationReason"
+                  c:type="WebKitWebNavigationReason"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_original_uri"
+              c:identifier="webkit_web_navigation_action_get_original_uri">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_original_uri"
+              c:identifier="webkit_web_navigation_action_set_original_uri">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="originalUri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_button"
+              c:identifier="webkit_web_navigation_action_get_button">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <method name="get_modifier_state"
+              c:identifier="webkit_web_navigation_action_get_modifier_state">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <method name="get_target_frame"
+              c:identifier="webkit_web_navigation_action_get_target_frame">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <property name="button"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <property name="modifier-state"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <property name="original-uri"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="reason"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="WebNavigationReason" c:type="WebKitWebNavigationReason"/>
+      </property>
+      <property name="target-frame"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="WebNavigationActionPrivate"
+              c:type="WebKitWebNavigationActionPrivate*"/>
+      </field>
+    </class>
+    <record name="WebNavigationActionClass"
+            c:type="WebKitWebNavigationActionClass"
+            glib:is-gtype-struct-for="WebNavigationAction">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="webkit_reserved0">
+        <callback name="webkit_reserved0" c:type="_webkit_reserved0">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="WebNavigationActionPrivate"
+            c:type="WebKitWebNavigationActionPrivate">
+    </record>
+    <enumeration name="WebNavigationReason"
+                 glib:type-name="WebKitWebNavigationReason"
+                 glib:get-type="webkit_web_navigation_reason_get_type"
+                 c:type="WebKitWebNavigationReason">
+      <member name="link_clicked"
+              value="0"
+              c:identifier="WEBKIT_WEB_NAVIGATION_REASON_LINK_CLICKED"
+              glib:nick="link-clicked"/>
+      <member name="form_submitted"
+              value="1"
+              c:identifier="WEBKIT_WEB_NAVIGATION_REASON_FORM_SUBMITTED"
+              glib:nick="form-submitted"/>
+      <member name="back_forward"
+              value="2"
+              c:identifier="WEBKIT_WEB_NAVIGATION_REASON_BACK_FORWARD"
+              glib:nick="back-forward"/>
+      <member name="reload"
+              value="3"
+              c:identifier="WEBKIT_WEB_NAVIGATION_REASON_RELOAD"
+              glib:nick="reload"/>
+      <member name="form_resubmitted"
+              value="4"
+              c:identifier="WEBKIT_WEB_NAVIGATION_REASON_FORM_RESUBMITTED"
+              glib:nick="form-resubmitted"/>
+      <member name="other"
+              value="5"
+              c:identifier="WEBKIT_WEB_NAVIGATION_REASON_OTHER"
+              glib:nick="other"/>
+    </enumeration>
+    <class name="WebPolicyDecision"
+           c:type="WebKitWebPolicyDecision"
+           parent="GObject.Object"
+           glib:type-name="WebKitWebPolicyDecision"
+           glib:get-type="webkit_web_policy_decision_get_type"
+           glib:type-struct="WebPolicyDecisionClass">
+      <method name="use" c:identifier="webkit_web_policy_decision_use">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="ignore" c:identifier="webkit_web_policy_decision_ignore">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="download"
+              c:identifier="webkit_web_policy_decision_download">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="WebPolicyDecisionPrivate"
+              c:type="WebKitWebPolicyDecisionPrivate*"/>
+      </field>
+    </class>
+    <record name="WebPolicyDecisionClass"
+            c:type="WebKitWebPolicyDecisionClass"
+            glib:is-gtype-struct-for="WebPolicyDecision">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="webkit_reserved0">
+        <callback name="webkit_reserved0" c:type="_webkit_reserved0">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="WebPolicyDecisionPrivate"
+            c:type="WebKitWebPolicyDecisionPrivate">
+    </record>
+    <class name="WebResource"
+           c:type="WebKitWebResource"
+           parent="GObject.Object"
+           glib:type-name="WebKitWebResource"
+           glib:get-type="webkit_web_resource_get_type"
+           glib:type-struct="WebResourceClass">
+      <constructor name="new" c:identifier="webkit_web_resource_new">
+        <return-value transfer-ownership="full">
+          <type name="WebResource" c:type="WebKitWebResource*"/>
+        </return-value>
+        <parameters>
+          <parameter name="data" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="size" transfer-ownership="none">
+            <type name="gssize" c:type="gssize"/>
+          </parameter>
+          <parameter name="uri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="mime_type" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="encoding" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="frame_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_data" c:identifier="webkit_web_resource_get_data">
+        <return-value transfer-ownership="full">
+          <type name="GLib.String" c:type="GString*"/>
+        </return-value>
+      </method>
+      <method name="get_uri" c:identifier="webkit_web_resource_get_uri">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_mime_type"
+              c:identifier="webkit_web_resource_get_mime_type">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_encoding"
+              c:identifier="webkit_web_resource_get_encoding">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_frame_name"
+              c:identifier="webkit_web_resource_get_frame_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <property name="encoding" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="frame-name" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="mime-type" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="uri"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="WebResourcePrivate" c:type="WebKitWebResourcePrivate*"/>
+      </field>
+    </class>
+    <record name="WebResourceClass"
+            c:type="WebKitWebResourceClass"
+            glib:is-gtype-struct-for="WebResource">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="webkit_reserved0">
+        <callback name="webkit_reserved0" c:type="_webkit_reserved0">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="WebResourcePrivate" c:type="WebKitWebResourcePrivate">
+    </record>
+    <class name="WebSettings"
+           c:type="WebKitWebSettings"
+           parent="GObject.Object"
+           glib:type-name="WebKitWebSettings"
+           glib:get-type="webkit_web_settings_get_type"
+           glib:type-struct="WebSettingsClass">
+      <constructor name="new" c:identifier="webkit_web_settings_new">
+        <return-value transfer-ownership="full">
+          <type name="WebSettings" c:type="WebKitWebSettings*"/>
+        </return-value>
+      </constructor>
+      <method name="copy" c:identifier="webkit_web_settings_copy">
+        <return-value transfer-ownership="full">
+          <type name="WebSettings" c:type="WebKitWebSettings*"/>
+        </return-value>
+      </method>
+      <method name="get_user_agent"
+              c:identifier="webkit_web_settings_get_user_agent">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <property name="auto-load-images"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="auto-resize-window"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="auto-shrink-images"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="cursive-font-family"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="default-encoding"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="default-font-family"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="default-font-size"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <property name="default-monospace-font-size"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <property name="editing-behavior"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="EditingBehavior" c:type="WebKitEditingBehavior"/>
+      </property>
+      <property name="enable-caret-browsing"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enable-default-context-menu"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enable-developer-extras"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enable-dom-paste"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enable-file-access-from-file-uris"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enable-html5-database"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enable-html5-local-storage"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enable-java-applet"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enable-offline-web-application-cache"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enable-page-cache"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enable-plugins"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enable-private-browsing"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enable-scripts"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enable-site-specific-quirks"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enable-spell-checking"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enable-universal-access-from-file-uris"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enable-xss-auditor"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="enforce-96-dpi"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="fantasy-font-family"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="javascript-can-open-windows-automatically"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="minimum-font-size"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <property name="minimum-logical-font-size"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <property name="monospace-font-family"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="print-backgrounds"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="resizable-text-areas"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="sans-serif-font-family"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="serif-font-family"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="spell-checking-languages"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="tab-key-cycles-through-elements"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="user-agent"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="user-stylesheet-uri"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="zoom-step"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="float" c:type="gfloat"/>
+      </property>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="WebSettingsPrivate" c:type="WebKitWebSettingsPrivate*"/>
+      </field>
+    </class>
+    <record name="WebSettingsClass"
+            c:type="WebKitWebSettingsClass"
+            glib:is-gtype-struct-for="WebSettings">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved4">
+        <callback name="webkit_reserved4" c:type="_webkit_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="WebSettingsPrivate" c:type="WebKitWebSettingsPrivate">
+    </record>
+    <class name="WebView"
+           c:type="WebKitWebView"
+           parent="Gtk.Container"
+           glib:type-name="WebKitWebView"
+           glib:get-type="webkit_web_view_get_type"
+           glib:type-struct="WebViewClass">
+      <implements name="Atk.ImplementorIface"/>
+      <implements name="Gtk.Buildable"/>
+      <constructor name="new" c:identifier="webkit_web_view_new">
+        <return-value transfer-ownership="full">
+          <type name="WebView" c:type="GtkWidget*"/>
+        </return-value>
+      </constructor>
+      <virtual-method name="choose_file">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="frame" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame*"/>
+          </parameter>
+          <parameter name="old_file" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <method name="get_title" c:identifier="webkit_web_view_get_title">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_uri" c:identifier="webkit_web_view_get_uri">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_maintains_back_forward_list"
+              c:identifier="webkit_web_view_set_maintains_back_forward_list">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="flag" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_back_forward_list"
+              c:identifier="webkit_web_view_get_back_forward_list">
+        <return-value transfer-ownership="full">
+          <type name="WebBackForwardList" c:type="WebKitWebBackForwardList*"/>
+        </return-value>
+      </method>
+      <method name="go_to_back_forward_item"
+              c:identifier="webkit_web_view_go_to_back_forward_item">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="item" transfer-ownership="none">
+            <type name="WebHistoryItem" c:type="WebKitWebHistoryItem*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="can_go_back" c:identifier="webkit_web_view_can_go_back">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="can_go_back_or_forward"
+              c:identifier="webkit_web_view_can_go_back_or_forward">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="steps" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="can_go_forward"
+              c:identifier="webkit_web_view_can_go_forward">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="go_back" c:identifier="webkit_web_view_go_back">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="go_back_or_forward"
+              c:identifier="webkit_web_view_go_back_or_forward">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="steps" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="go_forward" c:identifier="webkit_web_view_go_forward">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="stop_loading" c:identifier="webkit_web_view_stop_loading">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="open" c:identifier="webkit_web_view_open">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="uri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="reload" c:identifier="webkit_web_view_reload">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="reload_bypass_cache"
+              c:identifier="webkit_web_view_reload_bypass_cache">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="load_uri" c:identifier="webkit_web_view_load_uri">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="uri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="load_string" c:identifier="webkit_web_view_load_string">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="content" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="mime_type" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="encoding" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="base_uri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="load_html_string"
+              c:identifier="webkit_web_view_load_html_string">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="content" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="base_uri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="load_request" c:identifier="webkit_web_view_load_request">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="request" transfer-ownership="none">
+            <type name="NetworkRequest" c:type="WebKitNetworkRequest*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="search_text" c:identifier="webkit_web_view_search_text">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="text" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="case_sensitive" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+          <parameter name="forward" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+          <parameter name="wrap" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="mark_text_matches"
+              c:identifier="webkit_web_view_mark_text_matches">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+        <parameters>
+          <parameter name="string" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="case_sensitive" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+          <parameter name="limit" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_highlight_text_matches"
+              c:identifier="webkit_web_view_set_highlight_text_matches">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="highlight" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="unmark_text_matches"
+              c:identifier="webkit_web_view_unmark_text_matches">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="get_main_frame"
+              c:identifier="webkit_web_view_get_main_frame">
+        <return-value transfer-ownership="full">
+          <type name="WebFrame" c:type="WebKitWebFrame*"/>
+        </return-value>
+      </method>
+      <method name="get_focused_frame"
+              c:identifier="webkit_web_view_get_focused_frame">
+        <return-value transfer-ownership="full">
+          <type name="WebFrame" c:type="WebKitWebFrame*"/>
+        </return-value>
+      </method>
+      <method name="execute_script"
+              c:identifier="webkit_web_view_execute_script">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="script" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="can_cut_clipboard"
+              c:identifier="webkit_web_view_can_cut_clipboard">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="can_copy_clipboard"
+              c:identifier="webkit_web_view_can_copy_clipboard">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="can_paste_clipboard"
+              c:identifier="webkit_web_view_can_paste_clipboard">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="cut_clipboard"
+              c:identifier="webkit_web_view_cut_clipboard">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="copy_clipboard"
+              c:identifier="webkit_web_view_copy_clipboard">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="paste_clipboard"
+              c:identifier="webkit_web_view_paste_clipboard">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="delete_selection"
+              c:identifier="webkit_web_view_delete_selection">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="has_selection"
+              c:identifier="webkit_web_view_has_selection">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="select_all" c:identifier="webkit_web_view_select_all">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="get_editable" c:identifier="webkit_web_view_get_editable">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="set_editable" c:identifier="webkit_web_view_set_editable">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="flag" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_copy_target_list"
+              c:identifier="webkit_web_view_get_copy_target_list">
+        <return-value transfer-ownership="full">
+          <type name="Gtk.TargetList" c:type="GtkTargetList*"/>
+        </return-value>
+      </method>
+      <method name="get_paste_target_list"
+              c:identifier="webkit_web_view_get_paste_target_list">
+        <return-value transfer-ownership="full">
+          <type name="Gtk.TargetList" c:type="GtkTargetList*"/>
+        </return-value>
+      </method>
+      <method name="set_settings" c:identifier="webkit_web_view_set_settings">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="settings" transfer-ownership="none">
+            <type name="WebSettings" c:type="WebKitWebSettings*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_settings" c:identifier="webkit_web_view_get_settings">
+        <return-value transfer-ownership="none">
+          <type name="WebSettings" c:type="WebKitWebSettings*"/>
+        </return-value>
+      </method>
+      <method name="get_inspector"
+              c:identifier="webkit_web_view_get_inspector">
+        <return-value transfer-ownership="none">
+          <type name="WebInspector" c:type="WebKitWebInspector*"/>
+        </return-value>
+      </method>
+      <method name="get_window_features"
+              c:identifier="webkit_web_view_get_window_features">
+        <return-value transfer-ownership="full">
+          <type name="WebWindowFeatures" c:type="WebKitWebWindowFeatures*"/>
+        </return-value>
+      </method>
+      <method name="can_show_mime_type"
+              c:identifier="webkit_web_view_can_show_mime_type">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="mime_type" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_transparent"
+              c:identifier="webkit_web_view_get_transparent">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="set_transparent"
+              c:identifier="webkit_web_view_set_transparent">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="flag" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_zoom_level"
+              c:identifier="webkit_web_view_get_zoom_level">
+        <return-value transfer-ownership="none">
+          <type name="float" c:type="gfloat"/>
+        </return-value>
+      </method>
+      <method name="set_zoom_level"
+              c:identifier="webkit_web_view_set_zoom_level">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="zoom_level" transfer-ownership="none">
+            <type name="float" c:type="gfloat"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="zoom_in" c:identifier="webkit_web_view_zoom_in">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="zoom_out" c:identifier="webkit_web_view_zoom_out">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="get_full_content_zoom"
+              c:identifier="webkit_web_view_get_full_content_zoom">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="set_full_content_zoom"
+              c:identifier="webkit_web_view_set_full_content_zoom">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="full_content_zoom" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_encoding" c:identifier="webkit_web_view_get_encoding">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_custom_encoding"
+              c:identifier="webkit_web_view_set_custom_encoding">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="encoding" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_custom_encoding"
+              c:identifier="webkit_web_view_get_custom_encoding">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="move_cursor" c:identifier="webkit_web_view_move_cursor">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="step" transfer-ownership="none">
+            <type name="Gtk.MovementStep" c:type="GtkMovementStep"/>
+          </parameter>
+          <parameter name="count" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_load_status"
+              c:identifier="webkit_web_view_get_load_status">
+        <return-value transfer-ownership="full">
+          <type name="LoadStatus" c:type="WebKitLoadStatus"/>
+        </return-value>
+      </method>
+      <method name="get_progress" c:identifier="webkit_web_view_get_progress">
+        <return-value transfer-ownership="none">
+          <type name="double" c:type="gdouble"/>
+        </return-value>
+      </method>
+      <method name="undo" c:identifier="webkit_web_view_undo">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="can_undo" c:identifier="webkit_web_view_can_undo">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="redo" c:identifier="webkit_web_view_redo">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="can_redo" c:identifier="webkit_web_view_can_redo">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="set_view_source_mode"
+              c:identifier="webkit_web_view_set_view_source_mode">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="view_source_mode" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_view_source_mode"
+              c:identifier="webkit_web_view_get_view_source_mode">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_hit_test_result"
+              c:identifier="webkit_web_view_get_hit_test_result">
+        <return-value transfer-ownership="full">
+          <type name="HitTestResult" c:type="WebKitHitTestResult*"/>
+        </return-value>
+        <parameters>
+          <parameter name="event" transfer-ownership="none">
+            <type name="Gdk.EventButton" c:type="GdkEventButton*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_icon_uri" c:identifier="webkit_web_view_get_icon_uri">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <property name="copy-target-list" transfer-ownership="none">
+        <type name="Gtk.TargetList" c:type="GtkTargetList"/>
+      </property>
+      <property name="custom-encoding" writable="1" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="editable" writable="1" transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="encoding" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="full-content-zoom"
+                writable="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="icon-uri" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="im-context" transfer-ownership="none">
+        <type name="Gtk.IMContext" c:type="GtkIMContext"/>
+      </property>
+      <property name="load-status" transfer-ownership="none">
+        <type name="LoadStatus" c:type="WebKitLoadStatus"/>
+      </property>
+      <property name="paste-target-list" transfer-ownership="none">
+        <type name="Gtk.TargetList" c:type="GtkTargetList"/>
+      </property>
+      <property name="progress" transfer-ownership="none">
+        <type name="double" c:type="gdouble"/>
+      </property>
+      <property name="settings" writable="1" transfer-ownership="none">
+        <type name="WebSettings" c:type="WebKitWebSettings"/>
+      </property>
+      <property name="title" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="transparent" writable="1" transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="uri" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="web-inspector" transfer-ownership="none">
+        <type name="WebInspector" c:type="WebKitWebInspector"/>
+      </property>
+      <property name="window-features" writable="1" transfer-ownership="none">
+        <type name="WebWindowFeatures" c:type="WebKitWebWindowFeatures"/>
+      </property>
+      <property name="zoom-level" writable="1" transfer-ownership="none">
+        <type name="float" c:type="gfloat"/>
+      </property>
+      <field name="parent_instance">
+        <type name="Gtk.Container" c:type="GtkContainer"/>
+      </field>
+      <field name="priv">
+        <type name="WebViewPrivate" c:type="WebKitWebViewPrivate*"/>
+      </field>
+      <glib:signal name="close-web-view">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="console-message">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="p1" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="copy-clipboard">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="create-plugin-widget">
+        <return-value transfer-ownership="full">
+          <type name="Gtk.Widget" c:type="GtkWidget"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+          <parameter name="p1" transfer-ownership="none">
+            <type name="GLib.HashTable" c:type="GHashTable"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="create-web-view">
+        <return-value transfer-ownership="full">
+          <type name="WebView" c:type="WebKitWebView"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="cut-clipboard">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="database-quota-exceeded">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="GObject.Object" c:type="GObject"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="GObject.Object" c:type="GObject"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="download-requested">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="GObject.Object" c:type="GObject"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="hovering-over-link">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="icon-loaded">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="load-committed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="load-error">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+          <parameter name="p1" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="load-finished">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="load-progress-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="load-started">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="mime-type-policy-decision-requested">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="NetworkRequest" c:type="WebKitNetworkRequest"/>
+          </parameter>
+          <parameter name="p1" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+          <parameter name="p2" transfer-ownership="none">
+            <type name="WebPolicyDecision" c:type="WebKitWebPolicyDecision"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="move-cursor">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="Gtk.MovementStep" c:type="GtkMovementStep"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="navigation-policy-decision-requested">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="NetworkRequest" c:type="WebKitNetworkRequest"/>
+          </parameter>
+          <parameter name="p1" transfer-ownership="none">
+            <type name="WebNavigationAction"
+                  c:type="WebKitWebNavigationAction"/>
+          </parameter>
+          <parameter name="p2" transfer-ownership="none">
+            <type name="WebPolicyDecision" c:type="WebKitWebPolicyDecision"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="navigation-requested">
+        <return-value transfer-ownership="full">
+          <type name="NavigationResponse" c:type="WebKitNavigationResponse"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="NetworkRequest" c:type="WebKitNetworkRequest"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="new-window-policy-decision-requested">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="NetworkRequest" c:type="WebKitNetworkRequest"/>
+          </parameter>
+          <parameter name="p1" transfer-ownership="none">
+            <type name="WebNavigationAction"
+                  c:type="WebKitWebNavigationAction"/>
+          </parameter>
+          <parameter name="p2" transfer-ownership="none">
+            <type name="WebPolicyDecision" c:type="WebKitWebPolicyDecision"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="paste-clipboard">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="populate-popup">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="Gtk.Menu" c:type="GtkMenu"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="print-requested">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="redo">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="resource-request-starting">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="WebResource" c:type="WebKitWebResource"/>
+          </parameter>
+          <parameter name="p1" transfer-ownership="none">
+            <type name="NetworkRequest" c:type="WebKitNetworkRequest"/>
+          </parameter>
+          <parameter name="p2" transfer-ownership="none">
+            <type name="NetworkResponse" c:type="WebKitNetworkResponse"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="script-alert">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="script-confirm">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+          <parameter name="p1" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="script-prompt">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+          <parameter name="p1" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+          <parameter name="p2" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="select-all">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="selection-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="set-scroll-adjustments">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="Gtk.Adjustment" c:type="GtkAdjustment"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="Gtk.Adjustment" c:type="GtkAdjustment"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="status-bar-text-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="title-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="undo">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="web-view-ready">
+        <return-value transfer-ownership="full">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="window-object-cleared">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WebFrame" c:type="WebKitWebFrame"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="p1" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <record name="WebViewClass"
+            c:type="WebKitWebViewClass"
+            glib:is-gtype-struct-for="WebView">
+      <field name="parent_class">
+        <type name="Gtk.ContainerClass" c:type="GtkContainerClass"/>
+      </field>
+      <field name="create_web_view">
+        <callback name="create_web_view" c:type="create_web_view">
+          <return-value transfer-ownership="full">
+            <type name="WebView" c:type="WebKitWebView*"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+            <parameter name="web_frame" transfer-ownership="none">
+              <type name="WebFrame" c:type="WebKitWebFrame*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="web_view_ready">
+        <callback name="web_view_ready" c:type="web_view_ready">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="close_web_view">
+        <callback name="close_web_view" c:type="close_web_view">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="navigation_requested">
+        <callback name="navigation_requested" c:type="navigation_requested">
+          <return-value transfer-ownership="full">
+            <type name="NavigationResponse" c:type="WebKitNavigationResponse"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+            <parameter name="frame" transfer-ownership="none">
+              <type name="WebFrame" c:type="WebKitWebFrame*"/>
+            </parameter>
+            <parameter name="request" transfer-ownership="none">
+              <type name="NetworkRequest" c:type="WebKitNetworkRequest*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="window_object_cleared">
+        <callback name="window_object_cleared" c:type="window_object_cleared">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+            <parameter name="frame" transfer-ownership="none">
+              <type name="WebFrame" c:type="WebKitWebFrame*"/>
+            </parameter>
+            <parameter name="context" transfer-ownership="none">
+              <type name="JSCore.GlobalContextRef"
+                    c:type="JSGlobalContextRef"/>
+            </parameter>
+            <parameter name="window_object" transfer-ownership="none">
+              <type name="JSCore.ObjectRef" c:type="JSObjectRef"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="choose_file">
+        <callback name="choose_file" c:type="choose_file">
+          <return-value transfer-ownership="full">
+            <type name="utf8" c:type="gchar*"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+            <parameter name="frame" transfer-ownership="none">
+              <type name="WebFrame" c:type="WebKitWebFrame*"/>
+            </parameter>
+            <parameter name="old_file" transfer-ownership="none">
+              <type name="utf8" c:type="gchar*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="script_alert">
+        <callback name="script_alert" c:type="script_alert">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+            <parameter name="frame" transfer-ownership="none">
+              <type name="WebFrame" c:type="WebKitWebFrame*"/>
+            </parameter>
+            <parameter name="alert_message" transfer-ownership="none">
+              <type name="utf8" c:type="gchar*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="script_confirm">
+        <callback name="script_confirm" c:type="script_confirm">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+            <parameter name="frame" transfer-ownership="none">
+              <type name="WebFrame" c:type="WebKitWebFrame*"/>
+            </parameter>
+            <parameter name="confirm_message" transfer-ownership="none">
+              <type name="utf8" c:type="gchar*"/>
+            </parameter>
+            <parameter name="did_confirm"
+                       direction="out"
+                       caller-allocates="0"
+                       transfer-ownership="full">
+              <type name="boolean" c:type="gboolean*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="script_prompt">
+        <callback name="script_prompt" c:type="script_prompt">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+            <parameter name="frame" transfer-ownership="none">
+              <type name="WebFrame" c:type="WebKitWebFrame*"/>
+            </parameter>
+            <parameter name="message" transfer-ownership="none">
+              <type name="utf8" c:type="gchar*"/>
+            </parameter>
+            <parameter name="default_value" transfer-ownership="none">
+              <type name="utf8" c:type="gchar*"/>
+            </parameter>
+            <parameter name="value" transfer-ownership="none">
+              <array c:type="gchar**">
+                <type name="utf8"/>
+              </array>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="console_message">
+        <callback name="console_message" c:type="console_message">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+            <parameter name="message" transfer-ownership="none">
+              <type name="utf8" c:type="gchar*"/>
+            </parameter>
+            <parameter name="line_number" transfer-ownership="none">
+              <type name="uint" c:type="guint"/>
+            </parameter>
+            <parameter name="source_id" transfer-ownership="none">
+              <type name="utf8" c:type="gchar*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="select_all">
+        <callback name="select_all" c:type="select_all">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="cut_clipboard">
+        <callback name="cut_clipboard" c:type="cut_clipboard">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="copy_clipboard">
+        <callback name="copy_clipboard" c:type="copy_clipboard">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="paste_clipboard">
+        <callback name="paste_clipboard" c:type="paste_clipboard">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="move_cursor">
+        <callback name="move_cursor" c:type="move_cursor">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+            <parameter name="step" transfer-ownership="none">
+              <type name="Gtk.MovementStep" c:type="GtkMovementStep"/>
+            </parameter>
+            <parameter name="count" transfer-ownership="none">
+              <type name="int" c:type="gint"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="set_scroll_adjustments">
+        <callback name="set_scroll_adjustments"
+                  c:type="set_scroll_adjustments">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+            <parameter name="hadjustment" transfer-ownership="none">
+              <type name="Gtk.Adjustment" c:type="GtkAdjustment*"/>
+            </parameter>
+            <parameter name="vadjustment" transfer-ownership="none">
+              <type name="Gtk.Adjustment" c:type="GtkAdjustment*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="undo">
+        <callback name="undo" c:type="undo">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="redo">
+        <callback name="redo" c:type="redo">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="web_view" transfer-ownership="none">
+              <type name="WebView" c:type="WebKitWebView*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="webkit_reserved0">
+        <callback name="webkit_reserved0" c:type="_webkit_reserved0">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="WebViewPrivate" c:type="WebKitWebViewPrivate">
+    </record>
+    <enumeration name="WebViewTargetInfo"
+                 glib:type-name="WebKitWebViewTargetInfo"
+                 glib:get-type="webkit_web_view_target_info_get_type"
+                 c:type="WebKitWebViewTargetInfo">
+      <member name="html"
+              value="0"
+              c:identifier="WEBKIT_WEB_VIEW_TARGET_INFO_HTML"
+              glib:nick="html"/>
+      <member name="text"
+              value="1"
+              c:identifier="WEBKIT_WEB_VIEW_TARGET_INFO_TEXT"
+              glib:nick="text"/>
+      <member name="image"
+              value="2"
+              c:identifier="WEBKIT_WEB_VIEW_TARGET_INFO_IMAGE"
+              glib:nick="image"/>
+      <member name="uri_list"
+              value="3"
+              c:identifier="WEBKIT_WEB_VIEW_TARGET_INFO_URI_LIST"
+              glib:nick="uri-list"/>
+      <member name="netscape_url"
+              value="4"
+              c:identifier="WEBKIT_WEB_VIEW_TARGET_INFO_NETSCAPE_URL"
+              glib:nick="netscape-url"/>
+    </enumeration>
+    <class name="WebWindowFeatures"
+           c:type="WebKitWebWindowFeatures"
+           parent="GObject.Object"
+           glib:type-name="WebKitWebWindowFeatures"
+           glib:get-type="webkit_web_window_features_get_type"
+           glib:type-struct="WebWindowFeaturesClass">
+      <constructor name="new" c:identifier="webkit_web_window_features_new">
+        <return-value transfer-ownership="full">
+          <type name="WebWindowFeatures" c:type="WebKitWebWindowFeatures*"/>
+        </return-value>
+      </constructor>
+      <method name="equal" c:identifier="webkit_web_window_features_equal">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="features2" transfer-ownership="none">
+            <type name="WebWindowFeatures" c:type="WebKitWebWindowFeatures*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="fullscreen"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="height"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <property name="locationbar-visible"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="menubar-visible"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="scrollbar-visible"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="statusbar-visible"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="toolbar-visible"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="width"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <property name="x" writable="1" construct="1" transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <property name="y" writable="1" construct="1" transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="WebWindowFeaturesPrivate"
+              c:type="WebKitWebWindowFeaturesPrivate*"/>
+      </field>
+    </class>
+    <record name="WebWindowFeaturesClass"
+            c:type="WebKitWebWindowFeaturesClass"
+            glib:is-gtype-struct-for="WebWindowFeatures">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="webkit_reserved1">
+        <callback name="webkit_reserved1" c:type="_webkit_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved2">
+        <callback name="webkit_reserved2" c:type="_webkit_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved3">
+        <callback name="webkit_reserved3" c:type="_webkit_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="webkit_reserved4">
+        <callback name="webkit_reserved4" c:type="_webkit_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="WebWindowFeaturesPrivate"
+            c:type="WebKitWebWindowFeaturesPrivate">
+    </record>
+    <function name="check_version" c:identifier="webkit_check_version">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="major" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+        <parameter name="minor" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+        <parameter name="micro" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="get_cache_model" c:identifier="webkit_get_cache_model">
+      <return-value transfer-ownership="full">
+        <type name="CacheModel" c:type="WebKitCacheModel"/>
+      </return-value>
+    </function>
+    <function name="get_default_session"
+              c:identifier="webkit_get_default_session">
+      <return-value transfer-ownership="full">
+        <type name="Soup.Session" c:type="SoupSession*"/>
+      </return-value>
+    </function>
+    <function name="get_default_web_database_quota"
+              c:identifier="webkit_get_default_web_database_quota">
+      <return-value transfer-ownership="none">
+        <type name="uint64" c:type="guint64"/>
+      </return-value>
+    </function>
+    <function name="get_web_database_directory_path"
+              c:identifier="webkit_get_web_database_directory_path">
+      <return-value transfer-ownership="none">
+        <type name="utf8" c:type="gchar*"/>
+      </return-value>
+    </function>
+    <function name="major_version" c:identifier="webkit_major_version">
+      <return-value transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </return-value>
+    </function>
+    <function name="micro_version" c:identifier="webkit_micro_version">
+      <return-value transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </return-value>
+    </function>
+    <function name="minor_version" c:identifier="webkit_minor_version">
+      <return-value transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </return-value>
+    </function>
+    <function name="remove_all_web_databases"
+              c:identifier="webkit_remove_all_web_databases">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+    </function>
+    <function name="set_cache_model" c:identifier="webkit_set_cache_model">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="cache_model" transfer-ownership="none">
+          <type name="CacheModel" c:type="WebKitCacheModel"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="set_default_web_database_quota"
+              c:identifier="webkit_set_default_web_database_quota">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="defaultQuota" transfer-ownership="none">
+          <type name="uint64" c:type="guint64"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="set_web_database_directory_path"
+              c:identifier="webkit_set_web_database_directory_path">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="path" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+      </parameters>
+    </function>
+  </namespace>
+</repository>

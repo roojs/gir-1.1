@@ -1,0 +1,418 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="GLib" version="2.0"/>
+  <include name="GModule" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <include name="Gst" version="0.10"/>
+  <include name="libxml2" version="2.0"/>
+  <package name="gobject-2.0"/>
+  <package name="gstreamer-0.10"/>
+  <package name="gstreamer-fft-0.10"/>
+  <namespace name="GstFft"
+             version="0.10"
+             shared-library="libgstfft-0.10.so.0"
+             c:prefix="GstFft">
+    <record name="F32" c:type="GstFFTF32">
+      <doc xml:whitespace="preserve">Instance structure for #GstFFTF32.</doc>
+      <field name="cfg" writable="1">
+        <type name="any" c:type="void*"/>
+      </field>
+      <field name="inverse" writable="1">
+        <type name="boolean" c:type="gboolean"/>
+      </field>
+      <field name="len" writable="1">
+        <type name="int" c:type="gint"/>
+      </field>
+      <field name="_padding" writable="1">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="4">
+          <type name="any"/>
+        </array>
+      </field>
+      <constructor name="new" c:identifier="gst_fft_f32_new">
+        <return-value transfer-ownership="full">
+          <type name="F32" c:type="GstFFTF32*"/>
+        </return-value>
+        <parameters>
+          <parameter name="len" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="inverse" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="fft" c:identifier="gst_fft_f32_fft">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="timedata"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="none">
+            <type name="float" c:type="gfloat*"/>
+          </parameter>
+          <parameter name="freqdata" transfer-ownership="none">
+            <type name="F32Complex" c:type="GstFFTF32Complex*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="inverse_fft" c:identifier="gst_fft_f32_inverse_fft">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="freqdata" transfer-ownership="none">
+            <type name="F32Complex" c:type="GstFFTF32Complex*"/>
+          </parameter>
+          <parameter name="timedata"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="float" c:type="gfloat*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="free" c:identifier="gst_fft_f32_free">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="window" c:identifier="gst_fft_f32_window">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="timedata"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="float" c:type="gfloat*"/>
+          </parameter>
+          <parameter name="window" transfer-ownership="none">
+            <type name="Window" c:type="GstFFTWindow"/>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <record name="F32Complex" c:type="GstFFTF32Complex">
+      <doc xml:whitespace="preserve">Data type for complex numbers composed of
+32 bit float.</doc>
+      <field name="r" writable="1">
+        <type name="float" c:type="gfloat"/>
+      </field>
+      <field name="i" writable="1">
+        <type name="float" c:type="gfloat"/>
+      </field>
+    </record>
+    <record name="F64" c:type="GstFFTF64">
+      <doc xml:whitespace="preserve">Instance structure for #GstFFTF64.</doc>
+      <field name="cfg" writable="1">
+        <type name="any" c:type="void*"/>
+      </field>
+      <field name="inverse" writable="1">
+        <type name="boolean" c:type="gboolean"/>
+      </field>
+      <field name="len" writable="1">
+        <type name="int" c:type="gint"/>
+      </field>
+      <field name="_padding" writable="1">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="4">
+          <type name="any"/>
+        </array>
+      </field>
+      <constructor name="new" c:identifier="gst_fft_f64_new">
+        <return-value transfer-ownership="full">
+          <type name="F64" c:type="GstFFTF64*"/>
+        </return-value>
+        <parameters>
+          <parameter name="len" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="inverse" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="fft" c:identifier="gst_fft_f64_fft">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="timedata"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="none">
+            <type name="double" c:type="gdouble*"/>
+          </parameter>
+          <parameter name="freqdata" transfer-ownership="none">
+            <type name="F64Complex" c:type="GstFFTF64Complex*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="inverse_fft" c:identifier="gst_fft_f64_inverse_fft">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="freqdata" transfer-ownership="none">
+            <type name="F64Complex" c:type="GstFFTF64Complex*"/>
+          </parameter>
+          <parameter name="timedata"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="double" c:type="gdouble*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="free" c:identifier="gst_fft_f64_free">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="window" c:identifier="gst_fft_f64_window">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="timedata"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="double" c:type="gdouble*"/>
+          </parameter>
+          <parameter name="window" transfer-ownership="none">
+            <type name="Window" c:type="GstFFTWindow"/>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <record name="F64Complex" c:type="GstFFTF64Complex">
+      <doc xml:whitespace="preserve">Data type for complex numbers composed of
+64 bit float.</doc>
+      <field name="r" writable="1">
+        <type name="double" c:type="gdouble"/>
+      </field>
+      <field name="i" writable="1">
+        <type name="double" c:type="gdouble"/>
+      </field>
+    </record>
+    <record name="S16" c:type="GstFFTS16">
+      <doc xml:whitespace="preserve">Instance structure for #GstFFTS16.</doc>
+      <field name="cfg" writable="1">
+        <type name="any" c:type="void*"/>
+      </field>
+      <field name="inverse" writable="1">
+        <type name="boolean" c:type="gboolean"/>
+      </field>
+      <field name="len" writable="1">
+        <type name="int" c:type="gint"/>
+      </field>
+      <field name="_padding" writable="1">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="4">
+          <type name="any"/>
+        </array>
+      </field>
+      <constructor name="new" c:identifier="gst_fft_s16_new">
+        <return-value transfer-ownership="full">
+          <type name="S16" c:type="GstFFTS16*"/>
+        </return-value>
+        <parameters>
+          <parameter name="len" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="inverse" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="fft" c:identifier="gst_fft_s16_fft">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="timedata"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="none">
+            <type name="int16" c:type="gint16*"/>
+          </parameter>
+          <parameter name="freqdata" transfer-ownership="none">
+            <type name="S16Complex" c:type="GstFFTS16Complex*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="inverse_fft" c:identifier="gst_fft_s16_inverse_fft">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="freqdata" transfer-ownership="none">
+            <type name="S16Complex" c:type="GstFFTS16Complex*"/>
+          </parameter>
+          <parameter name="timedata"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int16" c:type="gint16*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="free" c:identifier="gst_fft_s16_free">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="window" c:identifier="gst_fft_s16_window">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="timedata"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int16" c:type="gint16*"/>
+          </parameter>
+          <parameter name="window" transfer-ownership="none">
+            <type name="Window" c:type="GstFFTWindow"/>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <record name="S16Complex" c:type="GstFFTS16Complex">
+      <doc xml:whitespace="preserve">Data type for complex numbers composed of
+signed 16 bit integers.</doc>
+      <field name="r" writable="1">
+        <type name="int16" c:type="gint16"/>
+      </field>
+      <field name="i" writable="1">
+        <type name="int16" c:type="gint16"/>
+      </field>
+    </record>
+    <record name="S32" c:type="GstFFTS32">
+      <doc xml:whitespace="preserve">Instance structure for #GstFFTS32.</doc>
+      <field name="cfg" writable="1">
+        <type name="any" c:type="void*"/>
+      </field>
+      <field name="inverse" writable="1">
+        <type name="boolean" c:type="gboolean"/>
+      </field>
+      <field name="len" writable="1">
+        <type name="int" c:type="gint"/>
+      </field>
+      <field name="_padding" writable="1">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="4">
+          <type name="any"/>
+        </array>
+      </field>
+      <constructor name="new" c:identifier="gst_fft_s32_new">
+        <return-value transfer-ownership="full">
+          <type name="S32" c:type="GstFFTS32*"/>
+        </return-value>
+        <parameters>
+          <parameter name="len" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="inverse" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="fft" c:identifier="gst_fft_s32_fft">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="timedata"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="none">
+            <type name="int32" c:type="gint32*"/>
+          </parameter>
+          <parameter name="freqdata" transfer-ownership="none">
+            <type name="S32Complex" c:type="GstFFTS32Complex*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="inverse_fft" c:identifier="gst_fft_s32_inverse_fft">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="freqdata" transfer-ownership="none">
+            <type name="S32Complex" c:type="GstFFTS32Complex*"/>
+          </parameter>
+          <parameter name="timedata"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int32" c:type="gint32*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="free" c:identifier="gst_fft_s32_free">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="window" c:identifier="gst_fft_s32_window">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="timedata"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int32" c:type="gint32*"/>
+          </parameter>
+          <parameter name="window" transfer-ownership="none">
+            <type name="Window" c:type="GstFFTWindow"/>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <record name="S32Complex" c:type="GstFFTS32Complex">
+      <doc xml:whitespace="preserve">Data type for complex numbers composed of
+signed 32 bit integers.</doc>
+      <field name="r" writable="1">
+        <type name="int32" c:type="gint32"/>
+      </field>
+      <field name="i" writable="1">
+        <type name="int32" c:type="gint32"/>
+      </field>
+    </record>
+    <enumeration name="Window" c:type="GstFFTWindow">
+      <doc xml:whitespace="preserve">The various window functions available.</doc>
+      <member name="rectangular"
+              value="0"
+              c:identifier="GST_FFT_WINDOW_RECTANGULAR"/>
+      <member name="hamming" value="1" c:identifier="GST_FFT_WINDOW_HAMMING"/>
+      <member name="hann" value="2" c:identifier="GST_FFT_WINDOW_HANN"/>
+      <member name="bartlett"
+              value="3"
+              c:identifier="GST_FFT_WINDOW_BARTLETT"/>
+      <member name="blackman"
+              value="4"
+              c:identifier="GST_FFT_WINDOW_BLACKMAN"/>
+    </enumeration>
+    <function name="next_fast_length" c:identifier="gst_fft_next_fast_length">
+      <return-value transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </return-value>
+      <parameters>
+        <parameter name="n" transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </parameter>
+      </parameters>
+    </function>
+  </namespace>
+</repository>

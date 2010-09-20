@@ -1,0 +1,940 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="GLib" version="2.0"/>
+  <include name="GModule" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <c:include name="libpeas/peas.h"/>
+  <namespace name="Peas"
+             version="1.0"
+             shared-library="libpeas-1.0.so.0"
+             c:prefix="Peas">
+    <interface name="Activatable"
+               c:type="PeasActivatable"
+               glib:type-name="PeasActivatable"
+               glib:get-type="peas_activatable_get_type"
+               glib:type-struct="ActivatableInterface">
+      <virtual-method name="activate" invoker="activate">
+        <doc xml:whitespace="preserve">Activates the extension on the given object.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <doc xml:whitespace="preserve">The #GObject on which the plugin should be activated.</doc>
+            <type name="GObject.Object" c:type="GObject*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="deactivate" invoker="deactivate">
+        <doc xml:whitespace="preserve">Deactivates the plugin on the given object.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <doc xml:whitespace="preserve">A #GObject.</doc>
+            <type name="GObject.Object" c:type="GObject*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="update_state" invoker="update_state">
+        <doc xml:whitespace="preserve">Triggers an update of the plugin's internal state to take into account
+state changes in the targetted object, due to a plugin or user action.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <doc xml:whitespace="preserve">A #GObject.</doc>
+            <type name="GObject.Object" c:type="GObject*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <method name="activate" c:identifier="peas_activatable_activate">
+        <doc xml:whitespace="preserve">Activates the extension on the given object.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <doc xml:whitespace="preserve">The #GObject on which the plugin should be activated.</doc>
+            <type name="GObject.Object" c:type="GObject*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="deactivate" c:identifier="peas_activatable_deactivate">
+        <doc xml:whitespace="preserve">Deactivates the plugin on the given object.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <doc xml:whitespace="preserve">A #GObject.</doc>
+            <type name="GObject.Object" c:type="GObject*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="update_state" c:identifier="peas_activatable_update_state">
+        <doc xml:whitespace="preserve">Triggers an update of the plugin's internal state to take into account
+state changes in the targetted object, due to a plugin or user action.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <doc xml:whitespace="preserve">A #GObject.</doc>
+            <type name="GObject.Object" c:type="GObject*"/>
+          </parameter>
+        </parameters>
+      </method>
+    </interface>
+    <record name="ActivatableInterface"
+            c:type="PeasActivatableInterface"
+            glib:is-gtype-struct-for="Activatable">
+      <field name="g_iface">
+        <type name="GObject.TypeInterface" c:type="GTypeInterface"/>
+      </field>
+      <field name="activate">
+        <callback name="activate" c:type="activate">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="activatable" transfer-ownership="none">
+              <type name="Activatable" c:type="PeasActivatable*"/>
+            </parameter>
+            <parameter name="object" transfer-ownership="none">
+              <doc xml:whitespace="preserve">The #GObject on which the plugin should be activated.</doc>
+              <type name="GObject.Object" c:type="GObject*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="deactivate">
+        <callback name="deactivate" c:type="deactivate">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="activatable" transfer-ownership="none">
+              <type name="Activatable" c:type="PeasActivatable*"/>
+            </parameter>
+            <parameter name="object" transfer-ownership="none">
+              <doc xml:whitespace="preserve">A #GObject.</doc>
+              <type name="GObject.Object" c:type="GObject*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="update_state">
+        <callback name="update_state" c:type="update_state">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="activatable" transfer-ownership="none">
+              <type name="Activatable" c:type="PeasActivatable*"/>
+            </parameter>
+            <parameter name="object" transfer-ownership="none">
+              <doc xml:whitespace="preserve">A #GObject.</doc>
+              <type name="GObject.Object" c:type="GObject*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+    </record>
+    <class name="Engine"
+           c:type="PeasEngine"
+           parent="GObject.Object"
+           glib:type-name="PeasEngine"
+           glib:get-type="peas_engine_get_type"
+           glib:type-struct="EngineClass">
+      <doc xml:whitespace="preserve">Engine at the heart of the Peas plugin system.</doc>
+      <constructor name="new" c:identifier="peas_engine_new">
+        <doc xml:whitespace="preserve">Returns a new #PeasEngine object.
+See the properties description for more information about the parameters.</doc>
+        <return-value transfer-ownership="full">
+          <doc xml:whitespace="preserve">a newly created #PeasEngine object.</doc>
+          <type name="Engine" c:type="PeasEngine*"/>
+        </return-value>
+        <parameters>
+          <parameter name="app_name" transfer-ownership="none" allow-none="1">
+            <doc xml:whitespace="preserve">The name of the application</doc>
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="base_module_dir" transfer-ownership="none">
+            <doc xml:whitespace="preserve">The base directory for language modules</doc>
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="search_paths" transfer-ownership="none">
+            <doc xml:whitespace="preserve">The paths where to look for plugins</doc>
+            <array c:type="gchar**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="disable_loader" c:identifier="peas_engine_disable_loader">
+        <doc xml:whitespace="preserve">Disable a loader, avoiding using the plugins written using the
+related language to be loaded. This method must be called before
+any plugin relying on the loader @loader_id has been loaded.
+For instance, the following code will prevent any python plugin
+from being loaded:
+|[
+peas_engine_disable_loader (engine, "python");
+]|</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="loader_id" transfer-ownership="none">
+            <doc xml:whitespace="preserve">The id of the loader to inhibit.</doc>
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="rescan_plugins" c:identifier="peas_engine_rescan_plugins">
+        <doc xml:whitespace="preserve">Rescan all the registered directories to find new or updated plugins.
+Calling this function will make the newly installed plugin infos to be
+loaded by the engine, so the new plugins can actually be used without
+restarting the application.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="get_plugin_list"
+              c:identifier="peas_engine_get_plugin_list">
+        <doc xml:whitespace="preserve">Returns the list of #PeasPluginInfo known to the engine.
+#PeasPluginInfo. Note that the list belongs to the engine and should
+not be freed.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">a #GList of</doc>
+          <type name="GLib.List" c:type="GList*">
+            <type name="Peas.PluginInfo"/>
+          </type>
+        </return-value>
+      </method>
+      <method name="get_loaded_plugins"
+              c:identifier="peas_engine_get_loaded_plugins">
+        <doc xml:whitespace="preserve">Returns the list of the names of all the loaded plugins, or %NULL if there
+is no plugin currently loaded. Please note that the returned array is a</doc>
+        <return-value transfer-ownership="full">
+          <doc xml:whitespace="preserve">A newly-allocated NULL-terminated array of strings, or %NULL.</doc>
+          <array c:type="gchar**">
+            <type name="utf8"/>
+          </array>
+        </return-value>
+      </method>
+      <method name="set_loaded_plugins"
+              c:identifier="peas_engine_set_loaded_plugins">
+        <doc xml:whitespace="preserve">Sets the list of loaded plugins for @engine. When this function is called,
+the #PeasEngine will load all the plugins whose names are in @plugin_names,
+and ensures all other active plugins are unloaded.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="plugin_names" transfer-ownership="none">
+            <doc xml:whitespace="preserve">A %NULL-terminated array of plugin names.</doc>
+            <array c:type="gchar**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_plugin_info"
+              c:identifier="peas_engine_get_plugin_info">
+        <return-value transfer-ownership="full">
+          <doc xml:whitespace="preserve">the #PeasPluginInfo corresponding with a given plugin name.</doc>
+          <type name="PluginInfo" c:type="PeasPluginInfo*"/>
+        </return-value>
+        <parameters>
+          <parameter name="plugin_name" transfer-ownership="none">
+            <doc xml:whitespace="preserve">A plugin name.</doc>
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="load_plugin" c:identifier="peas_engine_load_plugin">
+        <doc xml:whitespace="preserve">Loads the plugin corresponding to @info if it's not currently loaded.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">whether the plugin has been successfuly loaded.</doc>
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="info" transfer-ownership="none">
+            <doc xml:whitespace="preserve">A #PeasPluginInfo.</doc>
+            <type name="PluginInfo" c:type="PeasPluginInfo*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="unload_plugin" c:identifier="peas_engine_unload_plugin">
+        <doc xml:whitespace="preserve">Unloads the plugin corresponding to @info.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">whether the plugin has been successfuly unloaded.</doc>
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="info" transfer-ownership="none">
+            <doc xml:whitespace="preserve">A #PeasPluginInfo.</doc>
+            <type name="PluginInfo" c:type="PeasPluginInfo*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="garbage_collect"
+              c:identifier="peas_engine_garbage_collect">
+        <doc xml:whitespace="preserve">This function triggers garbage collection on all the loaders currently
+owned by the #PeasEngine.  This can be used to force the loaders to destroy
+managed objects that still hold references to objects that are about to
+disappear.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="provides_extension"
+              c:identifier="peas_engine_provides_extension">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="info" transfer-ownership="none">
+            <type name="PluginInfo" c:type="PeasPluginInfo*"/>
+          </parameter>
+          <parameter name="extension_type" transfer-ownership="none">
+            <type name="GType" c:type="GType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_extension" c:identifier="peas_engine_get_extension">
+        <return-value transfer-ownership="full">
+          <type name="Extension" c:type="PeasExtension*"/>
+        </return-value>
+        <parameters>
+          <parameter name="info" transfer-ownership="none">
+            <type name="PluginInfo" c:type="PeasPluginInfo*"/>
+          </parameter>
+          <parameter name="extension_type" transfer-ownership="none">
+            <type name="GType" c:type="GType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="app-name"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <doc xml:whitespace="preserve">The application name. Filename extension and section header for
+#PeasPluginInfo files are actually derived from this value.
+For instance, if app-name is "Gedit", then info files will have
+the .gedit-plugin extension, and the engine will look for a
+"Gedit Plugin" section in it to load the plugin data.</doc>
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="base-module-dir"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <doc xml:whitespace="preserve">The base application directory for binding modules lookup.
+Each loader module will load its modules from a subdirectory of
+the base module directory. For instance, the python loader will
+look for python modules in "${base-module-dir}/python/".</doc>
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="search-paths"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <doc xml:whitespace="preserve">The list of path where to look for plugins.
+A so-called "search path" actually consists on a couple of both a
+module directory (where the shared libraries or language modules
+lie) and a data directory (where the plugin data is).
+The #PeasPlugin will be able to use a correct data dir depending on
+where it is installed, hence allowing to keep the plugin agnostic
+installed both in the system path or in the user's home directory,
+without taking other special care than using
+egg_plugin_get_data_dir() when looking for its data files.
+Concretely, this property contains a NULL-terminated array of
+strings, whose even-indexed strings are module directories, and
+odd-indexed ones are the associated data directories.  Here is an
+example of such an array:
+|[
+gchar const * const search_paths[] = {
+// Plugins in ~/.config
+g_build_filename (g_get_user_config_dir (), "example/plugins", NULL),
+g_build_filename (g_get_user_config_dir (), "example/plugins", NULL),
+// System plugins
+EXAMPLE_PREFIX "/lib/example/plugins/",
+EXAMPLE_PREFIX "/share/example/plugins/",
+NULL
+};
+]|</doc>
+        <type name="GObject.Strv" c:type="GStrv"/>
+      </property>
+      <field name="parent">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="EnginePrivate" c:type="PeasEnginePrivate*"/>
+      </field>
+      <glib:signal name="load-plugin">
+        <doc xml:whitespace="preserve">The load-plugin signal is emitted when a plugin is being loaded.</doc>
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="info" transfer-ownership="none">
+            <doc xml:whitespace="preserve">A #PeasPluginInfo.</doc>
+            <type name="PluginInfo" c:type="PeasPluginInfo"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="unload-plugin">
+        <doc xml:whitespace="preserve">The unload-plugin signal is emitted when a plugin is being unloaded.</doc>
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="info" transfer-ownership="none">
+            <doc xml:whitespace="preserve">A #PeasPluginInfo.</doc>
+            <type name="PluginInfo" c:type="PeasPluginInfo"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <record name="EngineClass"
+            c:type="PeasEngineClass"
+            glib:is-gtype-struct-for="Engine">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="load_plugin">
+        <callback name="load_plugin" c:type="load_plugin">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="engine" transfer-ownership="none">
+              <type name="Engine" c:type="PeasEngine*"/>
+            </parameter>
+            <parameter name="info" transfer-ownership="none">
+              <type name="PluginInfo" c:type="PeasPluginInfo*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="unload_plugin">
+        <callback name="unload_plugin" c:type="unload_plugin">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="engine" transfer-ownership="none">
+              <type name="Engine" c:type="PeasEngine*"/>
+            </parameter>
+            <parameter name="info" transfer-ownership="none">
+              <type name="PluginInfo" c:type="PeasPluginInfo*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+    </record>
+    <record name="EnginePrivate" c:type="PeasEnginePrivate">
+    </record>
+    <class name="Extension"
+           c:type="PeasExtension"
+           parent="GObject.Object"
+           abstract="1"
+           glib:type-name="PeasExtension"
+           glib:get-type="peas_extension_get_type"
+           glib:type-struct="ExtensionClass">
+      <doc xml:whitespace="preserve">Base class for plugins.</doc>
+      <method name="call"
+              c:identifier="peas_extension_call"
+              introspectable="0">
+        <doc xml:whitespace="preserve">Call a method of the object behind @extension.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">%TRUE on successful call.</doc>
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="method_name" transfer-ownership="none">
+            <doc xml:whitespace="preserve">the name of the method that should be called.</doc>
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter transfer-ownership="none">
+            <varargs>
+            </varargs>
+          </parameter>
+        </parameters>
+      </method>
+      <field name="parent">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+    </class>
+    <class name="ExtensionBase"
+           c:type="PeasExtensionBase"
+           parent="GObject.Object"
+           abstract="1"
+           glib:type-name="PeasExtensionBase"
+           glib:get-type="peas_extension_base_get_type"
+           glib:type-struct="ExtensionBaseClass">
+      <doc xml:whitespace="preserve">Base class for C extensions.</doc>
+      <method name="get_plugin_info"
+              c:identifier="peas_extension_base_get_plugin_info">
+        <doc xml:whitespace="preserve">Get information relative to @extbase.</doc>
+        <return-value transfer-ownership="full">
+          <doc xml:whitespace="preserve">the #PeasPluginInfo relative to the #PeasExtensionBase.</doc>
+          <type name="PluginInfo" c:type="PeasPluginInfo*"/>
+        </return-value>
+      </method>
+      <method name="get_data_dir"
+              c:identifier="peas_extension_base_get_data_dir">
+        <doc xml:whitespace="preserve">Get the path of the directory where the plugin should look for
+its data files.
+directory where the plugin should look for its data files</doc>
+        <return-value transfer-ownership="full">
+          <doc xml:whitespace="preserve">A newly allocated string with the path of the</doc>
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <property name="data-dir" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="plugin-info"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="PluginInfo" c:type="PeasPluginInfo"/>
+      </property>
+      <field name="parent">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="plugin_info">
+        <type name="PluginInfo" c:type="PeasPluginInfo*"/>
+      </field>
+    </class>
+    <record name="ExtensionBaseClass"
+            c:type="PeasExtensionBaseClass"
+            glib:is-gtype-struct-for="ExtensionBase">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+    </record>
+    <record name="ExtensionClass"
+            c:type="PeasExtensionClass"
+            glib:is-gtype-struct-for="Extension">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+    </record>
+    <class name="ExtensionSet"
+           c:type="PeasExtensionSet"
+           parent="GObject.Object"
+           glib:type-name="PeasExtensionSet"
+           glib:get-type="peas_extension_set_get_type"
+           glib:type-struct="ExtensionSetClass">
+      <constructor name="new" c:identifier="peas_extension_set_new">
+        <doc xml:whitespace="preserve">Create an #ExtensionSet for all the @exten_type extensions defined in
+the plugins loaded in @engine.</doc>
+        <return-value transfer-ownership="full">
+          <type name="ExtensionSet" c:type="PeasExtensionSet*"/>
+        </return-value>
+        <parameters>
+          <parameter name="engine" transfer-ownership="none">
+            <doc xml:whitespace="preserve">A #PeasEngine.</doc>
+            <type name="Engine" c:type="PeasEngine*"/>
+          </parameter>
+          <parameter name="exten_type" transfer-ownership="none">
+            <doc xml:whitespace="preserve">the extension #GType.</doc>
+            <type name="GType" c:type="GType"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="call"
+              c:identifier="peas_extension_set_call"
+              introspectable="0">
+        <doc xml:whitespace="preserve">Call a method on all the #PeasExtension instances contained in @set.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">%TRUE on successful call.</doc>
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="method_name" transfer-ownership="none">
+            <doc xml:whitespace="preserve">the name of the method that should be called.</doc>
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter transfer-ownership="none">
+            <varargs>
+            </varargs>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="engine"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="Engine" c:type="PeasEngine"/>
+      </property>
+      <property name="extension-type"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="GType" c:type="GType"/>
+      </property>
+      <field name="parent">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="ExtensionSetPrivate" c:type="PeasExtensionSetPrivate*"/>
+      </field>
+      <glib:signal name="extension-added">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="PluginInfo" c:type="PeasPluginInfo"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="Extension" c:type="PeasExtension"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="extension-removed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="PluginInfo" c:type="PeasPluginInfo"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="Extension" c:type="PeasExtension"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <record name="ExtensionSetClass"
+            c:type="PeasExtensionSetClass"
+            glib:is-gtype-struct-for="ExtensionSet">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+    </record>
+    <record name="ExtensionSetPrivate" c:type="PeasExtensionSetPrivate">
+    </record>
+    <callback name="FactoryFunc" c:type="PeasFactoryFunc">
+      <return-value transfer-ownership="full">
+        <type name="GObject.Object" c:type="GObject*"/>
+      </return-value>
+      <parameters>
+        <parameter name="n_parameters" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+        <parameter name="parameters" transfer-ownership="none">
+          <type name="GObject.Parameter" c:type="GParameter*"/>
+        </parameter>
+        <parameter name="user_data" transfer-ownership="none" closure="2">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <class name="ObjectModule"
+           c:type="PeasObjectModule"
+           parent="GObject.TypeModule"
+           glib:type-name="PeasObjectModule"
+           glib:get-type="peas_object_module_get_type"
+           glib:type-struct="ObjectModuleClass">
+      <implements name="GObject.TypePlugin"/>
+      <constructor name="new" c:identifier="peas_object_module_new">
+        <return-value transfer-ownership="full">
+          <type name="ObjectModule" c:type="PeasObjectModule*"/>
+        </return-value>
+        <parameters>
+          <parameter name="module_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="path" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="resident" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="register_types"
+              c:identifier="peas_object_module_register_types">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="create_object"
+              c:identifier="peas_object_module_create_object">
+        <return-value transfer-ownership="full">
+          <type name="GObject.Object" c:type="GObject*"/>
+        </return-value>
+        <parameters>
+          <parameter name="interface" transfer-ownership="none">
+            <type name="GType" c:type="GType"/>
+          </parameter>
+          <parameter name="n_parameters" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="parameters" transfer-ownership="none">
+            <type name="GObject.Parameter" c:type="GParameter*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="provides_object"
+              c:identifier="peas_object_module_provides_object">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="interface" transfer-ownership="none">
+            <type name="GType" c:type="GType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_path" c:identifier="peas_object_module_get_path">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_module_name"
+              c:identifier="peas_object_module_get_module_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_library" c:identifier="peas_object_module_get_library">
+        <return-value transfer-ownership="full">
+          <type name="GModule.Module" c:type="GModule*"/>
+        </return-value>
+      </method>
+      <method name="register_extension_factory"
+              c:identifier="peas_object_module_register_extension_factory">
+        <doc xml:whitespace="preserve">Register an implementation for an extension type through a factory
+function @factory_func which will instantiate the extension when
+requested.
+This method is primarily meant to be used by native bindings (like gtkmm),
+creatint native types which cannot be instantiated correctly using
+g_object_new().  For other uses, you will usually prefer relying on
+peas_object_module_register_extension_type().</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="iface_type" transfer-ownership="none">
+            <doc xml:whitespace="preserve">The #GType of the extension interface you implement.</doc>
+            <type name="GType" c:type="GType"/>
+          </parameter>
+          <parameter name="factory_func"
+                     transfer-ownership="none"
+                     scope="notified"
+                     closure="3"
+                     destroy="4">
+            <doc xml:whitespace="preserve">The #PeasFactoryFunc that will create the @iface_type instance when requested.</doc>
+            <type name="FactoryFunc" c:type="PeasFactoryFunc"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <doc xml:whitespace="preserve">Data to pass to @func calls.</doc>
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="destroy_func"
+                     transfer-ownership="none"
+                     scope="call">
+            <doc xml:whitespace="preserve">A #GDestroyNotify for @user_data.</doc>
+            <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="register_extension_type"
+              c:identifier="peas_object_module_register_extension_type">
+        <doc xml:whitespace="preserve">Register an extension type which implements the extension interface</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="iface_type" transfer-ownership="none">
+            <doc xml:whitespace="preserve">The #GType of the extension interface you implement.</doc>
+            <type name="GType" c:type="GType"/>
+          </parameter>
+          <parameter name="extension_type" transfer-ownership="none">
+            <doc xml:whitespace="preserve">The #GType of your implementation of @iface_type.</doc>
+            <type name="GType" c:type="GType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="module-name"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="path"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="resident"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <field name="parent">
+        <type name="GObject.TypeModule" c:type="GTypeModule"/>
+      </field>
+      <field name="priv">
+        <type name="ObjectModulePrivate" c:type="PeasObjectModulePrivate*"/>
+      </field>
+    </class>
+    <record name="ObjectModuleClass"
+            c:type="PeasObjectModuleClass"
+            glib:is-gtype-struct-for="ObjectModule">
+      <field name="parent_class">
+        <type name="GObject.TypeModuleClass" c:type="GTypeModuleClass"/>
+      </field>
+    </record>
+    <record name="ObjectModulePrivate" c:type="PeasObjectModulePrivate">
+    </record>
+    <record name="PluginInfo"
+            c:type="PeasPluginInfo"
+            glib:type-name="PeasPluginInfo"
+            glib:get-type="peas_plugin_info_get_type">
+      <doc xml:whitespace="preserve">Boxed type for the information related to a plugin.</doc>
+      <method name="is_loaded" c:identifier="peas_plugin_info_is_loaded">
+        <doc xml:whitespace="preserve">Check if the plugin is loaded.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">%TRUE if the plugin is loaded.</doc>
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="is_available" c:identifier="peas_plugin_info_is_available">
+        <doc xml:whitespace="preserve">Check if the plugin is available.  A plugin is marked as not available when
+there is no loader available to load it, or when there has been an error
+when trying to load it previously.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">%TRUE if the plugin is available.</doc>
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_module_name"
+              c:identifier="peas_plugin_info_get_module_name">
+        <doc xml:whitespace="preserve">Gets the module name.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">the module name.</doc>
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_module_dir"
+              c:identifier="peas_plugin_info_get_module_dir">
+        <doc xml:whitespace="preserve">Gets the module directory.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">the module directory.</doc>
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_data_dir" c:identifier="peas_plugin_info_get_data_dir">
+        <doc xml:whitespace="preserve">Gets the data dir of the plugin.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">the plugin's data dir.</doc>
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_name" c:identifier="peas_plugin_info_get_name">
+        <doc xml:whitespace="preserve">Gets the name of the plugin.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">the plugin's name.</doc>
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_description"
+              c:identifier="peas_plugin_info_get_description">
+        <doc xml:whitespace="preserve">Gets the description of the plugin.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">the plugin's description.</doc>
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_authors" c:identifier="peas_plugin_info_get_authors">
+        <doc xml:whitespace="preserve">Gets a NULL-terminated array of strings with the authors of the plugin.</doc>
+        <return-value transfer-ownership="full">
+          <doc xml:whitespace="preserve">the plugin's author list.</doc>
+          <array c:type="gchar**">
+            <type name="utf8"/>
+          </array>
+        </return-value>
+      </method>
+      <method name="get_website" c:identifier="peas_plugin_info_get_website">
+        <doc xml:whitespace="preserve">Gets the website of the plugin.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">the plugin's associated website.</doc>
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_copyright"
+              c:identifier="peas_plugin_info_get_copyright">
+        <doc xml:whitespace="preserve">Gets the copyright of the plugin.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">the plugin's copyright information.</doc>
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_version" c:identifier="peas_plugin_info_get_version">
+        <doc xml:whitespace="preserve">Gets the version of the plugin.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">the plugin's version.</doc>
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_iage" c:identifier="peas_plugin_info_get_iage">
+        <doc xml:whitespace="preserve">Gets the interface age of the plugin.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">the interface age of the plugin or %0 if not known.</doc>
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <method name="get_keys" c:identifier="peas_plugin_info_get_keys">
+        <doc xml:whitespace="preserve">Gets a hash table of string keys present and #GValue values,
+present in the plugin information file, but not handled
+by libpeas. Note that libpeas only handles booleans and
+strings, and that strings that are recognised as booleans,
+as done by #g_key_file_get_boolean, will be of boolean type.
+not free or destroy any data in this hashtable.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">a #GHashTable of string keys and #GValue values. Do</doc>
+          <type name="GLib.HashTable" c:type="GHashTable*"/>
+        </return-value>
+      </method>
+      <method name="set_visible" c:identifier="peas_plugin_info_set_visible">
+        <doc xml:whitespace="preserve">Sets whether the plugin should be visible in the
+plugin manager.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="visible" transfer-ownership="none">
+            <doc xml:whitespace="preserve">visibility of the plugin</doc>
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_visible" c:identifier="peas_plugin_info_get_visible">
+        <doc xml:whitespace="preserve">Gets the visibility of the plugin.
+if not.</doc>
+        <return-value transfer-ownership="none">
+          <doc xml:whitespace="preserve">%TRUE if the plugin should be visible, %FALSE</doc>
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+    </record>
+  </namespace>
+</repository>

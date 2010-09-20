@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="GLib" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <package name="babl"/>
+  <namespace name="Babl"
+             version="0.1"
+             shared-library="libbabl-0.1.so.0"
+             c:prefix="Babl">
+    <union name="Babl" c:type="Babl">
+    </union>
+    <callback name="FuncLinear" c:type="BablFuncLinear">
+      <return-value transfer-ownership="none">
+        <type name="long" c:type="long"/>
+      </return-value>
+      <parameters>
+        <parameter name="src" transfer-ownership="full">
+          <type name="utf8" c:type="char*"/>
+        </parameter>
+        <parameter name="dst" transfer-ownership="full">
+          <type name="utf8" c:type="char*"/>
+        </parameter>
+        <parameter name="n" transfer-ownership="none">
+          <type name="long" c:type="long"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <callback name="FuncPlanar" c:type="BablFuncPlanar">
+      <return-value transfer-ownership="none">
+        <type name="long" c:type="long"/>
+      </return-value>
+      <parameters>
+        <parameter name="src_bands" transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </parameter>
+        <parameter name="src" transfer-ownership="full">
+          <type name="utf8" c:type="char*"/>
+        </parameter>
+        <parameter name="src_pitch" transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </parameter>
+        <parameter name="dst_bands" transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </parameter>
+        <parameter name="dst" transfer-ownership="full">
+          <type name="utf8" c:type="char*"/>
+        </parameter>
+        <parameter name="dst_pitch" transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </parameter>
+        <parameter name="n" transfer-ownership="none">
+          <type name="long" c:type="long"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <constant name="MAJOR_VERSION" value="0">
+      <type name="int"/>
+    </constant>
+    <constant name="MICRO_VERSION" value="3">
+      <type name="int"/>
+    </constant>
+    <constant name="MINOR_VERSION" value="1">
+      <type name="int"/>
+    </constant>
+    <function name="get_version" c:identifier="babl_get_version">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="major"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <type name="int" c:type="int*"/>
+        </parameter>
+        <parameter name="minor"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <type name="int" c:type="int*"/>
+        </parameter>
+        <parameter name="micro"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <type name="int" c:type="int*"/>
+        </parameter>
+      </parameters>
+    </function>
+  </namespace>
+</repository>

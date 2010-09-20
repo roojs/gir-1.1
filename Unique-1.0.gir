@@ -1,0 +1,632 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="Atk" version="1.0"/>
+  <include name="GLib" version="2.0"/>
+  <include name="GModule" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <include name="Gdk" version="2.0"/>
+  <include name="GdkPixbuf" version="2.0"/>
+  <include name="Gio" version="2.0"/>
+  <include name="Gtk" version="2.0"/>
+  <include name="Pango" version="1.0"/>
+  <include name="cairo" version="1.0"/>
+  <include name="xlib" version="2.0"/>
+  <package name="unique-1.0"/>
+  <namespace name="Unique"
+             version="1.0"
+             shared-library="libunique-1.0.so.0"
+             c:prefix="Unique">
+    <constant name="API_VERSION" value="1.0">
+      <type name="double"/>
+    </constant>
+    <constant name="API_VERSION_S" value="1.0">
+      <type name="utf8"/>
+    </constant>
+    <class name="App"
+           c:type="UniqueApp"
+           parent="GObject.Object"
+           glib:type-name="UniqueApp"
+           glib:get-type="unique_app_get_type"
+           glib:type-struct="AppClass">
+      <doc xml:whitespace="preserve">The base class for every single instance application. The #UniqueApp
+structure contains only private data and should be manipulated only
+with the provided functions.</doc>
+      <constructor name="new" c:identifier="unique_app_new">
+        <return-value transfer-ownership="full">
+          <type name="App" c:type="UniqueApp*"/>
+        </return-value>
+        <parameters>
+          <parameter name="name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="startup_id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_with_commands"
+                   c:identifier="unique_app_new_with_commands"
+                   introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="App" c:type="UniqueApp*"/>
+        </return-value>
+        <parameters>
+          <parameter name="name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="startup_id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="first_command_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter transfer-ownership="none">
+            <varargs>
+            </varargs>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="add_command" c:identifier="unique_app_add_command">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="command_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="command_id" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="watch_window" c:identifier="unique_app_watch_window">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="window" transfer-ownership="none">
+            <type name="Gtk.Window" c:type="GtkWindow*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="is_running" c:identifier="unique_app_is_running">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="send_message" c:identifier="unique_app_send_message">
+        <return-value transfer-ownership="full">
+          <type name="Response" c:type="UniqueResponse"/>
+        </return-value>
+        <parameters>
+          <parameter name="command_id" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="message_data" transfer-ownership="none">
+            <type name="MessageData" c:type="UniqueMessageData*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="is-running" transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="name"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="screen"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="Gdk.Screen" c:type="GdkScreen"/>
+      </property>
+      <property name="startup-id"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="AppPrivate" c:type="UniqueAppPrivate*"/>
+      </field>
+      <glib:signal name="message-received">
+        <return-value transfer-ownership="full">
+          <type name="Response" c:type="UniqueResponse"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="MessageData" c:type="UniqueMessageData"/>
+          </parameter>
+          <parameter name="p1" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <record name="AppClass"
+            c:type="UniqueAppClass"
+            glib:is-gtype-struct-for="App">
+      <doc xml:whitespace="preserve">Base class for every single instance application.</doc>
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="message_received">
+        <callback name="message_received" c:type="message_received">
+          <return-value transfer-ownership="full">
+            <type name="Response" c:type="UniqueResponse"/>
+          </return-value>
+          <parameters>
+            <parameter name="app" transfer-ownership="none">
+              <type name="App" c:type="UniqueApp*"/>
+            </parameter>
+            <parameter name="command" transfer-ownership="none">
+              <type name="int" c:type="gint"/>
+            </parameter>
+            <parameter name="message_data" transfer-ownership="none">
+              <type name="MessageData" c:type="UniqueMessageData*"/>
+            </parameter>
+            <parameter name="time_" transfer-ownership="none">
+              <type name="uint" c:type="guint"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="unique_reserved1">
+        <callback name="unique_reserved1" c:type="_unique_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="unique_reserved2">
+        <callback name="unique_reserved2" c:type="_unique_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="unique_reserved3">
+        <callback name="unique_reserved3" c:type="_unique_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="unique_reserved4">
+        <callback name="unique_reserved4" c:type="_unique_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="AppPrivate" c:type="UniqueAppPrivate">
+    </record>
+    <class name="Backend"
+           c:type="UniqueBackend"
+           parent="GObject.Object"
+           abstract="1"
+           glib:type-name="UniqueBackend"
+           glib:get-type="unique_backend_get_type"
+           glib:type-struct="BackendClass">
+      <doc xml:whitespace="preserve">The #UniqueBackend structure contains only private data and should only
+be accessed using the provided functions.</doc>
+      <function name="create" c:identifier="unique_backend_create">
+        <return-value transfer-ownership="full">
+          <type name="Backend" c:type="UniqueBackend*"/>
+        </return-value>
+      </function>
+      <virtual-method name="request_name" invoker="request_name">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </virtual-method>
+      <virtual-method name="send_message" invoker="send_message">
+        <return-value transfer-ownership="full">
+          <type name="Response" c:type="UniqueResponse"/>
+        </return-value>
+        <parameters>
+          <parameter name="command_id" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="message_data" transfer-ownership="none">
+            <type name="MessageData" c:type="UniqueMessageData*"/>
+          </parameter>
+          <parameter name="time_" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <method name="get_name" c:identifier="unique_backend_get_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_name" c:identifier="unique_backend_set_name">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_startup_id"
+              c:identifier="unique_backend_get_startup_id">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_startup_id"
+              c:identifier="unique_backend_set_startup_id">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="startup_id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_screen" c:identifier="unique_backend_get_screen">
+        <return-value transfer-ownership="full">
+          <type name="Gdk.Screen" c:type="GdkScreen*"/>
+        </return-value>
+      </method>
+      <method name="set_screen" c:identifier="unique_backend_set_screen">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="screen" transfer-ownership="none">
+            <type name="Gdk.Screen" c:type="GdkScreen*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_workspace" c:identifier="unique_backend_get_workspace">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="request_name" c:identifier="unique_backend_request_name">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="send_message" c:identifier="unique_backend_send_message">
+        <return-value transfer-ownership="full">
+          <type name="Response" c:type="UniqueResponse"/>
+        </return-value>
+        <parameters>
+          <parameter name="command_id" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="message_data" transfer-ownership="none">
+            <type name="MessageData" c:type="UniqueMessageData*"/>
+          </parameter>
+          <parameter name="time_" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="parent">
+        <type name="App" c:type="UniqueApp*"/>
+      </field>
+      <field name="name">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="startup_id">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="screen">
+        <type name="Gdk.Screen" c:type="GdkScreen*"/>
+      </field>
+      <field name="workspace">
+        <type name="uint" c:type="guint"/>
+      </field>
+    </class>
+    <record name="BackendClass"
+            c:type="UniqueBackendClass"
+            glib:is-gtype-struct-for="Backend">
+      <doc xml:whitespace="preserve">The class that should be implemented by every backend for #UniqueApp.</doc>
+      <field name="parent_instance">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="request_name">
+        <callback name="request_name" c:type="request_name">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="backend" transfer-ownership="none">
+              <type name="Backend" c:type="UniqueBackend*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="send_message">
+        <callback name="send_message" c:type="send_message">
+          <return-value transfer-ownership="full">
+            <type name="Response" c:type="UniqueResponse"/>
+          </return-value>
+          <parameters>
+            <parameter name="backend" transfer-ownership="none">
+              <type name="Backend" c:type="UniqueBackend*"/>
+            </parameter>
+            <parameter name="command_id" transfer-ownership="none">
+              <type name="int" c:type="gint"/>
+            </parameter>
+            <parameter name="message_data" transfer-ownership="none">
+              <type name="MessageData" c:type="UniqueMessageData*"/>
+            </parameter>
+            <parameter name="time_" transfer-ownership="none">
+              <type name="uint" c:type="guint"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="unique_reserved1">
+        <callback name="unique_reserved1" c:type="_unique_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="unique_reserved2">
+        <callback name="unique_reserved2" c:type="_unique_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="unique_reserved3">
+        <callback name="unique_reserved3" c:type="_unique_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="unique_reserved4">
+        <callback name="unique_reserved4" c:type="_unique_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="unique_reserved5">
+        <callback name="unique_reserved5" c:type="_unique_reserved5">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="unique_reserved6">
+        <callback name="unique_reserved6" c:type="_unique_reserved6">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <enumeration name="Command"
+                 glib:type-name="UniqueCommand"
+                 glib:get-type="unique_command_get_type"
+                 c:type="UniqueCommand">
+      <doc xml:whitespace="preserve">Command to send to a currently active instance. User defined commands
+should be positive integers, and should be added using the
+unique_app_add_command() function after creating a #UniqueApp instance</doc>
+      <member name="invalid"
+              value="0"
+              c:identifier="UNIQUE_INVALID"
+              glib:nick="invalid"/>
+      <member name="activate"
+              value="-1"
+              c:identifier="UNIQUE_ACTIVATE"
+              glib:nick="activate"/>
+      <member name="new" value="-2" c:identifier="UNIQUE_NEW" glib:nick="new"/>
+      <member name="open"
+              value="-3"
+              c:identifier="UNIQUE_OPEN"
+              glib:nick="open"/>
+      <member name="close"
+              value="-4"
+              c:identifier="UNIQUE_CLOSE"
+              glib:nick="close"/>
+    </enumeration>
+    <constant name="DEFAULT_BACKEND_S" value="dbus">
+      <type name="utf8"/>
+    </constant>
+    <constant name="MAJOR_VERSION" value="1">
+      <type name="int"/>
+    </constant>
+    <constant name="MICRO_VERSION" value="7">
+      <type name="int"/>
+    </constant>
+    <constant name="MINOR_VERSION" value="1">
+      <type name="int"/>
+    </constant>
+    <record name="MessageData"
+            c:type="UniqueMessageData"
+            glib:type-name="UniqueMessageData"
+            glib:get-type="unique_message_data_get_type">
+      <doc xml:whitespace="preserve">#UniqueMessageData contains the data passed between instances of
+a #UniqueApp. The #UniqueMessageData structure received inside
+the signal handlers for UniqueApp::message-received is guaranteed
+to contain the #GdkScreen, the workspace and the startup notification
+id of the instance sending the message.</doc>
+      <constructor name="new" c:identifier="unique_message_data_new">
+        <return-value transfer-ownership="full">
+          <type name="MessageData" c:type="UniqueMessageData*"/>
+        </return-value>
+      </constructor>
+      <method name="copy" c:identifier="unique_message_data_copy">
+        <return-value transfer-ownership="full">
+          <type name="MessageData" c:type="UniqueMessageData*"/>
+        </return-value>
+      </method>
+      <method name="free" c:identifier="unique_message_data_free">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="set" c:identifier="unique_message_data_set">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="data" transfer-ownership="none">
+            <array c:type="guchar*">
+              <type name="uint8"/>
+            </array>
+          </parameter>
+          <parameter name="length" transfer-ownership="none">
+            <type name="gsize" c:type="gsize"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get" c:identifier="unique_message_data_get">
+        <return-value transfer-ownership="none">
+          <array c:type="guchar*">
+            <type name="uint8"/>
+          </array>
+        </return-value>
+        <parameters>
+          <parameter name="length"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="gsize" c:type="gsize*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_text" c:identifier="unique_message_data_set_text">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="str" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="length" transfer-ownership="none">
+            <type name="gssize" c:type="gssize"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_text" c:identifier="unique_message_data_get_text">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_uris" c:identifier="unique_message_data_set_uris">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="uris" transfer-ownership="none">
+            <array c:type="gchar**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_uris" c:identifier="unique_message_data_get_uris">
+        <return-value transfer-ownership="full">
+          <array c:type="gchar**">
+            <type name="utf8"/>
+          </array>
+        </return-value>
+      </method>
+      <method name="set_filename"
+              c:identifier="unique_message_data_set_filename">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="filename" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_filename"
+              c:identifier="unique_message_data_get_filename">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_screen" c:identifier="unique_message_data_get_screen">
+        <return-value transfer-ownership="full">
+          <type name="Gdk.Screen" c:type="GdkScreen*"/>
+        </return-value>
+      </method>
+      <method name="get_startup_id"
+              c:identifier="unique_message_data_get_startup_id">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_workspace"
+              c:identifier="unique_message_data_get_workspace">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+    </record>
+    <constant name="PROTOCOL_VERSION" value="1.0">
+      <type name="double"/>
+    </constant>
+    <constant name="PROTOCOL_VERSION_S" value="1.0">
+      <type name="utf8"/>
+    </constant>
+    <enumeration name="Response"
+                 glib:type-name="UniqueResponse"
+                 glib:get-type="unique_response_get_type"
+                 c:type="UniqueResponse">
+      <doc xml:whitespace="preserve">Response that a currently active instance of the application should
+return to the caller which sent a command.</doc>
+      <member name="invalid"
+              value="0"
+              c:identifier="UNIQUE_RESPONSE_INVALID"
+              glib:nick="invalid"/>
+      <member name="ok"
+              value="1"
+              c:identifier="UNIQUE_RESPONSE_OK"
+              glib:nick="ok"/>
+      <member name="cancel"
+              value="2"
+              c:identifier="UNIQUE_RESPONSE_CANCEL"
+              glib:nick="cancel"/>
+      <member name="fail"
+              value="3"
+              c:identifier="UNIQUE_RESPONSE_FAIL"
+              glib:nick="fail"/>
+      <member name="passthrough"
+              value="4"
+              c:identifier="UNIQUE_RESPONSE_PASSTHROUGH"
+              glib:nick="passthrough"/>
+    </enumeration>
+    <constant name="VERSION_HEX" value="0">
+      <type name="int"/>
+    </constant>
+    <constant name="VERSION_S" value="1.1.7">
+      <type name="utf8"/>
+    </constant>
+  </namespace>
+</repository>

@@ -1,0 +1,1775 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="GLib" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <include name="Gio" version="2.0"/>
+  <package name="gio-2.0"/>
+  <package name="glib-2.0"/>
+  <package name="gobject-2.0"/>
+  <namespace name="Polkit"
+             version="1.0"
+             shared-library="libpolkit-gobject-1.so.0"
+             c:prefix="Polkit">
+    <class name="ActionDescription"
+           c:type="PolkitActionDescription"
+           parent="GObject.Object"
+           glib:type-name="PolkitActionDescription"
+           glib:get-type="polkit_action_description_get_type"
+           glib:type-struct="ActionDescriptionClass">
+      <method name="get_action_id"
+              c:identifier="polkit_action_description_get_action_id">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_description"
+              c:identifier="polkit_action_description_get_description">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_message"
+              c:identifier="polkit_action_description_get_message">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_vendor_name"
+              c:identifier="polkit_action_description_get_vendor_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_vendor_url"
+              c:identifier="polkit_action_description_get_vendor_url">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_icon_name"
+              c:identifier="polkit_action_description_get_icon_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_implicit_any"
+              c:identifier="polkit_action_description_get_implicit_any">
+        <return-value transfer-ownership="full">
+          <type name="ImplicitAuthorization"
+                c:type="PolkitImplicitAuthorization"/>
+        </return-value>
+      </method>
+      <method name="get_implicit_inactive"
+              c:identifier="polkit_action_description_get_implicit_inactive">
+        <return-value transfer-ownership="full">
+          <type name="ImplicitAuthorization"
+                c:type="PolkitImplicitAuthorization"/>
+        </return-value>
+      </method>
+      <method name="get_implicit_active"
+              c:identifier="polkit_action_description_get_implicit_active">
+        <return-value transfer-ownership="full">
+          <type name="ImplicitAuthorization"
+                c:type="PolkitImplicitAuthorization"/>
+        </return-value>
+      </method>
+      <method name="get_annotation"
+              c:identifier="polkit_action_description_get_annotation">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_annotation_keys"
+              c:identifier="polkit_action_description_get_annotation_keys">
+        <return-value transfer-ownership="full">
+          <array c:type="gchar**">
+            <type name="utf8"/>
+          </array>
+        </return-value>
+      </method>
+    </class>
+    <record name="ActionDescriptionClass"
+            c:type="PolkitActionDescriptionClass"
+            glib:is-gtype-struct-for="ActionDescription">
+    </record>
+    <class name="Authority"
+           c:type="PolkitAuthority"
+           parent="GObject.Object"
+           glib:type-name="PolkitAuthority"
+           glib:get-type="polkit_authority_get_type"
+           glib:type-struct="AuthorityClass">
+      <function name="get" c:identifier="polkit_authority_get">
+        <return-value transfer-ownership="full">
+          <type name="Authority" c:type="PolkitAuthority*"/>
+        </return-value>
+      </function>
+      <method name="get_backend_name"
+              c:identifier="polkit_authority_get_backend_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_backend_version"
+              c:identifier="polkit_authority_get_backend_version">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_backend_features"
+              c:identifier="polkit_authority_get_backend_features">
+        <return-value transfer-ownership="full">
+          <type name="AuthorityFeatures" c:type="PolkitAuthorityFeatures"/>
+        </return-value>
+      </method>
+      <method name="enumerate_actions_sync"
+              c:identifier="polkit_authority_enumerate_actions_sync"
+              introspectable="0"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="enumerate_users_sync"
+              c:identifier="polkit_authority_enumerate_users_sync"
+              introspectable="0"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="enumerate_groups_sync"
+              c:identifier="polkit_authority_enumerate_groups_sync"
+              introspectable="0"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="check_authorization_sync"
+              c:identifier="polkit_authority_check_authorization_sync"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="AuthorizationResult"
+                c:type="PolkitAuthorizationResult*"/>
+        </return-value>
+        <parameters>
+          <parameter name="subject" transfer-ownership="none">
+            <type name="Subject" c:type="PolkitSubject*"/>
+          </parameter>
+          <parameter name="action_id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="details" transfer-ownership="none">
+            <type name="Details" c:type="PolkitDetails*"/>
+          </parameter>
+          <parameter name="flags" transfer-ownership="none">
+            <type name="CheckAuthorizationFlags"
+                  c:type="PolkitCheckAuthorizationFlags"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="register_authentication_agent_sync"
+              c:identifier="polkit_authority_register_authentication_agent_sync"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="subject" transfer-ownership="none">
+            <type name="Subject" c:type="PolkitSubject*"/>
+          </parameter>
+          <parameter name="locale" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="object_path" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="unregister_authentication_agent_sync"
+              c:identifier="polkit_authority_unregister_authentication_agent_sync"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="subject" transfer-ownership="none">
+            <type name="Subject" c:type="PolkitSubject*"/>
+          </parameter>
+          <parameter name="object_path" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="authentication_agent_response_sync"
+              c:identifier="polkit_authority_authentication_agent_response_sync"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="cookie" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="identity" transfer-ownership="none">
+            <type name="Identity" c:type="PolkitIdentity*"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="enumerate_temporary_authorizations_sync"
+              c:identifier="polkit_authority_enumerate_temporary_authorizations_sync"
+              introspectable="0"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <parameter name="subject" transfer-ownership="none">
+            <type name="Subject" c:type="PolkitSubject*"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="revoke_temporary_authorizations_sync"
+              c:identifier="polkit_authority_revoke_temporary_authorizations_sync"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="subject" transfer-ownership="none">
+            <type name="Subject" c:type="PolkitSubject*"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="revoke_temporary_authorization_by_id_sync"
+              c:identifier="polkit_authority_revoke_temporary_authorization_by_id_sync"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_lockdown_for_action_sync"
+              c:identifier="polkit_authority_add_lockdown_for_action_sync"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="action_id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove_lockdown_for_action_sync"
+              c:identifier="polkit_authority_remove_lockdown_for_action_sync"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="action_id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="enumerate_actions"
+              c:identifier="polkit_authority_enumerate_actions">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="async"
+                     closure="3">
+            <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="enumerate_actions_finish"
+              c:identifier="polkit_authority_enumerate_actions_finish"
+              introspectable="0"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <parameter name="res" transfer-ownership="none">
+            <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="check_authorization"
+              c:identifier="polkit_authority_check_authorization">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="subject" transfer-ownership="none">
+            <type name="Subject" c:type="PolkitSubject*"/>
+          </parameter>
+          <parameter name="action_id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="details" transfer-ownership="none">
+            <type name="Details" c:type="PolkitDetails*"/>
+          </parameter>
+          <parameter name="flags" transfer-ownership="none">
+            <type name="CheckAuthorizationFlags"
+                  c:type="PolkitCheckAuthorizationFlags"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="async"
+                     closure="7">
+            <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="check_authorization_finish"
+              c:identifier="polkit_authority_check_authorization_finish"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="AuthorizationResult"
+                c:type="PolkitAuthorizationResult*"/>
+        </return-value>
+        <parameters>
+          <parameter name="res" transfer-ownership="none">
+            <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="register_authentication_agent"
+              c:identifier="polkit_authority_register_authentication_agent">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="subject" transfer-ownership="none">
+            <type name="Subject" c:type="PolkitSubject*"/>
+          </parameter>
+          <parameter name="locale" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="object_path" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="async"
+                     closure="6">
+            <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="register_authentication_agent_finish"
+              c:identifier="polkit_authority_register_authentication_agent_finish"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="res" transfer-ownership="none">
+            <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="unregister_authentication_agent"
+              c:identifier="polkit_authority_unregister_authentication_agent">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="subject" transfer-ownership="none">
+            <type name="Subject" c:type="PolkitSubject*"/>
+          </parameter>
+          <parameter name="object_path" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="async"
+                     closure="5">
+            <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="unregister_authentication_agent_finish"
+              c:identifier="polkit_authority_unregister_authentication_agent_finish"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="res" transfer-ownership="none">
+            <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="authentication_agent_response"
+              c:identifier="polkit_authority_authentication_agent_response">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="cookie" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="identity" transfer-ownership="none">
+            <type name="Identity" c:type="PolkitIdentity*"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="async"
+                     closure="5">
+            <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="authentication_agent_response_finish"
+              c:identifier="polkit_authority_authentication_agent_response_finish"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="res" transfer-ownership="none">
+            <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="enumerate_temporary_authorizations"
+              c:identifier="polkit_authority_enumerate_temporary_authorizations">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="subject" transfer-ownership="none">
+            <type name="Subject" c:type="PolkitSubject*"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="async"
+                     closure="4">
+            <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="enumerate_temporary_authorizations_finish"
+              c:identifier="polkit_authority_enumerate_temporary_authorizations_finish"
+              introspectable="0"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <parameter name="res" transfer-ownership="none">
+            <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="revoke_temporary_authorizations"
+              c:identifier="polkit_authority_revoke_temporary_authorizations">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="subject" transfer-ownership="none">
+            <type name="Subject" c:type="PolkitSubject*"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="async"
+                     closure="4">
+            <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="revoke_temporary_authorizations_finish"
+              c:identifier="polkit_authority_revoke_temporary_authorizations_finish"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="res" transfer-ownership="none">
+            <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="revoke_temporary_authorization_by_id"
+              c:identifier="polkit_authority_revoke_temporary_authorization_by_id">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="async"
+                     closure="4">
+            <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="revoke_temporary_authorization_by_id_finish"
+              c:identifier="polkit_authority_revoke_temporary_authorization_by_id_finish"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="res" transfer-ownership="none">
+            <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_lockdown_for_action"
+              c:identifier="polkit_authority_add_lockdown_for_action">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="action_id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="async"
+                     closure="4">
+            <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_lockdown_for_action_finish"
+              c:identifier="polkit_authority_add_lockdown_for_action_finish"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="res" transfer-ownership="none">
+            <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove_lockdown_for_action"
+              c:identifier="polkit_authority_remove_lockdown_for_action">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="action_id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="async"
+                     closure="4">
+            <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove_lockdown_for_action_finish"
+              c:identifier="polkit_authority_remove_lockdown_for_action_finish"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="res" transfer-ownership="none">
+            <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="backend-features" transfer-ownership="none">
+        <type name="AuthorityFeatures" c:type="PolkitAuthorityFeatures"/>
+      </property>
+      <property name="backend-name" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="backend-version" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <glib:signal name="changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+    </class>
+    <record name="AuthorityClass"
+            c:type="PolkitAuthorityClass"
+            glib:is-gtype-struct-for="Authority">
+    </record>
+    <bitfield name="AuthorityFeatures"
+              glib:type-name="PolkitAuthorityFeatures"
+              glib:get-type="polkit_authority_features_get_type"
+              c:type="PolkitAuthorityFeatures">
+      <doc xml:whitespace="preserve">Flags describing features supported by the Authority implementation.</doc>
+      <member name="none"
+              value="0"
+              c:identifier="POLKIT_AUTHORITY_FEATURES_NONE"
+              glib:nick="none"/>
+      <member name="temporary_authorization"
+              value="1"
+              c:identifier="POLKIT_AUTHORITY_FEATURES_TEMPORARY_AUTHORIZATION"
+              glib:nick="temporary-authorization"/>
+      <member name="lockdown"
+              value="2"
+              c:identifier="POLKIT_AUTHORITY_FEATURES_LOCKDOWN"
+              glib:nick="lockdown"/>
+    </bitfield>
+    <class name="AuthorizationResult"
+           c:type="PolkitAuthorizationResult"
+           parent="GObject.Object"
+           glib:type-name="PolkitAuthorizationResult"
+           glib:get-type="polkit_authorization_result_get_type"
+           glib:type-struct="AuthorizationResultClass">
+      <constructor name="new" c:identifier="polkit_authorization_result_new">
+        <return-value transfer-ownership="full">
+          <type name="AuthorizationResult"
+                c:type="PolkitAuthorizationResult*"/>
+        </return-value>
+        <parameters>
+          <parameter name="is_authorized" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+          <parameter name="is_challenge" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+          <parameter name="details" transfer-ownership="none">
+            <type name="Details" c:type="PolkitDetails*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_details"
+              c:identifier="polkit_authorization_result_get_details">
+        <return-value transfer-ownership="full">
+          <type name="Details" c:type="PolkitDetails*"/>
+        </return-value>
+      </method>
+      <method name="get_is_authorized"
+              c:identifier="polkit_authorization_result_get_is_authorized">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_is_challenge"
+              c:identifier="polkit_authorization_result_get_is_challenge">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_retains_authorization"
+              c:identifier="polkit_authorization_result_get_retains_authorization">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_temporary_authorization_id"
+              c:identifier="polkit_authorization_result_get_temporary_authorization_id">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_locked_down"
+              c:identifier="polkit_authorization_result_get_locked_down">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+    </class>
+    <record name="AuthorizationResultClass"
+            c:type="PolkitAuthorizationResultClass"
+            glib:is-gtype-struct-for="AuthorizationResult">
+    </record>
+    <bitfield name="CheckAuthorizationFlags"
+              glib:type-name="PolkitCheckAuthorizationFlags"
+              glib:get-type="polkit_check_authorization_flags_get_type"
+              c:type="PolkitCheckAuthorizationFlags">
+      <doc xml:whitespace="preserve">Possible flags when checking authorizations.</doc>
+      <member name="none"
+              value="0"
+              c:identifier="POLKIT_CHECK_AUTHORIZATION_FLAGS_NONE"
+              glib:nick="none"/>
+      <member name="allow_user_interaction"
+              value="1"
+              c:identifier="POLKIT_CHECK_AUTHORIZATION_FLAGS_ALLOW_USER_INTERACTION"
+              glib:nick="allow-user-interaction"/>
+    </bitfield>
+    <class name="Details"
+           c:type="PolkitDetails"
+           parent="GObject.Object"
+           glib:type-name="PolkitDetails"
+           glib:get-type="polkit_details_get_type"
+           glib:type-struct="DetailsClass">
+      <constructor name="new" c:identifier="polkit_details_new">
+        <return-value transfer-ownership="full">
+          <type name="Details" c:type="PolkitDetails*"/>
+        </return-value>
+      </constructor>
+      <method name="lookup" c:identifier="polkit_details_lookup">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="insert" c:identifier="polkit_details_insert">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_keys" c:identifier="polkit_details_get_keys">
+        <return-value transfer-ownership="full">
+          <array c:type="gchar**">
+            <type name="utf8"/>
+          </array>
+        </return-value>
+      </method>
+    </class>
+    <record name="DetailsClass"
+            c:type="PolkitDetailsClass"
+            glib:is-gtype-struct-for="Details">
+    </record>
+    <enumeration name="Error"
+                 glib:type-name="PolkitError"
+                 glib:get-type="polkit_error_get_type"
+                 c:type="PolkitError"
+                 glib:error-quark="polkit_error_quark">
+      <doc xml:whitespace="preserve">Possible error when using PolicyKit.</doc>
+      <member name="failed"
+              value="0"
+              c:identifier="POLKIT_ERROR_FAILED"
+              glib:nick="failed"/>
+      <member name="cancelled"
+              value="1"
+              c:identifier="POLKIT_ERROR_CANCELLED"
+              glib:nick="cancelled"/>
+      <member name="not_supported"
+              value="2"
+              c:identifier="POLKIT_ERROR_NOT_SUPPORTED"
+              glib:nick="not-supported"/>
+      <member name="not_authorized"
+              value="3"
+              c:identifier="POLKIT_ERROR_NOT_AUTHORIZED"
+              glib:nick="not-authorized"/>
+    </enumeration>
+    <interface name="Identity"
+               c:type="PolkitIdentity"
+               glib:type-name="PolkitIdentity"
+               glib:get-type="polkit_identity_get_type"
+               glib:type-struct="IdentityIface">
+      <virtual-method name="hash" invoker="hash">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </virtual-method>
+      <virtual-method name="equal" invoker="equal">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="b" transfer-ownership="none">
+            <type name="Identity" c:type="PolkitIdentity*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="to_string" invoker="to_string">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </virtual-method>
+      <method name="hash" c:identifier="polkit_identity_hash">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="equal" c:identifier="polkit_identity_equal">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="b" transfer-ownership="none">
+            <type name="Identity" c:type="PolkitIdentity*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="to_string" c:identifier="polkit_identity_to_string">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+    </interface>
+    <record name="IdentityIface"
+            c:type="PolkitIdentityIface"
+            glib:is-gtype-struct-for="Identity">
+      <doc xml:whitespace="preserve">An interface for identities.</doc>
+      <field name="parent_iface">
+        <type name="GObject.TypeInterface" c:type="GTypeInterface"/>
+      </field>
+      <field name="hash">
+        <callback name="hash" c:type="hash">
+          <return-value transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </return-value>
+          <parameters>
+            <parameter name="identity" transfer-ownership="none">
+              <type name="Identity" c:type="PolkitIdentity*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="equal">
+        <callback name="equal" c:type="equal">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="a" transfer-ownership="none">
+              <type name="Identity" c:type="PolkitIdentity*"/>
+            </parameter>
+            <parameter name="b" transfer-ownership="none">
+              <type name="Identity" c:type="PolkitIdentity*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="to_string">
+        <callback name="to_string" c:type="to_string">
+          <return-value transfer-ownership="full">
+            <type name="utf8" c:type="gchar*"/>
+          </return-value>
+          <parameters>
+            <parameter name="identity" transfer-ownership="none">
+              <type name="Identity" c:type="PolkitIdentity*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+    </record>
+    <enumeration name="ImplicitAuthorization"
+                 glib:type-name="PolkitImplicitAuthorization"
+                 glib:get-type="polkit_implicit_authorization_get_type"
+                 c:type="PolkitImplicitAuthorization">
+      <doc xml:whitespace="preserve">Possible implicit authorizations.</doc>
+      <member name="unknown"
+              value="-1"
+              c:identifier="POLKIT_IMPLICIT_AUTHORIZATION_UNKNOWN"
+              glib:nick="unknown"/>
+      <member name="not_authorized"
+              value="0"
+              c:identifier="POLKIT_IMPLICIT_AUTHORIZATION_NOT_AUTHORIZED"
+              glib:nick="not-authorized"/>
+      <member name="authentication_required"
+              value="1"
+              c:identifier="POLKIT_IMPLICIT_AUTHORIZATION_AUTHENTICATION_REQUIRED"
+              glib:nick="authentication-required"/>
+      <member name="administrator_authentication_required"
+              value="2"
+              c:identifier="POLKIT_IMPLICIT_AUTHORIZATION_ADMINISTRATOR_AUTHENTICATION_REQUIRED"
+              glib:nick="administrator-authentication-required"/>
+      <member name="authentication_required_retained"
+              value="3"
+              c:identifier="POLKIT_IMPLICIT_AUTHORIZATION_AUTHENTICATION_REQUIRED_RETAINED"
+              glib:nick="authentication-required-retained"/>
+      <member name="administrator_authentication_required_retained"
+              value="4"
+              c:identifier="POLKIT_IMPLICIT_AUTHORIZATION_ADMINISTRATOR_AUTHENTICATION_REQUIRED_RETAINED"
+              glib:nick="administrator-authentication-required-retained"/>
+      <member name="authorized"
+              value="5"
+              c:identifier="POLKIT_IMPLICIT_AUTHORIZATION_AUTHORIZED"
+              glib:nick="authorized"/>
+    </enumeration>
+    <constant name="POLKIT_INSIDE_POLKIT_H" value="1">
+      <type name="int"/>
+    </constant>
+    <interface name="Subject"
+               c:type="PolkitSubject"
+               glib:type-name="PolkitSubject"
+               glib:get-type="polkit_subject_get_type"
+               glib:type-struct="SubjectIface">
+      <virtual-method name="hash" invoker="hash">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </virtual-method>
+      <virtual-method name="equal" invoker="equal">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="b" transfer-ownership="none">
+            <type name="Subject" c:type="PolkitSubject*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="to_string" invoker="to_string">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </virtual-method>
+      <virtual-method name="exists" invoker="exists">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+          <parameter name="callback" transfer-ownership="none">
+            <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none" closure="3">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="exists_finish" invoker="exists_finish" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="res" transfer-ownership="none">
+            <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="exists_sync" invoker="exists_sync" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <method name="hash" c:identifier="polkit_subject_hash">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="equal" c:identifier="polkit_subject_equal">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="b" transfer-ownership="none">
+            <type name="Subject" c:type="PolkitSubject*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="to_string" c:identifier="polkit_subject_to_string">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="exists" c:identifier="polkit_subject_exists">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="async"
+                     closure="3">
+            <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="exists_finish"
+              c:identifier="polkit_subject_exists_finish"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="res" transfer-ownership="none">
+            <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="exists_sync"
+              c:identifier="polkit_subject_exists_sync"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </method>
+    </interface>
+    <record name="SubjectIface"
+            c:type="PolkitSubjectIface"
+            glib:is-gtype-struct-for="Subject">
+      <doc xml:whitespace="preserve">An interface for subjects.</doc>
+      <field name="parent_iface">
+        <type name="GObject.TypeInterface" c:type="GTypeInterface"/>
+      </field>
+      <field name="hash">
+        <callback name="hash" c:type="hash">
+          <return-value transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </return-value>
+          <parameters>
+            <parameter name="subject" transfer-ownership="none">
+              <type name="Subject" c:type="PolkitSubject*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="equal">
+        <callback name="equal" c:type="equal">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="a" transfer-ownership="none">
+              <type name="Subject" c:type="PolkitSubject*"/>
+            </parameter>
+            <parameter name="b" transfer-ownership="none">
+              <type name="Subject" c:type="PolkitSubject*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="to_string">
+        <callback name="to_string" c:type="to_string">
+          <return-value transfer-ownership="full">
+            <type name="utf8" c:type="gchar*"/>
+          </return-value>
+          <parameters>
+            <parameter name="subject" transfer-ownership="none">
+              <type name="Subject" c:type="PolkitSubject*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="exists">
+        <callback name="exists" c:type="exists">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="subject" transfer-ownership="none">
+              <type name="Subject" c:type="PolkitSubject*"/>
+            </parameter>
+            <parameter name="cancellable"
+                       transfer-ownership="none"
+                       allow-none="1">
+              <type name="Gio.Cancellable" c:type="GCancellable*"/>
+            </parameter>
+            <parameter name="callback" transfer-ownership="none">
+              <type name="Gio.AsyncReadyCallback"
+                    c:type="GAsyncReadyCallback"/>
+            </parameter>
+            <parameter name="user_data" transfer-ownership="none" closure="3">
+              <type name="any" c:type="gpointer"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="exists_finish">
+        <callback name="exists_finish" c:type="exists_finish" throws="1">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="subject" transfer-ownership="none">
+              <type name="Subject" c:type="PolkitSubject*"/>
+            </parameter>
+            <parameter name="res" transfer-ownership="none">
+              <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="exists_sync">
+        <callback name="exists_sync" c:type="exists_sync" throws="1">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="subject" transfer-ownership="none">
+              <type name="Subject" c:type="PolkitSubject*"/>
+            </parameter>
+            <parameter name="cancellable"
+                       transfer-ownership="none"
+                       allow-none="1">
+              <type name="Gio.Cancellable" c:type="GCancellable*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+    </record>
+    <class name="SystemBusName"
+           c:type="PolkitSystemBusName"
+           parent="GObject.Object"
+           glib:type-name="PolkitSystemBusName"
+           glib:get-type="polkit_system_bus_name_get_type"
+           glib:type-struct="SystemBusNameClass">
+      <implements name="Subject"/>
+      <constructor name="new" c:identifier="polkit_system_bus_name_new">
+        <return-value transfer-ownership="full">
+          <type name="SystemBusName" c:type="PolkitSubject*"/>
+        </return-value>
+        <parameters>
+          <parameter name="name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_name" c:identifier="polkit_system_bus_name_get_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_name" c:identifier="polkit_system_bus_name_set_name">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_process_sync"
+              c:identifier="polkit_system_bus_name_get_process_sync"
+              throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Subject" c:type="PolkitSubject*"/>
+        </return-value>
+        <parameters>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="name"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+    </class>
+    <record name="SystemBusNameClass"
+            c:type="PolkitSystemBusNameClass"
+            glib:is-gtype-struct-for="SystemBusName">
+    </record>
+    <class name="TemporaryAuthorization"
+           c:type="PolkitTemporaryAuthorization"
+           parent="GObject.Object"
+           glib:type-name="PolkitTemporaryAuthorization"
+           glib:get-type="polkit_temporary_authorization_get_type"
+           glib:type-struct="TemporaryAuthorizationClass">
+      <constructor name="new"
+                   c:identifier="polkit_temporary_authorization_new">
+        <return-value transfer-ownership="full">
+          <type name="TemporaryAuthorization"
+                c:type="PolkitTemporaryAuthorization*"/>
+        </return-value>
+        <parameters>
+          <parameter name="id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="action_id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="subject" transfer-ownership="none">
+            <type name="Subject" c:type="PolkitSubject*"/>
+          </parameter>
+          <parameter name="time_obtained" transfer-ownership="none">
+            <type name="uint64" c:type="guint64"/>
+          </parameter>
+          <parameter name="time_expires" transfer-ownership="none">
+            <type name="uint64" c:type="guint64"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_id"
+              c:identifier="polkit_temporary_authorization_get_id">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_action_id"
+              c:identifier="polkit_temporary_authorization_get_action_id">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_subject"
+              c:identifier="polkit_temporary_authorization_get_subject">
+        <return-value transfer-ownership="full">
+          <type name="Subject" c:type="PolkitSubject*"/>
+        </return-value>
+      </method>
+      <method name="get_time_obtained"
+              c:identifier="polkit_temporary_authorization_get_time_obtained">
+        <return-value transfer-ownership="none">
+          <type name="uint64" c:type="guint64"/>
+        </return-value>
+      </method>
+      <method name="get_time_expires"
+              c:identifier="polkit_temporary_authorization_get_time_expires">
+        <return-value transfer-ownership="none">
+          <type name="uint64" c:type="guint64"/>
+        </return-value>
+      </method>
+    </class>
+    <record name="TemporaryAuthorizationClass"
+            c:type="PolkitTemporaryAuthorizationClass"
+            glib:is-gtype-struct-for="TemporaryAuthorization">
+    </record>
+    <class name="UnixGroup"
+           c:type="PolkitUnixGroup"
+           parent="GObject.Object"
+           glib:type-name="PolkitUnixGroup"
+           glib:get-type="polkit_unix_group_get_type"
+           glib:type-struct="UnixGroupClass">
+      <implements name="Identity"/>
+      <constructor name="new" c:identifier="polkit_unix_group_new">
+        <return-value transfer-ownership="full">
+          <type name="UnixGroup" c:type="PolkitIdentity*"/>
+        </return-value>
+        <parameters>
+          <parameter name="gid" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_for_name"
+                   c:identifier="polkit_unix_group_new_for_name"
+                   throws="1">
+        <return-value transfer-ownership="full">
+          <type name="UnixGroup" c:type="PolkitIdentity*"/>
+        </return-value>
+        <parameters>
+          <parameter name="name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_gid" c:identifier="polkit_unix_group_get_gid">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <method name="set_gid" c:identifier="polkit_unix_group_set_gid">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="gid" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="gid"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+    </class>
+    <record name="UnixGroupClass"
+            c:type="PolkitUnixGroupClass"
+            glib:is-gtype-struct-for="UnixGroup">
+    </record>
+    <class name="UnixProcess"
+           c:type="PolkitUnixProcess"
+           parent="GObject.Object"
+           glib:type-name="PolkitUnixProcess"
+           glib:get-type="polkit_unix_process_get_type"
+           glib:type-struct="UnixProcessClass">
+      <implements name="Subject"/>
+      <constructor name="new" c:identifier="polkit_unix_process_new">
+        <return-value transfer-ownership="full">
+          <type name="UnixProcess" c:type="PolkitSubject*"/>
+        </return-value>
+        <parameters>
+          <parameter name="pid" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_full" c:identifier="polkit_unix_process_new_full">
+        <return-value transfer-ownership="full">
+          <type name="UnixProcess" c:type="PolkitSubject*"/>
+        </return-value>
+        <parameters>
+          <parameter name="pid" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="start_time" transfer-ownership="none">
+            <type name="uint64" c:type="guint64"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_pid" c:identifier="polkit_unix_process_get_pid">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <method name="get_start_time"
+              c:identifier="polkit_unix_process_get_start_time">
+        <return-value transfer-ownership="none">
+          <type name="uint64" c:type="guint64"/>
+        </return-value>
+      </method>
+      <method name="set_pid" c:identifier="polkit_unix_process_set_pid">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="pid" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_owner"
+              c:identifier="polkit_unix_process_get_owner"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <property name="pid"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <property name="start-time" transfer-ownership="none">
+        <type name="uint64" c:type="guint64"/>
+      </property>
+    </class>
+    <record name="UnixProcessClass"
+            c:type="PolkitUnixProcessClass"
+            glib:is-gtype-struct-for="UnixProcess">
+    </record>
+    <class name="UnixSession"
+           c:type="PolkitUnixSession"
+           parent="GObject.Object"
+           glib:type-name="PolkitUnixSession"
+           glib:get-type="polkit_unix_session_get_type"
+           glib:type-struct="UnixSessionClass">
+      <implements name="Gio.AsyncInitable"/>
+      <implements name="Gio.Initable"/>
+      <implements name="Subject"/>
+      <constructor name="new" c:identifier="polkit_unix_session_new">
+        <return-value transfer-ownership="full">
+          <type name="UnixSession" c:type="PolkitSubject*"/>
+        </return-value>
+        <parameters>
+          <parameter name="session_id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_for_process_finish"
+                   c:identifier="polkit_unix_session_new_for_process_finish"
+                   throws="1">
+        <return-value transfer-ownership="full">
+          <type name="UnixSession" c:type="PolkitSubject*"/>
+        </return-value>
+        <parameters>
+          <parameter name="res" transfer-ownership="none">
+            <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_for_process_sync"
+                   c:identifier="polkit_unix_session_new_for_process_sync"
+                   throws="1">
+        <return-value transfer-ownership="full">
+          <type name="UnixSession" c:type="PolkitSubject*"/>
+        </return-value>
+        <parameters>
+          <parameter name="pid" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <function name="new_for_process"
+                c:identifier="polkit_unix_session_new_for_process">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="pid" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="cancellable"
+                     transfer-ownership="none"
+                     allow-none="1">
+            <type name="Gio.Cancellable" c:type="GCancellable*"/>
+          </parameter>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="async"
+                     closure="3">
+            <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </function>
+      <method name="get_session_id"
+              c:identifier="polkit_unix_session_get_session_id">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_session_id"
+              c:identifier="polkit_unix_session_set_session_id">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="session_id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="pid"
+                readable="0"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <property name="session-id"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+    </class>
+    <record name="UnixSessionClass"
+            c:type="PolkitUnixSessionClass"
+            glib:is-gtype-struct-for="UnixSession">
+    </record>
+    <class name="UnixUser"
+           c:type="PolkitUnixUser"
+           parent="GObject.Object"
+           glib:type-name="PolkitUnixUser"
+           glib:get-type="polkit_unix_user_get_type"
+           glib:type-struct="UnixUserClass">
+      <implements name="Identity"/>
+      <constructor name="new" c:identifier="polkit_unix_user_new">
+        <return-value transfer-ownership="full">
+          <type name="UnixUser" c:type="PolkitIdentity*"/>
+        </return-value>
+        <parameters>
+          <parameter name="uid" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_for_name"
+                   c:identifier="polkit_unix_user_new_for_name"
+                   throws="1">
+        <return-value transfer-ownership="full">
+          <type name="UnixUser" c:type="PolkitIdentity*"/>
+        </return-value>
+        <parameters>
+          <parameter name="name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_uid" c:identifier="polkit_unix_user_get_uid">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <method name="set_uid" c:identifier="polkit_unix_user_set_uid">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="uid" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="uid"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+    </class>
+    <record name="UnixUserClass"
+            c:type="PolkitUnixUserClass"
+            glib:is-gtype-struct-for="UnixUser">
+    </record>
+    <function name="identity_from_string"
+              c:identifier="polkit_identity_from_string"
+              throws="1">
+      <return-value transfer-ownership="full">
+        <type name="Identity" c:type="PolkitIdentity*"/>
+      </return-value>
+      <parameters>
+        <parameter name="str" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="implicit_authorization_from_string"
+              c:identifier="polkit_implicit_authorization_from_string">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="string" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="out_implicit_authorization" transfer-ownership="none">
+          <type name="ImplicitAuthorization"
+                c:type="PolkitImplicitAuthorization*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="implicit_authorization_to_string"
+              c:identifier="polkit_implicit_authorization_to_string">
+      <return-value transfer-ownership="none">
+        <type name="utf8" c:type="gchar*"/>
+      </return-value>
+      <parameters>
+        <parameter name="implicit_authorization" transfer-ownership="none">
+          <type name="ImplicitAuthorization"
+                c:type="PolkitImplicitAuthorization"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="subject_from_string"
+              c:identifier="polkit_subject_from_string"
+              throws="1">
+      <return-value transfer-ownership="full">
+        <type name="Subject" c:type="PolkitSubject*"/>
+      </return-value>
+      <parameters>
+        <parameter name="str" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+      </parameters>
+    </function>
+  </namespace>
+</repository>

@@ -1,0 +1,898 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="GLib" version="2.0"/>
+  <include name="GModule" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <include name="Gst" version="0.10"/>
+  <include name="libxml2" version="2.0"/>
+  <package name="gobject-2.0"/>
+  <package name="gstreamer-0.10"/>
+  <package name="gstreamer-sdp-0.10"/>
+  <namespace name="GstSdp"
+             version="0.10"
+             shared-library="libgstsdp-0.10.so.0"
+             c:prefix="GstSdp">
+    <record name="Attribute" c:type="GstSDPAttribute">
+      <doc xml:whitespace="preserve">The contents of the SDP "a=" field which contains a key/value pair.</doc>
+      <field name="key" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="value" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+    </record>
+    <constant name="BWTYPE_AS" value="AS">
+      <type name="utf8"/>
+    </constant>
+    <constant name="BWTYPE_CT" value="CT">
+      <type name="utf8"/>
+    </constant>
+    <constant name="BWTYPE_EXT_PREFIX" value="X-">
+      <type name="utf8"/>
+    </constant>
+    <constant name="BWTYPE_RR" value="RR">
+      <type name="utf8"/>
+    </constant>
+    <constant name="BWTYPE_RS" value="RS">
+      <type name="utf8"/>
+    </constant>
+    <record name="Bandwidth" c:type="GstSDPBandwidth">
+      <doc xml:whitespace="preserve">The contents of the SDP "b=" field which specifies the proposed bandwidth to
+be used by the session or media.</doc>
+      <field name="bwtype" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="bandwidth" writable="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+    </record>
+    <record name="Connection" c:type="GstSDPConnection">
+      <doc xml:whitespace="preserve">The contents of the SDP "c=" field which contains connection data.</doc>
+      <field name="nettype" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="addrtype" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="address" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="ttl" writable="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="addr_number" writable="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+    </record>
+    <record name="Key" c:type="GstSDPKey">
+      <doc xml:whitespace="preserve">The contents of the SDP "k=" field which is used to convey encryption
+keys.</doc>
+      <field name="type" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="data" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+    </record>
+    <record name="Media" c:type="GstSDPMedia">
+      <doc xml:whitespace="preserve">The contents of the SDP "m=" field with all related fields.</doc>
+      <field name="media" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="port" writable="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="num_ports" writable="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="proto" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="fmts" writable="1">
+        <type name="GLib.Array" c:type="GArray*"/>
+      </field>
+      <field name="information" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="connections" writable="1">
+        <type name="GLib.Array" c:type="GArray*"/>
+      </field>
+      <field name="bandwidths" writable="1">
+        <type name="GLib.Array" c:type="GArray*"/>
+      </field>
+      <field name="key" writable="1">
+        <type name="Key" c:type="GstSDPKey"/>
+      </field>
+      <field name="attributes" writable="1">
+        <type name="GLib.Array" c:type="GArray*"/>
+      </field>
+      <constructor name="new" c:identifier="gst_sdp_media_new">
+        <return-value transfer-ownership="full">
+          <type name="Media" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="media" transfer-ownership="none">
+            <type name="Media" c:type="GstSDPMedia**"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="init" c:identifier="gst_sdp_media_init">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+      </method>
+      <method name="uninit" c:identifier="gst_sdp_media_uninit">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+      </method>
+      <method name="free" c:identifier="gst_sdp_media_free">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+      </method>
+      <method name="as_text" c:identifier="gst_sdp_media_as_text">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_media" c:identifier="gst_sdp_media_get_media">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_media" c:identifier="gst_sdp_media_set_media">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="med" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_port" c:identifier="gst_sdp_media_get_port">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="get_num_ports" c:identifier="gst_sdp_media_get_num_ports">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="set_port_info" c:identifier="gst_sdp_media_set_port_info">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="port" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="num_ports" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_proto" c:identifier="gst_sdp_media_get_proto">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_proto" c:identifier="gst_sdp_media_set_proto">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="proto" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="formats_len" c:identifier="gst_sdp_media_formats_len">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="get_format" c:identifier="gst_sdp_media_get_format">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="idx" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_format" c:identifier="gst_sdp_media_add_format">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="format" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_information"
+              c:identifier="gst_sdp_media_get_information">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_information"
+              c:identifier="gst_sdp_media_set_information">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="information" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="connections_len"
+              c:identifier="gst_sdp_media_connections_len">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="get_connection"
+              c:identifier="gst_sdp_media_get_connection">
+        <return-value transfer-ownership="none">
+          <type name="Connection" c:type="GstSDPConnection*"/>
+        </return-value>
+        <parameters>
+          <parameter name="idx" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_connection"
+              c:identifier="gst_sdp_media_add_connection">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="nettype" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="addrtype" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="address" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="ttl" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="addr_number" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="bandwidths_len"
+              c:identifier="gst_sdp_media_bandwidths_len">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="get_bandwidth" c:identifier="gst_sdp_media_get_bandwidth">
+        <return-value transfer-ownership="none">
+          <type name="Bandwidth" c:type="GstSDPBandwidth*"/>
+        </return-value>
+        <parameters>
+          <parameter name="idx" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_bandwidth" c:identifier="gst_sdp_media_add_bandwidth">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="bwtype" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="bandwidth" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_key" c:identifier="gst_sdp_media_get_key">
+        <return-value transfer-ownership="none">
+          <type name="Key" c:type="GstSDPKey*"/>
+        </return-value>
+      </method>
+      <method name="set_key" c:identifier="gst_sdp_media_set_key">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="type" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="data" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="attributes_len"
+              c:identifier="gst_sdp_media_attributes_len">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="get_attribute" c:identifier="gst_sdp_media_get_attribute">
+        <return-value transfer-ownership="none">
+          <type name="Attribute" c:type="GstSDPAttribute*"/>
+        </return-value>
+        <parameters>
+          <parameter name="idx" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_attribute_val"
+              c:identifier="gst_sdp_media_get_attribute_val">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_attribute_val_n"
+              c:identifier="gst_sdp_media_get_attribute_val_n">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="nth" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_attribute" c:identifier="gst_sdp_media_add_attribute">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <record name="Message" c:type="GstSDPMessage">
+      <doc xml:whitespace="preserve">The contents of the SDP message.</doc>
+      <field name="version" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="origin" writable="1">
+        <type name="Origin" c:type="GstSDPOrigin"/>
+      </field>
+      <field name="session_name" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="information" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="uri" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="emails" writable="1">
+        <type name="GLib.Array" c:type="GArray*"/>
+      </field>
+      <field name="phones" writable="1">
+        <type name="GLib.Array" c:type="GArray*"/>
+      </field>
+      <field name="connection" writable="1">
+        <type name="Connection" c:type="GstSDPConnection"/>
+      </field>
+      <field name="bandwidths" writable="1">
+        <type name="GLib.Array" c:type="GArray*"/>
+      </field>
+      <field name="times" writable="1">
+        <type name="GLib.Array" c:type="GArray*"/>
+      </field>
+      <field name="zones" writable="1">
+        <type name="GLib.Array" c:type="GArray*"/>
+      </field>
+      <field name="key" writable="1">
+        <type name="Key" c:type="GstSDPKey"/>
+      </field>
+      <field name="attributes" writable="1">
+        <type name="GLib.Array" c:type="GArray*"/>
+      </field>
+      <field name="medias" writable="1">
+        <type name="GLib.Array" c:type="GArray*"/>
+      </field>
+      <constructor name="new" c:identifier="gst_sdp_message_new">
+        <return-value transfer-ownership="full">
+          <type name="Message" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="msg" transfer-ownership="none">
+            <type name="Message" c:type="GstSDPMessage**"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="init" c:identifier="gst_sdp_message_init">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+      </method>
+      <method name="uninit" c:identifier="gst_sdp_message_uninit">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+      </method>
+      <method name="free" c:identifier="gst_sdp_message_free">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+      </method>
+      <method name="as_text" c:identifier="gst_sdp_message_as_text">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="get_version" c:identifier="gst_sdp_message_get_version">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_version" c:identifier="gst_sdp_message_set_version">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="version" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_origin" c:identifier="gst_sdp_message_get_origin">
+        <return-value transfer-ownership="none">
+          <type name="Origin" c:type="GstSDPOrigin*"/>
+        </return-value>
+      </method>
+      <method name="set_origin" c:identifier="gst_sdp_message_set_origin">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="username" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="sess_id" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="sess_version" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="nettype" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="addrtype" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="addr" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_session_name"
+              c:identifier="gst_sdp_message_get_session_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_session_name"
+              c:identifier="gst_sdp_message_set_session_name">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="session_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_information"
+              c:identifier="gst_sdp_message_get_information">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_information"
+              c:identifier="gst_sdp_message_set_information">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="information" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_uri" c:identifier="gst_sdp_message_get_uri">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_uri" c:identifier="gst_sdp_message_set_uri">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="uri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="emails_len" c:identifier="gst_sdp_message_emails_len">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="get_email" c:identifier="gst_sdp_message_get_email">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="idx" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_email" c:identifier="gst_sdp_message_add_email">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="email" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="phones_len" c:identifier="gst_sdp_message_phones_len">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="get_phone" c:identifier="gst_sdp_message_get_phone">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="idx" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_phone" c:identifier="gst_sdp_message_add_phone">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="phone" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_connection"
+              c:identifier="gst_sdp_message_get_connection">
+        <return-value transfer-ownership="none">
+          <type name="Connection" c:type="GstSDPConnection*"/>
+        </return-value>
+      </method>
+      <method name="set_connection"
+              c:identifier="gst_sdp_message_set_connection">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="nettype" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="addrtype" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="address" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="ttl" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="addr_number" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="bandwidths_len"
+              c:identifier="gst_sdp_message_bandwidths_len">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="get_bandwidth"
+              c:identifier="gst_sdp_message_get_bandwidth">
+        <return-value transfer-ownership="none">
+          <type name="Bandwidth" c:type="GstSDPBandwidth*"/>
+        </return-value>
+        <parameters>
+          <parameter name="idx" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_bandwidth"
+              c:identifier="gst_sdp_message_add_bandwidth">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="bwtype" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="bandwidth" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="times_len" c:identifier="gst_sdp_message_times_len">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="get_time" c:identifier="gst_sdp_message_get_time">
+        <return-value transfer-ownership="none">
+          <type name="GLib.Time" c:type="GstSDPTime*"/>
+        </return-value>
+        <parameters>
+          <parameter name="idx" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_time" c:identifier="gst_sdp_message_add_time">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="start" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="stop" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="repeat" transfer-ownership="none">
+            <array c:type="gchar**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="zones_len" c:identifier="gst_sdp_message_zones_len">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="get_zone" c:identifier="gst_sdp_message_get_zone">
+        <return-value transfer-ownership="none">
+          <type name="Zone" c:type="GstSDPZone*"/>
+        </return-value>
+        <parameters>
+          <parameter name="idx" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_zone" c:identifier="gst_sdp_message_add_zone">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="adj_time" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="typed_time" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_key" c:identifier="gst_sdp_message_get_key">
+        <return-value transfer-ownership="none">
+          <type name="Key" c:type="GstSDPKey*"/>
+        </return-value>
+      </method>
+      <method name="set_key" c:identifier="gst_sdp_message_set_key">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="type" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="data" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="attributes_len"
+              c:identifier="gst_sdp_message_attributes_len">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="get_attribute"
+              c:identifier="gst_sdp_message_get_attribute">
+        <return-value transfer-ownership="none">
+          <type name="Attribute" c:type="GstSDPAttribute*"/>
+        </return-value>
+        <parameters>
+          <parameter name="idx" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_attribute_val"
+              c:identifier="gst_sdp_message_get_attribute_val">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_attribute_val_n"
+              c:identifier="gst_sdp_message_get_attribute_val_n">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="nth" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_attribute"
+              c:identifier="gst_sdp_message_add_attribute">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="medias_len" c:identifier="gst_sdp_message_medias_len">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="get_media" c:identifier="gst_sdp_message_get_media">
+        <return-value transfer-ownership="none">
+          <type name="Media" c:type="GstSDPMedia*"/>
+        </return-value>
+        <parameters>
+          <parameter name="idx" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_media" c:identifier="gst_sdp_message_add_media">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="media" transfer-ownership="none">
+            <type name="Media" c:type="GstSDPMedia*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="dump" c:identifier="gst_sdp_message_dump">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstSDPResult"/>
+        </return-value>
+      </method>
+    </record>
+    <record name="Origin" c:type="GstSDPOrigin">
+      <doc xml:whitespace="preserve">The contents of the SDP "o=" field which gives the originator of the session
+(their username and the address of the user's host) plus a session id and
+session version number.</doc>
+      <field name="username" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="sess_id" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="sess_version" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="nettype" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="addrtype" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="addr" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+    </record>
+    <enumeration name="Result" c:type="GstSDPResult">
+      <doc xml:whitespace="preserve">Return values for the SDP functions.</doc>
+      <member name="ok" value="0" c:identifier="GST_SDP_OK"/>
+      <member name="einval" value="-1" c:identifier="GST_SDP_EINVAL"/>
+    </enumeration>
+    <record name="Time" c:type="GstSDPTime">
+      <doc xml:whitespace="preserve">The contents of the SDP "t=" field which specify the start and stop times for
+a conference session.</doc>
+      <field name="start" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="stop" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="repeat" writable="1">
+        <type name="GLib.Array" c:type="GArray*"/>
+      </field>
+    </record>
+    <record name="Zone" c:type="GstSDPZone">
+      <doc xml:whitespace="preserve">The contents of the SDP "z=" field which allows the sender to
+specify a list of time zone adjustments and offsets from the base
+time.</doc>
+      <field name="time" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="typed_time" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+    </record>
+    <function name="message_parse_buffer"
+              c:identifier="gst_sdp_message_parse_buffer">
+      <return-value transfer-ownership="full">
+        <type name="Result" c:type="GstSDPResult"/>
+      </return-value>
+      <parameters>
+        <parameter name="data" transfer-ownership="none">
+          <array c:type="guint8*">
+            <type name="uint8"/>
+          </array>
+        </parameter>
+        <parameter name="size" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+        <parameter name="msg" transfer-ownership="none">
+          <type name="Message" c:type="GstSDPMessage*"/>
+        </parameter>
+      </parameters>
+    </function>
+  </namespace>
+</repository>

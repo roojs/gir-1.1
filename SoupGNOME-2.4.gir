@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="GLib" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <include name="Gio" version="2.0"/>
+  <include name="Soup" version="2.4"/>
+  <namespace name="SoupGNOME"
+             version="2.4"
+             shared-library="libsoup-gnome-2.4.so.1"
+             c:prefix="soup">
+    <constant name="COOKIE_JAR_SQLITE_FILENAME" value="filename">
+      <type name="utf8"/>
+    </constant>
+    <constant name="COOKIE_JAR_SQLITE_H" value="1">
+      <type name="int"/>
+    </constant>
+    <class name="CookieJarSqlite"
+           c:type="SoupCookieJarSqlite"
+           parent="Soup.CookieJar"
+           glib:type-name="SoupCookieJarSqlite"
+           glib:get-type="soup_cookie_jar_sqlite_get_type"
+           glib:type-struct="CookieJarSqliteClass">
+      <implements name="Soup.SessionFeature"/>
+      <constructor name="new"
+                   c:identifier="soup_cookie_jar_sqlite_new"
+                   version="2.26">
+        <doc xml:whitespace="preserve">Creates a #SoupCookieJarSqlite.
+cookies. If @read_only is %FALSE, then the non-session cookies will
+be written to @filename when the 'changed' signal is emitted from
+the jar. (If @read_only is %TRUE, then the cookie jar will only be
+used for this session, and changes made to it will be lost when the
+jar is destroyed.)</doc>
+        <return-value transfer-ownership="full">
+          <doc xml:whitespace="preserve">the new #SoupCookieJar</doc>
+          <type name="CookieJarSqlite" c:type="SoupCookieJar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="filename" transfer-ownership="none">
+            <doc xml:whitespace="preserve">the filename to read to/write from, or %NULL</doc>
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="read_only" transfer-ownership="none">
+            <doc xml:whitespace="preserve">%TRUE if @filename is read-only</doc>
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <property name="filename"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <field name="parent">
+        <type name="Soup.CookieJar" c:type="SoupCookieJar"/>
+      </field>
+    </class>
+    <record name="CookieJarSqliteClass"
+            c:type="SoupCookieJarSqliteClass"
+            glib:is-gtype-struct-for="CookieJarSqlite">
+      <field name="parent_class">
+        <type name="Soup.CookieJarClass" c:type="SoupCookieJarClass"/>
+      </field>
+      <field name="libsoup_reserved1">
+        <callback name="libsoup_reserved1" c:type="_libsoup_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="libsoup_reserved2">
+        <callback name="libsoup_reserved2" c:type="_libsoup_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="libsoup_reserved3">
+        <callback name="libsoup_reserved3" c:type="_libsoup_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="libsoup_reserved4">
+        <callback name="libsoup_reserved4" c:type="_libsoup_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <constant name="FEATURES_H" value="1">
+      <type name="int"/>
+    </constant>
+    <constant name="GCONF_PROXY_IGNORE_HOSTS"
+              value="/system/http_proxy/ignore_hosts">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PASSWORD_MANAGER_GNOME_H" value="1">
+      <type name="int"/>
+    </constant>
+    <constant name="PROXY_RESOLVER_GNOME_H" value="1">
+      <type name="int"/>
+    </constant>
+    <record name="PasswordManagerGNOME" c:type="SoupPasswordManagerGNOME">
+      <field name="parent" writable="1">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+    </record>
+    <record name="PasswordManagerGNOMEClass"
+            c:type="SoupPasswordManagerGNOMEClass">
+      <field name="parent_class" writable="1">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+    </record>
+    <class name="ProxyResolverGNOME"
+           c:type="SoupProxyResolverGNOME"
+           parent="GObject.Object"
+           glib:type-name="SoupProxyResolverGNOME"
+           glib:get-type="soup_proxy_resolver_gnome_get_type"
+           glib:type-struct="ProxyResolverGNOMEClass">
+      <implements name="Soup.ProxyURIResolver"/>
+      <implements name="Soup.SessionFeature"/>
+      <field name="parent">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+    </class>
+    <record name="ProxyResolverGNOMEClass"
+            c:type="SoupProxyResolverGNOMEClass"
+            glib:is-gtype-struct-for="ProxyResolverGNOME">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+    </record>
+    <constant name="QUERY_DELETE"
+              value="DELETE FROM moz_cookies WHERE name=%Q AND host=%Q;">
+      <type name="utf8"/>
+    </constant>
+  </namespace>
+</repository>

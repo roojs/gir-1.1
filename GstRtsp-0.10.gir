@@ -1,0 +1,2479 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="GLib" version="2.0"/>
+  <include name="GModule" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <include name="Gst" version="0.10"/>
+  <include name="GstSdp" version="0.10"/>
+  <include name="libxml2" version="2.0"/>
+  <package name="gobject-2.0"/>
+  <package name="gstreamer-0.10"/>
+  <package name="gstreamer-rtsp-0.10"/>
+  <namespace name="GstRtsp"
+             version="0.10"
+             shared-library="libgstrtsp-0.10.so.0"
+             c:prefix="GstRtsp">
+    <enumeration name="AuthMethod"
+                 glib:type-name="GstRTSPAuthMethod"
+                 glib:get-type="gst_rtsp_auth_method_get_type"
+                 c:type="GstRTSPAuthMethod">
+      <doc xml:whitespace="preserve">Authentication methods, ordered by strength</doc>
+      <member name="none"
+              value="0"
+              c:identifier="GST_RTSP_AUTH_NONE"
+              glib:nick="none"/>
+      <member name="basic"
+              value="1"
+              c:identifier="GST_RTSP_AUTH_BASIC"
+              glib:nick="basic"/>
+      <member name="digest"
+              value="2"
+              c:identifier="GST_RTSP_AUTH_DIGEST"
+              glib:nick="digest"/>
+    </enumeration>
+    <record name="Connection" c:type="GstRTSPConnection">
+      <doc xml:whitespace="preserve">Opaque RTSP connection object.</doc>
+      <method name="connect" c:identifier="gst_rtsp_connection_connect">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="timeout" transfer-ownership="none">
+            <type name="GLib.TimeVal" c:type="GTimeVal*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="close" c:identifier="gst_rtsp_connection_close">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+      </method>
+      <method name="free" c:identifier="gst_rtsp_connection_free">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+      </method>
+      <method name="read" c:identifier="gst_rtsp_connection_read">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="data" transfer-ownership="none">
+            <array c:type="guint8*">
+              <type name="uint8"/>
+            </array>
+          </parameter>
+          <parameter name="size" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="timeout" transfer-ownership="none">
+            <type name="GLib.TimeVal" c:type="GTimeVal*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="write" c:identifier="gst_rtsp_connection_write">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="data" transfer-ownership="none">
+            <array c:type="guint8*">
+              <type name="uint8"/>
+            </array>
+          </parameter>
+          <parameter name="size" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="timeout" transfer-ownership="none">
+            <type name="GLib.TimeVal" c:type="GTimeVal*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="send" c:identifier="gst_rtsp_connection_send">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="message" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+          <parameter name="timeout" transfer-ownership="none">
+            <type name="GLib.TimeVal" c:type="GTimeVal*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="receive" c:identifier="gst_rtsp_connection_receive">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="message" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+          <parameter name="timeout" transfer-ownership="none">
+            <type name="GLib.TimeVal" c:type="GTimeVal*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="poll" c:identifier="gst_rtsp_connection_poll">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="events" transfer-ownership="none">
+            <type name="Event" c:type="GstRTSPEvent"/>
+          </parameter>
+          <parameter name="revents" transfer-ownership="none">
+            <type name="Event" c:type="GstRTSPEvent*"/>
+          </parameter>
+          <parameter name="timeout" transfer-ownership="none">
+            <type name="GLib.TimeVal" c:type="GTimeVal*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="next_timeout"
+              c:identifier="gst_rtsp_connection_next_timeout">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="timeout" transfer-ownership="none">
+            <type name="GLib.TimeVal" c:type="GTimeVal*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="reset_timeout"
+              c:identifier="gst_rtsp_connection_reset_timeout">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+      </method>
+      <method name="flush" c:identifier="gst_rtsp_connection_flush">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="flush" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_proxy" c:identifier="gst_rtsp_connection_set_proxy">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="host" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="port" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_auth" c:identifier="gst_rtsp_connection_set_auth">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="method" transfer-ownership="none">
+            <type name="AuthMethod" c:type="GstRTSPAuthMethod"/>
+          </parameter>
+          <parameter name="user" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="pass" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_auth_param"
+              c:identifier="gst_rtsp_connection_set_auth_param">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="param" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="clear_auth_params"
+              c:identifier="gst_rtsp_connection_clear_auth_params">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="set_qos_dscp"
+              c:identifier="gst_rtsp_connection_set_qos_dscp">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="qos_dscp" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_url" c:identifier="gst_rtsp_connection_get_url">
+        <return-value transfer-ownership="full">
+          <type name="Url" c:type="GstRTSPUrl*"/>
+        </return-value>
+      </method>
+      <method name="get_ip" c:identifier="gst_rtsp_connection_get_ip">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_ip" c:identifier="gst_rtsp_connection_set_ip">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="ip" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_readfd" c:identifier="gst_rtsp_connection_get_readfd">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <method name="get_writefd"
+              c:identifier="gst_rtsp_connection_get_writefd">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <method name="set_http_mode"
+              c:identifier="gst_rtsp_connection_set_http_mode">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="enable" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_tunneled"
+              c:identifier="gst_rtsp_connection_set_tunneled">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="tunneled" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="is_tunneled"
+              c:identifier="gst_rtsp_connection_is_tunneled">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_tunnelid"
+              c:identifier="gst_rtsp_connection_get_tunnelid">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="do_tunnel" c:identifier="gst_rtsp_connection_do_tunnel">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="conn2" transfer-ownership="none">
+            <type name="Connection" c:type="GstRTSPConnection*"/>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <constant name="DEFAULT_PORT" value="554">
+      <type name="int"/>
+    </constant>
+    <bitfield name="Event"
+              glib:type-name="GstRTSPEvent"
+              glib:get-type="gst_rtsp_event_get_type"
+              c:type="GstRTSPEvent">
+      <doc xml:whitespace="preserve">The possible events for the connection.</doc>
+      <member name="read"
+              value="1"
+              c:identifier="GST_RTSP_EV_READ"
+              glib:nick="read"/>
+      <member name="write"
+              value="2"
+              c:identifier="GST_RTSP_EV_WRITE"
+              glib:nick="write"/>
+    </bitfield>
+    <interface name="Extension"
+               c:type="GstRTSPExtension"
+               glib:type-name="GstRTSPExtension"
+               glib:get-type="gst_rtsp_extension_get_type"
+               glib:type-struct="ExtensionInterface">
+      <virtual-method name="detect_server" invoker="detect_server">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="resp" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="before_send" invoker="before_send">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="req" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="after_send" invoker="after_send">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="req" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+          <parameter name="resp" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="parse_sdp" invoker="parse_sdp">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="sdp" transfer-ownership="none">
+            <type name="GstSdp.Message" c:type="GstSDPMessage*"/>
+          </parameter>
+          <parameter name="s" transfer-ownership="none">
+            <type name="Gst.Structure" c:type="GstStructure*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="setup_media" invoker="setup_media">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="media" transfer-ownership="none">
+            <type name="GstSdp.Media" c:type="GstSDPMedia*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="configure_stream" invoker="configure_stream">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="caps" transfer-ownership="none">
+            <type name="Gst.Caps" c:type="GstCaps*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="get_transports" invoker="get_transports">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="protocols" transfer-ownership="none">
+            <type name="LowerTrans" c:type="GstRTSPLowerTrans"/>
+          </parameter>
+          <parameter name="transport" transfer-ownership="none">
+            <array c:type="gchar**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="stream_select" invoker="stream_select">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="url" transfer-ownership="none">
+            <type name="Url" c:type="GstRTSPUrl*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="receive_request" invoker="receive_request">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="req" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <method name="detect_server"
+              c:identifier="gst_rtsp_extension_detect_server">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="resp" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="before_send" c:identifier="gst_rtsp_extension_before_send">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="req" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="after_send" c:identifier="gst_rtsp_extension_after_send">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="req" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+          <parameter name="resp" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="parse_sdp" c:identifier="gst_rtsp_extension_parse_sdp">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="sdp" transfer-ownership="none">
+            <type name="GstSdp.Message" c:type="GstSDPMessage*"/>
+          </parameter>
+          <parameter name="s" transfer-ownership="none">
+            <type name="Gst.Structure" c:type="GstStructure*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="setup_media" c:identifier="gst_rtsp_extension_setup_media">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="media" transfer-ownership="none">
+            <type name="GstSdp.Media" c:type="GstSDPMedia*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="configure_stream"
+              c:identifier="gst_rtsp_extension_configure_stream">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="caps" transfer-ownership="none">
+            <type name="Gst.Caps" c:type="GstCaps*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_transports"
+              c:identifier="gst_rtsp_extension_get_transports">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="protocols" transfer-ownership="none">
+            <type name="LowerTrans" c:type="GstRTSPLowerTrans"/>
+          </parameter>
+          <parameter name="transport" transfer-ownership="none">
+            <array c:type="gchar**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="stream_select"
+              c:identifier="gst_rtsp_extension_stream_select">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="url" transfer-ownership="none">
+            <type name="Url" c:type="GstRTSPUrl*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="receive_request"
+              c:identifier="gst_rtsp_extension_receive_request">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="req" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="send" c:identifier="gst_rtsp_extension_send">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="req" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+          <parameter name="resp" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <glib:signal name="send">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </interface>
+    <record name="ExtensionInterface"
+            c:type="GstRTSPExtensionInterface"
+            glib:is-gtype-struct-for="Extension">
+      <field name="parent">
+        <type name="GObject.TypeInterface" c:type="GTypeInterface"/>
+      </field>
+      <field name="detect_server">
+        <callback name="detect_server" c:type="detect_server">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="ext" transfer-ownership="none">
+              <type name="Extension" c:type="GstRTSPExtension*"/>
+            </parameter>
+            <parameter name="resp" transfer-ownership="none">
+              <type name="Message" c:type="GstRTSPMessage*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="before_send">
+        <callback name="before_send" c:type="before_send">
+          <return-value transfer-ownership="full">
+            <type name="Result" c:type="GstRTSPResult"/>
+          </return-value>
+          <parameters>
+            <parameter name="ext" transfer-ownership="none">
+              <type name="Extension" c:type="GstRTSPExtension*"/>
+            </parameter>
+            <parameter name="req" transfer-ownership="none">
+              <type name="Message" c:type="GstRTSPMessage*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="after_send">
+        <callback name="after_send" c:type="after_send">
+          <return-value transfer-ownership="full">
+            <type name="Result" c:type="GstRTSPResult"/>
+          </return-value>
+          <parameters>
+            <parameter name="ext" transfer-ownership="none">
+              <type name="Extension" c:type="GstRTSPExtension*"/>
+            </parameter>
+            <parameter name="req" transfer-ownership="none">
+              <type name="Message" c:type="GstRTSPMessage*"/>
+            </parameter>
+            <parameter name="resp" transfer-ownership="none">
+              <type name="Message" c:type="GstRTSPMessage*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="parse_sdp">
+        <callback name="parse_sdp" c:type="parse_sdp">
+          <return-value transfer-ownership="full">
+            <type name="Result" c:type="GstRTSPResult"/>
+          </return-value>
+          <parameters>
+            <parameter name="ext" transfer-ownership="none">
+              <type name="Extension" c:type="GstRTSPExtension*"/>
+            </parameter>
+            <parameter name="sdp" transfer-ownership="none">
+              <type name="GstSdp.Message" c:type="GstSDPMessage*"/>
+            </parameter>
+            <parameter name="s" transfer-ownership="none">
+              <type name="Gst.Structure" c:type="GstStructure*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="setup_media">
+        <callback name="setup_media" c:type="setup_media">
+          <return-value transfer-ownership="full">
+            <type name="Result" c:type="GstRTSPResult"/>
+          </return-value>
+          <parameters>
+            <parameter name="ext" transfer-ownership="none">
+              <type name="Extension" c:type="GstRTSPExtension*"/>
+            </parameter>
+            <parameter name="media" transfer-ownership="none">
+              <type name="GstSdp.Media" c:type="GstSDPMedia*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="configure_stream">
+        <callback name="configure_stream" c:type="configure_stream">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="ext" transfer-ownership="none">
+              <type name="Extension" c:type="GstRTSPExtension*"/>
+            </parameter>
+            <parameter name="caps" transfer-ownership="none">
+              <type name="Gst.Caps" c:type="GstCaps*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="get_transports">
+        <callback name="get_transports" c:type="get_transports">
+          <return-value transfer-ownership="full">
+            <type name="Result" c:type="GstRTSPResult"/>
+          </return-value>
+          <parameters>
+            <parameter name="ext" transfer-ownership="none">
+              <type name="Extension" c:type="GstRTSPExtension*"/>
+            </parameter>
+            <parameter name="protocols" transfer-ownership="none">
+              <type name="LowerTrans" c:type="GstRTSPLowerTrans"/>
+            </parameter>
+            <parameter name="transport" transfer-ownership="none">
+              <array c:type="gchar**">
+                <type name="utf8"/>
+              </array>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="stream_select">
+        <callback name="stream_select" c:type="stream_select">
+          <return-value transfer-ownership="full">
+            <type name="Result" c:type="GstRTSPResult"/>
+          </return-value>
+          <parameters>
+            <parameter name="ext" transfer-ownership="none">
+              <type name="Extension" c:type="GstRTSPExtension*"/>
+            </parameter>
+            <parameter name="url" transfer-ownership="none">
+              <type name="Url" c:type="GstRTSPUrl*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="send">
+        <callback name="send" c:type="send">
+          <return-value transfer-ownership="full">
+            <type name="Result" c:type="GstRTSPResult"/>
+          </return-value>
+          <parameters>
+            <parameter name="ext" transfer-ownership="none">
+              <type name="Extension" c:type="GstRTSPExtension*"/>
+            </parameter>
+            <parameter name="req" transfer-ownership="none">
+              <type name="Message" c:type="GstRTSPMessage*"/>
+            </parameter>
+            <parameter name="resp" transfer-ownership="none">
+              <type name="Message" c:type="GstRTSPMessage*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="receive_request">
+        <callback name="receive_request" c:type="receive_request">
+          <return-value transfer-ownership="full">
+            <type name="Result" c:type="GstRTSPResult"/>
+          </return-value>
+          <parameters>
+            <parameter name="ext" transfer-ownership="none">
+              <type name="Extension" c:type="GstRTSPExtension*"/>
+            </parameter>
+            <parameter name="req" transfer-ownership="none">
+              <type name="Message" c:type="GstRTSPMessage*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="_gst_reserved">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="3">
+          <type name="any"/>
+        </array>
+      </field>
+    </record>
+    <enumeration name="Family"
+                 glib:type-name="GstRTSPFamily"
+                 glib:get-type="gst_rtsp_family_get_type"
+                 c:type="GstRTSPFamily">
+      <doc xml:whitespace="preserve">The possible network families.</doc>
+      <member name="none"
+              value="0"
+              c:identifier="GST_RTSP_FAM_NONE"
+              glib:nick="none"/>
+      <member name="inet"
+              value="1"
+              c:identifier="GST_RTSP_FAM_INET"
+              glib:nick="inet"/>
+      <member name="inet6"
+              value="2"
+              c:identifier="GST_RTSP_FAM_INET6"
+              glib:nick="inet6"/>
+    </enumeration>
+    <enumeration name="HeaderField"
+                 glib:type-name="GstRTSPHeaderField"
+                 glib:get-type="gst_rtsp_header_field_get_type"
+                 c:type="GstRTSPHeaderField">
+      <member name="invalid"
+              value="0"
+              c:identifier="GST_RTSP_HDR_INVALID"
+              glib:nick="invalid"/>
+      <member name="accept"
+              value="1"
+              c:identifier="GST_RTSP_HDR_ACCEPT"
+              glib:nick="accept"/>
+      <member name="accept_encoding"
+              value="2"
+              c:identifier="GST_RTSP_HDR_ACCEPT_ENCODING"
+              glib:nick="accept-encoding"/>
+      <member name="accept_language"
+              value="3"
+              c:identifier="GST_RTSP_HDR_ACCEPT_LANGUAGE"
+              glib:nick="accept-language"/>
+      <member name="allow"
+              value="4"
+              c:identifier="GST_RTSP_HDR_ALLOW"
+              glib:nick="allow"/>
+      <member name="authorization"
+              value="5"
+              c:identifier="GST_RTSP_HDR_AUTHORIZATION"
+              glib:nick="authorization"/>
+      <member name="bandwidth"
+              value="6"
+              c:identifier="GST_RTSP_HDR_BANDWIDTH"
+              glib:nick="bandwidth"/>
+      <member name="blocksize"
+              value="7"
+              c:identifier="GST_RTSP_HDR_BLOCKSIZE"
+              glib:nick="blocksize"/>
+      <member name="cache_control"
+              value="8"
+              c:identifier="GST_RTSP_HDR_CACHE_CONTROL"
+              glib:nick="cache-control"/>
+      <member name="conference"
+              value="9"
+              c:identifier="GST_RTSP_HDR_CONFERENCE"
+              glib:nick="conference"/>
+      <member name="connection"
+              value="10"
+              c:identifier="GST_RTSP_HDR_CONNECTION"
+              glib:nick="connection"/>
+      <member name="content_base"
+              value="11"
+              c:identifier="GST_RTSP_HDR_CONTENT_BASE"
+              glib:nick="content-base"/>
+      <member name="content_encoding"
+              value="12"
+              c:identifier="GST_RTSP_HDR_CONTENT_ENCODING"
+              glib:nick="content-encoding"/>
+      <member name="content_language"
+              value="13"
+              c:identifier="GST_RTSP_HDR_CONTENT_LANGUAGE"
+              glib:nick="content-language"/>
+      <member name="content_length"
+              value="14"
+              c:identifier="GST_RTSP_HDR_CONTENT_LENGTH"
+              glib:nick="content-length"/>
+      <member name="content_location"
+              value="15"
+              c:identifier="GST_RTSP_HDR_CONTENT_LOCATION"
+              glib:nick="content-location"/>
+      <member name="content_type"
+              value="16"
+              c:identifier="GST_RTSP_HDR_CONTENT_TYPE"
+              glib:nick="content-type"/>
+      <member name="cseq"
+              value="17"
+              c:identifier="GST_RTSP_HDR_CSEQ"
+              glib:nick="cseq"/>
+      <member name="date"
+              value="18"
+              c:identifier="GST_RTSP_HDR_DATE"
+              glib:nick="date"/>
+      <member name="expires"
+              value="19"
+              c:identifier="GST_RTSP_HDR_EXPIRES"
+              glib:nick="expires"/>
+      <member name="from"
+              value="20"
+              c:identifier="GST_RTSP_HDR_FROM"
+              glib:nick="from"/>
+      <member name="if_modified_since"
+              value="21"
+              c:identifier="GST_RTSP_HDR_IF_MODIFIED_SINCE"
+              glib:nick="if-modified-since"/>
+      <member name="last_modified"
+              value="22"
+              c:identifier="GST_RTSP_HDR_LAST_MODIFIED"
+              glib:nick="last-modified"/>
+      <member name="proxy_authenticate"
+              value="23"
+              c:identifier="GST_RTSP_HDR_PROXY_AUTHENTICATE"
+              glib:nick="proxy-authenticate"/>
+      <member name="proxy_require"
+              value="24"
+              c:identifier="GST_RTSP_HDR_PROXY_REQUIRE"
+              glib:nick="proxy-require"/>
+      <member name="public"
+              value="25"
+              c:identifier="GST_RTSP_HDR_PUBLIC"
+              glib:nick="public"/>
+      <member name="range"
+              value="26"
+              c:identifier="GST_RTSP_HDR_RANGE"
+              glib:nick="range"/>
+      <member name="referer"
+              value="27"
+              c:identifier="GST_RTSP_HDR_REFERER"
+              glib:nick="referer"/>
+      <member name="require"
+              value="28"
+              c:identifier="GST_RTSP_HDR_REQUIRE"
+              glib:nick="require"/>
+      <member name="retry_after"
+              value="29"
+              c:identifier="GST_RTSP_HDR_RETRY_AFTER"
+              glib:nick="retry-after"/>
+      <member name="rtp_info"
+              value="30"
+              c:identifier="GST_RTSP_HDR_RTP_INFO"
+              glib:nick="rtp-info"/>
+      <member name="scale"
+              value="31"
+              c:identifier="GST_RTSP_HDR_SCALE"
+              glib:nick="scale"/>
+      <member name="session"
+              value="32"
+              c:identifier="GST_RTSP_HDR_SESSION"
+              glib:nick="session"/>
+      <member name="server"
+              value="33"
+              c:identifier="GST_RTSP_HDR_SERVER"
+              glib:nick="server"/>
+      <member name="speed"
+              value="34"
+              c:identifier="GST_RTSP_HDR_SPEED"
+              glib:nick="speed"/>
+      <member name="transport"
+              value="35"
+              c:identifier="GST_RTSP_HDR_TRANSPORT"
+              glib:nick="transport"/>
+      <member name="unsupported"
+              value="36"
+              c:identifier="GST_RTSP_HDR_UNSUPPORTED"
+              glib:nick="unsupported"/>
+      <member name="user_agent"
+              value="37"
+              c:identifier="GST_RTSP_HDR_USER_AGENT"
+              glib:nick="user-agent"/>
+      <member name="via"
+              value="38"
+              c:identifier="GST_RTSP_HDR_VIA"
+              glib:nick="via"/>
+      <member name="www_authenticate"
+              value="39"
+              c:identifier="GST_RTSP_HDR_WWW_AUTHENTICATE"
+              glib:nick="www-authenticate"/>
+      <member name="client_challenge"
+              value="40"
+              c:identifier="GST_RTSP_HDR_CLIENT_CHALLENGE"
+              glib:nick="client-challenge"/>
+      <member name="real_challenge1"
+              value="41"
+              c:identifier="GST_RTSP_HDR_REAL_CHALLENGE1"
+              glib:nick="real-challenge1"/>
+      <member name="real_challenge2"
+              value="42"
+              c:identifier="GST_RTSP_HDR_REAL_CHALLENGE2"
+              glib:nick="real-challenge2"/>
+      <member name="real_challenge3"
+              value="43"
+              c:identifier="GST_RTSP_HDR_REAL_CHALLENGE3"
+              glib:nick="real-challenge3"/>
+      <member name="subscribe"
+              value="44"
+              c:identifier="GST_RTSP_HDR_SUBSCRIBE"
+              glib:nick="subscribe"/>
+      <member name="alert"
+              value="45"
+              c:identifier="GST_RTSP_HDR_ALERT"
+              glib:nick="alert"/>
+      <member name="client_id"
+              value="46"
+              c:identifier="GST_RTSP_HDR_CLIENT_ID"
+              glib:nick="client-id"/>
+      <member name="company_id"
+              value="47"
+              c:identifier="GST_RTSP_HDR_COMPANY_ID"
+              glib:nick="company-id"/>
+      <member name="guid"
+              value="48"
+              c:identifier="GST_RTSP_HDR_GUID"
+              glib:nick="guid"/>
+      <member name="region_data"
+              value="49"
+              c:identifier="GST_RTSP_HDR_REGION_DATA"
+              glib:nick="region-data"/>
+      <member name="max_asm_width"
+              value="50"
+              c:identifier="GST_RTSP_HDR_MAX_ASM_WIDTH"
+              glib:nick="max-asm-width"/>
+      <member name="language"
+              value="51"
+              c:identifier="GST_RTSP_HDR_LANGUAGE"
+              glib:nick="language"/>
+      <member name="player_start_time"
+              value="52"
+              c:identifier="GST_RTSP_HDR_PLAYER_START_TIME"
+              glib:nick="player-start-time"/>
+      <member name="location"
+              value="53"
+              c:identifier="GST_RTSP_HDR_LOCATION"
+              glib:nick="location"/>
+      <member name="etag"
+              value="54"
+              c:identifier="GST_RTSP_HDR_ETAG"
+              glib:nick="etag"/>
+      <member name="if_match"
+              value="55"
+              c:identifier="GST_RTSP_HDR_IF_MATCH"
+              glib:nick="if-match"/>
+      <member name="accept_charset"
+              value="56"
+              c:identifier="GST_RTSP_HDR_ACCEPT_CHARSET"
+              glib:nick="accept-charset"/>
+      <member name="supported"
+              value="57"
+              c:identifier="GST_RTSP_HDR_SUPPORTED"
+              glib:nick="supported"/>
+      <member name="vary"
+              value="58"
+              c:identifier="GST_RTSP_HDR_VARY"
+              glib:nick="vary"/>
+      <member name="x_accelerate_streaming"
+              value="59"
+              c:identifier="GST_RTSP_HDR_X_ACCELERATE_STREAMING"
+              glib:nick="x-accelerate-streaming"/>
+      <member name="x_accept_authent"
+              value="60"
+              c:identifier="GST_RTSP_HDR_X_ACCEPT_AUTHENT"
+              glib:nick="x-accept-authent"/>
+      <member name="x_accept_proxy_authent"
+              value="61"
+              c:identifier="GST_RTSP_HDR_X_ACCEPT_PROXY_AUTHENT"
+              glib:nick="x-accept-proxy-authent"/>
+      <member name="x_broadcast_id"
+              value="62"
+              c:identifier="GST_RTSP_HDR_X_BROADCAST_ID"
+              glib:nick="x-broadcast-id"/>
+      <member name="x_burst_streaming"
+              value="63"
+              c:identifier="GST_RTSP_HDR_X_BURST_STREAMING"
+              glib:nick="x-burst-streaming"/>
+      <member name="x_notice"
+              value="64"
+              c:identifier="GST_RTSP_HDR_X_NOTICE"
+              glib:nick="x-notice"/>
+      <member name="x_player_lag_time"
+              value="65"
+              c:identifier="GST_RTSP_HDR_X_PLAYER_LAG_TIME"
+              glib:nick="x-player-lag-time"/>
+      <member name="x_playlist"
+              value="66"
+              c:identifier="GST_RTSP_HDR_X_PLAYLIST"
+              glib:nick="x-playlist"/>
+      <member name="x_playlist_change_notice"
+              value="67"
+              c:identifier="GST_RTSP_HDR_X_PLAYLIST_CHANGE_NOTICE"
+              glib:nick="x-playlist-change-notice"/>
+      <member name="x_playlist_gen_id"
+              value="68"
+              c:identifier="GST_RTSP_HDR_X_PLAYLIST_GEN_ID"
+              glib:nick="x-playlist-gen-id"/>
+      <member name="x_playlist_seek_id"
+              value="69"
+              c:identifier="GST_RTSP_HDR_X_PLAYLIST_SEEK_ID"
+              glib:nick="x-playlist-seek-id"/>
+      <member name="x_proxy_client_agent"
+              value="70"
+              c:identifier="GST_RTSP_HDR_X_PROXY_CLIENT_AGENT"
+              glib:nick="x-proxy-client-agent"/>
+      <member name="x_proxy_client_verb"
+              value="71"
+              c:identifier="GST_RTSP_HDR_X_PROXY_CLIENT_VERB"
+              glib:nick="x-proxy-client-verb"/>
+      <member name="x_receding_playlistchange"
+              value="72"
+              c:identifier="GST_RTSP_HDR_X_RECEDING_PLAYLISTCHANGE"
+              glib:nick="x-receding-playlistchange"/>
+      <member name="x_rtp_info"
+              value="73"
+              c:identifier="GST_RTSP_HDR_X_RTP_INFO"
+              glib:nick="x-rtp-info"/>
+      <member name="x_startupprofile"
+              value="74"
+              c:identifier="GST_RTSP_HDR_X_STARTUPPROFILE"
+              glib:nick="x-startupprofile"/>
+      <member name="timestamp"
+              value="75"
+              c:identifier="GST_RTSP_HDR_TIMESTAMP"
+              glib:nick="timestamp"/>
+      <member name="authentication_info"
+              value="76"
+              c:identifier="GST_RTSP_HDR_AUTHENTICATION_INFO"
+              glib:nick="authentication-info"/>
+      <member name="host"
+              value="77"
+              c:identifier="GST_RTSP_HDR_HOST"
+              glib:nick="host"/>
+      <member name="pragma"
+              value="78"
+              c:identifier="GST_RTSP_HDR_PRAGMA"
+              glib:nick="pragma"/>
+      <member name="x_server_ip_address"
+              value="79"
+              c:identifier="GST_RTSP_HDR_X_SERVER_IP_ADDRESS"
+              glib:nick="x-server-ip-address"/>
+      <member name="x_sessioncookie"
+              value="80"
+              c:identifier="GST_RTSP_HDR_X_SESSIONCOOKIE"
+              glib:nick="x-sessioncookie"/>
+      <member name="last"
+              value="81"
+              c:identifier="GST_RTSP_HDR_LAST"
+              glib:nick="last"/>
+    </enumeration>
+    <bitfield name="LowerTrans"
+              glib:type-name="GstRTSPLowerTrans"
+              glib:get-type="gst_rtsp_lower_trans_get_type"
+              c:type="GstRTSPLowerTrans">
+      <doc xml:whitespace="preserve">The different transport methods.</doc>
+      <member name="udp_unicast"
+              value="1"
+              c:identifier="UDP Unicast Mode"
+              glib:nick="udp-unicast"/>
+      <member name="udp_multicast"
+              value="2"
+              c:identifier="UDP Multicast Mode"
+              glib:nick="udp-multicast"/>
+      <member name="tcp"
+              value="4"
+              c:identifier="TCP interleaved mode"
+              glib:nick="tcp"/>
+      <member name="http"
+              value="16"
+              c:identifier="HTTP tunneled mode"
+              glib:nick="http"/>
+    </bitfield>
+    <record name="Message" c:type="GstRTSPMessage">
+      <doc xml:whitespace="preserve">An RTSP message containing request, response or data messages. Depending on
+the @type, the appropriate structure may be accessed.</doc>
+      <field name="type" writable="1">
+        <type name="MsgType" c:type="GstRTSPMsgType"/>
+      </field>
+      <union name="type_data" c:type="type_data">
+        <record name="request" c:type="request">
+          <field name="method" writable="1">
+            <type name="Method" c:type="GstRTSPMethod"/>
+          </field>
+          <field name="uri" writable="1">
+            <type name="utf8" c:type="gchar*"/>
+          </field>
+          <field name="version" writable="1">
+            <type name="Version" c:type="GstRTSPVersion"/>
+          </field>
+        </record>
+        <record name="response" c:type="response">
+          <field name="code" writable="1">
+            <type name="StatusCode" c:type="GstRTSPStatusCode"/>
+          </field>
+          <field name="reason" writable="1">
+            <type name="utf8" c:type="gchar*"/>
+          </field>
+          <field name="version" writable="1">
+            <type name="Version" c:type="GstRTSPVersion"/>
+          </field>
+        </record>
+        <record name="data" c:type="data">
+          <field name="channel" writable="1">
+            <type name="uint8" c:type="guint8"/>
+          </field>
+        </record>
+      </union>
+      <field name="hdr_fields" writable="1">
+        <type name="GLib.Array" c:type="GArray*"/>
+      </field>
+      <field name="body" writable="1">
+        <type name="any" c:type="guint8*"/>
+      </field>
+      <field name="body_size" writable="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <constructor name="new" c:identifier="gst_rtsp_message_new">
+        <return-value transfer-ownership="full">
+          <type name="Message" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="msg" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage**"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_request"
+                   c:identifier="gst_rtsp_message_new_request">
+        <return-value transfer-ownership="full">
+          <type name="Message" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="msg" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage**"/>
+          </parameter>
+          <parameter name="method" transfer-ownership="none">
+            <type name="Method" c:type="GstRTSPMethod"/>
+          </parameter>
+          <parameter name="uri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_response"
+                   c:identifier="gst_rtsp_message_new_response">
+        <return-value transfer-ownership="full">
+          <type name="Message" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="msg" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage**"/>
+          </parameter>
+          <parameter name="code" transfer-ownership="none">
+            <type name="StatusCode" c:type="GstRTSPStatusCode"/>
+          </parameter>
+          <parameter name="reason" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="request" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_data" c:identifier="gst_rtsp_message_new_data">
+        <return-value transfer-ownership="full">
+          <type name="Message" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="msg" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage**"/>
+          </parameter>
+          <parameter name="channel" transfer-ownership="none">
+            <type name="uint8" c:type="guint8"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="init" c:identifier="gst_rtsp_message_init">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+      </method>
+      <method name="unset" c:identifier="gst_rtsp_message_unset">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+      </method>
+      <method name="free" c:identifier="gst_rtsp_message_free">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+      </method>
+      <method name="init_request" c:identifier="gst_rtsp_message_init_request">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="method" transfer-ownership="none">
+            <type name="Method" c:type="GstRTSPMethod"/>
+          </parameter>
+          <parameter name="uri" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="parse_request"
+              c:identifier="gst_rtsp_message_parse_request">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="method" transfer-ownership="none">
+            <type name="Method" c:type="GstRTSPMethod*"/>
+          </parameter>
+          <parameter name="uri" transfer-ownership="none">
+            <array c:type="gchar**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+          <parameter name="version" transfer-ownership="none">
+            <type name="Version" c:type="GstRTSPVersion*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="init_response"
+              c:identifier="gst_rtsp_message_init_response">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="code" transfer-ownership="none">
+            <type name="StatusCode" c:type="GstRTSPStatusCode"/>
+          </parameter>
+          <parameter name="reason" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="request" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="parse_response"
+              c:identifier="gst_rtsp_message_parse_response">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="code" transfer-ownership="none">
+            <type name="StatusCode" c:type="GstRTSPStatusCode*"/>
+          </parameter>
+          <parameter name="reason" transfer-ownership="none">
+            <array c:type="gchar**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+          <parameter name="version" transfer-ownership="none">
+            <type name="Version" c:type="GstRTSPVersion*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="init_data" c:identifier="gst_rtsp_message_init_data">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="channel" transfer-ownership="none">
+            <type name="uint8" c:type="guint8"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="parse_data" c:identifier="gst_rtsp_message_parse_data">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="channel" transfer-ownership="none">
+            <array c:type="guint8*">
+              <type name="uint8"/>
+            </array>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_header" c:identifier="gst_rtsp_message_add_header">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="field" transfer-ownership="none">
+            <type name="HeaderField" c:type="GstRTSPHeaderField"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="take_header" c:identifier="gst_rtsp_message_take_header">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="field" transfer-ownership="none">
+            <type name="HeaderField" c:type="GstRTSPHeaderField"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="full">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove_header"
+              c:identifier="gst_rtsp_message_remove_header">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="field" transfer-ownership="none">
+            <type name="HeaderField" c:type="GstRTSPHeaderField"/>
+          </parameter>
+          <parameter name="indx" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_header" c:identifier="gst_rtsp_message_get_header">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="field" transfer-ownership="none">
+            <type name="HeaderField" c:type="GstRTSPHeaderField"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <array c:type="gchar**">
+              <type name="utf8"/>
+            </array>
+          </parameter>
+          <parameter name="indx" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="append_headers"
+              c:identifier="gst_rtsp_message_append_headers">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="str" transfer-ownership="none">
+            <type name="GLib.String" c:type="GString*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_body" c:identifier="gst_rtsp_message_set_body">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="data" transfer-ownership="none">
+            <array c:type="guint8*">
+              <type name="uint8"/>
+            </array>
+          </parameter>
+          <parameter name="size" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="take_body" c:identifier="gst_rtsp_message_take_body">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="data" transfer-ownership="none">
+            <array c:type="guint8*">
+              <type name="uint8"/>
+            </array>
+          </parameter>
+          <parameter name="size" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_body" c:identifier="gst_rtsp_message_get_body">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="data"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint8" c:type="guint8**"/>
+          </parameter>
+          <parameter name="size"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint" c:type="guint*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="steal_body" c:identifier="gst_rtsp_message_steal_body">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="data"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint8" c:type="guint8**"/>
+          </parameter>
+          <parameter name="size"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint" c:type="guint*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="dump" c:identifier="gst_rtsp_message_dump">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+      </method>
+    </record>
+    <bitfield name="Method"
+              glib:type-name="GstRTSPMethod"
+              glib:get-type="gst_rtsp_method_get_type"
+              c:type="GstRTSPMethod">
+      <doc xml:whitespace="preserve">The different supported RTSP methods.</doc>
+      <member name="invalid"
+              value="0"
+              c:identifier="GST_RTSP_INVALID"
+              glib:nick="invalid"/>
+      <member name="describe"
+              value="1"
+              c:identifier="GST_RTSP_DESCRIBE"
+              glib:nick="describe"/>
+      <member name="announce"
+              value="2"
+              c:identifier="GST_RTSP_ANNOUNCE"
+              glib:nick="announce"/>
+      <member name="get_parameter"
+              value="4"
+              c:identifier="GST_RTSP_GET_PARAMETER"
+              glib:nick="get-parameter"/>
+      <member name="options"
+              value="8"
+              c:identifier="GST_RTSP_OPTIONS"
+              glib:nick="options"/>
+      <member name="pause"
+              value="16"
+              c:identifier="GST_RTSP_PAUSE"
+              glib:nick="pause"/>
+      <member name="play"
+              value="32"
+              c:identifier="GST_RTSP_PLAY"
+              glib:nick="play"/>
+      <member name="record"
+              value="64"
+              c:identifier="GST_RTSP_RECORD"
+              glib:nick="record"/>
+      <member name="redirect"
+              value="128"
+              c:identifier="GST_RTSP_REDIRECT"
+              glib:nick="redirect"/>
+      <member name="setup"
+              value="256"
+              c:identifier="GST_RTSP_SETUP"
+              glib:nick="setup"/>
+      <member name="set_parameter"
+              value="512"
+              c:identifier="GST_RTSP_SET_PARAMETER"
+              glib:nick="set-parameter"/>
+      <member name="teardown"
+              value="1024"
+              c:identifier="GST_RTSP_TEARDOWN"
+              glib:nick="teardown"/>
+      <member name="get"
+              value="2048"
+              c:identifier="GST_RTSP_GET"
+              glib:nick="get"/>
+      <member name="post"
+              value="4096"
+              c:identifier="GST_RTSP_POST"
+              glib:nick="post"/>
+    </bitfield>
+    <enumeration name="MsgType" c:type="GstRTSPMsgType">
+      <doc xml:whitespace="preserve">The type of a message.</doc>
+      <member name="invalid"
+              value="0"
+              c:identifier="GST_RTSP_MESSAGE_INVALID"/>
+      <member name="request"
+              value="1"
+              c:identifier="GST_RTSP_MESSAGE_REQUEST"/>
+      <member name="response"
+              value="2"
+              c:identifier="GST_RTSP_MESSAGE_RESPONSE"/>
+      <member name="http_request"
+              value="3"
+              c:identifier="GST_RTSP_MESSAGE_HTTP_REQUEST"/>
+      <member name="http_response"
+              value="4"
+              c:identifier="GST_RTSP_MESSAGE_HTTP_RESPONSE"/>
+      <member name="data" value="5" c:identifier="GST_RTSP_MESSAGE_DATA"/>
+    </enumeration>
+    <bitfield name="Profile" c:type="GstRTSPProfile">
+      <doc xml:whitespace="preserve">The transfer profile to use.</doc>
+      <member name="unknown"
+              value="0"
+              c:identifier="GST_RTSP_PROFILE_UNKNOWN"/>
+      <member name="avp" value="1" c:identifier="GST_RTSP_PROFILE_AVP"/>
+      <member name="savp" value="2" c:identifier="GST_RTSP_PROFILE_SAVP"/>
+    </bitfield>
+    <record name="Range" c:type="GstRTSPRange">
+      <doc xml:whitespace="preserve">A type to specify a range.</doc>
+      <field name="min" writable="1">
+        <type name="int" c:type="gint"/>
+      </field>
+      <field name="max" writable="1">
+        <type name="int" c:type="gint"/>
+      </field>
+    </record>
+    <enumeration name="RangeUnit" c:type="GstRTSPRangeUnit">
+      <doc xml:whitespace="preserve">Different possible time range units.</doc>
+      <member name="smpte" value="0" c:identifier="GST_RTSP_RANGE_SMPTE"/>
+      <member name="smpte_30_drop"
+              value="1"
+              c:identifier="GST_RTSP_RANGE_SMPTE_30_DROP"/>
+      <member name="smpte_25"
+              value="2"
+              c:identifier="GST_RTSP_RANGE_SMPTE_25"/>
+      <member name="npt" value="3" c:identifier="GST_RTSP_RANGE_NPT"/>
+      <member name="clock" value="4" c:identifier="GST_RTSP_RANGE_CLOCK"/>
+    </enumeration>
+    <enumeration name="Result"
+                 glib:type-name="GstRTSPResult"
+                 glib:get-type="gst_rtsp_result_get_type"
+                 c:type="GstRTSPResult">
+      <doc xml:whitespace="preserve">Result codes from the RTSP functions.</doc>
+      <member name="ok" value="0" c:identifier="GST_RTSP_OK" glib:nick="ok"/>
+      <member name="error"
+              value="-1"
+              c:identifier="GST_RTSP_ERROR"
+              glib:nick="error"/>
+      <member name="einval"
+              value="-2"
+              c:identifier="GST_RTSP_EINVAL"
+              glib:nick="einval"/>
+      <member name="eintr"
+              value="-3"
+              c:identifier="GST_RTSP_EINTR"
+              glib:nick="eintr"/>
+      <member name="enomem"
+              value="-4"
+              c:identifier="GST_RTSP_ENOMEM"
+              glib:nick="enomem"/>
+      <member name="eresolv"
+              value="-5"
+              c:identifier="GST_RTSP_ERESOLV"
+              glib:nick="eresolv"/>
+      <member name="enotimpl"
+              value="-6"
+              c:identifier="GST_RTSP_ENOTIMPL"
+              glib:nick="enotimpl"/>
+      <member name="esys"
+              value="-7"
+              c:identifier="GST_RTSP_ESYS"
+              glib:nick="esys"/>
+      <member name="eparse"
+              value="-8"
+              c:identifier="GST_RTSP_EPARSE"
+              glib:nick="eparse"/>
+      <member name="ewsastart"
+              value="-9"
+              c:identifier="GST_RTSP_EWSASTART"
+              glib:nick="ewsastart"/>
+      <member name="ewsaversion"
+              value="-10"
+              c:identifier="GST_RTSP_EWSAVERSION"
+              glib:nick="ewsaversion"/>
+      <member name="eeof"
+              value="-11"
+              c:identifier="GST_RTSP_EEOF"
+              glib:nick="eeof"/>
+      <member name="enet"
+              value="-12"
+              c:identifier="GST_RTSP_ENET"
+              glib:nick="enet"/>
+      <member name="enotip"
+              value="-13"
+              c:identifier="GST_RTSP_ENOTIP"
+              glib:nick="enotip"/>
+      <member name="etimeout"
+              value="-14"
+              c:identifier="GST_RTSP_ETIMEOUT"
+              glib:nick="etimeout"/>
+      <member name="etget"
+              value="-15"
+              c:identifier="GST_RTSP_ETGET"
+              glib:nick="etget"/>
+      <member name="etpost"
+              value="-16"
+              c:identifier="GST_RTSP_ETPOST"
+              glib:nick="etpost"/>
+      <member name="elast"
+              value="-17"
+              c:identifier="GST_RTSP_ELAST"
+              glib:nick="elast"/>
+    </enumeration>
+    <enumeration name="State"
+                 glib:type-name="GstRTSPState"
+                 glib:get-type="gst_rtsp_state_get_type"
+                 c:type="GstRTSPState">
+      <doc xml:whitespace="preserve">The different RTSP states.</doc>
+      <member name="invalid"
+              value="0"
+              c:identifier="GST_RTSP_STATE_INVALID"
+              glib:nick="invalid"/>
+      <member name="init"
+              value="1"
+              c:identifier="GST_RTSP_STATE_INIT"
+              glib:nick="init"/>
+      <member name="ready"
+              value="2"
+              c:identifier="GST_RTSP_STATE_READY"
+              glib:nick="ready"/>
+      <member name="seeking"
+              value="3"
+              c:identifier="GST_RTSP_STATE_SEEKING"
+              glib:nick="seeking"/>
+      <member name="playing"
+              value="4"
+              c:identifier="GST_RTSP_STATE_PLAYING"
+              glib:nick="playing"/>
+      <member name="recording"
+              value="5"
+              c:identifier="GST_RTSP_STATE_RECORDING"
+              glib:nick="recording"/>
+    </enumeration>
+    <enumeration name="StatusCode"
+                 glib:type-name="GstRTSPStatusCode"
+                 glib:get-type="gst_rtsp_status_code_get_type"
+                 c:type="GstRTSPStatusCode">
+      <member name="invalid"
+              value="0"
+              c:identifier="GST_RTSP_STS_INVALID"
+              glib:nick="invalid"/>
+      <member name="continue"
+              value="100"
+              c:identifier="GST_RTSP_STS_CONTINUE"
+              glib:nick="continue"/>
+      <member name="ok"
+              value="200"
+              c:identifier="GST_RTSP_STS_OK"
+              glib:nick="ok"/>
+      <member name="created"
+              value="201"
+              c:identifier="GST_RTSP_STS_CREATED"
+              glib:nick="created"/>
+      <member name="low_on_storage"
+              value="250"
+              c:identifier="GST_RTSP_STS_LOW_ON_STORAGE"
+              glib:nick="low-on-storage"/>
+      <member name="multiple_choices"
+              value="300"
+              c:identifier="GST_RTSP_STS_MULTIPLE_CHOICES"
+              glib:nick="multiple-choices"/>
+      <member name="moved_permanently"
+              value="301"
+              c:identifier="GST_RTSP_STS_MOVED_PERMANENTLY"
+              glib:nick="moved-permanently"/>
+      <member name="move_temporarily"
+              value="302"
+              c:identifier="GST_RTSP_STS_MOVE_TEMPORARILY"
+              glib:nick="move-temporarily"/>
+      <member name="see_other"
+              value="303"
+              c:identifier="GST_RTSP_STS_SEE_OTHER"
+              glib:nick="see-other"/>
+      <member name="not_modified"
+              value="304"
+              c:identifier="GST_RTSP_STS_NOT_MODIFIED"
+              glib:nick="not-modified"/>
+      <member name="use_proxy"
+              value="305"
+              c:identifier="GST_RTSP_STS_USE_PROXY"
+              glib:nick="use-proxy"/>
+      <member name="bad_request"
+              value="400"
+              c:identifier="GST_RTSP_STS_BAD_REQUEST"
+              glib:nick="bad-request"/>
+      <member name="unauthorized"
+              value="401"
+              c:identifier="GST_RTSP_STS_UNAUTHORIZED"
+              glib:nick="unauthorized"/>
+      <member name="payment_required"
+              value="402"
+              c:identifier="GST_RTSP_STS_PAYMENT_REQUIRED"
+              glib:nick="payment-required"/>
+      <member name="forbidden"
+              value="403"
+              c:identifier="GST_RTSP_STS_FORBIDDEN"
+              glib:nick="forbidden"/>
+      <member name="not_found"
+              value="404"
+              c:identifier="GST_RTSP_STS_NOT_FOUND"
+              glib:nick="not-found"/>
+      <member name="method_not_allowed"
+              value="405"
+              c:identifier="GST_RTSP_STS_METHOD_NOT_ALLOWED"
+              glib:nick="method-not-allowed"/>
+      <member name="not_acceptable"
+              value="406"
+              c:identifier="GST_RTSP_STS_NOT_ACCEPTABLE"
+              glib:nick="not-acceptable"/>
+      <member name="proxy_auth_required"
+              value="407"
+              c:identifier="GST_RTSP_STS_PROXY_AUTH_REQUIRED"
+              glib:nick="proxy-auth-required"/>
+      <member name="request_timeout"
+              value="408"
+              c:identifier="GST_RTSP_STS_REQUEST_TIMEOUT"
+              glib:nick="request-timeout"/>
+      <member name="gone"
+              value="410"
+              c:identifier="GST_RTSP_STS_GONE"
+              glib:nick="gone"/>
+      <member name="length_required"
+              value="411"
+              c:identifier="GST_RTSP_STS_LENGTH_REQUIRED"
+              glib:nick="length-required"/>
+      <member name="precondition_failed"
+              value="412"
+              c:identifier="GST_RTSP_STS_PRECONDITION_FAILED"
+              glib:nick="precondition-failed"/>
+      <member name="request_entity_too_large"
+              value="413"
+              c:identifier="GST_RTSP_STS_REQUEST_ENTITY_TOO_LARGE"
+              glib:nick="request-entity-too-large"/>
+      <member name="request_uri_too_large"
+              value="414"
+              c:identifier="GST_RTSP_STS_REQUEST_URI_TOO_LARGE"
+              glib:nick="request-uri-too-large"/>
+      <member name="unsupported_media_type"
+              value="415"
+              c:identifier="GST_RTSP_STS_UNSUPPORTED_MEDIA_TYPE"
+              glib:nick="unsupported-media-type"/>
+      <member name="parameter_not_understood"
+              value="451"
+              c:identifier="GST_RTSP_STS_PARAMETER_NOT_UNDERSTOOD"
+              glib:nick="parameter-not-understood"/>
+      <member name="conference_not_found"
+              value="452"
+              c:identifier="GST_RTSP_STS_CONFERENCE_NOT_FOUND"
+              glib:nick="conference-not-found"/>
+      <member name="not_enough_bandwidth"
+              value="453"
+              c:identifier="GST_RTSP_STS_NOT_ENOUGH_BANDWIDTH"
+              glib:nick="not-enough-bandwidth"/>
+      <member name="session_not_found"
+              value="454"
+              c:identifier="GST_RTSP_STS_SESSION_NOT_FOUND"
+              glib:nick="session-not-found"/>
+      <member name="method_not_valid_in_this_state"
+              value="455"
+              c:identifier="GST_RTSP_STS_METHOD_NOT_VALID_IN_THIS_STATE"
+              glib:nick="method-not-valid-in-this-state"/>
+      <member name="header_field_not_valid_for_resource"
+              value="456"
+              c:identifier="GST_RTSP_STS_HEADER_FIELD_NOT_VALID_FOR_RESOURCE"
+              glib:nick="header-field-not-valid-for-resource"/>
+      <member name="invalid_range"
+              value="457"
+              c:identifier="GST_RTSP_STS_INVALID_RANGE"
+              glib:nick="invalid-range"/>
+      <member name="parameter_is_readonly"
+              value="458"
+              c:identifier="GST_RTSP_STS_PARAMETER_IS_READONLY"
+              glib:nick="parameter-is-readonly"/>
+      <member name="aggregate_operation_not_allowed"
+              value="459"
+              c:identifier="GST_RTSP_STS_AGGREGATE_OPERATION_NOT_ALLOWED"
+              glib:nick="aggregate-operation-not-allowed"/>
+      <member name="only_aggregate_operation_allowed"
+              value="460"
+              c:identifier="GST_RTSP_STS_ONLY_AGGREGATE_OPERATION_ALLOWED"
+              glib:nick="only-aggregate-operation-allowed"/>
+      <member name="unsupported_transport"
+              value="461"
+              c:identifier="GST_RTSP_STS_UNSUPPORTED_TRANSPORT"
+              glib:nick="unsupported-transport"/>
+      <member name="destination_unreachable"
+              value="462"
+              c:identifier="GST_RTSP_STS_DESTINATION_UNREACHABLE"
+              glib:nick="destination-unreachable"/>
+      <member name="internal_server_error"
+              value="500"
+              c:identifier="GST_RTSP_STS_INTERNAL_SERVER_ERROR"
+              glib:nick="internal-server-error"/>
+      <member name="not_implemented"
+              value="501"
+              c:identifier="GST_RTSP_STS_NOT_IMPLEMENTED"
+              glib:nick="not-implemented"/>
+      <member name="bad_gateway"
+              value="502"
+              c:identifier="GST_RTSP_STS_BAD_GATEWAY"
+              glib:nick="bad-gateway"/>
+      <member name="service_unavailable"
+              value="503"
+              c:identifier="GST_RTSP_STS_SERVICE_UNAVAILABLE"
+              glib:nick="service-unavailable"/>
+      <member name="gateway_timeout"
+              value="504"
+              c:identifier="GST_RTSP_STS_GATEWAY_TIMEOUT"
+              glib:nick="gateway-timeout"/>
+      <member name="rtsp_version_not_supported"
+              value="505"
+              c:identifier="GST_RTSP_STS_RTSP_VERSION_NOT_SUPPORTED"
+              glib:nick="rtsp-version-not-supported"/>
+      <member name="option_not_supported"
+              value="551"
+              c:identifier="GST_RTSP_STS_OPTION_NOT_SUPPORTED"
+              glib:nick="option-not-supported"/>
+    </enumeration>
+    <record name="Time" c:type="GstRTSPTime">
+      <doc xml:whitespace="preserve">A time indication.</doc>
+      <field name="type" writable="1">
+        <type name="TimeType" c:type="GstRTSPTimeType"/>
+      </field>
+      <field name="seconds" writable="1">
+        <type name="double" c:type="gdouble"/>
+      </field>
+    </record>
+    <record name="TimeRange" c:type="GstRTSPTimeRange">
+      <doc xml:whitespace="preserve">A time range.</doc>
+      <field name="unit" writable="1">
+        <type name="RangeUnit" c:type="GstRTSPRangeUnit"/>
+      </field>
+      <field name="min" writable="1">
+        <type name="GLib.Time" c:type="GstRTSPTime"/>
+      </field>
+      <field name="max" writable="1">
+        <type name="GLib.Time" c:type="GstRTSPTime"/>
+      </field>
+    </record>
+    <enumeration name="TimeType" c:type="GstRTSPTimeType">
+      <doc xml:whitespace="preserve">Possible time types.</doc>
+      <member name="seconds" value="0" c:identifier="GST_RTSP_TIME_SECONDS"/>
+      <member name="now" value="1" c:identifier="GST_RTSP_TIME_NOW"/>
+      <member name="end" value="2" c:identifier="GST_RTSP_TIME_END"/>
+    </enumeration>
+    <bitfield name="TransMode" c:type="GstRTSPTransMode">
+      <doc xml:whitespace="preserve">The transfer mode to use.</doc>
+      <member name="unknown" value="0" c:identifier="GST_RTSP_TRANS_UNKNOWN"/>
+      <member name="rtp" value="1" c:identifier="GST_RTSP_TRANS_RTP"/>
+      <member name="rdt" value="2" c:identifier="GST_RTSP_TRANS_RDT"/>
+    </bitfield>
+    <record name="Transport" c:type="_GstRTSPTransport">
+      <field name="trans" writable="1">
+        <type name="TransMode" c:type="GstRTSPTransMode"/>
+      </field>
+      <field name="profile" writable="1">
+        <type name="Profile" c:type="GstRTSPProfile"/>
+      </field>
+      <field name="lower_transport" writable="1">
+        <type name="LowerTrans" c:type="GstRTSPLowerTrans"/>
+      </field>
+      <field name="destination" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="source" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="layers" writable="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="mode_play" writable="1">
+        <type name="boolean" c:type="gboolean"/>
+      </field>
+      <field name="mode_record" writable="1">
+        <type name="boolean" c:type="gboolean"/>
+      </field>
+      <field name="append" writable="1">
+        <type name="boolean" c:type="gboolean"/>
+      </field>
+      <field name="interleaved" writable="1">
+        <type name="Range" c:type="GstRTSPRange"/>
+      </field>
+      <field name="ttl" writable="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="port" writable="1">
+        <type name="Range" c:type="GstRTSPRange"/>
+      </field>
+      <field name="client_port" writable="1">
+        <type name="Range" c:type="GstRTSPRange"/>
+      </field>
+      <field name="server_port" writable="1">
+        <type name="Range" c:type="GstRTSPRange"/>
+      </field>
+      <field name="ssrc" writable="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+    </record>
+    <record name="Url"
+            c:type="GstRTSPUrl"
+            glib:type-name="GstRTSPUrl"
+            glib:get-type="gst_rtsp_url_get_type">
+      <doc xml:whitespace="preserve">This structure contains the result of a parsed RTSP URL</doc>
+      <field name="transports" writable="1">
+        <type name="LowerTrans" c:type="GstRTSPLowerTrans"/>
+      </field>
+      <field name="family" writable="1">
+        <type name="Family" c:type="GstRTSPFamily"/>
+      </field>
+      <field name="user" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="passwd" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="host" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="port" writable="1">
+        <type name="uint16" c:type="guint16"/>
+      </field>
+      <field name="abspath" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="query" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <method name="copy" c:identifier="gst_rtsp_url_copy">
+        <return-value transfer-ownership="full">
+          <type name="Url" c:type="GstRTSPUrl*"/>
+        </return-value>
+      </method>
+      <method name="free" c:identifier="gst_rtsp_url_free">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="get_request_uri"
+              c:identifier="gst_rtsp_url_get_request_uri">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_port" c:identifier="gst_rtsp_url_set_port">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="port" transfer-ownership="none">
+            <type name="uint16" c:type="guint16"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_port" c:identifier="gst_rtsp_url_get_port">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="port"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint16" c:type="guint16*"/>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <enumeration name="Version"
+                 glib:type-name="GstRTSPVersion"
+                 glib:get-type="gst_rtsp_version_get_type"
+                 c:type="GstRTSPVersion">
+      <doc xml:whitespace="preserve">The supported RTSP versions.</doc>
+      <member name="invalid"
+              value="0"
+              c:identifier="GST_RTSP_VERSION_INVALID"
+              glib:nick="invalid"/>
+      <member name="1_0"
+              value="16"
+              c:identifier="GST_RTSP_VERSION_1_0"
+              glib:nick="1-0"/>
+      <member name="1_1"
+              value="17"
+              c:identifier="GST_RTSP_VERSION_1_1"
+              glib:nick="1-1"/>
+    </enumeration>
+    <record name="Watch" c:type="GstRTSPWatch">
+      <doc xml:whitespace="preserve">Opaque RTSP watch object that can be used for asynchronous RTSP
+operations.</doc>
+      <constructor name="new" c:identifier="gst_rtsp_watch_new">
+        <return-value transfer-ownership="full">
+          <type name="Watch" c:type="GstRTSPWatch*"/>
+        </return-value>
+        <parameters>
+          <parameter name="conn" transfer-ownership="none">
+            <type name="Connection" c:type="GstRTSPConnection*"/>
+          </parameter>
+          <parameter name="funcs" transfer-ownership="none">
+            <type name="WatchFuncs" c:type="GstRTSPWatchFuncs*"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="notify" transfer-ownership="none" scope="call">
+            <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="reset" c:identifier="gst_rtsp_watch_reset">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="unref" c:identifier="gst_rtsp_watch_unref">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="attach" c:identifier="gst_rtsp_watch_attach">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+        <parameters>
+          <parameter name="context" transfer-ownership="none">
+            <type name="GLib.MainContext" c:type="GMainContext*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="write_data" c:identifier="gst_rtsp_watch_write_data">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="data" transfer-ownership="none">
+            <array c:type="guint8*">
+              <type name="uint8"/>
+            </array>
+          </parameter>
+          <parameter name="size" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="id"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint" c:type="guint*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="send_message" c:identifier="gst_rtsp_watch_send_message">
+        <return-value transfer-ownership="full">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </return-value>
+        <parameters>
+          <parameter name="message" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+          <parameter name="id"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint" c:type="guint*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="queue_data" c:identifier="gst_rtsp_watch_queue_data">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+        <parameters>
+          <parameter name="data" transfer-ownership="none">
+            <array c:type="guint8*">
+              <type name="uint8"/>
+            </array>
+          </parameter>
+          <parameter name="size" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="queue_message" c:identifier="gst_rtsp_watch_queue_message">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+        <parameters>
+          <parameter name="message" transfer-ownership="none">
+            <type name="Message" c:type="GstRTSPMessage*"/>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <record name="WatchFuncs" c:type="GstRTSPWatchFuncs" version="0.10.23">
+      <doc xml:whitespace="preserve">Callback functions from a #GstRTSPWatch.</doc>
+      <field name="message_received">
+        <type name="any" c:type="pointer"/>
+      </field>
+      <field name="message_sent">
+        <type name="any" c:type="pointer"/>
+      </field>
+      <field name="closed">
+        <type name="any" c:type="pointer"/>
+      </field>
+      <field name="error">
+        <type name="any" c:type="pointer"/>
+      </field>
+      <field name="tunnel_start">
+        <type name="any" c:type="pointer"/>
+      </field>
+      <field name="tunnel_complete">
+        <type name="any" c:type="pointer"/>
+      </field>
+      <field name="error_full">
+        <type name="any" c:type="pointer"/>
+      </field>
+      <field name="_gst_reserved" writable="1">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="3">
+          <type name="any"/>
+        </array>
+      </field>
+    </record>
+    <function name="base64_decode_ip" c:identifier="gst_rtsp_base64_decode_ip">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="data" transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="len"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <type name="gsize" c:type="gsize*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="base64_encode" c:identifier="gst_rtsp_base64_encode">
+      <return-value transfer-ownership="full">
+        <type name="utf8" c:type="gchar*"/>
+      </return-value>
+      <parameters>
+        <parameter name="data" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="len" transfer-ownership="none">
+          <type name="gsize" c:type="gsize"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="connection_accept"
+              c:identifier="gst_rtsp_connection_accept">
+      <return-value transfer-ownership="full">
+        <type name="Result" c:type="GstRTSPResult"/>
+      </return-value>
+      <parameters>
+        <parameter name="sock" transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </parameter>
+        <parameter name="conn" transfer-ownership="none">
+          <type name="Connection" c:type="GstRTSPConnection**"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="connection_create"
+              c:identifier="gst_rtsp_connection_create">
+      <return-value transfer-ownership="full">
+        <type name="Result" c:type="GstRTSPResult"/>
+      </return-value>
+      <parameters>
+        <parameter name="url" transfer-ownership="none">
+          <type name="Url" c:type="GstRTSPUrl*"/>
+        </parameter>
+        <parameter name="conn" transfer-ownership="none">
+          <type name="Connection" c:type="GstRTSPConnection**"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="connection_create_from_fd"
+              c:identifier="gst_rtsp_connection_create_from_fd">
+      <return-value transfer-ownership="full">
+        <type name="Result" c:type="GstRTSPResult"/>
+      </return-value>
+      <parameters>
+        <parameter name="fd" transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </parameter>
+        <parameter name="ip" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="port" transfer-ownership="none">
+          <type name="uint16" c:type="guint16"/>
+        </parameter>
+        <parameter name="initial_buffer" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="conn" transfer-ownership="none">
+          <type name="Connection" c:type="GstRTSPConnection**"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="find_header_field"
+              c:identifier="gst_rtsp_find_header_field">
+      <return-value transfer-ownership="full">
+        <type name="HeaderField" c:type="GstRTSPHeaderField"/>
+      </return-value>
+      <parameters>
+        <parameter name="header" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="find_method" c:identifier="gst_rtsp_find_method">
+      <return-value transfer-ownership="full">
+        <type name="Method" c:type="GstRTSPMethod"/>
+      </return-value>
+      <parameters>
+        <parameter name="method" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="header_allow_multiple"
+              c:identifier="gst_rtsp_header_allow_multiple">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="field" transfer-ownership="none">
+          <type name="HeaderField" c:type="GstRTSPHeaderField"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="header_as_text" c:identifier="gst_rtsp_header_as_text">
+      <return-value transfer-ownership="none">
+        <type name="utf8" c:type="gchar*"/>
+      </return-value>
+      <parameters>
+        <parameter name="field" transfer-ownership="none">
+          <type name="HeaderField" c:type="GstRTSPHeaderField"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="message_get_type" c:identifier="gst_rtsp_message_get_type">
+      <return-value transfer-ownership="full">
+        <type name="MsgType" c:type="GstRTSPMsgType"/>
+      </return-value>
+      <parameters>
+        <parameter name="msg" transfer-ownership="none">
+          <type name="Message" c:type="GstRTSPMessage*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="method_as_text" c:identifier="gst_rtsp_method_as_text">
+      <return-value transfer-ownership="none">
+        <type name="utf8" c:type="gchar*"/>
+      </return-value>
+      <parameters>
+        <parameter name="method" transfer-ownership="none">
+          <type name="Method" c:type="GstRTSPMethod"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="options_as_text" c:identifier="gst_rtsp_options_as_text">
+      <return-value transfer-ownership="full">
+        <type name="utf8" c:type="gchar*"/>
+      </return-value>
+      <parameters>
+        <parameter name="options" transfer-ownership="none">
+          <type name="Method" c:type="GstRTSPMethod"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="range_free" c:identifier="gst_rtsp_range_free">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="range" transfer-ownership="none">
+          <type name="TimeRange" c:type="GstRTSPTimeRange*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="range_parse" c:identifier="gst_rtsp_range_parse">
+      <return-value transfer-ownership="full">
+        <type name="Result" c:type="GstRTSPResult"/>
+      </return-value>
+      <parameters>
+        <parameter name="rangestr" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="range" transfer-ownership="none">
+          <type name="TimeRange" c:type="GstRTSPTimeRange**"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="range_to_string" c:identifier="gst_rtsp_range_to_string">
+      <return-value transfer-ownership="full">
+        <type name="utf8" c:type="gchar*"/>
+      </return-value>
+      <parameters>
+        <parameter name="range" transfer-ownership="none">
+          <type name="TimeRange" c:type="GstRTSPTimeRange*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="status_as_text" c:identifier="gst_rtsp_status_as_text">
+      <return-value transfer-ownership="none">
+        <type name="utf8" c:type="gchar*"/>
+      </return-value>
+      <parameters>
+        <parameter name="code" transfer-ownership="none">
+          <type name="StatusCode" c:type="GstRTSPStatusCode"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="strresult" c:identifier="gst_rtsp_strresult">
+      <return-value transfer-ownership="full">
+        <type name="utf8" c:type="gchar*"/>
+      </return-value>
+      <parameters>
+        <parameter name="result" transfer-ownership="none">
+          <type name="Result" c:type="GstRTSPResult"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="transport_as_text"
+              c:identifier="gst_rtsp_transport_as_text">
+      <return-value transfer-ownership="full">
+        <type name="utf8" c:type="gchar*"/>
+      </return-value>
+      <parameters>
+        <parameter name="transport" transfer-ownership="none">
+          <type name="Transport" c:type="GstRTSPTransport*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="transport_free" c:identifier="gst_rtsp_transport_free">
+      <return-value transfer-ownership="full">
+        <type name="Result" c:type="GstRTSPResult"/>
+      </return-value>
+      <parameters>
+        <parameter name="transport" transfer-ownership="none">
+          <type name="Transport" c:type="GstRTSPTransport*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="transport_get_manager"
+              c:identifier="gst_rtsp_transport_get_manager">
+      <return-value transfer-ownership="full">
+        <type name="Result" c:type="GstRTSPResult"/>
+      </return-value>
+      <parameters>
+        <parameter name="trans" transfer-ownership="none">
+          <type name="TransMode" c:type="GstRTSPTransMode"/>
+        </parameter>
+        <parameter name="manager" transfer-ownership="none">
+          <array c:type="gchar**">
+            <type name="utf8"/>
+          </array>
+        </parameter>
+        <parameter name="option" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="transport_get_mime"
+              c:identifier="gst_rtsp_transport_get_mime">
+      <return-value transfer-ownership="full">
+        <type name="Result" c:type="GstRTSPResult"/>
+      </return-value>
+      <parameters>
+        <parameter name="trans" transfer-ownership="none">
+          <type name="TransMode" c:type="GstRTSPTransMode"/>
+        </parameter>
+        <parameter name="mime" transfer-ownership="none">
+          <array c:type="gchar**">
+            <type name="utf8"/>
+          </array>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="transport_init" c:identifier="gst_rtsp_transport_init">
+      <return-value transfer-ownership="full">
+        <type name="Result" c:type="GstRTSPResult"/>
+      </return-value>
+      <parameters>
+        <parameter name="transport" transfer-ownership="none">
+          <type name="Transport" c:type="GstRTSPTransport*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="transport_new" c:identifier="gst_rtsp_transport_new">
+      <return-value transfer-ownership="full">
+        <type name="Result" c:type="GstRTSPResult"/>
+      </return-value>
+      <parameters>
+        <parameter name="transport" transfer-ownership="none">
+          <type name="Transport" c:type="GstRTSPTransport**"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="transport_parse" c:identifier="gst_rtsp_transport_parse">
+      <return-value transfer-ownership="full">
+        <type name="Result" c:type="GstRTSPResult"/>
+      </return-value>
+      <parameters>
+        <parameter name="str" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="transport" transfer-ownership="none">
+          <type name="Transport" c:type="GstRTSPTransport*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="url_parse" c:identifier="gst_rtsp_url_parse">
+      <return-value transfer-ownership="full">
+        <type name="Result" c:type="GstRTSPResult"/>
+      </return-value>
+      <parameters>
+        <parameter name="urlstr" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="url" transfer-ownership="none">
+          <type name="Url" c:type="GstRTSPUrl**"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="version_as_text" c:identifier="gst_rtsp_version_as_text">
+      <return-value transfer-ownership="none">
+        <type name="utf8" c:type="gchar*"/>
+      </return-value>
+      <parameters>
+        <parameter name="version" transfer-ownership="none">
+          <type name="Version" c:type="GstRTSPVersion"/>
+        </parameter>
+      </parameters>
+    </function>
+  </namespace>
+</repository>

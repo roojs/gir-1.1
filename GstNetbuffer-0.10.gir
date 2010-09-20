@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="GLib" version="2.0"/>
+  <include name="GModule" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <include name="Gst" version="0.10"/>
+  <include name="libxml2" version="2.0"/>
+  <package name="gobject-2.0"/>
+  <package name="gstreamer-0.10"/>
+  <package name="gstreamer-netbuffer-0.10"/>
+  <namespace name="GstNetbuffer"
+             version="0.10"
+             shared-library="libgstnetbuffer-0.10.so.0"
+             c:prefix="GstNetbuffer">
+    <record name="Class" c:type="GstNetBufferClass">
+      <field name="buffer_class" writable="1">
+        <type name="Gst.BufferClass" c:type="GstBufferClass"/>
+      </field>
+      <field name="_gst_reserved" writable="1">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="4">
+          <type name="any"/>
+        </array>
+      </field>
+    </record>
+    <constant name="GST_NETADDRESS_MAX_LEN" value="64">
+      <type name="int"/>
+    </constant>
+    <record name="GstNetAddress" c:type="GstNetAddress">
+      <doc xml:whitespace="preserve">An opaque network address as used in #GstNetBuffer.</doc>
+      <field name="type" writable="1">
+        <type name="GstNetType" c:type="GstNetType"/>
+      </field>
+      <union name="address" c:type="address">
+        <field name="ip6" writable="1">
+          <array zero-terminated="0" c:type="guint8" fixed-size="16">
+            <type name="uint8"/>
+          </array>
+        </field>
+        <field name="ip4" writable="1">
+          <type name="uint32" c:type="guint32"/>
+        </field>
+      </union>
+      <field name="port" writable="1">
+        <type name="uint16" c:type="guint16"/>
+      </field>
+      <field name="_gst_reserved" writable="1">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="4">
+          <type name="any"/>
+        </array>
+      </field>
+    </record>
+    <class name="GstNetBuffer"
+           c:type="GstNetBuffer"
+           parent="Gst.Buffer"
+           glib:type-name="GstNetBuffer"
+           glib:get-type="gst_netbuffer_get_type"
+           glib:fundamental="1">
+      <doc xml:whitespace="preserve">buffer for use in network sources and sinks.
+It contains the source or destination address of the buffer.</doc>
+      <constructor name="new" c:identifier="gst_netbuffer_new">
+        <return-value transfer-ownership="full">
+          <type name="GstNetBuffer" c:type="GstNetBuffer*"/>
+        </return-value>
+      </constructor>
+      <field name="buffer">
+        <type name="Gst.Buffer" c:type="GstBuffer"/>
+      </field>
+      <field name="from">
+        <type name="GstNetAddress" c:type="GstNetAddress"/>
+      </field>
+      <field name="to">
+        <type name="GstNetAddress" c:type="GstNetAddress"/>
+      </field>
+      <field name="_gst_reserved">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="4">
+          <type name="any"/>
+        </array>
+      </field>
+    </class>
+    <enumeration name="GstNetType" c:type="GstNetType">
+      <doc xml:whitespace="preserve">The Address type used in #GstNetAddress.</doc>
+      <member name="unknown" value="0" c:identifier="GST_NET_TYPE_UNKNOWN"/>
+      <member name="ip4" value="1" c:identifier="GST_NET_TYPE_IP4"/>
+      <member name="ip6" value="2" c:identifier="GST_NET_TYPE_IP6"/>
+    </enumeration>
+    <function name="gst_netaddress_equal" c:identifier="gst_netaddress_equal">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="naddr1" transfer-ownership="none">
+          <type name="GstNetAddress" c:type="GstNetAddress*"/>
+        </parameter>
+        <parameter name="naddr2" transfer-ownership="none">
+          <type name="GstNetAddress" c:type="GstNetAddress*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_netaddress_get_address_bytes"
+              c:identifier="gst_netaddress_get_address_bytes">
+      <return-value transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </return-value>
+      <parameters>
+        <parameter name="naddr" transfer-ownership="none">
+          <type name="GstNetAddress" c:type="GstNetAddress*"/>
+        </parameter>
+        <parameter name="address" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+        <parameter name="port"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <type name="uint16" c:type="guint16*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_netaddress_get_ip4_address"
+              c:identifier="gst_netaddress_get_ip4_address">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="naddr" transfer-ownership="none">
+          <type name="GstNetAddress" c:type="GstNetAddress*"/>
+        </parameter>
+        <parameter name="address"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <type name="uint32" c:type="guint32*"/>
+        </parameter>
+        <parameter name="port"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <type name="uint16" c:type="guint16*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_netaddress_get_ip6_address"
+              c:identifier="gst_netaddress_get_ip6_address">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="naddr" transfer-ownership="none">
+          <type name="GstNetAddress" c:type="GstNetAddress*"/>
+        </parameter>
+        <parameter name="address" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+        <parameter name="port"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <type name="uint16" c:type="guint16*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_netaddress_get_net_type"
+              c:identifier="gst_netaddress_get_net_type">
+      <return-value transfer-ownership="full">
+        <type name="GstNetType" c:type="GstNetType"/>
+      </return-value>
+      <parameters>
+        <parameter name="naddr" transfer-ownership="none">
+          <type name="GstNetAddress" c:type="GstNetAddress*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_netaddress_set_address_bytes"
+              c:identifier="gst_netaddress_set_address_bytes">
+      <return-value transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </return-value>
+      <parameters>
+        <parameter name="naddr" transfer-ownership="none">
+          <type name="GstNetAddress" c:type="GstNetAddress*"/>
+        </parameter>
+        <parameter name="type" transfer-ownership="none">
+          <type name="GstNetType" c:type="GstNetType"/>
+        </parameter>
+        <parameter name="address" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+        <parameter name="port" transfer-ownership="none">
+          <type name="uint16" c:type="guint16"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_netaddress_set_ip4_address"
+              c:identifier="gst_netaddress_set_ip4_address">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="naddr" transfer-ownership="none">
+          <type name="GstNetAddress" c:type="GstNetAddress*"/>
+        </parameter>
+        <parameter name="address" transfer-ownership="none">
+          <type name="uint32" c:type="guint32"/>
+        </parameter>
+        <parameter name="port" transfer-ownership="none">
+          <type name="uint16" c:type="guint16"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_netaddress_set_ip6_address"
+              c:identifier="gst_netaddress_set_ip6_address">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="naddr" transfer-ownership="none">
+          <type name="GstNetAddress" c:type="GstNetAddress*"/>
+        </parameter>
+        <parameter name="address" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+        <parameter name="port" transfer-ownership="none">
+          <type name="uint16" c:type="guint16"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_netaddress_to_string"
+              c:identifier="gst_netaddress_to_string">
+      <return-value transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </return-value>
+      <parameters>
+        <parameter name="naddr" transfer-ownership="none">
+          <type name="GstNetAddress" c:type="GstNetAddress*"/>
+        </parameter>
+        <parameter name="dest" transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="len" transfer-ownership="none">
+          <type name="ulong" c:type="gulong"/>
+        </parameter>
+      </parameters>
+    </function>
+  </namespace>
+</repository>

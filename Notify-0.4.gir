@@ -1,0 +1,497 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="Atk" version="1.0"/>
+  <include name="GLib" version="2.0"/>
+  <include name="GModule" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <include name="Gdk" version="2.0"/>
+  <include name="GdkPixbuf" version="2.0"/>
+  <include name="Gio" version="2.0"/>
+  <include name="Gtk" version="2.0"/>
+  <include name="Pango" version="1.0"/>
+  <include name="cairo" version="1.0"/>
+  <include name="xlib" version="2.0"/>
+  <package name="gtk+-2.0"/>
+  <package name="libnotify"/>
+  <c:include name="libnotify/notification.h"/>
+  <c:include name="libnotify/notify.h"/>
+  <namespace name="Notify"
+             version="0.4"
+             shared-library="libnotify.so.1"
+             c:prefix="Notify">
+    <callback name="ActionCallback" c:type="NotifyActionCallback">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="notification" transfer-ownership="none">
+          <type name="Notification" c:type="NotifyNotification*"/>
+        </parameter>
+        <parameter name="action" transfer-ownership="full">
+          <type name="utf8" c:type="char*"/>
+        </parameter>
+        <parameter name="user_data" transfer-ownership="none" closure="2">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <constant name="EXPIRES_DEFAULT" value="-1">
+      <type name="int"/>
+    </constant>
+    <constant name="EXPIRES_NEVER" value="0">
+      <type name="int"/>
+    </constant>
+    <class name="Notification"
+           c:type="NotifyNotification"
+           parent="GObject.Object"
+           glib:type-name="NotifyNotification"
+           glib:get-type="notify_notification_get_type"
+           glib:type-struct="NotificationClass">
+      <constructor name="new" c:identifier="notify_notification_new">
+        <return-value transfer-ownership="full">
+          <type name="Notification" c:type="NotifyNotification*"/>
+        </return-value>
+        <parameters>
+          <parameter name="summary" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="body" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="icon" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="attach" transfer-ownership="none" allow-none="1">
+            <type name="Gtk.Widget" c:type="GtkWidget*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_with_status_icon"
+                   c:identifier="notify_notification_new_with_status_icon">
+        <return-value transfer-ownership="full">
+          <type name="Notification" c:type="NotifyNotification*"/>
+        </return-value>
+        <parameters>
+          <parameter name="summary" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="body" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="icon" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="status_icon" transfer-ownership="none">
+            <type name="Gtk.StatusIcon" c:type="GtkStatusIcon*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="update" c:identifier="notify_notification_update">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="summary" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="body" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="icon" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="attach_to_widget"
+              c:identifier="notify_notification_attach_to_widget">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="attach" transfer-ownership="none">
+            <type name="Gtk.Widget" c:type="GtkWidget*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="attach_to_status_icon"
+              c:identifier="notify_notification_attach_to_status_icon">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="status_icon" transfer-ownership="none">
+            <type name="Gtk.StatusIcon" c:type="GtkStatusIcon*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_geometry_hints"
+              c:identifier="notify_notification_set_geometry_hints">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="screen" transfer-ownership="none">
+            <type name="Gdk.Screen" c:type="GdkScreen*"/>
+          </parameter>
+          <parameter name="x" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="y" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="show" c:identifier="notify_notification_show" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="set_timeout"
+              c:identifier="notify_notification_set_timeout">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="timeout" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_category"
+              c:identifier="notify_notification_set_category">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="category" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_urgency"
+              c:identifier="notify_notification_set_urgency">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="urgency" transfer-ownership="none">
+            <type name="Urgency" c:type="NotifyUrgency"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_icon_from_pixbuf"
+              c:identifier="notify_notification_set_icon_from_pixbuf">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="icon" transfer-ownership="none">
+            <type name="GdkPixbuf.Pixbuf" c:type="GdkPixbuf*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_image_from_pixbuf"
+              c:identifier="notify_notification_set_image_from_pixbuf">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="image" transfer-ownership="none">
+            <type name="GdkPixbuf.Pixbuf" c:type="GdkPixbuf*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_hint_int32"
+              c:identifier="notify_notification_set_hint_int32">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_hint_uint32"
+              c:identifier="notify_notification_set_hint_uint32">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_hint_double"
+              c:identifier="notify_notification_set_hint_double">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="double" c:type="gdouble"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_hint_string"
+              c:identifier="notify_notification_set_hint_string">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_hint_byte"
+              c:identifier="notify_notification_set_hint_byte">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="uint8" c:type="guchar"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_hint_byte_array"
+              c:identifier="notify_notification_set_hint_byte_array">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="key" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <array c:type="guchar*">
+              <type name="uint8"/>
+            </array>
+          </parameter>
+          <parameter name="len" transfer-ownership="none">
+            <type name="gsize" c:type="gsize"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="clear_hints"
+              c:identifier="notify_notification_clear_hints">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="add_action" c:identifier="notify_notification_add_action">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="action" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="label" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="call"
+                     closure="4">
+            <type name="ActionCallback" c:type="NotifyActionCallback"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="free_func" transfer-ownership="none" scope="call">
+            <type name="GLib.FreeFunc" c:type="GFreeFunc"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="clear_actions"
+              c:identifier="notify_notification_clear_actions">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="close" c:identifier="notify_notification_close" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_closed_reason"
+              c:identifier="notify_notification_get_closed_reason">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <property name="attach-widget"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="Gtk.Widget" c:type="GtkWidget"/>
+      </property>
+      <property name="body"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="closed-reason" transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <property name="icon-name"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="id" writable="1" construct="1" transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <property name="status-icon"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="Gtk.StatusIcon" c:type="GtkStatusIcon"/>
+      </property>
+      <property name="summary"
+                writable="1"
+                construct="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <field name="parent_object">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="NotificationPrivate" c:type="NotifyNotificationPrivate*"/>
+      </field>
+      <glib:signal name="closed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+    </class>
+    <record name="NotificationClass"
+            c:type="NotifyNotificationClass"
+            glib:is-gtype-struct-for="Notification">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="closed">
+        <callback name="closed" c:type="closed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="notification" transfer-ownership="none">
+              <type name="Notification" c:type="NotifyNotification*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+    </record>
+    <record name="NotificationPrivate" c:type="NotifyNotificationPrivate">
+    </record>
+    <enumeration name="Urgency"
+                 glib:type-name="NotifyUrgency"
+                 glib:get-type="notify_urgency_get_type"
+                 c:type="NotifyUrgency">
+      <member name="low"
+              value="0"
+              c:identifier="NOTIFY_URGENCY_LOW"
+              glib:nick="low"/>
+      <member name="normal"
+              value="1"
+              c:identifier="NOTIFY_URGENCY_NORMAL"
+              glib:nick="normal"/>
+      <member name="critical"
+              value="2"
+              c:identifier="NOTIFY_URGENCY_CRITICAL"
+              glib:nick="critical"/>
+    </enumeration>
+    <function name="get_app_name" c:identifier="notify_get_app_name">
+      <return-value transfer-ownership="none">
+        <type name="utf8" c:type="gchar*"/>
+      </return-value>
+    </function>
+    <function name="get_server_caps" c:identifier="notify_get_server_caps">
+      <return-value transfer-ownership="full">
+        <type name="GLib.List" c:type="GList*">
+          <type name="utf8"/>
+        </type>
+      </return-value>
+    </function>
+    <function name="get_server_info" c:identifier="notify_get_server_info">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="ret_name"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <type name="utf8" c:type="char**"/>
+        </parameter>
+        <parameter name="ret_vendor"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <type name="utf8" c:type="char**"/>
+        </parameter>
+        <parameter name="ret_version"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <type name="utf8" c:type="char**"/>
+        </parameter>
+        <parameter name="ret_spec_version"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <type name="utf8" c:type="char**"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="init" c:identifier="notify_init">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="app_name" transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="is_initted" c:identifier="notify_is_initted">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+    </function>
+    <function name="uninit" c:identifier="notify_uninit">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+    </function>
+  </namespace>
+</repository>

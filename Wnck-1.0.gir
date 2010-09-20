@@ -1,0 +1,2840 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="Atk" version="1.0"/>
+  <include name="GLib" version="2.0"/>
+  <include name="GModule" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <include name="Gdk" version="2.0"/>
+  <include name="GdkPixbuf" version="2.0"/>
+  <include name="Gio" version="2.0"/>
+  <include name="Gtk" version="2.0"/>
+  <include name="Pango" version="1.0"/>
+  <include name="cairo" version="1.0"/>
+  <include name="xlib" version="2.0"/>
+  <package name="libwnck-1.0"/>
+  <namespace name="Wnck"
+             version="1.0"
+             shared-library="libwnck-1.so.22"
+             c:prefix="Wnck">
+    <class name="ActionMenu"
+           c:type="WnckActionMenu"
+           parent="Gtk.Menu"
+           glib:type-name="WnckActionMenu"
+           glib:get-type="wnck_action_menu_get_type"
+           glib:type-struct="ActionMenuClass">
+      <doc xml:whitespace="preserve">The #WnckActionMenu struct contains only private fields and should not be
+directly accessed.</doc>
+      <implements name="Atk.ImplementorIface"/>
+      <implements name="Gtk.Buildable"/>
+      <constructor name="new" c:identifier="wnck_action_menu_new">
+        <return-value transfer-ownership="full">
+          <type name="ActionMenu" c:type="GtkWidget*"/>
+        </return-value>
+        <parameters>
+          <parameter name="window" transfer-ownership="none">
+            <type name="Window" c:type="WnckWindow*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <property name="window"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="any" c:type="gpointer"/>
+      </property>
+      <field name="parent_instance">
+        <type name="Gtk.Menu" c:type="GtkMenu"/>
+      </field>
+      <field name="priv">
+        <type name="ActionMenuPrivate" c:type="WnckActionMenuPrivate*"/>
+      </field>
+    </class>
+    <record name="ActionMenuClass"
+            c:type="WnckActionMenuClass"
+            glib:is-gtype-struct-for="ActionMenu">
+      <field name="parent_class">
+        <type name="Gtk.MenuClass" c:type="GtkMenuClass"/>
+      </field>
+      <field name="pad1">
+        <callback name="pad1" c:type="pad1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad2">
+        <callback name="pad2" c:type="pad2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad3">
+        <callback name="pad3" c:type="pad3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad4">
+        <callback name="pad4" c:type="pad4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="ActionMenuPrivate" c:type="WnckActionMenuPrivate">
+    </record>
+    <class name="Application"
+           c:type="WnckApplication"
+           parent="GObject.Object"
+           glib:type-name="WnckApplication"
+           glib:get-type="wnck_application_get_type"
+           glib:type-struct="ApplicationClass">
+      <doc xml:whitespace="preserve">The #WnckApplication struct contains only private fields and should not be
+directly accessed.</doc>
+      <function name="get" c:identifier="wnck_application_get">
+        <return-value transfer-ownership="full">
+          <type name="Application" c:type="WnckApplication*"/>
+        </return-value>
+        <parameters>
+          <parameter name="xwindow" transfer-ownership="none">
+            <type name="ulong" c:type="gulong"/>
+          </parameter>
+        </parameters>
+      </function>
+      <method name="get_xid" c:identifier="wnck_application_get_xid">
+        <return-value transfer-ownership="none">
+          <type name="ulong" c:type="gulong"/>
+        </return-value>
+      </method>
+      <method name="get_windows"
+              c:identifier="wnck_application_get_windows"
+              introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+      </method>
+      <method name="get_n_windows"
+              c:identifier="wnck_application_get_n_windows">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="get_name" c:identifier="wnck_application_get_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_icon_name"
+              c:identifier="wnck_application_get_icon_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_pid" c:identifier="wnck_application_get_pid">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="get_icon" c:identifier="wnck_application_get_icon">
+        <return-value transfer-ownership="full">
+          <type name="GdkPixbuf.Pixbuf" c:type="GdkPixbuf*"/>
+        </return-value>
+      </method>
+      <method name="get_mini_icon"
+              c:identifier="wnck_application_get_mini_icon">
+        <return-value transfer-ownership="full">
+          <type name="GdkPixbuf.Pixbuf" c:type="GdkPixbuf*"/>
+        </return-value>
+      </method>
+      <method name="get_icon_is_fallback"
+              c:identifier="wnck_application_get_icon_is_fallback">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_startup_id"
+              c:identifier="wnck_application_get_startup_id">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="ApplicationPrivate" c:type="WnckApplicationPrivate*"/>
+      </field>
+      <glib:signal name="icon-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="name-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+    </class>
+    <record name="ApplicationClass"
+            c:type="WnckApplicationClass"
+            glib:is-gtype-struct-for="Application">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="name_changed">
+        <callback name="name_changed" c:type="name_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="app" transfer-ownership="none">
+              <type name="Application" c:type="WnckApplication*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="icon_changed">
+        <callback name="icon_changed" c:type="icon_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="app" transfer-ownership="none">
+              <type name="Application" c:type="WnckApplication*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="pad1">
+        <callback name="pad1" c:type="pad1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad2">
+        <callback name="pad2" c:type="pad2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad3">
+        <callback name="pad3" c:type="pad3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad4">
+        <callback name="pad4" c:type="pad4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="ApplicationPrivate" c:type="WnckApplicationPrivate">
+    </record>
+    <class name="ClassGroup"
+           c:type="WnckClassGroup"
+           parent="GObject.Object"
+           glib:type-name="WnckClassGroup"
+           glib:get-type="wnck_class_group_get_type"
+           glib:type-struct="ClassGroupClass">
+      <doc xml:whitespace="preserve">The #WnckClassGroup struct contains only private fields and should not be
+directly accessed.</doc>
+      <function name="get" c:identifier="wnck_class_group_get">
+        <return-value transfer-ownership="full">
+          <type name="ClassGroup" c:type="WnckClassGroup*"/>
+        </return-value>
+        <parameters>
+          <parameter name="res_class" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </function>
+      <method name="get_windows"
+              c:identifier="wnck_class_group_get_windows"
+              introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+      </method>
+      <method name="get_res_class"
+              c:identifier="wnck_class_group_get_res_class">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_name" c:identifier="wnck_class_group_get_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_icon" c:identifier="wnck_class_group_get_icon">
+        <return-value transfer-ownership="full">
+          <type name="GdkPixbuf.Pixbuf" c:type="GdkPixbuf*"/>
+        </return-value>
+      </method>
+      <method name="get_mini_icon"
+              c:identifier="wnck_class_group_get_mini_icon">
+        <return-value transfer-ownership="full">
+          <type name="GdkPixbuf.Pixbuf" c:type="GdkPixbuf*"/>
+        </return-value>
+      </method>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="ClassGroupPrivate" c:type="WnckClassGroupPrivate*"/>
+      </field>
+      <glib:signal name="icon-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="name-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+    </class>
+    <record name="ClassGroupClass"
+            c:type="WnckClassGroupClass"
+            glib:is-gtype-struct-for="ClassGroup">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="name_changed">
+        <callback name="name_changed" c:type="name_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="app" transfer-ownership="none">
+              <type name="Application" c:type="WnckApplication*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="icon_changed">
+        <callback name="icon_changed" c:type="icon_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="app" transfer-ownership="none">
+              <type name="Application" c:type="WnckApplication*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="pad1">
+        <callback name="pad1" c:type="pad1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad2">
+        <callback name="pad2" c:type="pad2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad3">
+        <callback name="pad3" c:type="pad3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad4">
+        <callback name="pad4" c:type="pad4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="ClassGroupPrivate" c:type="WnckClassGroupPrivate">
+    </record>
+    <enumeration name="ClientType"
+                 version="2.14"
+                 glib:type-name="WnckClientType"
+                 glib:get-type="wnck_client_type_get_type"
+                 c:type="WnckClientType">
+      <doc xml:whitespace="preserve">Type describing the role of the libwnck user.</doc>
+      <member name="application"
+              value="1"
+              c:identifier="WNCK_CLIENT_TYPE_APPLICATION"
+              glib:nick="application"/>
+      <member name="pager"
+              value="2"
+              c:identifier="WNCK_CLIENT_TYPE_PAGER"
+              glib:nick="pager"/>
+    </enumeration>
+    <callback name="LoadIconFunction"
+              c:type="WnckLoadIconFunction"
+              version="2.2">
+      <doc xml:whitespace="preserve">Specifies the type of function passed to wnck_tasklist_set_icon_loader().
+at size @size, or %NULL if no icon for @icon_name at size @size could be
+loaded.</doc>
+      <return-value transfer-ownership="full">
+        <doc xml:whitespace="preserve">it should return a &lt;classname&gt;GdkPixbuf&lt;/classname&gt; of @icon_name</doc>
+        <type name="GdkPixbuf.Pixbuf" c:type="GdkPixbuf*"/>
+      </return-value>
+      <parameters>
+        <parameter name="icon_name" transfer-ownership="none">
+          <doc xml:whitespace="preserve">an icon name as in the Icon field in a .desktop file for the icon to load.</doc>
+          <type name="utf8" c:type="char*"/>
+        </parameter>
+        <parameter name="size" transfer-ownership="none">
+          <doc xml:whitespace="preserve">the desired icon size.</doc>
+          <type name="int" c:type="int"/>
+        </parameter>
+        <parameter name="flags" transfer-ownership="none">
+          <doc xml:whitespace="preserve">not defined to do anything yet.</doc>
+          <type name="uint" c:type="unsigned int"/>
+        </parameter>
+        <parameter name="data" transfer-ownership="none">
+          <doc xml:whitespace="preserve">data passed to the function, set when the #WnckLoadIconFunction has been set for the #WnckTasklist.</doc>
+          <type name="any" c:type="void*"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <enumeration name="MotionDirection"
+                 version="2.14"
+                 glib:type-name="WnckMotionDirection"
+                 glib:get-type="wnck_motion_direction_get_type"
+                 c:type="WnckMotionDirection">
+      <doc xml:whitespace="preserve">Type defining a direction in which to search a neighbor #WnckWorkspace.</doc>
+      <member name="up"
+              value="-1"
+              c:identifier="WNCK_MOTION_UP"
+              glib:nick="up"/>
+      <member name="down"
+              value="-2"
+              c:identifier="WNCK_MOTION_DOWN"
+              glib:nick="down"/>
+      <member name="left"
+              value="-3"
+              c:identifier="WNCK_MOTION_LEFT"
+              glib:nick="left"/>
+      <member name="right"
+              value="-4"
+              c:identifier="WNCK_MOTION_RIGHT"
+              glib:nick="right"/>
+    </enumeration>
+    <class name="Pager"
+           c:type="WnckPager"
+           parent="Gtk.Widget"
+           glib:type-name="WnckPager"
+           glib:get-type="wnck_pager_get_type"
+           glib:type-struct="PagerClass">
+      <doc xml:whitespace="preserve">The #WnckPager struct contains only private fields and should not be
+directly accessed.</doc>
+      <implements name="Atk.ImplementorIface"/>
+      <implements name="Gtk.Buildable"/>
+      <constructor name="new" c:identifier="wnck_pager_new">
+        <return-value transfer-ownership="full">
+          <type name="Pager" c:type="GtkWidget*"/>
+        </return-value>
+        <parameters>
+          <parameter name="screen" transfer-ownership="none">
+            <type name="Screen" c:type="WnckScreen*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="set_orientation" c:identifier="wnck_pager_set_orientation">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="orientation" transfer-ownership="none">
+            <type name="Gtk.Orientation" c:type="GtkOrientation"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_n_rows" c:identifier="wnck_pager_set_n_rows">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="n_rows" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_display_mode"
+              c:identifier="wnck_pager_set_display_mode">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="mode" transfer-ownership="none">
+            <type name="PagerDisplayMode" c:type="WnckPagerDisplayMode"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_show_all" c:identifier="wnck_pager_set_show_all">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="show_all_workspaces" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_shadow_type" c:identifier="wnck_pager_set_shadow_type">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="shadow_type" transfer-ownership="none">
+            <type name="Gtk.ShadowType" c:type="GtkShadowType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_screen" c:identifier="wnck_pager_set_screen">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="screen" transfer-ownership="none">
+            <type name="Screen" c:type="WnckScreen*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <field name="parent_instance">
+        <type name="Gtk.Container" c:type="GtkContainer"/>
+      </field>
+      <field name="priv">
+        <type name="PagerPrivate" c:type="WnckPagerPrivate*"/>
+      </field>
+    </class>
+    <record name="PagerClass"
+            c:type="WnckPagerClass"
+            glib:is-gtype-struct-for="Pager">
+      <field name="parent_class">
+        <type name="Gtk.ContainerClass" c:type="GtkContainerClass"/>
+      </field>
+      <field name="pad1">
+        <callback name="pad1" c:type="pad1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad2">
+        <callback name="pad2" c:type="pad2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad3">
+        <callback name="pad3" c:type="pad3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad4">
+        <callback name="pad4" c:type="pad4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <enumeration name="PagerDisplayMode"
+                 glib:type-name="WnckPagerDisplayMode"
+                 glib:get-type="wnck_pager_display_mode_get_type"
+                 c:type="WnckPagerDisplayMode">
+      <doc xml:whitespace="preserve">Mode defining what a #WnckPager will display.</doc>
+      <member name="name"
+              value="0"
+              c:identifier="WNCK_PAGER_DISPLAY_NAME"
+              glib:nick="name"/>
+      <member name="content"
+              value="1"
+              c:identifier="WNCK_PAGER_DISPLAY_CONTENT"
+              glib:nick="content"/>
+    </enumeration>
+    <record name="PagerPrivate" c:type="WnckPagerPrivate">
+    </record>
+    <record name="ResourceUsage" c:type="WnckResourceUsage" version="2.6">
+      <doc xml:whitespace="preserve">The #WnckResourceUsage struct contains information about the total resource
+usage of an X client, and the number of resources allocated for each
+resource type.</doc>
+      <field name="total_bytes_estimate" writable="1">
+        <type name="ulong" c:type="gulong"/>
+      </field>
+      <field name="pixmap_bytes" writable="1">
+        <type name="ulong" c:type="gulong"/>
+      </field>
+      <field name="n_pixmaps" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="n_windows" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="n_gcs" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="n_pictures" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="n_glyphsets" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="n_fonts" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="n_colormap_entries" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="n_passive_grabs" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="n_cursors" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="n_other" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="pad1" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="pad2" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="pad3" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="pad4" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="pad5" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="pad6" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="pad7" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="pad8" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+      <field name="pad9" writable="1">
+        <type name="uint" c:type="unsigned"/>
+      </field>
+    </record>
+    <class name="Screen"
+           c:type="WnckScreen"
+           parent="GObject.Object"
+           glib:type-name="WnckScreen"
+           glib:get-type="wnck_screen_get_type"
+           glib:type-struct="ScreenClass">
+      <doc xml:whitespace="preserve">The #WnckScreen struct contains only private fields and should not be
+directly accessed.</doc>
+      <function name="get_default" c:identifier="wnck_screen_get_default">
+        <return-value transfer-ownership="full">
+          <type name="Screen" c:type="WnckScreen*"/>
+        </return-value>
+      </function>
+      <function name="get" c:identifier="wnck_screen_get">
+        <return-value transfer-ownership="full">
+          <type name="Screen" c:type="WnckScreen*"/>
+        </return-value>
+        <parameters>
+          <parameter name="index" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+        </parameters>
+      </function>
+      <function name="get_for_root" c:identifier="wnck_screen_get_for_root">
+        <return-value transfer-ownership="full">
+          <type name="Screen" c:type="WnckScreen*"/>
+        </return-value>
+        <parameters>
+          <parameter name="root_window_id" transfer-ownership="none">
+            <type name="ulong" c:type="gulong"/>
+          </parameter>
+        </parameters>
+      </function>
+      <function name="free_workspace_layout"
+                c:identifier="wnck_screen_free_workspace_layout">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="layout" transfer-ownership="none">
+            <type name="WorkspaceLayout" c:type="WnckWorkspaceLayout*"/>
+          </parameter>
+        </parameters>
+      </function>
+      <method name="get_number" c:identifier="wnck_screen_get_number">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="get_workspace" c:identifier="wnck_screen_get_workspace">
+        <return-value transfer-ownership="full">
+          <type name="Workspace" c:type="WnckWorkspace*"/>
+        </return-value>
+        <parameters>
+          <parameter name="workspace" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_workspace_index"
+              c:identifier="wnck_screen_get_workspace_index">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+        <parameters>
+          <parameter name="space" transfer-ownership="none">
+            <type name="Workspace" c:type="WnckWorkspace*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_workspace_neighbor"
+              c:identifier="wnck_screen_get_workspace_neighbor">
+        <return-value transfer-ownership="full">
+          <type name="Workspace" c:type="WnckWorkspace*"/>
+        </return-value>
+        <parameters>
+          <parameter name="space" transfer-ownership="none">
+            <type name="Workspace" c:type="WnckWorkspace*"/>
+          </parameter>
+          <parameter name="direction" transfer-ownership="none">
+            <type name="MotionDirection" c:type="WnckMotionDirection"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_active_workspace"
+              c:identifier="wnck_screen_get_active_workspace">
+        <return-value transfer-ownership="full">
+          <type name="Workspace" c:type="WnckWorkspace*"/>
+        </return-value>
+      </method>
+      <method name="get_workspaces"
+              c:identifier="wnck_screen_get_workspaces"
+              introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+      </method>
+      <method name="get_active_window"
+              c:identifier="wnck_screen_get_active_window">
+        <return-value transfer-ownership="full">
+          <type name="Window" c:type="WnckWindow*"/>
+        </return-value>
+      </method>
+      <method name="get_previously_active_window"
+              c:identifier="wnck_screen_get_previously_active_window">
+        <return-value transfer-ownership="full">
+          <type name="Window" c:type="WnckWindow*"/>
+        </return-value>
+      </method>
+      <method name="get_windows"
+              c:identifier="wnck_screen_get_windows"
+              introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+      </method>
+      <method name="get_windows_stacked"
+              c:identifier="wnck_screen_get_windows_stacked"
+              introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+      </method>
+      <method name="force_update" c:identifier="wnck_screen_force_update">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="get_workspace_count"
+              c:identifier="wnck_screen_get_workspace_count">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="change_workspace_count"
+              c:identifier="wnck_screen_change_workspace_count">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="count" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_window_manager_name"
+              c:identifier="wnck_screen_get_window_manager_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="net_wm_supports"
+              c:identifier="wnck_screen_net_wm_supports">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="atom" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_background_pixmap"
+              c:identifier="wnck_screen_get_background_pixmap">
+        <return-value transfer-ownership="none">
+          <type name="ulong" c:type="gulong"/>
+        </return-value>
+      </method>
+      <method name="get_width" c:identifier="wnck_screen_get_width">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="get_height" c:identifier="wnck_screen_get_height">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="get_showing_desktop"
+              c:identifier="wnck_screen_get_showing_desktop">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="toggle_showing_desktop"
+              c:identifier="wnck_screen_toggle_showing_desktop">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="show" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="move_viewport" c:identifier="wnck_screen_move_viewport">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="x" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+          <parameter name="y" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="try_set_workspace_layout"
+              c:identifier="wnck_screen_try_set_workspace_layout">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+        <parameters>
+          <parameter name="current_token" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+          <parameter name="rows" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+          <parameter name="columns" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="release_workspace_layout"
+              c:identifier="wnck_screen_release_workspace_layout">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="current_token" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="calc_workspace_layout"
+              c:identifier="wnck_screen_calc_workspace_layout">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="num_workspaces" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+          <parameter name="space_index" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+          <parameter name="layout" transfer-ownership="none">
+            <type name="WorkspaceLayout" c:type="WnckWorkspaceLayout*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="ScreenPrivate" c:type="WnckScreenPrivate*"/>
+      </field>
+      <glib:signal name="active-window-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="Window" c:type="WnckWindow"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="active-workspace-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="Workspace" c:type="WnckWorkspace"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="application-closed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="Application" c:type="WnckApplication"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="application-opened">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="Application" c:type="WnckApplication"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="background-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="class-group-closed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="ClassGroup" c:type="WnckClassGroup"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="class-group-opened">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="ClassGroup" c:type="WnckClassGroup"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="showing-desktop-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="viewports-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="window-closed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="Window" c:type="WnckWindow"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="window-manager-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="window-opened">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="Window" c:type="WnckWindow"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="window-stacking-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="workspace-created">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="Workspace" c:type="WnckWorkspace"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="workspace-destroyed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="Workspace" c:type="WnckWorkspace"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <record name="ScreenClass"
+            c:type="WnckScreenClass"
+            glib:is-gtype-struct-for="Screen">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="active_window_changed">
+        <callback name="active_window_changed" c:type="active_window_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="screen" transfer-ownership="none">
+              <type name="Screen" c:type="WnckScreen*"/>
+            </parameter>
+            <parameter name="previous_window" transfer-ownership="none">
+              <type name="Window" c:type="WnckWindow*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="active_workspace_changed">
+        <callback name="active_workspace_changed"
+                  c:type="active_workspace_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="screen" transfer-ownership="none">
+              <type name="Screen" c:type="WnckScreen*"/>
+            </parameter>
+            <parameter name="previous_workspace" transfer-ownership="none">
+              <type name="Workspace" c:type="WnckWorkspace*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="window_stacking_changed">
+        <callback name="window_stacking_changed"
+                  c:type="window_stacking_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="screen" transfer-ownership="none">
+              <type name="Screen" c:type="WnckScreen*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="window_opened">
+        <callback name="window_opened" c:type="window_opened">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="screen" transfer-ownership="none">
+              <type name="Screen" c:type="WnckScreen*"/>
+            </parameter>
+            <parameter name="window" transfer-ownership="none">
+              <type name="Window" c:type="WnckWindow*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="window_closed">
+        <callback name="window_closed" c:type="window_closed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="screen" transfer-ownership="none">
+              <type name="Screen" c:type="WnckScreen*"/>
+            </parameter>
+            <parameter name="window" transfer-ownership="none">
+              <type name="Window" c:type="WnckWindow*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="workspace_created">
+        <callback name="workspace_created" c:type="workspace_created">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="screen" transfer-ownership="none">
+              <type name="Screen" c:type="WnckScreen*"/>
+            </parameter>
+            <parameter name="space" transfer-ownership="none">
+              <type name="Workspace" c:type="WnckWorkspace*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="workspace_destroyed">
+        <callback name="workspace_destroyed" c:type="workspace_destroyed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="screen" transfer-ownership="none">
+              <type name="Screen" c:type="WnckScreen*"/>
+            </parameter>
+            <parameter name="space" transfer-ownership="none">
+              <type name="Workspace" c:type="WnckWorkspace*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="application_opened">
+        <callback name="application_opened" c:type="application_opened">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="screen" transfer-ownership="none">
+              <type name="Screen" c:type="WnckScreen*"/>
+            </parameter>
+            <parameter name="app" transfer-ownership="none">
+              <type name="Application" c:type="WnckApplication*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="application_closed">
+        <callback name="application_closed" c:type="application_closed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="screen" transfer-ownership="none">
+              <type name="Screen" c:type="WnckScreen*"/>
+            </parameter>
+            <parameter name="app" transfer-ownership="none">
+              <type name="Application" c:type="WnckApplication*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="background_changed">
+        <callback name="background_changed" c:type="background_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="screen" transfer-ownership="none">
+              <type name="Screen" c:type="WnckScreen*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="class_group_opened">
+        <callback name="class_group_opened" c:type="class_group_opened">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="screen" transfer-ownership="none">
+              <type name="Screen" c:type="WnckScreen*"/>
+            </parameter>
+            <parameter name="class_group" transfer-ownership="none">
+              <type name="ClassGroup" c:type="WnckClassGroup*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="class_group_closed">
+        <callback name="class_group_closed" c:type="class_group_closed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="screen" transfer-ownership="none">
+              <type name="Screen" c:type="WnckScreen*"/>
+            </parameter>
+            <parameter name="class_group" transfer-ownership="none">
+              <type name="ClassGroup" c:type="WnckClassGroup*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="showing_desktop_changed">
+        <callback name="showing_desktop_changed"
+                  c:type="showing_desktop_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="screen" transfer-ownership="none">
+              <type name="Screen" c:type="WnckScreen*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="viewports_changed">
+        <callback name="viewports_changed" c:type="viewports_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="screen" transfer-ownership="none">
+              <type name="Screen" c:type="WnckScreen*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="window_manager_changed">
+        <callback name="window_manager_changed"
+                  c:type="window_manager_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="screen" transfer-ownership="none">
+              <type name="Screen" c:type="WnckScreen*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="pad2">
+        <callback name="pad2" c:type="pad2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad3">
+        <callback name="pad3" c:type="pad3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad4">
+        <callback name="pad4" c:type="pad4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad5">
+        <callback name="pad5" c:type="pad5">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad6">
+        <callback name="pad6" c:type="pad6">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="ScreenPrivate" c:type="WnckScreenPrivate">
+    </record>
+    <class name="Selector"
+           c:type="WnckSelector"
+           parent="Gtk.MenuBar"
+           glib:type-name="WnckSelector"
+           glib:get-type="wnck_selector_get_type"
+           glib:type-struct="SelectorClass">
+      <doc xml:whitespace="preserve">The #WnckSelector struct contains only private fields and should not be
+directly accessed.</doc>
+      <implements name="Atk.ImplementorIface"/>
+      <implements name="Gtk.Buildable"/>
+      <constructor name="new" c:identifier="wnck_selector_new">
+        <return-value transfer-ownership="full">
+          <type name="Selector" c:type="GtkWidget*"/>
+        </return-value>
+      </constructor>
+      <field name="parent_instance">
+        <type name="Gtk.MenuBar" c:type="GtkMenuBar"/>
+      </field>
+      <field name="priv">
+        <type name="SelectorPrivate" c:type="WnckSelectorPrivate*"/>
+      </field>
+    </class>
+    <record name="SelectorClass"
+            c:type="WnckSelectorClass"
+            glib:is-gtype-struct-for="Selector">
+      <field name="parent_class">
+        <type name="Gtk.MenuBarClass" c:type="GtkMenuBarClass"/>
+      </field>
+      <field name="pad1">
+        <callback name="pad1" c:type="pad1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad2">
+        <callback name="pad2" c:type="pad2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad3">
+        <callback name="pad3" c:type="pad3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad4">
+        <callback name="pad4" c:type="pad4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="SelectorPrivate" c:type="WnckSelectorPrivate">
+    </record>
+    <class name="Tasklist"
+           c:type="WnckTasklist"
+           parent="Gtk.Container"
+           glib:type-name="WnckTasklist"
+           glib:get-type="wnck_tasklist_get_type"
+           glib:type-struct="TasklistClass">
+      <doc xml:whitespace="preserve">The #WnckTasklist struct contains only private fields and should not be
+directly accessed.</doc>
+      <implements name="Atk.ImplementorIface"/>
+      <implements name="Gtk.Buildable"/>
+      <constructor name="new" c:identifier="wnck_tasklist_new">
+        <return-value transfer-ownership="full">
+          <type name="Tasklist" c:type="GtkWidget*"/>
+        </return-value>
+        <parameters>
+          <parameter name="screen" transfer-ownership="none">
+            <type name="Screen" c:type="WnckScreen*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_size_hint_list"
+              c:identifier="wnck_tasklist_get_size_hint_list">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int*"/>
+        </return-value>
+        <parameters>
+          <parameter name="n_elements"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int" c:type="int*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_grouping" c:identifier="wnck_tasklist_set_grouping">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="grouping" transfer-ownership="none">
+            <type name="TasklistGroupingType"
+                  c:type="WnckTasklistGroupingType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_switch_workspace_on_unminimize"
+              c:identifier="wnck_tasklist_set_switch_workspace_on_unminimize">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="switch_workspace_on_unminimize"
+                     transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_grouping_limit"
+              c:identifier="wnck_tasklist_set_grouping_limit">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="limit" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_include_all_workspaces"
+              c:identifier="wnck_tasklist_set_include_all_workspaces">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="include_all_workspaces" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_button_relief"
+              c:identifier="wnck_tasklist_set_button_relief">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="relief" transfer-ownership="none">
+            <type name="Gtk.ReliefStyle" c:type="GtkReliefStyle"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_minimum_width"
+              c:identifier="wnck_tasklist_set_minimum_width">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="size" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_minimum_width"
+              c:identifier="wnck_tasklist_get_minimum_width">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <method name="set_minimum_height"
+              c:identifier="wnck_tasklist_set_minimum_height">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="size" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_minimum_height"
+              c:identifier="wnck_tasklist_get_minimum_height">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <method name="set_icon_loader"
+              c:identifier="wnck_tasklist_set_icon_loader">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="load_icon_func"
+                     transfer-ownership="none"
+                     scope="notified"
+                     closure="2"
+                     destroy="3">
+            <type name="LoadIconFunction" c:type="WnckLoadIconFunction"/>
+          </parameter>
+          <parameter name="data" transfer-ownership="none">
+            <type name="any" c:type="void*"/>
+          </parameter>
+          <parameter name="free_data_func"
+                     transfer-ownership="none"
+                     scope="call">
+            <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_screen" c:identifier="wnck_tasklist_set_screen">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="screen" transfer-ownership="none">
+            <type name="Screen" c:type="WnckScreen*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <field name="parent_instance">
+        <type name="Gtk.Container" c:type="GtkContainer"/>
+      </field>
+      <field name="priv">
+        <type name="TasklistPrivate" c:type="WnckTasklistPrivate*"/>
+      </field>
+    </class>
+    <record name="TasklistClass"
+            c:type="WnckTasklistClass"
+            glib:is-gtype-struct-for="Tasklist">
+      <field name="parent_class">
+        <type name="Gtk.ContainerClass" c:type="GtkContainerClass"/>
+      </field>
+      <field name="pad1">
+        <callback name="pad1" c:type="pad1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad2">
+        <callback name="pad2" c:type="pad2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad3">
+        <callback name="pad3" c:type="pad3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad4">
+        <callback name="pad4" c:type="pad4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <enumeration name="TasklistGroupingType"
+                 glib:type-name="WnckTasklistGroupingType"
+                 glib:get-type="wnck_tasklist_grouping_type_get_type"
+                 c:type="WnckTasklistGroupingType">
+      <doc xml:whitespace="preserve">Type defining the policy of the #WnckTasklist for grouping multiple
+#WnckWindow of the same #WnckApplication.</doc>
+      <member name="never_group"
+              value="0"
+              c:identifier="WNCK_TASKLIST_NEVER_GROUP"
+              glib:nick="never-group"/>
+      <member name="auto_group"
+              value="1"
+              c:identifier="WNCK_TASKLIST_AUTO_GROUP"
+              glib:nick="auto-group"/>
+      <member name="always_group"
+              value="2"
+              c:identifier="WNCK_TASKLIST_ALWAYS_GROUP"
+              glib:nick="always-group"/>
+    </enumeration>
+    <record name="TasklistPrivate" c:type="WnckTasklistPrivate">
+    </record>
+    <class name="Window"
+           c:type="WnckWindow"
+           parent="GObject.Object"
+           glib:type-name="WnckWindow"
+           glib:get-type="wnck_window_get_type"
+           glib:type-struct="WindowClass">
+      <doc xml:whitespace="preserve">The #WnckWindow struct contains only private fields and should not be
+directly accessed.</doc>
+      <function name="get" c:identifier="wnck_window_get">
+        <return-value transfer-ownership="full">
+          <type name="Window" c:type="WnckWindow*"/>
+        </return-value>
+        <parameters>
+          <parameter name="xwindow" transfer-ownership="none">
+            <type name="ulong" c:type="gulong"/>
+          </parameter>
+        </parameters>
+      </function>
+      <method name="get_screen" c:identifier="wnck_window_get_screen">
+        <return-value transfer-ownership="full">
+          <type name="Screen" c:type="WnckScreen*"/>
+        </return-value>
+      </method>
+      <method name="has_name" c:identifier="wnck_window_has_name">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_name" c:identifier="wnck_window_get_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="has_icon_name" c:identifier="wnck_window_has_icon_name">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_icon_name" c:identifier="wnck_window_get_icon_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_application"
+              c:identifier="wnck_window_get_application">
+        <return-value transfer-ownership="full">
+          <type name="Application" c:type="WnckApplication*"/>
+        </return-value>
+      </method>
+      <method name="get_transient" c:identifier="wnck_window_get_transient">
+        <return-value transfer-ownership="full">
+          <type name="Window" c:type="WnckWindow*"/>
+        </return-value>
+      </method>
+      <method name="get_group_leader"
+              c:identifier="wnck_window_get_group_leader">
+        <return-value transfer-ownership="none">
+          <type name="ulong" c:type="gulong"/>
+        </return-value>
+      </method>
+      <method name="get_xid" c:identifier="wnck_window_get_xid">
+        <return-value transfer-ownership="none">
+          <type name="ulong" c:type="gulong"/>
+        </return-value>
+      </method>
+      <method name="get_class_group"
+              c:identifier="wnck_window_get_class_group">
+        <return-value transfer-ownership="full">
+          <type name="ClassGroup" c:type="WnckClassGroup*"/>
+        </return-value>
+      </method>
+      <method name="get_session_id" c:identifier="wnck_window_get_session_id">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_session_id_utf8"
+              c:identifier="wnck_window_get_session_id_utf8">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_pid" c:identifier="wnck_window_get_pid">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="get_sort_order" c:identifier="wnck_window_get_sort_order">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="gint"/>
+        </return-value>
+      </method>
+      <method name="set_sort_order" c:identifier="wnck_window_set_sort_order">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="order" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_window_type"
+              c:identifier="wnck_window_get_window_type">
+        <return-value transfer-ownership="full">
+          <type name="WindowType" c:type="WnckWindowType"/>
+        </return-value>
+      </method>
+      <method name="set_window_type"
+              c:identifier="wnck_window_set_window_type">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="wintype" transfer-ownership="none">
+            <type name="WindowType" c:type="WnckWindowType"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="is_minimized" c:identifier="wnck_window_is_minimized">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="is_maximized_horizontally"
+              c:identifier="wnck_window_is_maximized_horizontally">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="is_maximized_vertically"
+              c:identifier="wnck_window_is_maximized_vertically">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="is_maximized" c:identifier="wnck_window_is_maximized">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="is_shaded" c:identifier="wnck_window_is_shaded">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="is_above" c:identifier="wnck_window_is_above">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="is_below" c:identifier="wnck_window_is_below">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="is_skip_pager" c:identifier="wnck_window_is_skip_pager">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="is_skip_tasklist"
+              c:identifier="wnck_window_is_skip_tasklist">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="is_fullscreen" c:identifier="wnck_window_is_fullscreen">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="is_sticky" c:identifier="wnck_window_is_sticky">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="needs_attention"
+              c:identifier="wnck_window_needs_attention">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="or_transient_needs_attention"
+              c:identifier="wnck_window_or_transient_needs_attention">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="set_skip_pager" c:identifier="wnck_window_set_skip_pager">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="skip" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_skip_tasklist"
+              c:identifier="wnck_window_set_skip_tasklist">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="skip" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_fullscreen" c:identifier="wnck_window_set_fullscreen">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="fullscreen" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="close" c:identifier="wnck_window_close">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="minimize" c:identifier="wnck_window_minimize">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="unminimize" c:identifier="wnck_window_unminimize">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="maximize" c:identifier="wnck_window_maximize">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="unmaximize" c:identifier="wnck_window_unmaximize">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="maximize_horizontally"
+              c:identifier="wnck_window_maximize_horizontally">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="unmaximize_horizontally"
+              c:identifier="wnck_window_unmaximize_horizontally">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="maximize_vertically"
+              c:identifier="wnck_window_maximize_vertically">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="unmaximize_vertically"
+              c:identifier="wnck_window_unmaximize_vertically">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="shade" c:identifier="wnck_window_shade">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="unshade" c:identifier="wnck_window_unshade">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="make_above" c:identifier="wnck_window_make_above">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="unmake_above" c:identifier="wnck_window_unmake_above">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="make_below" c:identifier="wnck_window_make_below">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="unmake_below" c:identifier="wnck_window_unmake_below">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="stick" c:identifier="wnck_window_stick">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="unstick" c:identifier="wnck_window_unstick">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="keyboard_move" c:identifier="wnck_window_keyboard_move">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="keyboard_size" c:identifier="wnck_window_keyboard_size">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="get_workspace" c:identifier="wnck_window_get_workspace">
+        <return-value transfer-ownership="full">
+          <type name="Workspace" c:type="WnckWorkspace*"/>
+        </return-value>
+      </method>
+      <method name="move_to_workspace"
+              c:identifier="wnck_window_move_to_workspace">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="space" transfer-ownership="none">
+            <type name="Workspace" c:type="WnckWorkspace*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="is_pinned" c:identifier="wnck_window_is_pinned">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="pin" c:identifier="wnck_window_pin">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="unpin" c:identifier="wnck_window_unpin">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="activate" c:identifier="wnck_window_activate">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="is_active" c:identifier="wnck_window_is_active">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="is_most_recently_activated"
+              c:identifier="wnck_window_is_most_recently_activated">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="activate_transient"
+              c:identifier="wnck_window_activate_transient">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="transient_is_most_recently_activated"
+              c:identifier="wnck_window_transient_is_most_recently_activated">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_icon" c:identifier="wnck_window_get_icon">
+        <return-value transfer-ownership="full">
+          <type name="GdkPixbuf.Pixbuf" c:type="GdkPixbuf*"/>
+        </return-value>
+      </method>
+      <method name="get_mini_icon" c:identifier="wnck_window_get_mini_icon">
+        <return-value transfer-ownership="full">
+          <type name="GdkPixbuf.Pixbuf" c:type="GdkPixbuf*"/>
+        </return-value>
+      </method>
+      <method name="get_icon_is_fallback"
+              c:identifier="wnck_window_get_icon_is_fallback">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="set_icon_geometry"
+              c:identifier="wnck_window_set_icon_geometry">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="x" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+          <parameter name="y" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+          <parameter name="width" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+          <parameter name="height" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_actions" c:identifier="wnck_window_get_actions">
+        <return-value transfer-ownership="full">
+          <type name="WindowActions" c:type="WnckWindowActions"/>
+        </return-value>
+      </method>
+      <method name="get_state" c:identifier="wnck_window_get_state">
+        <return-value transfer-ownership="full">
+          <type name="WindowState" c:type="WnckWindowState"/>
+        </return-value>
+      </method>
+      <method name="get_client_window_geometry"
+              c:identifier="wnck_window_get_client_window_geometry">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="xp"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int" c:type="int*"/>
+          </parameter>
+          <parameter name="yp"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int" c:type="int*"/>
+          </parameter>
+          <parameter name="widthp"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int" c:type="int*"/>
+          </parameter>
+          <parameter name="heightp"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int" c:type="int*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_geometry" c:identifier="wnck_window_get_geometry">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="xp"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int" c:type="int*"/>
+          </parameter>
+          <parameter name="yp"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int" c:type="int*"/>
+          </parameter>
+          <parameter name="widthp"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int" c:type="int*"/>
+          </parameter>
+          <parameter name="heightp"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int" c:type="int*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_geometry" c:identifier="wnck_window_set_geometry">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="gravity" transfer-ownership="none">
+            <type name="WindowGravity" c:type="WnckWindowGravity"/>
+          </parameter>
+          <parameter name="geometry_mask" transfer-ownership="none">
+            <type name="WindowMoveResizeMask"
+                  c:type="WnckWindowMoveResizeMask"/>
+          </parameter>
+          <parameter name="x" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+          <parameter name="y" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+          <parameter name="width" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+          <parameter name="height" transfer-ownership="none">
+            <type name="int" c:type="int"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="is_visible_on_workspace"
+              c:identifier="wnck_window_is_visible_on_workspace">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="workspace" transfer-ownership="none">
+            <type name="Workspace" c:type="WnckWorkspace*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="is_on_workspace"
+              c:identifier="wnck_window_is_on_workspace">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="workspace" transfer-ownership="none">
+            <type name="Workspace" c:type="WnckWorkspace*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="is_in_viewport" c:identifier="wnck_window_is_in_viewport">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="workspace" transfer-ownership="none">
+            <type name="Workspace" c:type="WnckWorkspace*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="WindowPrivate" c:type="WnckWindowPrivate*"/>
+      </field>
+      <glib:signal name="actions-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WindowActions" c:type="WnckWindowActions"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="WindowActions" c:type="WnckWindowActions"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="geometry-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="icon-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="name-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="state-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="WindowState" c:type="WnckWindowState"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="WindowState" c:type="WnckWindowState"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="workspace-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+    </class>
+    <enumeration name="WindowActions"
+                 glib:type-name="WnckWindowActions"
+                 glib:get-type="wnck_window_actions_get_type"
+                 c:type="WnckWindowActions">
+      <doc xml:whitespace="preserve">Type used as a bitmask to describe the actions that can be done for a
+#WnckWindow.</doc>
+      <member name="move"
+              value="1"
+              c:identifier="WNCK_WINDOW_ACTION_MOVE"
+              glib:nick="move"/>
+      <member name="resize"
+              value="2"
+              c:identifier="WNCK_WINDOW_ACTION_RESIZE"
+              glib:nick="resize"/>
+      <member name="shade"
+              value="4"
+              c:identifier="WNCK_WINDOW_ACTION_SHADE"
+              glib:nick="shade"/>
+      <member name="stick"
+              value="8"
+              c:identifier="WNCK_WINDOW_ACTION_STICK"
+              glib:nick="stick"/>
+      <member name="maximize_horizontally"
+              value="16"
+              c:identifier="WNCK_WINDOW_ACTION_MAXIMIZE_HORIZONTALLY"
+              glib:nick="maximize-horizontally"/>
+      <member name="maximize_vertically"
+              value="32"
+              c:identifier="WNCK_WINDOW_ACTION_MAXIMIZE_VERTICALLY"
+              glib:nick="maximize-vertically"/>
+      <member name="change_workspace"
+              value="64"
+              c:identifier="WNCK_WINDOW_ACTION_CHANGE_WORKSPACE"
+              glib:nick="change-workspace"/>
+      <member name="close"
+              value="128"
+              c:identifier="WNCK_WINDOW_ACTION_CLOSE"
+              glib:nick="close"/>
+      <member name="unmaximize_horizontally"
+              value="256"
+              c:identifier="WNCK_WINDOW_ACTION_UNMAXIMIZE_HORIZONTALLY"
+              glib:nick="unmaximize-horizontally"/>
+      <member name="unmaximize_vertically"
+              value="512"
+              c:identifier="WNCK_WINDOW_ACTION_UNMAXIMIZE_VERTICALLY"
+              glib:nick="unmaximize-vertically"/>
+      <member name="unshade"
+              value="1024"
+              c:identifier="WNCK_WINDOW_ACTION_UNSHADE"
+              glib:nick="unshade"/>
+      <member name="unstick"
+              value="2048"
+              c:identifier="WNCK_WINDOW_ACTION_UNSTICK"
+              glib:nick="unstick"/>
+      <member name="minimize"
+              value="4096"
+              c:identifier="WNCK_WINDOW_ACTION_MINIMIZE"
+              glib:nick="minimize"/>
+      <member name="unminimize"
+              value="8192"
+              c:identifier="WNCK_WINDOW_ACTION_UNMINIMIZE"
+              glib:nick="unminimize"/>
+      <member name="maximize"
+              value="16384"
+              c:identifier="WNCK_WINDOW_ACTION_MAXIMIZE"
+              glib:nick="maximize"/>
+      <member name="unmaximize"
+              value="32768"
+              c:identifier="WNCK_WINDOW_ACTION_UNMAXIMIZE"
+              glib:nick="unmaximize"/>
+      <member name="fullscreen"
+              value="65536"
+              c:identifier="WNCK_WINDOW_ACTION_FULLSCREEN"
+              glib:nick="fullscreen"/>
+      <member name="above"
+              value="131072"
+              c:identifier="WNCK_WINDOW_ACTION_ABOVE"
+              glib:nick="above"/>
+      <member name="below"
+              value="262144"
+              c:identifier="WNCK_WINDOW_ACTION_BELOW"
+              glib:nick="below"/>
+    </enumeration>
+    <record name="WindowClass"
+            c:type="WnckWindowClass"
+            glib:is-gtype-struct-for="Window">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="name_changed">
+        <callback name="name_changed" c:type="name_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="window" transfer-ownership="none">
+              <type name="Window" c:type="WnckWindow*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="state_changed">
+        <callback name="state_changed" c:type="state_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="window" transfer-ownership="none">
+              <type name="Window" c:type="WnckWindow*"/>
+            </parameter>
+            <parameter name="changed_mask" transfer-ownership="none">
+              <type name="WindowState" c:type="WnckWindowState"/>
+            </parameter>
+            <parameter name="new_state" transfer-ownership="none">
+              <type name="WindowState" c:type="WnckWindowState"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="workspace_changed">
+        <callback name="workspace_changed" c:type="workspace_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="window" transfer-ownership="none">
+              <type name="Window" c:type="WnckWindow*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="icon_changed">
+        <callback name="icon_changed" c:type="icon_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="window" transfer-ownership="none">
+              <type name="Window" c:type="WnckWindow*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="actions_changed">
+        <callback name="actions_changed" c:type="actions_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="window" transfer-ownership="none">
+              <type name="Window" c:type="WnckWindow*"/>
+            </parameter>
+            <parameter name="changed_mask" transfer-ownership="none">
+              <type name="WindowActions" c:type="WnckWindowActions"/>
+            </parameter>
+            <parameter name="new_actions" transfer-ownership="none">
+              <type name="WindowActions" c:type="WnckWindowActions"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="geometry_changed">
+        <callback name="geometry_changed" c:type="geometry_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="window" transfer-ownership="none">
+              <type name="Window" c:type="WnckWindow*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="pad1">
+        <callback name="pad1" c:type="pad1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad2">
+        <callback name="pad2" c:type="pad2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad3">
+        <callback name="pad3" c:type="pad3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad4">
+        <callback name="pad4" c:type="pad4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <enumeration name="WindowGravity"
+                 version="2.16"
+                 glib:type-name="WnckWindowGravity"
+                 glib:get-type="wnck_window_gravity_get_type"
+                 c:type="WnckWindowGravity">
+      <doc xml:whitespace="preserve">Flag used when changing the geometry of a #WnckWindow. This is the gravity
+point to use as a reference for the new position.</doc>
+      <member name="current"
+              value="0"
+              c:identifier="WNCK_WINDOW_GRAVITY_CURRENT"
+              glib:nick="current"/>
+      <member name="northwest"
+              value="1"
+              c:identifier="WNCK_WINDOW_GRAVITY_NORTHWEST"
+              glib:nick="northwest"/>
+      <member name="north"
+              value="2"
+              c:identifier="WNCK_WINDOW_GRAVITY_NORTH"
+              glib:nick="north"/>
+      <member name="northeast"
+              value="3"
+              c:identifier="WNCK_WINDOW_GRAVITY_NORTHEAST"
+              glib:nick="northeast"/>
+      <member name="west"
+              value="4"
+              c:identifier="WNCK_WINDOW_GRAVITY_WEST"
+              glib:nick="west"/>
+      <member name="center"
+              value="5"
+              c:identifier="WNCK_WINDOW_GRAVITY_CENTER"
+              glib:nick="center"/>
+      <member name="east"
+              value="6"
+              c:identifier="WNCK_WINDOW_GRAVITY_EAST"
+              glib:nick="east"/>
+      <member name="southwest"
+              value="7"
+              c:identifier="WNCK_WINDOW_GRAVITY_SOUTHWEST"
+              glib:nick="southwest"/>
+      <member name="south"
+              value="8"
+              c:identifier="WNCK_WINDOW_GRAVITY_SOUTH"
+              glib:nick="south"/>
+      <member name="southeast"
+              value="9"
+              c:identifier="WNCK_WINDOW_GRAVITY_SOUTHEAST"
+              glib:nick="southeast"/>
+      <member name="static"
+              value="10"
+              c:identifier="WNCK_WINDOW_GRAVITY_STATIC"
+              glib:nick="static"/>
+    </enumeration>
+    <enumeration name="WindowMoveResizeMask"
+                 version="2.16"
+                 glib:type-name="WnckWindowMoveResizeMask"
+                 glib:get-type="wnck_window_move_resize_mask_get_type"
+                 c:type="WnckWindowMoveResizeMask">
+      <doc xml:whitespace="preserve">Flag used as a bitmask when changing the geometry of a #WnckWindow. This
+indicates which part of the geometry should be changed.</doc>
+      <member name="x"
+              value="1"
+              c:identifier="WNCK_WINDOW_CHANGE_X"
+              glib:nick="x"/>
+      <member name="y"
+              value="2"
+              c:identifier="WNCK_WINDOW_CHANGE_Y"
+              glib:nick="y"/>
+      <member name="width"
+              value="4"
+              c:identifier="WNCK_WINDOW_CHANGE_WIDTH"
+              glib:nick="width"/>
+      <member name="height"
+              value="8"
+              c:identifier="WNCK_WINDOW_CHANGE_HEIGHT"
+              glib:nick="height"/>
+    </enumeration>
+    <record name="WindowPrivate" c:type="WnckWindowPrivate">
+    </record>
+    <enumeration name="WindowState"
+                 glib:type-name="WnckWindowState"
+                 glib:get-type="wnck_window_state_get_type"
+                 c:type="WnckWindowState">
+      <doc xml:whitespace="preserve">Type used as a bitmask to describe the state of a #WnckWindow.</doc>
+      <member name="minimized"
+              value="1"
+              c:identifier="WNCK_WINDOW_STATE_MINIMIZED"
+              glib:nick="minimized"/>
+      <member name="maximized_horizontally"
+              value="2"
+              c:identifier="WNCK_WINDOW_STATE_MAXIMIZED_HORIZONTALLY"
+              glib:nick="maximized-horizontally"/>
+      <member name="maximized_vertically"
+              value="4"
+              c:identifier="WNCK_WINDOW_STATE_MAXIMIZED_VERTICALLY"
+              glib:nick="maximized-vertically"/>
+      <member name="shaded"
+              value="8"
+              c:identifier="WNCK_WINDOW_STATE_SHADED"
+              glib:nick="shaded"/>
+      <member name="skip_pager"
+              value="16"
+              c:identifier="WNCK_WINDOW_STATE_SKIP_PAGER"
+              glib:nick="skip-pager"/>
+      <member name="skip_tasklist"
+              value="32"
+              c:identifier="WNCK_WINDOW_STATE_SKIP_TASKLIST"
+              glib:nick="skip-tasklist"/>
+      <member name="sticky"
+              value="64"
+              c:identifier="WNCK_WINDOW_STATE_STICKY"
+              glib:nick="sticky"/>
+      <member name="hidden"
+              value="128"
+              c:identifier="WNCK_WINDOW_STATE_HIDDEN"
+              glib:nick="hidden"/>
+      <member name="fullscreen"
+              value="256"
+              c:identifier="WNCK_WINDOW_STATE_FULLSCREEN"
+              glib:nick="fullscreen"/>
+      <member name="demands_attention"
+              value="512"
+              c:identifier="WNCK_WINDOW_STATE_DEMANDS_ATTENTION"
+              glib:nick="demands-attention"/>
+      <member name="urgent"
+              value="1024"
+              c:identifier="WNCK_WINDOW_STATE_URGENT"
+              glib:nick="urgent"/>
+      <member name="above"
+              value="2048"
+              c:identifier="WNCK_WINDOW_STATE_ABOVE"
+              glib:nick="above"/>
+      <member name="below"
+              value="4096"
+              c:identifier="WNCK_WINDOW_STATE_BELOW"
+              glib:nick="below"/>
+    </enumeration>
+    <enumeration name="WindowType"
+                 glib:type-name="WnckWindowType"
+                 glib:get-type="wnck_window_type_get_type"
+                 c:type="WnckWindowType">
+      <doc xml:whitespace="preserve">Type describing the semantic type of a #WnckWindow.</doc>
+      <member name="normal"
+              value="0"
+              c:identifier="WNCK_WINDOW_NORMAL"
+              glib:nick="normal"/>
+      <member name="desktop"
+              value="1"
+              c:identifier="WNCK_WINDOW_DESKTOP"
+              glib:nick="desktop"/>
+      <member name="dock"
+              value="2"
+              c:identifier="WNCK_WINDOW_DOCK"
+              glib:nick="dock"/>
+      <member name="dialog"
+              value="3"
+              c:identifier="WNCK_WINDOW_DIALOG"
+              glib:nick="dialog"/>
+      <member name="toolbar"
+              value="4"
+              c:identifier="WNCK_WINDOW_TOOLBAR"
+              glib:nick="toolbar"/>
+      <member name="menu"
+              value="5"
+              c:identifier="WNCK_WINDOW_MENU"
+              glib:nick="menu"/>
+      <member name="utility"
+              value="6"
+              c:identifier="WNCK_WINDOW_UTILITY"
+              glib:nick="utility"/>
+      <member name="splashscreen"
+              value="7"
+              c:identifier="WNCK_WINDOW_SPLASHSCREEN"
+              glib:nick="splashscreen"/>
+    </enumeration>
+    <enumeration name="WnckLayoutCorner" c:type="_WnckLayoutCorner">
+      <member name="topleft"
+              value="0"
+              c:identifier="WNCK_LAYOUT_CORNER_TOPLEFT"/>
+      <member name="topright"
+              value="1"
+              c:identifier="WNCK_LAYOUT_CORNER_TOPRIGHT"/>
+      <member name="bottomright"
+              value="2"
+              c:identifier="WNCK_LAYOUT_CORNER_BOTTOMRIGHT"/>
+      <member name="bottomleft"
+              value="3"
+              c:identifier="WNCK_LAYOUT_CORNER_BOTTOMLEFT"/>
+    </enumeration>
+    <enumeration name="WnckLayoutOrientation" c:type="_WnckLayoutOrientation">
+      <member name="horizontal"
+              value="0"
+              c:identifier="WNCK_LAYOUT_ORIENTATION_HORIZONTAL"/>
+      <member name="vertical"
+              value="1"
+              c:identifier="WNCK_LAYOUT_ORIENTATION_VERTICAL"/>
+    </enumeration>
+    <class name="Workspace"
+           c:type="WnckWorkspace"
+           parent="GObject.Object"
+           glib:type-name="WnckWorkspace"
+           glib:get-type="wnck_workspace_get_type"
+           glib:type-struct="WorkspaceClass">
+      <doc xml:whitespace="preserve">The #WnckWorkspace struct contains only private fields and should not be
+directly accessed.</doc>
+      <method name="get_number" c:identifier="wnck_workspace_get_number">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="get_name" c:identifier="wnck_workspace_get_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="change_name" c:identifier="wnck_workspace_change_name">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="name" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_screen" c:identifier="wnck_workspace_get_screen">
+        <return-value transfer-ownership="full">
+          <type name="Screen" c:type="WnckScreen*"/>
+        </return-value>
+      </method>
+      <method name="activate" c:identifier="wnck_workspace_activate">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_width" c:identifier="wnck_workspace_get_width">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="get_height" c:identifier="wnck_workspace_get_height">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="get_viewport_x"
+              c:identifier="wnck_workspace_get_viewport_x">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="get_viewport_y"
+              c:identifier="wnck_workspace_get_viewport_y">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="is_virtual" c:identifier="wnck_workspace_is_virtual">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_layout_row"
+              c:identifier="wnck_workspace_get_layout_row">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="get_layout_column"
+              c:identifier="wnck_workspace_get_layout_column">
+        <return-value transfer-ownership="none">
+          <type name="int" c:type="int"/>
+        </return-value>
+      </method>
+      <method name="get_neighbor" c:identifier="wnck_workspace_get_neighbor">
+        <return-value transfer-ownership="full">
+          <type name="Workspace" c:type="WnckWorkspace*"/>
+        </return-value>
+        <parameters>
+          <parameter name="direction" transfer-ownership="none">
+            <type name="MotionDirection" c:type="WnckMotionDirection"/>
+          </parameter>
+        </parameters>
+      </method>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="WorkspacePrivate" c:type="WnckWorkspacePrivate*"/>
+      </field>
+      <glib:signal name="name-changed">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+    </class>
+    <record name="WorkspaceClass"
+            c:type="WnckWorkspaceClass"
+            glib:is-gtype-struct-for="Workspace">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="name_changed">
+        <callback name="name_changed" c:type="name_changed">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="space" transfer-ownership="none">
+              <type name="Workspace" c:type="WnckWorkspace*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="pad1">
+        <callback name="pad1" c:type="pad1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad2">
+        <callback name="pad2" c:type="pad2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad3">
+        <callback name="pad3" c:type="pad3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="pad4">
+        <callback name="pad4" c:type="pad4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="WorkspaceLayout" c:type="WnckWorkspaceLayout" version="2.12">
+      <doc xml:whitespace="preserve">The #WnckWorkspaceLayout struct contains information about the layout of
+#WnckWorkspace on a #WnckScreen, and the exact position of a specific
+#WnckWorkspace.
+Deprecated:2.20:</doc>
+      <field name="rows" writable="1">
+        <type name="int" c:type="int"/>
+      </field>
+      <field name="cols" writable="1">
+        <type name="int" c:type="int"/>
+      </field>
+      <field name="grid" writable="1">
+        <type name="any" c:type="int*"/>
+      </field>
+      <field name="grid_area" writable="1">
+        <type name="int" c:type="int"/>
+      </field>
+      <field name="current_row" writable="1">
+        <type name="int" c:type="int"/>
+      </field>
+      <field name="current_col" writable="1">
+        <type name="int" c:type="int"/>
+      </field>
+    </record>
+    <record name="WorkspacePrivate" c:type="WnckWorkspacePrivate">
+    </record>
+    <function name="create_window_action_menu"
+              c:identifier="wnck_create_window_action_menu">
+      <return-value transfer-ownership="full">
+        <type name="Gtk.Widget" c:type="GtkWidget*"/>
+      </return-value>
+      <parameters>
+        <parameter name="window" transfer-ownership="none">
+          <type name="Window" c:type="WnckWindow*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gtk_window_set_dock_type"
+              c:identifier="wnck_gtk_window_set_dock_type">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="window" transfer-ownership="none">
+          <type name="Gtk.Window" c:type="GtkWindow*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="pid_read_resource_usage"
+              c:identifier="wnck_pid_read_resource_usage">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="gdk_display" transfer-ownership="none">
+          <type name="Gdk.Display" c:type="GdkDisplay*"/>
+        </parameter>
+        <parameter name="pid" transfer-ownership="none">
+          <type name="ulong" c:type="gulong"/>
+        </parameter>
+        <parameter name="usage" transfer-ownership="none">
+          <type name="ResourceUsage" c:type="WnckResourceUsage*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="set_client_type" c:identifier="wnck_set_client_type">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="ewmh_sourceindication_client_type"
+                   transfer-ownership="none">
+          <type name="ClientType" c:type="WnckClientType"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="xid_read_resource_usage"
+              c:identifier="wnck_xid_read_resource_usage">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="gdk_display" transfer-ownership="none">
+          <type name="Gdk.Display" c:type="GdkDisplay*"/>
+        </parameter>
+        <parameter name="xid" transfer-ownership="none">
+          <type name="ulong" c:type="gulong"/>
+        </parameter>
+        <parameter name="usage" transfer-ownership="none">
+          <type name="ResourceUsage" c:type="WnckResourceUsage*"/>
+        </parameter>
+      </parameters>
+    </function>
+  </namespace>
+</repository>

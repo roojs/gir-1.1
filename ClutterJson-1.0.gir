@@ -1,0 +1,1276 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="GLib" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <package name="gobject-2.0"/>
+  <namespace name="ClutterJson"
+             version="1.0"
+             shared-library="libclutter-glx-1.0.so.0"
+             c:prefix="ClutterJson">
+    <record name="JsonArray"
+            c:type="JsonArray"
+            glib:type-name="JsonArray"
+            glib:get-type="json_array_get_type">
+      <doc xml:whitespace="preserve">A JSON array type. The contents of the #JsonArray structure are private
+and should only be accessed by the provided API</doc>
+      <constructor name="new" c:identifier="json_array_new">
+        <return-value transfer-ownership="full">
+          <type name="JsonArray" c:type="JsonArray*"/>
+        </return-value>
+      </constructor>
+      <method name="ref" c:identifier="json_array_ref">
+        <return-value transfer-ownership="full">
+          <type name="JsonArray" c:type="JsonArray*"/>
+        </return-value>
+      </method>
+      <method name="unref" c:identifier="json_array_unref">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="add_element" c:identifier="json_array_add_element">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="node" transfer-ownership="none">
+            <type name="JsonNode" c:type="JsonNode*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_int_element" c:identifier="json_array_add_int_element">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="value" transfer-ownership="none">
+            <type name="int64" c:type="gint64"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_double_element"
+              c:identifier="json_array_add_double_element">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="value" transfer-ownership="none">
+            <type name="double" c:type="gdouble"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_boolean_element"
+              c:identifier="json_array_add_boolean_element">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="value" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_string_element"
+              c:identifier="json_array_add_string_element">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="value" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_null_element"
+              c:identifier="json_array_add_null_element">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="add_array_element"
+              c:identifier="json_array_add_array_element">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="value" transfer-ownership="none">
+            <type name="JsonArray" c:type="JsonArray*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_object_element"
+              c:identifier="json_array_add_object_element">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="value" transfer-ownership="none">
+            <type name="JsonObject" c:type="JsonObject*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_elements"
+              c:identifier="json_array_get_elements"
+              introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+      </method>
+      <method name="get_element" c:identifier="json_array_get_element">
+        <return-value transfer-ownership="full">
+          <type name="JsonNode" c:type="JsonNode*"/>
+        </return-value>
+        <parameters>
+          <parameter name="index_" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_int_element" c:identifier="json_array_get_int_element">
+        <return-value transfer-ownership="none">
+          <type name="int64" c:type="gint64"/>
+        </return-value>
+        <parameters>
+          <parameter name="index_" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_double_element"
+              c:identifier="json_array_get_double_element">
+        <return-value transfer-ownership="none">
+          <type name="double" c:type="gdouble"/>
+        </return-value>
+        <parameters>
+          <parameter name="index_" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_boolean_element"
+              c:identifier="json_array_get_boolean_element">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="index_" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_string_element"
+              c:identifier="json_array_get_string_element">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="index_" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_null_element"
+              c:identifier="json_array_get_null_element">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="index_" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_array_element"
+              c:identifier="json_array_get_array_element">
+        <return-value transfer-ownership="full">
+          <type name="JsonArray" c:type="JsonArray*"/>
+        </return-value>
+        <parameters>
+          <parameter name="index_" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_object_element"
+              c:identifier="json_array_get_object_element">
+        <return-value transfer-ownership="full">
+          <type name="JsonObject" c:type="JsonObject*"/>
+        </return-value>
+        <parameters>
+          <parameter name="index_" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="dup_element" c:identifier="json_array_dup_element">
+        <return-value transfer-ownership="full">
+          <type name="JsonNode" c:type="JsonNode*"/>
+        </return-value>
+        <parameters>
+          <parameter name="index_" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove_element" c:identifier="json_array_remove_element">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="index_" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_length" c:identifier="json_array_get_length">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="foreach_element" c:identifier="json_array_foreach_element">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="func"
+                     transfer-ownership="none"
+                     scope="call"
+                     closure="2">
+            <type name="JsonArrayForeach" c:type="JsonArrayForeach"/>
+          </parameter>
+          <parameter name="data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <callback name="JsonArrayForeach" c:type="JsonArrayForeach" version="0.8">
+      <doc xml:whitespace="preserve">The function to be passed to json_array_foreach_element(). You
+should not add or remove elements to and from @array within
+this function. It is safe to change the value of @element_node.</doc>
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="array" transfer-ownership="none">
+          <doc xml:whitespace="preserve">the iterated #JsonArray</doc>
+          <type name="JsonArray" c:type="JsonArray*"/>
+        </parameter>
+        <parameter name="index_" transfer-ownership="none">
+          <doc xml:whitespace="preserve">the index of the element</doc>
+          <type name="uint" c:type="guint"/>
+        </parameter>
+        <parameter name="element_node" transfer-ownership="none">
+          <doc xml:whitespace="preserve">a #JsonNode containing the value at @index_</doc>
+          <type name="JsonNode" c:type="JsonNode*"/>
+        </parameter>
+        <parameter name="user_data" transfer-ownership="none" closure="3">
+          <doc xml:whitespace="preserve">data passed to the function</doc>
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <class name="JsonGenerator"
+           c:type="JsonGenerator"
+           parent="GObject.Object"
+           glib:type-name="JsonGenerator"
+           glib:get-type="json_generator_get_type"
+           glib:type-struct="JsonGeneratorClass">
+      <doc xml:whitespace="preserve">JSON data streams generator. The contents of the #JsonGenerator structure
+are private and should only be accessed via the provided API.</doc>
+      <constructor name="new" c:identifier="json_generator_new">
+        <return-value transfer-ownership="full">
+          <type name="JsonGenerator" c:type="JsonGenerator*"/>
+        </return-value>
+      </constructor>
+      <method name="to_data" c:identifier="json_generator_to_data">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="length"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="gsize" c:type="gsize*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="to_file" c:identifier="json_generator_to_file" throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="filename" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_root" c:identifier="json_generator_set_root">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="node" transfer-ownership="none">
+            <type name="JsonNode" c:type="JsonNode*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="indent" writable="1" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <property name="indent-char" writable="1" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <property name="pretty" writable="1" transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="root" writable="1" transfer-ownership="none">
+        <type name="JsonNode" c:type="JsonNode"/>
+      </property>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="JsonGeneratorPrivate" c:type="JsonGeneratorPrivate*"/>
+      </field>
+    </class>
+    <record name="JsonGeneratorClass"
+            c:type="JsonGeneratorClass"
+            glib:is-gtype-struct-for="JsonGenerator">
+      <doc xml:whitespace="preserve">#JsonGenerator class</doc>
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="json_reserved1">
+        <callback name="json_reserved1" c:type="_json_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="json_reserved2">
+        <callback name="json_reserved2" c:type="_json_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="json_reserved3">
+        <callback name="json_reserved3" c:type="_json_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="json_reserved4">
+        <callback name="json_reserved4" c:type="_json_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="JsonGeneratorPrivate" c:type="JsonGeneratorPrivate">
+    </record>
+    <record name="JsonNode"
+            c:type="JsonNode"
+            glib:type-name="JsonNode"
+            glib:get-type="json_node_get_type">
+      <doc xml:whitespace="preserve">A generic container of JSON data types. The contents of the #JsonNode
+structure are private and should only be accessed via the provided
+functions and never directly.</doc>
+      <constructor name="new" c:identifier="json_node_new">
+        <return-value transfer-ownership="full">
+          <type name="JsonNode" c:type="JsonNode*"/>
+        </return-value>
+        <parameters>
+          <parameter name="type" transfer-ownership="none">
+            <type name="JsonNodeType" c:type="JsonNodeType"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="copy" c:identifier="json_node_copy">
+        <return-value transfer-ownership="full">
+          <type name="JsonNode" c:type="JsonNode*"/>
+        </return-value>
+      </method>
+      <method name="free" c:identifier="json_node_free">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="get_node_type" c:identifier="json_node_get_node_type">
+        <return-value transfer-ownership="full">
+          <type name="JsonNodeType" c:type="JsonNodeType"/>
+        </return-value>
+      </method>
+      <method name="get_value_type" c:identifier="json_node_get_value_type">
+        <return-value transfer-ownership="none">
+          <type name="GType" c:type="GType"/>
+        </return-value>
+      </method>
+      <method name="get_parent" c:identifier="json_node_get_parent">
+        <return-value transfer-ownership="full">
+          <type name="JsonNode" c:type="JsonNode*"/>
+        </return-value>
+      </method>
+      <method name="type_name" c:identifier="json_node_type_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_object" c:identifier="json_node_set_object">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="JsonObject" c:type="JsonObject*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="take_object" c:identifier="json_node_take_object">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="JsonObject" c:type="JsonObject*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_object" c:identifier="json_node_get_object">
+        <return-value transfer-ownership="full">
+          <type name="JsonObject" c:type="JsonObject*"/>
+        </return-value>
+      </method>
+      <method name="dup_object" c:identifier="json_node_dup_object">
+        <return-value transfer-ownership="full">
+          <type name="JsonObject" c:type="JsonObject*"/>
+        </return-value>
+      </method>
+      <method name="set_array" c:identifier="json_node_set_array">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="array" transfer-ownership="none">
+            <type name="JsonArray" c:type="JsonArray*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="take_array" c:identifier="json_node_take_array">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="array" transfer-ownership="none">
+            <type name="JsonArray" c:type="JsonArray*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_array" c:identifier="json_node_get_array">
+        <return-value transfer-ownership="full">
+          <type name="JsonArray" c:type="JsonArray*"/>
+        </return-value>
+      </method>
+      <method name="dup_array" c:identifier="json_node_dup_array">
+        <return-value transfer-ownership="full">
+          <type name="JsonArray" c:type="JsonArray*"/>
+        </return-value>
+      </method>
+      <method name="set_value" c:identifier="json_node_set_value">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="value" transfer-ownership="none">
+            <type name="GObject.Value" c:type="GValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_value" c:identifier="json_node_get_value">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="value" transfer-ownership="none">
+            <type name="GObject.Value" c:type="GValue*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_string" c:identifier="json_node_set_string">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="value" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_string" c:identifier="json_node_get_string">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="dup_string" c:identifier="json_node_dup_string">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="set_int" c:identifier="json_node_set_int">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="value" transfer-ownership="none">
+            <type name="int64" c:type="gint64"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_int" c:identifier="json_node_get_int">
+        <return-value transfer-ownership="none">
+          <type name="int64" c:type="gint64"/>
+        </return-value>
+      </method>
+      <method name="set_double" c:identifier="json_node_set_double">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="value" transfer-ownership="none">
+            <type name="double" c:type="gdouble"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_double" c:identifier="json_node_get_double">
+        <return-value transfer-ownership="none">
+          <type name="double" c:type="gdouble"/>
+        </return-value>
+      </method>
+      <method name="set_boolean" c:identifier="json_node_set_boolean">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="value" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_boolean" c:identifier="json_node_get_boolean">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="is_null" c:identifier="json_node_is_null">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+    </record>
+    <enumeration name="JsonNodeType" c:type="JsonNodeType">
+      <doc xml:whitespace="preserve">Indicates the content of a #JsonNode.</doc>
+      <member name="object" value="0" c:identifier="JSON_NODE_OBJECT"/>
+      <member name="array" value="1" c:identifier="JSON_NODE_ARRAY"/>
+      <member name="value" value="2" c:identifier="JSON_NODE_VALUE"/>
+      <member name="null" value="3" c:identifier="JSON_NODE_NULL"/>
+    </enumeration>
+    <record name="JsonObject"
+            c:type="JsonObject"
+            glib:type-name="JsonObject"
+            glib:get-type="json_object_get_type">
+      <doc xml:whitespace="preserve">A JSON object type. The contents of the #JsonObject structure are private
+and should only be accessed by the provided API</doc>
+      <constructor name="new" c:identifier="json_object_new">
+        <return-value transfer-ownership="full">
+          <type name="JsonObject" c:type="JsonObject*"/>
+        </return-value>
+      </constructor>
+      <method name="ref" c:identifier="json_object_ref">
+        <return-value transfer-ownership="full">
+          <type name="JsonObject" c:type="JsonObject*"/>
+        </return-value>
+      </method>
+      <method name="unref" c:identifier="json_object_unref">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="add_member" c:identifier="json_object_add_member">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="node" transfer-ownership="none">
+            <type name="JsonNode" c:type="JsonNode*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_member" c:identifier="json_object_set_member">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="node" transfer-ownership="none">
+            <type name="JsonNode" c:type="JsonNode*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_int_member" c:identifier="json_object_set_int_member">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="int64" c:type="gint64"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_double_member"
+              c:identifier="json_object_set_double_member">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="double" c:type="gdouble"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_boolean_member"
+              c:identifier="json_object_set_boolean_member">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_string_member"
+              c:identifier="json_object_set_string_member">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_null_member"
+              c:identifier="json_object_set_null_member">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_array_member"
+              c:identifier="json_object_set_array_member">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="JsonArray" c:type="JsonArray*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_object_member"
+              c:identifier="json_object_set_object_member">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="JsonObject" c:type="JsonObject*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_members"
+              c:identifier="json_object_get_members"
+              introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+      </method>
+      <method name="get_member" c:identifier="json_object_get_member">
+        <return-value transfer-ownership="full">
+          <type name="JsonNode" c:type="JsonNode*"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="dup_member" c:identifier="json_object_dup_member">
+        <return-value transfer-ownership="full">
+          <type name="JsonNode" c:type="JsonNode*"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_int_member" c:identifier="json_object_get_int_member">
+        <return-value transfer-ownership="none">
+          <type name="int64" c:type="gint64"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_double_member"
+              c:identifier="json_object_get_double_member">
+        <return-value transfer-ownership="none">
+          <type name="double" c:type="gdouble"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_boolean_member"
+              c:identifier="json_object_get_boolean_member">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_string_member"
+              c:identifier="json_object_get_string_member">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_null_member"
+              c:identifier="json_object_get_null_member">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_array_member"
+              c:identifier="json_object_get_array_member">
+        <return-value transfer-ownership="full">
+          <type name="JsonArray" c:type="JsonArray*"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_object_member"
+              c:identifier="json_object_get_object_member">
+        <return-value transfer-ownership="full">
+          <type name="JsonObject" c:type="JsonObject*"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="has_member" c:identifier="json_object_has_member">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove_member" c:identifier="json_object_remove_member">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="member_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_values"
+              c:identifier="json_object_get_values"
+              introspectable="0">
+        <return-value transfer-ownership="full">
+          <type name="GLib.List" c:type="GList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+      </method>
+      <method name="get_size" c:identifier="json_object_get_size">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="foreach_member" c:identifier="json_object_foreach_member">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="func"
+                     transfer-ownership="none"
+                     scope="call"
+                     closure="2">
+            <type name="JsonObjectForeach" c:type="JsonObjectForeach"/>
+          </parameter>
+          <parameter name="data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <callback name="JsonObjectForeach"
+              c:type="JsonObjectForeach"
+              version="0.8">
+      <doc xml:whitespace="preserve">The function to be passed to json_object_foreach_member(). You
+should not add or remove members to and from @object within
+this function. It is safe to change the value of @member_node.</doc>
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="object" transfer-ownership="none">
+          <doc xml:whitespace="preserve">the iterated #JsonObject</doc>
+          <type name="JsonObject" c:type="JsonObject*"/>
+        </parameter>
+        <parameter name="member_name" transfer-ownership="none">
+          <doc xml:whitespace="preserve">the name of the member</doc>
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="member_node" transfer-ownership="none">
+          <doc xml:whitespace="preserve">a #JsonNode containing the @member_name value</doc>
+          <type name="JsonNode" c:type="JsonNode*"/>
+        </parameter>
+        <parameter name="user_data" transfer-ownership="none" closure="3">
+          <doc xml:whitespace="preserve">data passed to the function</doc>
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <class name="JsonParser"
+           c:type="JsonParser"
+           parent="GObject.Object"
+           glib:type-name="JsonParser"
+           glib:get-type="json_parser_get_type"
+           glib:type-struct="JsonParserClass">
+      <doc xml:whitespace="preserve">JSON data streams parser. The contents of the #JsonParser structure are
+private and should only be accessed via the provided API.</doc>
+      <constructor name="new" c:identifier="json_parser_new">
+        <return-value transfer-ownership="full">
+          <type name="JsonParser" c:type="JsonParser*"/>
+        </return-value>
+      </constructor>
+      <method name="load_from_file"
+              c:identifier="json_parser_load_from_file"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="filename" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="load_from_data"
+              c:identifier="json_parser_load_from_data"
+              throws="1">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="data" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="length" transfer-ownership="none">
+            <type name="gssize" c:type="gssize"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_root" c:identifier="json_parser_get_root">
+        <return-value transfer-ownership="full">
+          <type name="JsonNode" c:type="JsonNode*"/>
+        </return-value>
+      </method>
+      <method name="get_current_line"
+              c:identifier="json_parser_get_current_line">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="get_current_pos"
+              c:identifier="json_parser_get_current_pos">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="JsonParserPrivate" c:type="JsonParserPrivate*"/>
+      </field>
+      <glib:signal name="array-element">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="JsonArray" c:type="JsonArray"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="array-end">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="JsonArray" c:type="JsonArray"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="array-start">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="error">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="object-end">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="JsonObject" c:type="JsonObject"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="object-member">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="JsonObject" c:type="JsonObject"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="object-start">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="parse-end">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="parse-start">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+    </class>
+    <record name="JsonParserClass"
+            c:type="JsonParserClass"
+            glib:is-gtype-struct-for="JsonParser">
+      <doc xml:whitespace="preserve">#JsonParser class.</doc>
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="parse_start">
+        <callback name="parse_start" c:type="parse_start">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="parser" transfer-ownership="none">
+              <type name="JsonParser" c:type="JsonParser*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="object_start">
+        <callback name="object_start" c:type="object_start">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="parser" transfer-ownership="none">
+              <type name="JsonParser" c:type="JsonParser*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="object_member">
+        <callback name="object_member" c:type="object_member">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="parser" transfer-ownership="none">
+              <type name="JsonParser" c:type="JsonParser*"/>
+            </parameter>
+            <parameter name="object" transfer-ownership="none">
+              <type name="JsonObject" c:type="JsonObject*"/>
+            </parameter>
+            <parameter name="member_name" transfer-ownership="none">
+              <type name="utf8" c:type="gchar*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="object_end">
+        <callback name="object_end" c:type="object_end">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="parser" transfer-ownership="none">
+              <type name="JsonParser" c:type="JsonParser*"/>
+            </parameter>
+            <parameter name="object" transfer-ownership="none">
+              <type name="JsonObject" c:type="JsonObject*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="array_start">
+        <callback name="array_start" c:type="array_start">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="parser" transfer-ownership="none">
+              <type name="JsonParser" c:type="JsonParser*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="array_element">
+        <callback name="array_element" c:type="array_element">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="parser" transfer-ownership="none">
+              <type name="JsonParser" c:type="JsonParser*"/>
+            </parameter>
+            <parameter name="array" transfer-ownership="none">
+              <type name="JsonArray" c:type="JsonArray*"/>
+            </parameter>
+            <parameter name="index_" transfer-ownership="none">
+              <type name="int" c:type="gint"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="array_end">
+        <callback name="array_end" c:type="array_end">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="parser" transfer-ownership="none">
+              <type name="JsonParser" c:type="JsonParser*"/>
+            </parameter>
+            <parameter name="array" transfer-ownership="none">
+              <type name="JsonArray" c:type="JsonArray*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="parse_end">
+        <callback name="parse_end" c:type="parse_end">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="parser" transfer-ownership="none">
+              <type name="JsonParser" c:type="JsonParser*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="error">
+        <callback name="error" c:type="error">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="parser" transfer-ownership="none">
+              <type name="JsonParser" c:type="JsonParser*"/>
+            </parameter>
+            <parameter name="error" transfer-ownership="none">
+              <type name="GLib.Error" c:type="GError*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="json_reserved1">
+        <callback name="json_reserved1" c:type="_json_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="json_reserved2">
+        <callback name="json_reserved2" c:type="_json_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="json_reserved3">
+        <callback name="json_reserved3" c:type="_json_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="json_reserved4">
+        <callback name="json_reserved4" c:type="_json_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="json_reserved5">
+        <callback name="json_reserved5" c:type="_json_reserved5">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="json_reserved6">
+        <callback name="json_reserved6" c:type="_json_reserved6">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="json_reserved7">
+        <callback name="json_reserved7" c:type="_json_reserved7">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="json_reserved8">
+        <callback name="json_reserved8" c:type="_json_reserved8">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <enumeration name="JsonParserError"
+                 c:type="JsonParserError"
+                 glib:error-quark="json_parser_error_quark">
+      <doc xml:whitespace="preserve">Error enumeration for #JsonParser</doc>
+      <member name="parse" value="0" c:identifier="JSON_PARSER_ERROR_PARSE"/>
+      <member name="unknown"
+              value="1"
+              c:identifier="JSON_PARSER_ERROR_UNKNOWN"/>
+    </enumeration>
+    <record name="JsonParserPrivate" c:type="JsonParserPrivate">
+    </record>
+    <enumeration name="JsonTokenType" c:type="JsonTokenType">
+      <member name="invalid" value="270" c:identifier="JSON_TOKEN_INVALID"/>
+      <member name="true" value="271" c:identifier="JSON_TOKEN_TRUE"/>
+      <member name="false" value="272" c:identifier="JSON_TOKEN_FALSE"/>
+      <member name="null" value="273" c:identifier="JSON_TOKEN_NULL"/>
+      <member name="last" value="274" c:identifier="JSON_TOKEN_LAST"/>
+    </enumeration>
+    <function name="json_array_sized_new" c:identifier="json_array_sized_new">
+      <return-value transfer-ownership="full">
+        <type name="JsonArray" c:type="JsonArray*"/>
+      </return-value>
+      <parameters>
+        <parameter name="n_elements" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+      </parameters>
+    </function>
+  </namespace>
+</repository>

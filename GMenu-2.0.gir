@@ -1,0 +1,389 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="Atk" version="1.0"/>
+  <include name="GLib" version="2.0"/>
+  <include name="GModule" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <include name="Gdk" version="2.0"/>
+  <include name="GdkPixbuf" version="2.0"/>
+  <include name="Gio" version="2.0"/>
+  <include name="Gtk" version="2.0"/>
+  <include name="Pango" version="1.0"/>
+  <include name="cairo" version="1.0"/>
+  <include name="xlib" version="2.0"/>
+  <package name="libgnome-menu"/>
+  <namespace name="GMenu"
+             version="2.0"
+             shared-library="libgnome-menu.so.2"
+             c:prefix="GMenu">
+    <record name="Tree" c:type="GMenuTree">
+      <method name="ref" c:identifier="gmenu_tree_ref">
+        <return-value transfer-ownership="full">
+          <type name="Tree" c:type="GMenuTree*"/>
+        </return-value>
+      </method>
+      <method name="unref" c:identifier="gmenu_tree_unref">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="set_user_data" c:identifier="gmenu_tree_set_user_data">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="dnotify" transfer-ownership="none" scope="call">
+            <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_user_data" c:identifier="gmenu_tree_get_user_data">
+        <return-value transfer-ownership="none">
+          <type name="any" c:type="gpointer"/>
+        </return-value>
+      </method>
+      <method name="get_menu_file" c:identifier="gmenu_tree_get_menu_file">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_root_directory"
+              c:identifier="gmenu_tree_get_root_directory">
+        <return-value transfer-ownership="full">
+          <type name="TreeDirectory" c:type="GMenuTreeDirectory*"/>
+        </return-value>
+      </method>
+      <method name="get_directory_from_path"
+              c:identifier="gmenu_tree_get_directory_from_path">
+        <return-value transfer-ownership="full">
+          <type name="TreeDirectory" c:type="GMenuTreeDirectory*"/>
+        </return-value>
+        <parameters>
+          <parameter name="path" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_sort_key" c:identifier="gmenu_tree_get_sort_key">
+        <return-value transfer-ownership="full">
+          <type name="TreeSortKey" c:type="GMenuTreeSortKey"/>
+        </return-value>
+      </method>
+      <method name="set_sort_key" c:identifier="gmenu_tree_set_sort_key">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="sort_key" transfer-ownership="none">
+            <type name="TreeSortKey" c:type="GMenuTreeSortKey"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_monitor" c:identifier="gmenu_tree_add_monitor">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="call"
+                     closure="2">
+            <type name="TreeChangedFunc" c:type="GMenuTreeChangedFunc"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove_monitor" c:identifier="gmenu_tree_remove_monitor">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="callback"
+                     transfer-ownership="none"
+                     scope="call"
+                     closure="2">
+            <type name="TreeChangedFunc" c:type="GMenuTreeChangedFunc"/>
+          </parameter>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <record name="TreeAlias" c:type="GMenuTreeAlias">
+      <method name="get_directory"
+              c:identifier="gmenu_tree_alias_get_directory">
+        <return-value transfer-ownership="full">
+          <type name="TreeDirectory" c:type="GMenuTreeDirectory*"/>
+        </return-value>
+      </method>
+      <method name="get_item" c:identifier="gmenu_tree_alias_get_item">
+        <return-value transfer-ownership="full">
+          <type name="TreeItem" c:type="GMenuTreeItem*"/>
+        </return-value>
+      </method>
+    </record>
+    <callback name="TreeChangedFunc" c:type="GMenuTreeChangedFunc">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="tree" transfer-ownership="none">
+          <type name="Tree" c:type="GMenuTree*"/>
+        </parameter>
+        <parameter name="user_data" transfer-ownership="none" closure="1">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <record name="TreeDirectory" c:type="GMenuTreeDirectory">
+      <method name="get_contents"
+              c:identifier="gmenu_tree_directory_get_contents">
+        <return-value transfer-ownership="full">
+          <type name="GLib.SList" c:type="GSList*">
+            <type name="any" c:type="gpointer"/>
+          </type>
+        </return-value>
+      </method>
+      <method name="get_name" c:identifier="gmenu_tree_directory_get_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_comment"
+              c:identifier="gmenu_tree_directory_get_comment">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_icon" c:identifier="gmenu_tree_directory_get_icon">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_desktop_file_path"
+              c:identifier="gmenu_tree_directory_get_desktop_file_path">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_menu_id"
+              c:identifier="gmenu_tree_directory_get_menu_id">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_tree" c:identifier="gmenu_tree_directory_get_tree">
+        <return-value transfer-ownership="full">
+          <type name="Tree" c:type="GMenuTree*"/>
+        </return-value>
+      </method>
+      <method name="get_is_nodisplay"
+              c:identifier="gmenu_tree_directory_get_is_nodisplay">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="make_path" c:identifier="gmenu_tree_directory_make_path">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+        <parameters>
+          <parameter name="entry" transfer-ownership="none">
+            <type name="TreeEntry" c:type="GMenuTreeEntry*"/>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <record name="TreeEntry" c:type="GMenuTreeEntry">
+      <method name="get_name" c:identifier="gmenu_tree_entry_get_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_generic_name"
+              c:identifier="gmenu_tree_entry_get_generic_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_display_name"
+              c:identifier="gmenu_tree_entry_get_display_name">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_comment" c:identifier="gmenu_tree_entry_get_comment">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_icon" c:identifier="gmenu_tree_entry_get_icon">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_exec" c:identifier="gmenu_tree_entry_get_exec">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_launch_in_terminal"
+              c:identifier="gmenu_tree_entry_get_launch_in_terminal">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_desktop_file_path"
+              c:identifier="gmenu_tree_entry_get_desktop_file_path">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_desktop_file_id"
+              c:identifier="gmenu_tree_entry_get_desktop_file_id">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_is_excluded"
+              c:identifier="gmenu_tree_entry_get_is_excluded">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_is_nodisplay"
+              c:identifier="gmenu_tree_entry_get_is_nodisplay">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+    </record>
+    <bitfield name="TreeFlags" c:type="GMenuTreeFlags">
+      <member name="none" value="0" c:identifier="GMENU_TREE_FLAGS_NONE"/>
+      <member name="include_excluded"
+              value="1"
+              c:identifier="GMENU_TREE_FLAGS_INCLUDE_EXCLUDED"/>
+      <member name="show_empty"
+              value="2"
+              c:identifier="GMENU_TREE_FLAGS_SHOW_EMPTY"/>
+      <member name="include_nodisplay"
+              value="4"
+              c:identifier="GMENU_TREE_FLAGS_INCLUDE_NODISPLAY"/>
+      <member name="show_all_separators"
+              value="8"
+              c:identifier="GMENU_TREE_FLAGS_SHOW_ALL_SEPARATORS"/>
+      <member name="mask" value="15" c:identifier="GMENU_TREE_FLAGS_MASK"/>
+    </bitfield>
+    <record name="TreeHeader" c:type="GMenuTreeHeader">
+      <method name="get_directory"
+              c:identifier="gmenu_tree_header_get_directory">
+        <return-value transfer-ownership="full">
+          <type name="TreeDirectory" c:type="GMenuTreeDirectory*"/>
+        </return-value>
+      </method>
+    </record>
+    <record name="TreeItem" c:type="GMenuTreeItem">
+      <method name="set_user_data"
+              c:identifier="gmenu_tree_item_set_user_data">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="user_data" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+          <parameter name="dnotify" transfer-ownership="none" scope="call">
+            <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_user_data"
+              c:identifier="gmenu_tree_item_get_user_data">
+        <return-value transfer-ownership="none">
+          <type name="any" c:type="gpointer"/>
+        </return-value>
+      </method>
+      <method name="get_parent" c:identifier="gmenu_tree_item_get_parent">
+        <return-value transfer-ownership="full">
+          <type name="TreeDirectory" c:type="GMenuTreeDirectory*"/>
+        </return-value>
+      </method>
+    </record>
+    <enumeration name="TreeItemType" c:type="GMenuTreeItemType">
+      <member name="invalid" value="0" c:identifier="GMENU_TREE_ITEM_INVALID"/>
+      <member name="directory"
+              value="1"
+              c:identifier="GMENU_TREE_ITEM_DIRECTORY"/>
+      <member name="entry" value="2" c:identifier="GMENU_TREE_ITEM_ENTRY"/>
+      <member name="separator"
+              value="3"
+              c:identifier="GMENU_TREE_ITEM_SEPARATOR"/>
+      <member name="header" value="4" c:identifier="GMENU_TREE_ITEM_HEADER"/>
+      <member name="alias" value="5" c:identifier="GMENU_TREE_ITEM_ALIAS"/>
+    </enumeration>
+    <record name="TreeSeparator" c:type="GMenuTreeSeparator">
+    </record>
+    <enumeration name="TreeSortKey" c:type="GMenuTreeSortKey">
+      <member name="name" value="0" c:identifier="GMENU_TREE_SORT_NAME"/>
+      <member name="display_name"
+              value="1"
+              c:identifier="GMENU_TREE_SORT_DISPLAY_NAME"/>
+    </enumeration>
+    <function name="tree_item_get_type"
+              c:identifier="gmenu_tree_item_get_type">
+      <return-value transfer-ownership="full">
+        <type name="TreeItemType" c:type="GMenuTreeItemType"/>
+      </return-value>
+      <parameters>
+        <parameter name="item" transfer-ownership="none">
+          <type name="TreeItem" c:type="GMenuTreeItem*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="tree_item_ref" c:identifier="gmenu_tree_item_ref">
+      <return-value transfer-ownership="none">
+        <type name="any" c:type="gpointer"/>
+      </return-value>
+      <parameters>
+        <parameter name="item" transfer-ownership="none">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="tree_item_unref" c:identifier="gmenu_tree_item_unref">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="item" transfer-ownership="none">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="tree_lookup" c:identifier="gmenu_tree_lookup">
+      <return-value transfer-ownership="full">
+        <type name="Tree" c:type="GMenuTree*"/>
+      </return-value>
+      <parameters>
+        <parameter name="menu_file" transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </parameter>
+        <parameter name="flags" transfer-ownership="none">
+          <type name="TreeFlags" c:type="GMenuTreeFlags"/>
+        </parameter>
+      </parameters>
+    </function>
+  </namespace>
+</repository>

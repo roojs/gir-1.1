@@ -1,0 +1,2275 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="GLib" version="2.0"/>
+  <include name="GModule" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <include name="Gst" version="0.10"/>
+  <include name="GstBase" version="0.10"/>
+  <include name="libxml2" version="2.0"/>
+  <package name="gobject-2.0"/>
+  <package name="gstreamer-0.10"/>
+  <package name="gstreamer-rtp-0.10"/>
+  <namespace name="GstRtp"
+             version="0.10"
+             shared-library="libgstrtp-0.10.so.0"
+             c:prefix="GstRtp">
+    <constant name="GST_RTCP_MAX_BYE_SSRC_COUNT" value="31">
+      <type name="int"/>
+    </constant>
+    <constant name="GST_RTCP_MAX_RB_COUNT" value="31">
+      <type name="int"/>
+    </constant>
+    <constant name="GST_RTCP_MAX_SDES" value="255">
+      <type name="int"/>
+    </constant>
+    <constant name="GST_RTCP_MAX_SDES_ITEM_COUNT" value="31">
+      <type name="int"/>
+    </constant>
+    <constant name="GST_RTCP_VALID_MASK" value="57598">
+      <type name="int"/>
+    </constant>
+    <constant name="GST_RTCP_VALID_VALUE" value="0">
+      <type name="int"/>
+    </constant>
+    <constant name="GST_RTCP_VERSION" value="2">
+      <type name="int"/>
+    </constant>
+    <class name="GstBaseRTPAudioPayload"
+           c:type="GstBaseRTPAudioPayload"
+           parent="GstBaseRTPPayload"
+           glib:type-name="GstBaseRTPAudioPayload"
+           glib:get-type="gst_base_rtp_audio_payload_get_type"
+           glib:type-struct="GstBaseRTPAudioPayloadClass">
+      <method name="set_frame_based"
+              c:identifier="gst_base_rtp_audio_payload_set_frame_based">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="set_frame_options"
+              c:identifier="gst_base_rtp_audio_payload_set_frame_options">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="frame_duration" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="frame_size" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_sample_based"
+              c:identifier="gst_base_rtp_audio_payload_set_sample_based">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </method>
+      <method name="set_sample_options"
+              c:identifier="gst_base_rtp_audio_payload_set_sample_options">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="sample_size" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_samplebits_options"
+              c:identifier="gst_base_rtp_audio_payload_set_samplebits_options">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="sample_size" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_adapter"
+              c:identifier="gst_base_rtp_audio_payload_get_adapter">
+        <return-value transfer-ownership="full">
+          <type name="GstBase.GstAdapter" c:type="GstAdapter*"/>
+        </return-value>
+      </method>
+      <method name="push" c:identifier="gst_base_rtp_audio_payload_push">
+        <return-value transfer-ownership="full">
+          <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
+        </return-value>
+        <parameters>
+          <parameter name="data" transfer-ownership="none">
+            <array c:type="guint8*">
+              <type name="uint8"/>
+            </array>
+          </parameter>
+          <parameter name="payload_len" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="Gst.ClockTime" c:type="GstClockTime"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="flush" c:identifier="gst_base_rtp_audio_payload_flush">
+        <return-value transfer-ownership="full">
+          <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
+        </return-value>
+        <parameters>
+          <parameter name="payload_len" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="Gst.ClockTime" c:type="GstClockTime"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="buffer-list" writable="1" transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <field name="payload">
+        <type name="GstBaseRTPPayload" c:type="GstBaseRTPPayload"/>
+      </field>
+      <field name="priv">
+        <type name="GstBaseRTPAudioPayloadPrivate"
+              c:type="GstBaseRTPAudioPayloadPrivate*"/>
+      </field>
+      <field name="base_ts">
+        <type name="Gst.ClockTime" c:type="GstClockTime"/>
+      </field>
+      <field name="frame_size">
+        <type name="int" c:type="gint"/>
+      </field>
+      <field name="frame_duration">
+        <type name="int" c:type="gint"/>
+      </field>
+      <field name="sample_size">
+        <type name="int" c:type="gint"/>
+      </field>
+      <field name="_gst_reserved">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="4">
+          <type name="any"/>
+        </array>
+      </field>
+    </class>
+    <record name="GstBaseRTPAudioPayloadClass"
+            c:type="GstBaseRTPAudioPayloadClass"
+            glib:is-gtype-struct-for="GstBaseRTPAudioPayload">
+      <field name="parent_class">
+        <type name="GstBaseRTPPayloadClass" c:type="GstBaseRTPPayloadClass"/>
+      </field>
+      <field name="_gst_reserved">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="4">
+          <type name="any"/>
+        </array>
+      </field>
+    </record>
+    <record name="GstBaseRTPAudioPayloadPrivate"
+            c:type="GstBaseRTPAudioPayloadPrivate">
+    </record>
+    <class name="GstBaseRTPDepayload"
+           c:type="GstBaseRTPDepayload"
+           parent="Gst.Element"
+           glib:type-name="GstBaseRTPDepayload"
+           glib:get-type="gst_base_rtp_depayload_get_type"
+           glib:type-struct="GstBaseRTPDepayloadClass">
+      <virtual-method name="set_caps">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="caps" transfer-ownership="none">
+            <type name="Gst.Caps" c:type="GstCaps*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="add_to_queue">
+        <return-value transfer-ownership="full">
+          <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
+        </return-value>
+        <parameters>
+          <parameter name="in" transfer-ownership="none">
+            <type name="Gst.Buffer" c:type="GstBuffer*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="process">
+        <return-value transfer-ownership="full">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </return-value>
+        <parameters>
+          <parameter name="in" transfer-ownership="none">
+            <type name="Gst.Buffer" c:type="GstBuffer*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="set_gst_timestamp">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+          <parameter name="buf" transfer-ownership="none">
+            <type name="Gst.Buffer" c:type="GstBuffer*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="packet_lost">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="event" transfer-ownership="none">
+            <type name="Gst.Event" c:type="GstEvent*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <method name="push" c:identifier="gst_base_rtp_depayload_push">
+        <return-value transfer-ownership="full">
+          <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
+        </return-value>
+        <parameters>
+          <parameter name="out_buf" transfer-ownership="none">
+            <type name="Gst.Buffer" c:type="GstBuffer*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="push_ts" c:identifier="gst_base_rtp_depayload_push_ts">
+        <return-value transfer-ownership="full">
+          <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
+        </return-value>
+        <parameters>
+          <parameter name="timestamp" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+          <parameter name="out_buf" transfer-ownership="none">
+            <type name="Gst.Buffer" c:type="GstBuffer*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="queue-delay" writable="1" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <field name="parent">
+        <type name="Gst.Element" c:type="GstElement"/>
+      </field>
+      <field name="sinkpad">
+        <type name="Gst.Pad" c:type="GstPad*"/>
+      </field>
+      <field name="srcpad">
+        <type name="Gst.Pad" c:type="GstPad*"/>
+      </field>
+      <field name="queuelock">
+        <type name="GLib.StaticRecMutex" c:type="GStaticRecMutex"/>
+      </field>
+      <field name="thread_running">
+        <type name="boolean" c:type="gboolean"/>
+      </field>
+      <field name="thread">
+        <type name="GLib.Thread" c:type="GThread*"/>
+      </field>
+      <field name="clock_rate">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="queue_delay">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="queue">
+        <type name="GLib.Queue" c:type="GQueue*"/>
+      </field>
+      <field name="segment">
+        <type name="Gst.Segment" c:type="GstSegment"/>
+      </field>
+      <field name="need_newsegment">
+        <type name="boolean" c:type="gboolean"/>
+      </field>
+      <field name="priv">
+        <type name="GstBaseRTPDepayloadPrivate"
+              c:type="GstBaseRTPDepayloadPrivate*"/>
+      </field>
+      <field name="_gst_reserved">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="3">
+          <type name="any"/>
+        </array>
+      </field>
+    </class>
+    <record name="GstBaseRTPDepayloadClass"
+            c:type="GstBaseRTPDepayloadClass"
+            glib:is-gtype-struct-for="GstBaseRTPDepayload">
+      <field name="parent_class">
+        <type name="Gst.ElementClass" c:type="GstElementClass"/>
+      </field>
+      <field name="set_caps">
+        <callback name="set_caps" c:type="set_caps">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="filter" transfer-ownership="none">
+              <type name="GstBaseRTPDepayload" c:type="GstBaseRTPDepayload*"/>
+            </parameter>
+            <parameter name="caps" transfer-ownership="none">
+              <type name="Gst.Caps" c:type="GstCaps*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="add_to_queue">
+        <callback name="add_to_queue" c:type="add_to_queue">
+          <return-value transfer-ownership="full">
+            <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
+          </return-value>
+          <parameters>
+            <parameter name="filter" transfer-ownership="none">
+              <type name="GstBaseRTPDepayload" c:type="GstBaseRTPDepayload*"/>
+            </parameter>
+            <parameter name="in" transfer-ownership="none">
+              <type name="Gst.Buffer" c:type="GstBuffer*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="process">
+        <callback name="process" c:type="process">
+          <return-value transfer-ownership="full">
+            <type name="Gst.Buffer" c:type="GstBuffer*"/>
+          </return-value>
+          <parameters>
+            <parameter name="base" transfer-ownership="none">
+              <type name="GstBaseRTPDepayload" c:type="GstBaseRTPDepayload*"/>
+            </parameter>
+            <parameter name="in" transfer-ownership="none">
+              <type name="Gst.Buffer" c:type="GstBuffer*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="set_gst_timestamp">
+        <callback name="set_gst_timestamp" c:type="set_gst_timestamp">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="filter" transfer-ownership="none">
+              <type name="GstBaseRTPDepayload" c:type="GstBaseRTPDepayload*"/>
+            </parameter>
+            <parameter name="timestamp" transfer-ownership="none">
+              <type name="uint32" c:type="guint32"/>
+            </parameter>
+            <parameter name="buf" transfer-ownership="none">
+              <type name="Gst.Buffer" c:type="GstBuffer*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="packet_lost">
+        <callback name="packet_lost" c:type="packet_lost">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="filter" transfer-ownership="none">
+              <type name="GstBaseRTPDepayload" c:type="GstBaseRTPDepayload*"/>
+            </parameter>
+            <parameter name="event" transfer-ownership="none">
+              <type name="Gst.Event" c:type="GstEvent*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="_gst_reserved">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="3">
+          <type name="any"/>
+        </array>
+      </field>
+    </record>
+    <record name="GstBaseRTPDepayloadPrivate"
+            c:type="GstBaseRTPDepayloadPrivate">
+    </record>
+    <class name="GstBaseRTPPayload"
+           c:type="GstBaseRTPPayload"
+           parent="Gst.Element"
+           abstract="1"
+           glib:type-name="GstBaseRTPPayload"
+           glib:get-type="gst_basertppayload_get_type"
+           glib:type-struct="GstBaseRTPPayloadClass">
+      <virtual-method name="set_caps">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="caps" transfer-ownership="none">
+            <type name="Gst.Caps" c:type="GstCaps*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="handle_buffer">
+        <return-value transfer-ownership="full">
+          <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
+        </return-value>
+        <parameters>
+          <parameter name="buffer" transfer-ownership="none">
+            <type name="Gst.Buffer" c:type="GstBuffer*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="get_caps">
+        <return-value transfer-ownership="full">
+          <type name="Gst.Caps" c:type="GstCaps*"/>
+        </return-value>
+        <parameters>
+          <parameter name="pad" transfer-ownership="none">
+            <type name="Gst.Pad" c:type="GstPad*"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <method name="set_options" c:identifier="gst_basertppayload_set_options">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="media" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="dynamic" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+          <parameter name="encoding_name" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="clock_rate" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_outcaps"
+              c:identifier="gst_basertppayload_set_outcaps"
+              introspectable="0">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="fieldname" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter transfer-ownership="none">
+            <varargs>
+            </varargs>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="is_filled" c:identifier="gst_basertppayload_is_filled">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="size" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="duration" transfer-ownership="none">
+            <type name="Gst.ClockTime" c:type="GstClockTime"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="push" c:identifier="gst_basertppayload_push">
+        <return-value transfer-ownership="full">
+          <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
+        </return-value>
+        <parameters>
+          <parameter name="buffer" transfer-ownership="none">
+            <type name="Gst.Buffer" c:type="GstBuffer*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="push_list" c:identifier="gst_basertppayload_push_list">
+        <return-value transfer-ownership="full">
+          <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
+        </return-value>
+        <parameters>
+          <parameter name="list" transfer-ownership="none">
+            <type name="Gst.BufferList" c:type="GstBufferList*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="max-ptime" writable="1" transfer-ownership="none">
+        <type name="int64" c:type="gint64"/>
+      </property>
+      <property name="min-ptime" writable="1" transfer-ownership="none">
+        <type name="int64" c:type="gint64"/>
+      </property>
+      <property name="mtu" writable="1" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <property name="perfect-rtptime" writable="1" transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="pt" writable="1" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <property name="seqnum" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <property name="seqnum-offset" writable="1" transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </property>
+      <property name="ssrc" writable="1" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <property name="timestamp" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <property name="timestamp-offset" writable="1" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <field name="element">
+        <type name="Gst.Element" c:type="GstElement"/>
+      </field>
+      <field name="sinkpad">
+        <type name="Gst.Pad" c:type="GstPad*"/>
+      </field>
+      <field name="srcpad">
+        <type name="Gst.Pad" c:type="GstPad*"/>
+      </field>
+      <field name="seq_rand">
+        <type name="GLib.Rand" c:type="GRand*"/>
+      </field>
+      <field name="ssrc_rand">
+        <type name="GLib.Rand" c:type="GRand*"/>
+      </field>
+      <field name="ts_rand">
+        <type name="GLib.Rand" c:type="GRand*"/>
+      </field>
+      <field name="ts_base">
+        <type name="uint32" c:type="guint32"/>
+      </field>
+      <field name="seqnum_base">
+        <type name="uint16" c:type="guint16"/>
+      </field>
+      <field name="media">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="encoding_name">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="dynamic">
+        <type name="boolean" c:type="gboolean"/>
+      </field>
+      <field name="clock_rate">
+        <type name="uint32" c:type="guint32"/>
+      </field>
+      <field name="ts_offset">
+        <type name="int32" c:type="gint32"/>
+      </field>
+      <field name="timestamp">
+        <type name="uint32" c:type="guint32"/>
+      </field>
+      <field name="seqnum_offset">
+        <type name="int16" c:type="gint16"/>
+      </field>
+      <field name="seqnum">
+        <type name="uint16" c:type="guint16"/>
+      </field>
+      <field name="max_ptime">
+        <type name="int64" c:type="gint64"/>
+      </field>
+      <field name="pt">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="ssrc">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="current_ssrc">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="mtu">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="segment">
+        <type name="Gst.Segment" c:type="GstSegment"/>
+      </field>
+      <field name="min_ptime">
+        <type name="uint64" c:type="guint64"/>
+      </field>
+      <field name="priv">
+        <type name="GstBaseRTPPayloadPrivate"
+              c:type="GstBaseRTPPayloadPrivate*"/>
+      </field>
+      <union name="abidata" c:type="abidata">
+        <record name="ABI" c:type="ABI">
+          <field name="ptime" writable="1">
+            <type name="uint64" c:type="guint64"/>
+          </field>
+        </record>
+        <field name="_gst_reserved" writable="1">
+          <array zero-terminated="0" c:type="gpointer" fixed-size="3">
+            <type name="any"/>
+          </array>
+        </field>
+      </union>
+    </class>
+    <record name="GstBaseRTPPayloadClass"
+            c:type="GstBaseRTPPayloadClass"
+            glib:is-gtype-struct-for="GstBaseRTPPayload">
+      <field name="parent_class">
+        <type name="Gst.ElementClass" c:type="GstElementClass"/>
+      </field>
+      <field name="set_caps">
+        <callback name="set_caps" c:type="set_caps">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="payload" transfer-ownership="none">
+              <type name="GstBaseRTPPayload" c:type="GstBaseRTPPayload*"/>
+            </parameter>
+            <parameter name="caps" transfer-ownership="none">
+              <type name="Gst.Caps" c:type="GstCaps*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="handle_buffer">
+        <callback name="handle_buffer" c:type="handle_buffer">
+          <return-value transfer-ownership="full">
+            <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
+          </return-value>
+          <parameters>
+            <parameter name="payload" transfer-ownership="none">
+              <type name="GstBaseRTPPayload" c:type="GstBaseRTPPayload*"/>
+            </parameter>
+            <parameter name="buffer" transfer-ownership="none">
+              <type name="Gst.Buffer" c:type="GstBuffer*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="handle_event">
+        <callback name="handle_event" c:type="handle_event">
+          <return-value transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </return-value>
+          <parameters>
+            <parameter name="pad" transfer-ownership="none">
+              <type name="Gst.Pad" c:type="GstPad*"/>
+            </parameter>
+            <parameter name="event" transfer-ownership="none">
+              <type name="Gst.Event" c:type="GstEvent*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="get_caps">
+        <callback name="get_caps" c:type="get_caps">
+          <return-value transfer-ownership="full">
+            <type name="Gst.Caps" c:type="GstCaps*"/>
+          </return-value>
+          <parameters>
+            <parameter name="payload" transfer-ownership="none">
+              <type name="GstBaseRTPPayload" c:type="GstBaseRTPPayload*"/>
+            </parameter>
+            <parameter name="pad" transfer-ownership="none">
+              <type name="Gst.Pad" c:type="GstPad*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="_gst_reserved">
+        <array zero-terminated="0" c:type="gpointer" fixed-size="2">
+          <type name="any"/>
+        </array>
+      </field>
+    </record>
+    <record name="GstBaseRTPPayloadPrivate" c:type="GstBaseRTPPayloadPrivate">
+    </record>
+    <enumeration name="GstRTCPFBType" version="0.10.23" c:type="GstRTCPFBType">
+      <doc xml:whitespace="preserve">Different types of feedback messages.</doc>
+      <member name="fb_type_invalid"
+              value="0"
+              c:identifier="GST_RTCP_FB_TYPE_INVALID"/>
+      <member name="rtpfb_type_nack"
+              value="1"
+              c:identifier="GST_RTCP_RTPFB_TYPE_NACK"/>
+      <member name="psfb_type_pli"
+              value="1"
+              c:identifier="GST_RTCP_PSFB_TYPE_PLI"/>
+      <member name="psfb_type_sli"
+              value="2"
+              c:identifier="GST_RTCP_PSFB_TYPE_SLI"/>
+      <member name="psfb_type_rpsi"
+              value="3"
+              c:identifier="GST_RTCP_PSFB_TYPE_RPSI"/>
+      <member name="psfb_type_afb"
+              value="15"
+              c:identifier="GST_RTCP_PSFB_TYPE_AFB"/>
+    </enumeration>
+    <record name="GstRTCPPacket" c:type="GstRTCPPacket">
+      <doc xml:whitespace="preserve">Data structure that points to a packet at @offset in @buffer. 
+The size of the structure is made public to allow stack allocations.</doc>
+      <field name="buffer" writable="1">
+        <type name="Gst.Buffer" c:type="GstBuffer*"/>
+      </field>
+      <field name="offset" writable="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="padding" writable="1">
+        <type name="boolean" c:type="gboolean"/>
+      </field>
+      <field name="count" writable="1">
+        <type name="uint8" c:type="guint8"/>
+      </field>
+      <field name="type" writable="1">
+        <type name="GstRTCPType" c:type="GstRTCPType"/>
+      </field>
+      <field name="length" writable="1">
+        <type name="uint16" c:type="guint16"/>
+      </field>
+      <field name="item_offset" writable="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="item_count" writable="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="entry_offset" writable="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <method name="move_to_next" c:identifier="gst_rtcp_packet_move_to_next">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="remove" c:identifier="gst_rtcp_packet_remove">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_padding" c:identifier="gst_rtcp_packet_get_padding">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="get_count" c:identifier="gst_rtcp_packet_get_count">
+        <return-value transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </return-value>
+      </method>
+      <method name="get_length" c:identifier="gst_rtcp_packet_get_length">
+        <return-value transfer-ownership="none">
+          <type name="uint16" c:type="guint16"/>
+        </return-value>
+      </method>
+      <method name="sr_get_sender_info"
+              c:identifier="gst_rtcp_packet_sr_get_sender_info">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="ssrc"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint32" c:type="guint32*"/>
+          </parameter>
+          <parameter name="ntptime"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint64" c:type="guint64*"/>
+          </parameter>
+          <parameter name="rtptime"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint32" c:type="guint32*"/>
+          </parameter>
+          <parameter name="packet_count"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint32" c:type="guint32*"/>
+          </parameter>
+          <parameter name="octet_count"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint32" c:type="guint32*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="sr_set_sender_info"
+              c:identifier="gst_rtcp_packet_sr_set_sender_info">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="ssrc" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+          <parameter name="ntptime" transfer-ownership="none">
+            <type name="uint64" c:type="guint64"/>
+          </parameter>
+          <parameter name="rtptime" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+          <parameter name="packet_count" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+          <parameter name="octet_count" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="rr_get_ssrc" c:identifier="gst_rtcp_packet_rr_get_ssrc">
+        <return-value transfer-ownership="none">
+          <type name="uint32" c:type="guint32"/>
+        </return-value>
+      </method>
+      <method name="rr_set_ssrc" c:identifier="gst_rtcp_packet_rr_set_ssrc">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="ssrc" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_rb_count" c:identifier="gst_rtcp_packet_get_rb_count">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="get_rb" c:identifier="gst_rtcp_packet_get_rb">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="nth" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="ssrc"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint32" c:type="guint32*"/>
+          </parameter>
+          <parameter name="fractionlost" transfer-ownership="none">
+            <array c:type="guint8*">
+              <type name="uint8"/>
+            </array>
+          </parameter>
+          <parameter name="packetslost"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="int32" c:type="gint32*"/>
+          </parameter>
+          <parameter name="exthighestseq"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint32" c:type="guint32*"/>
+          </parameter>
+          <parameter name="jitter"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint32" c:type="guint32*"/>
+          </parameter>
+          <parameter name="lsr"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint32" c:type="guint32*"/>
+          </parameter>
+          <parameter name="dlsr"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint32" c:type="guint32*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_rb" c:identifier="gst_rtcp_packet_add_rb">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="ssrc" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+          <parameter name="fractionlost" transfer-ownership="none">
+            <type name="uint8" c:type="guint8"/>
+          </parameter>
+          <parameter name="packetslost" transfer-ownership="none">
+            <type name="int32" c:type="gint32"/>
+          </parameter>
+          <parameter name="exthighestseq" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+          <parameter name="jitter" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+          <parameter name="lsr" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+          <parameter name="dlsr" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_rb" c:identifier="gst_rtcp_packet_set_rb">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="nth" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="ssrc" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+          <parameter name="fractionlost" transfer-ownership="none">
+            <type name="uint8" c:type="guint8"/>
+          </parameter>
+          <parameter name="packetslost" transfer-ownership="none">
+            <type name="int32" c:type="gint32"/>
+          </parameter>
+          <parameter name="exthighestseq" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+          <parameter name="jitter" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+          <parameter name="lsr" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+          <parameter name="dlsr" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="sdes_get_item_count"
+              c:identifier="gst_rtcp_packet_sdes_get_item_count">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="sdes_first_item"
+              c:identifier="gst_rtcp_packet_sdes_first_item">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="sdes_next_item"
+              c:identifier="gst_rtcp_packet_sdes_next_item">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="sdes_get_ssrc"
+              c:identifier="gst_rtcp_packet_sdes_get_ssrc">
+        <return-value transfer-ownership="none">
+          <type name="uint32" c:type="guint32"/>
+        </return-value>
+      </method>
+      <method name="sdes_first_entry"
+              c:identifier="gst_rtcp_packet_sdes_first_entry">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="sdes_next_entry"
+              c:identifier="gst_rtcp_packet_sdes_next_entry">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="sdes_get_entry"
+              c:identifier="gst_rtcp_packet_sdes_get_entry">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="type" transfer-ownership="none">
+            <type name="GstRTCPSDESType" c:type="GstRTCPSDESType*"/>
+          </parameter>
+          <parameter name="len" transfer-ownership="none">
+            <array c:type="guint8*">
+              <type name="uint8"/>
+            </array>
+          </parameter>
+          <parameter name="data"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint8" c:type="guint8**"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="sdes_copy_entry"
+              c:identifier="gst_rtcp_packet_sdes_copy_entry">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="type" transfer-ownership="none">
+            <type name="GstRTCPSDESType" c:type="GstRTCPSDESType*"/>
+          </parameter>
+          <parameter name="len" transfer-ownership="none">
+            <array c:type="guint8*">
+              <type name="uint8"/>
+            </array>
+          </parameter>
+          <parameter name="data"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint8" c:type="guint8**"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="sdes_add_item"
+              c:identifier="gst_rtcp_packet_sdes_add_item">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="ssrc" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="sdes_add_entry"
+              c:identifier="gst_rtcp_packet_sdes_add_entry">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="type" transfer-ownership="none">
+            <type name="GstRTCPSDESType" c:type="GstRTCPSDESType"/>
+          </parameter>
+          <parameter name="len" transfer-ownership="none">
+            <type name="uint8" c:type="guint8"/>
+          </parameter>
+          <parameter name="data" transfer-ownership="none">
+            <array c:type="guint8*">
+              <type name="uint8"/>
+            </array>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="bye_get_ssrc_count"
+              c:identifier="gst_rtcp_packet_bye_get_ssrc_count">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="bye_get_nth_ssrc"
+              c:identifier="gst_rtcp_packet_bye_get_nth_ssrc">
+        <return-value transfer-ownership="none">
+          <type name="uint32" c:type="guint32"/>
+        </return-value>
+        <parameters>
+          <parameter name="nth" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="bye_add_ssrc" c:identifier="gst_rtcp_packet_bye_add_ssrc">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="ssrc" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="bye_add_ssrcs"
+              c:identifier="gst_rtcp_packet_bye_add_ssrcs">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="ssrc"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <type name="uint32" c:type="guint32*"/>
+          </parameter>
+          <parameter name="len" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="bye_get_reason_len"
+              c:identifier="gst_rtcp_packet_bye_get_reason_len">
+        <return-value transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </return-value>
+      </method>
+      <method name="bye_get_reason"
+              c:identifier="gst_rtcp_packet_bye_get_reason">
+        <return-value transfer-ownership="full">
+          <type name="utf8" c:type="gchar*"/>
+        </return-value>
+      </method>
+      <method name="bye_set_reason"
+              c:identifier="gst_rtcp_packet_bye_set_reason">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="reason" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="fb_get_sender_ssrc"
+              c:identifier="gst_rtcp_packet_fb_get_sender_ssrc">
+        <return-value transfer-ownership="none">
+          <type name="uint32" c:type="guint32"/>
+        </return-value>
+      </method>
+      <method name="fb_set_sender_ssrc"
+              c:identifier="gst_rtcp_packet_fb_set_sender_ssrc">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="ssrc" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="fb_get_media_ssrc"
+              c:identifier="gst_rtcp_packet_fb_get_media_ssrc">
+        <return-value transfer-ownership="none">
+          <type name="uint32" c:type="guint32"/>
+        </return-value>
+      </method>
+      <method name="fb_set_media_ssrc"
+              c:identifier="gst_rtcp_packet_fb_set_media_ssrc">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="ssrc" transfer-ownership="none">
+            <type name="uint32" c:type="guint32"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="fb_set_type" c:identifier="gst_rtcp_packet_fb_set_type">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="type" transfer-ownership="none">
+            <type name="GstRTCPFBType" c:type="GstRTCPFBType"/>
+          </parameter>
+        </parameters>
+      </method>
+    </record>
+    <enumeration name="GstRTCPSDESType" c:type="GstRTCPSDESType">
+      <member name="invalid" value="-1" c:identifier="GST_RTCP_SDES_INVALID"/>
+      <member name="end" value="0" c:identifier="GST_RTCP_SDES_END"/>
+      <member name="cname" value="1" c:identifier="GST_RTCP_SDES_CNAME"/>
+      <member name="name" value="2" c:identifier="GST_RTCP_SDES_NAME"/>
+      <member name="email" value="3" c:identifier="GST_RTCP_SDES_EMAIL"/>
+      <member name="phone" value="4" c:identifier="GST_RTCP_SDES_PHONE"/>
+      <member name="loc" value="5" c:identifier="GST_RTCP_SDES_LOC"/>
+      <member name="tool" value="6" c:identifier="GST_RTCP_SDES_TOOL"/>
+      <member name="note" value="7" c:identifier="GST_RTCP_SDES_NOTE"/>
+      <member name="priv" value="8" c:identifier="GST_RTCP_SDES_PRIV"/>
+    </enumeration>
+    <enumeration name="GstRTCPType" c:type="GstRTCPType">
+      <member name="invalid" value="0" c:identifier="GST_RTCP_TYPE_INVALID"/>
+      <member name="sr" value="200" c:identifier="GST_RTCP_TYPE_SR"/>
+      <member name="rr" value="201" c:identifier="GST_RTCP_TYPE_RR"/>
+      <member name="sdes" value="202" c:identifier="GST_RTCP_TYPE_SDES"/>
+      <member name="bye" value="203" c:identifier="GST_RTCP_TYPE_BYE"/>
+      <member name="app" value="204" c:identifier="GST_RTCP_TYPE_APP"/>
+      <member name="rtpfb" value="205" c:identifier="GST_RTCP_TYPE_RTPFB"/>
+      <member name="psfb" value="206" c:identifier="GST_RTCP_TYPE_PSFB"/>
+    </enumeration>
+    <constant name="PAYLOAD_1016_STRING" value="1">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_CELLB_STRING" value="25">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_CN_STRING" value="13">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_DVI4_11025_STRING" value="16">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_DVI4_16000_STRING" value="6">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_DVI4_22050_STRING" value="17">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_DVI4_8000_STRING" value="5">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_DYNAMIC_STRING" value="[96, 127]">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_G721_STRING" value="2">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_G722_STRING" value="9">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_G723_53" value="17">
+      <type name="int"/>
+    </constant>
+    <constant name="PAYLOAD_G723_53_STRING" value="17">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_G723_63" value="16">
+      <type name="int"/>
+    </constant>
+    <constant name="PAYLOAD_G723_63_STRING" value="16">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_G723_STRING" value="4">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_G728_STRING" value="15">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_G729_STRING" value="18">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_GSM_STRING" value="3">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_H261_STRING" value="31">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_H263_STRING" value="34">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_JPEG_STRING" value="26">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_L16_MONO_STRING" value="11">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_L16_STEREO_STRING" value="10">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_LPC_STRING" value="7">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_MP2T_STRING" value="33">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_MPA_STRING" value="14">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_MPV_STRING" value="32">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_NV_STRING" value="28">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_PCMA_STRING" value="8">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_PCMU_STRING" value="0">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_QCELP_STRING" value="12">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_TS41" value="19">
+      <type name="int"/>
+    </constant>
+    <constant name="PAYLOAD_TS41_STRING" value="19">
+      <type name="utf8"/>
+    </constant>
+    <constant name="PAYLOAD_TS48" value="18">
+      <type name="int"/>
+    </constant>
+    <constant name="PAYLOAD_TS48_STRING" value="18">
+      <type name="utf8"/>
+    </constant>
+    <enumeration name="Payload" c:type="GstRTPPayload">
+      <member name="pcmu" value="0" c:identifier="GST_RTP_PAYLOAD_PCMU"/>
+      <member name="1016" value="1" c:identifier="GST_RTP_PAYLOAD_1016"/>
+      <member name="g721" value="2" c:identifier="GST_RTP_PAYLOAD_G721"/>
+      <member name="gsm" value="3" c:identifier="GST_RTP_PAYLOAD_GSM"/>
+      <member name="g723" value="4" c:identifier="GST_RTP_PAYLOAD_G723"/>
+      <member name="dvi4_8000"
+              value="5"
+              c:identifier="GST_RTP_PAYLOAD_DVI4_8000"/>
+      <member name="dvi4_16000"
+              value="6"
+              c:identifier="GST_RTP_PAYLOAD_DVI4_16000"/>
+      <member name="lpc" value="7" c:identifier="GST_RTP_PAYLOAD_LPC"/>
+      <member name="pcma" value="8" c:identifier="GST_RTP_PAYLOAD_PCMA"/>
+      <member name="g722" value="9" c:identifier="GST_RTP_PAYLOAD_G722"/>
+      <member name="l16_stereo"
+              value="10"
+              c:identifier="GST_RTP_PAYLOAD_L16_STEREO"/>
+      <member name="l16_mono"
+              value="11"
+              c:identifier="GST_RTP_PAYLOAD_L16_MONO"/>
+      <member name="qcelp" value="12" c:identifier="GST_RTP_PAYLOAD_QCELP"/>
+      <member name="cn" value="13" c:identifier="GST_RTP_PAYLOAD_CN"/>
+      <member name="mpa" value="14" c:identifier="GST_RTP_PAYLOAD_MPA"/>
+      <member name="g728" value="15" c:identifier="GST_RTP_PAYLOAD_G728"/>
+      <member name="dvi4_11025"
+              value="16"
+              c:identifier="GST_RTP_PAYLOAD_DVI4_11025"/>
+      <member name="dvi4_22050"
+              value="17"
+              c:identifier="GST_RTP_PAYLOAD_DVI4_22050"/>
+      <member name="g729" value="18" c:identifier="GST_RTP_PAYLOAD_G729"/>
+      <member name="cellb" value="25" c:identifier="GST_RTP_PAYLOAD_CELLB"/>
+      <member name="jpeg" value="26" c:identifier="GST_RTP_PAYLOAD_JPEG"/>
+      <member name="nv" value="28" c:identifier="GST_RTP_PAYLOAD_NV"/>
+      <member name="h261" value="31" c:identifier="GST_RTP_PAYLOAD_H261"/>
+      <member name="mpv" value="32" c:identifier="GST_RTP_PAYLOAD_MPV"/>
+      <member name="mp2t" value="33" c:identifier="GST_RTP_PAYLOAD_MP2T"/>
+      <member name="h263" value="34" c:identifier="GST_RTP_PAYLOAD_H263"/>
+    </enumeration>
+    <record name="PayloadInfo" c:type="GstRTPPayloadInfo">
+      <doc xml:whitespace="preserve">Structure holding default payload type information.</doc>
+      <field name="payload_type" writable="1">
+        <type name="uint8" c:type="guint8"/>
+      </field>
+      <field name="media" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="encoding_name" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="clock_rate" writable="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+      <field name="encoding_parameters" writable="1">
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="bitrate" writable="1">
+        <type name="uint" c:type="guint"/>
+      </field>
+    </record>
+    <constant name="VERSION" value="2">
+      <type name="int"/>
+    </constant>
+    <function name="buffer_allocate_data"
+              c:identifier="gst_rtp_buffer_allocate_data">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="payload_len" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+        <parameter name="pad_len" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+        <parameter name="csrc_count" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_calc_header_len"
+              c:identifier="gst_rtp_buffer_calc_header_len">
+      <return-value transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </return-value>
+      <parameters>
+        <parameter name="csrc_count" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_calc_packet_len"
+              c:identifier="gst_rtp_buffer_calc_packet_len">
+      <return-value transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </return-value>
+      <parameters>
+        <parameter name="payload_len" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+        <parameter name="pad_len" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+        <parameter name="csrc_count" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_calc_payload_len"
+              c:identifier="gst_rtp_buffer_calc_payload_len">
+      <return-value transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </return-value>
+      <parameters>
+        <parameter name="packet_len" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+        <parameter name="pad_len" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+        <parameter name="csrc_count" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_compare_seqnum"
+              c:identifier="gst_rtp_buffer_compare_seqnum">
+      <return-value transfer-ownership="none">
+        <type name="int" c:type="gint"/>
+      </return-value>
+      <parameters>
+        <parameter name="seqnum1" transfer-ownership="none">
+          <type name="uint16" c:type="guint16"/>
+        </parameter>
+        <parameter name="seqnum2" transfer-ownership="none">
+          <type name="uint16" c:type="guint16"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_default_clock_rate"
+              c:identifier="gst_rtp_buffer_default_clock_rate">
+      <return-value transfer-ownership="none">
+        <type name="uint32" c:type="guint32"/>
+      </return-value>
+      <parameters>
+        <parameter name="payload_type" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_ext_timestamp"
+              c:identifier="gst_rtp_buffer_ext_timestamp">
+      <return-value transfer-ownership="none">
+        <type name="uint64" c:type="guint64"/>
+      </return-value>
+      <parameters>
+        <parameter name="exttimestamp"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <type name="uint64" c:type="guint64*"/>
+        </parameter>
+        <parameter name="timestamp" transfer-ownership="none">
+          <type name="uint32" c:type="guint32"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_csrc" c:identifier="gst_rtp_buffer_get_csrc">
+      <return-value transfer-ownership="none">
+        <type name="uint32" c:type="guint32"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="idx" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_csrc_count"
+              c:identifier="gst_rtp_buffer_get_csrc_count">
+      <return-value transfer-ownership="none">
+        <type name="uint8" c:type="guint8"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_extension"
+              c:identifier="gst_rtp_buffer_get_extension">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_extension_data"
+              c:identifier="gst_rtp_buffer_get_extension_data">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="bits"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <type name="uint16" c:type="guint16*"/>
+        </parameter>
+        <parameter name="data" transfer-ownership="none">
+          <type name="any" c:type="gpointer*"/>
+        </parameter>
+        <parameter name="wordlen"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <type name="uint" c:type="guint*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_header_len"
+              c:identifier="gst_rtp_buffer_get_header_len">
+      <return-value transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_marker"
+              c:identifier="gst_rtp_buffer_get_marker">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_packet_len"
+              c:identifier="gst_rtp_buffer_get_packet_len">
+      <return-value transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_padding"
+              c:identifier="gst_rtp_buffer_get_padding">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_payload"
+              c:identifier="gst_rtp_buffer_get_payload">
+      <return-value transfer-ownership="none">
+        <type name="any" c:type="gpointer"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_payload_buffer"
+              c:identifier="gst_rtp_buffer_get_payload_buffer">
+      <return-value transfer-ownership="full">
+        <type name="Gst.Buffer" c:type="GstBuffer*"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_payload_len"
+              c:identifier="gst_rtp_buffer_get_payload_len">
+      <return-value transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_payload_subbuffer"
+              c:identifier="gst_rtp_buffer_get_payload_subbuffer">
+      <return-value transfer-ownership="full">
+        <type name="Gst.Buffer" c:type="GstBuffer*"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="offset" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+        <parameter name="len" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_payload_type"
+              c:identifier="gst_rtp_buffer_get_payload_type">
+      <return-value transfer-ownership="none">
+        <type name="uint8" c:type="guint8"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_seq" c:identifier="gst_rtp_buffer_get_seq">
+      <return-value transfer-ownership="none">
+        <type name="uint16" c:type="guint16"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_ssrc" c:identifier="gst_rtp_buffer_get_ssrc">
+      <return-value transfer-ownership="none">
+        <type name="uint32" c:type="guint32"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_timestamp"
+              c:identifier="gst_rtp_buffer_get_timestamp">
+      <return-value transfer-ownership="none">
+        <type name="uint32" c:type="guint32"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_get_version"
+              c:identifier="gst_rtp_buffer_get_version">
+      <return-value transfer-ownership="none">
+        <type name="uint8" c:type="guint8"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_list_get_payload_len"
+              c:identifier="gst_rtp_buffer_list_get_payload_len">
+      <return-value transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </return-value>
+      <parameters>
+        <parameter name="list" transfer-ownership="none">
+          <type name="Gst.BufferList" c:type="GstBufferList*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_list_get_payload_type"
+              c:identifier="gst_rtp_buffer_list_get_payload_type">
+      <return-value transfer-ownership="none">
+        <type name="uint8" c:type="guint8"/>
+      </return-value>
+      <parameters>
+        <parameter name="list" transfer-ownership="none">
+          <type name="Gst.BufferList" c:type="GstBufferList*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_list_get_seq"
+              c:identifier="gst_rtp_buffer_list_get_seq">
+      <return-value transfer-ownership="none">
+        <type name="uint16" c:type="guint16"/>
+      </return-value>
+      <parameters>
+        <parameter name="list" transfer-ownership="none">
+          <type name="Gst.BufferList" c:type="GstBufferList*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_list_get_ssrc"
+              c:identifier="gst_rtp_buffer_list_get_ssrc">
+      <return-value transfer-ownership="none">
+        <type name="uint32" c:type="guint32"/>
+      </return-value>
+      <parameters>
+        <parameter name="list" transfer-ownership="none">
+          <type name="Gst.BufferList" c:type="GstBufferList*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_list_get_timestamp"
+              c:identifier="gst_rtp_buffer_list_get_timestamp">
+      <return-value transfer-ownership="none">
+        <type name="uint32" c:type="guint32"/>
+      </return-value>
+      <parameters>
+        <parameter name="list" transfer-ownership="none">
+          <type name="Gst.BufferList" c:type="GstBufferList*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_list_set_payload_type"
+              c:identifier="gst_rtp_buffer_list_set_payload_type">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="list" transfer-ownership="none">
+          <type name="Gst.BufferList" c:type="GstBufferList*"/>
+        </parameter>
+        <parameter name="payload_type" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_list_set_seq"
+              c:identifier="gst_rtp_buffer_list_set_seq">
+      <return-value transfer-ownership="none">
+        <type name="uint16" c:type="guint16"/>
+      </return-value>
+      <parameters>
+        <parameter name="list" transfer-ownership="none">
+          <type name="Gst.BufferList" c:type="GstBufferList*"/>
+        </parameter>
+        <parameter name="seq" transfer-ownership="none">
+          <type name="uint16" c:type="guint16"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_list_set_ssrc"
+              c:identifier="gst_rtp_buffer_list_set_ssrc">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="list" transfer-ownership="none">
+          <type name="Gst.BufferList" c:type="GstBufferList*"/>
+        </parameter>
+        <parameter name="ssrc" transfer-ownership="none">
+          <type name="uint32" c:type="guint32"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_list_set_timestamp"
+              c:identifier="gst_rtp_buffer_list_set_timestamp">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="list" transfer-ownership="none">
+          <type name="Gst.BufferList" c:type="GstBufferList*"/>
+        </parameter>
+        <parameter name="timestamp" transfer-ownership="none">
+          <type name="uint32" c:type="guint32"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_list_validate"
+              c:identifier="gst_rtp_buffer_list_validate">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="list" transfer-ownership="none">
+          <type name="Gst.BufferList" c:type="GstBufferList*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_new_allocate"
+              c:identifier="gst_rtp_buffer_new_allocate">
+      <return-value transfer-ownership="full">
+        <type name="Gst.Buffer" c:type="GstBuffer*"/>
+      </return-value>
+      <parameters>
+        <parameter name="payload_len" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+        <parameter name="pad_len" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+        <parameter name="csrc_count" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_new_allocate_len"
+              c:identifier="gst_rtp_buffer_new_allocate_len">
+      <return-value transfer-ownership="full">
+        <type name="Gst.Buffer" c:type="GstBuffer*"/>
+      </return-value>
+      <parameters>
+        <parameter name="packet_len" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+        <parameter name="pad_len" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+        <parameter name="csrc_count" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_new_copy_data"
+              c:identifier="gst_rtp_buffer_new_copy_data">
+      <return-value transfer-ownership="full">
+        <type name="Gst.Buffer" c:type="GstBuffer*"/>
+      </return-value>
+      <parameters>
+        <parameter name="data" transfer-ownership="none">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+        <parameter name="len" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_new_take_data"
+              c:identifier="gst_rtp_buffer_new_take_data">
+      <return-value transfer-ownership="full">
+        <type name="Gst.Buffer" c:type="GstBuffer*"/>
+      </return-value>
+      <parameters>
+        <parameter name="data" transfer-ownership="none">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+        <parameter name="len" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_pad_to" c:identifier="gst_rtp_buffer_pad_to">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="len" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_set_csrc" c:identifier="gst_rtp_buffer_set_csrc">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="idx" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+        <parameter name="csrc" transfer-ownership="none">
+          <type name="uint32" c:type="guint32"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_set_extension"
+              c:identifier="gst_rtp_buffer_set_extension">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="extension" transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_set_extension_data"
+              c:identifier="gst_rtp_buffer_set_extension_data">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="bits" transfer-ownership="none">
+          <type name="uint16" c:type="guint16"/>
+        </parameter>
+        <parameter name="length" transfer-ownership="none">
+          <type name="uint16" c:type="guint16"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_set_marker"
+              c:identifier="gst_rtp_buffer_set_marker">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="marker" transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_set_packet_len"
+              c:identifier="gst_rtp_buffer_set_packet_len">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="len" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_set_padding"
+              c:identifier="gst_rtp_buffer_set_padding">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="padding" transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_set_payload_type"
+              c:identifier="gst_rtp_buffer_set_payload_type">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="payload_type" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_set_seq" c:identifier="gst_rtp_buffer_set_seq">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="seq" transfer-ownership="none">
+          <type name="uint16" c:type="guint16"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_set_ssrc" c:identifier="gst_rtp_buffer_set_ssrc">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="ssrc" transfer-ownership="none">
+          <type name="uint32" c:type="guint32"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_set_timestamp"
+              c:identifier="gst_rtp_buffer_set_timestamp">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="timestamp" transfer-ownership="none">
+          <type name="uint32" c:type="guint32"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_set_version"
+              c:identifier="gst_rtp_buffer_set_version">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="version" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_validate" c:identifier="gst_rtp_buffer_validate">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="buffer_validate_data"
+              c:identifier="gst_rtp_buffer_validate_data">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="data" transfer-ownership="none">
+          <array c:type="guint8*">
+            <type name="uint8"/>
+          </array>
+        </parameter>
+        <parameter name="len" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_rtcp_buffer_add_packet"
+              c:identifier="gst_rtcp_buffer_add_packet">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="type" transfer-ownership="none">
+          <type name="GstRTCPType" c:type="GstRTCPType"/>
+        </parameter>
+        <parameter name="packet" transfer-ownership="none">
+          <type name="GstRTCPPacket" c:type="GstRTCPPacket*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_rtcp_buffer_end" c:identifier="gst_rtcp_buffer_end">
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_rtcp_buffer_get_first_packet"
+              c:identifier="gst_rtcp_buffer_get_first_packet">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="packet" transfer-ownership="none">
+          <type name="GstRTCPPacket" c:type="GstRTCPPacket*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_rtcp_buffer_get_packet_count"
+              c:identifier="gst_rtcp_buffer_get_packet_count">
+      <return-value transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_rtcp_buffer_new" c:identifier="gst_rtcp_buffer_new">
+      <return-value transfer-ownership="full">
+        <type name="Gst.Buffer" c:type="GstBuffer*"/>
+      </return-value>
+      <parameters>
+        <parameter name="mtu" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_rtcp_buffer_new_copy_data"
+              c:identifier="gst_rtcp_buffer_new_copy_data">
+      <return-value transfer-ownership="full">
+        <type name="Gst.Buffer" c:type="GstBuffer*"/>
+      </return-value>
+      <parameters>
+        <parameter name="data" transfer-ownership="none">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+        <parameter name="len" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_rtcp_buffer_new_take_data"
+              c:identifier="gst_rtcp_buffer_new_take_data">
+      <return-value transfer-ownership="full">
+        <type name="Gst.Buffer" c:type="GstBuffer*"/>
+      </return-value>
+      <parameters>
+        <parameter name="data" transfer-ownership="none">
+          <type name="any" c:type="gpointer"/>
+        </parameter>
+        <parameter name="len" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_rtcp_buffer_validate"
+              c:identifier="gst_rtcp_buffer_validate">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="buffer" transfer-ownership="none">
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_rtcp_buffer_validate_data"
+              c:identifier="gst_rtcp_buffer_validate_data">
+      <return-value transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="data" transfer-ownership="none">
+          <array c:type="guint8*">
+            <type name="uint8"/>
+          </array>
+        </parameter>
+        <parameter name="len" transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_rtcp_ntp_to_unix" c:identifier="gst_rtcp_ntp_to_unix">
+      <return-value transfer-ownership="none">
+        <type name="uint64" c:type="guint64"/>
+      </return-value>
+      <parameters>
+        <parameter name="ntptime" transfer-ownership="none">
+          <type name="uint64" c:type="guint64"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_rtcp_packet_fb_get_type"
+              c:identifier="gst_rtcp_packet_fb_get_type">
+      <return-value transfer-ownership="full">
+        <type name="GstRTCPFBType" c:type="GstRTCPFBType"/>
+      </return-value>
+      <parameters>
+        <parameter name="packet" transfer-ownership="none">
+          <type name="GstRTCPPacket" c:type="GstRTCPPacket*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_rtcp_packet_get_type"
+              c:identifier="gst_rtcp_packet_get_type">
+      <return-value transfer-ownership="full">
+        <type name="GstRTCPType" c:type="GstRTCPType"/>
+      </return-value>
+      <parameters>
+        <parameter name="packet" transfer-ownership="none">
+          <type name="GstRTCPPacket" c:type="GstRTCPPacket*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_rtcp_sdes_name_to_type"
+              c:identifier="gst_rtcp_sdes_name_to_type">
+      <return-value transfer-ownership="full">
+        <type name="GstRTCPSDESType" c:type="GstRTCPSDESType"/>
+      </return-value>
+      <parameters>
+        <parameter name="name" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_rtcp_sdes_type_to_name"
+              c:identifier="gst_rtcp_sdes_type_to_name">
+      <return-value transfer-ownership="none">
+        <type name="utf8" c:type="gchar*"/>
+      </return-value>
+      <parameters>
+        <parameter name="type" transfer-ownership="none">
+          <type name="GstRTCPSDESType" c:type="GstRTCPSDESType"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="gst_rtcp_unix_to_ntp" c:identifier="gst_rtcp_unix_to_ntp">
+      <return-value transfer-ownership="none">
+        <type name="uint64" c:type="guint64"/>
+      </return-value>
+      <parameters>
+        <parameter name="unixtime" transfer-ownership="none">
+          <type name="uint64" c:type="guint64"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="payload_info_for_name"
+              c:identifier="gst_rtp_payload_info_for_name">
+      <return-value transfer-ownership="none">
+        <type name="PayloadInfo" c:type="GstRTPPayloadInfo*"/>
+      </return-value>
+      <parameters>
+        <parameter name="media" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+        <parameter name="encoding_name" transfer-ownership="none">
+          <type name="utf8" c:type="gchar*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="payload_info_for_pt"
+              c:identifier="gst_rtp_payload_info_for_pt">
+      <return-value transfer-ownership="none">
+        <type name="PayloadInfo" c:type="GstRTPPayloadInfo*"/>
+      </return-value>
+      <parameters>
+        <parameter name="payload_type" transfer-ownership="none">
+          <type name="uint8" c:type="guint8"/>
+        </parameter>
+      </parameters>
+    </function>
+  </namespace>
+</repository>

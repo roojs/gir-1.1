@@ -1,0 +1,545 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.1"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="GLib" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <package name="gssdp-1.0"/>
+  <namespace name="GSSDP"
+             version="1.0"
+             shared-library="libgssdp-1.0.so.2"
+             c:prefix="GSSDP">
+    <constant name="ALL_RESOURCES" value="ssdp:all">
+      <type name="utf8"/>
+    </constant>
+    <class name="Client"
+           c:type="GSSDPClient"
+           parent="GObject.Object"
+           glib:type-name="GSSDPClient"
+           glib:get-type="gssdp_client_get_type"
+           glib:type-struct="ClientClass">
+      <constructor name="new" c:identifier="gssdp_client_new" throws="1">
+        <return-value transfer-ownership="full">
+          <type name="Client" c:type="GSSDPClient*"/>
+        </return-value>
+        <parameters>
+          <parameter name="main_context" transfer-ownership="none">
+            <type name="GLib.MainContext" c:type="GMainContext*"/>
+          </parameter>
+          <parameter name="interface" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_main_context"
+              c:identifier="gssdp_client_get_main_context">
+        <return-value transfer-ownership="full">
+          <type name="GLib.MainContext" c:type="GMainContext*"/>
+        </return-value>
+      </method>
+      <method name="set_server_id" c:identifier="gssdp_client_set_server_id">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="server_id" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_server_id" c:identifier="gssdp_client_get_server_id">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_interface" c:identifier="gssdp_client_get_interface">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_host_ip" c:identifier="gssdp_client_get_host_ip">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="get_active" c:identifier="gssdp_client_get_active">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <property name="active" writable="1" transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="error"
+                readable="0"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="any" c:type="gpointer"/>
+      </property>
+      <property name="host-ip" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="interface"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <property name="main-context"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="any" c:type="gpointer"/>
+      </property>
+      <property name="server-id" writable="1" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <field name="parent">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="ClientPrivate" c:type="GSSDPClientPrivate*"/>
+      </field>
+      <glib:signal name="message-received">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+          <parameter name="p1" transfer-ownership="none">
+            <type name="int" c:type="gint"/>
+          </parameter>
+          <parameter name="p2" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <record name="ClientClass"
+            c:type="GSSDPClientClass"
+            glib:is-gtype-struct-for="Client">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="gssdp_reserved1">
+        <callback name="gssdp_reserved1" c:type="_gssdp_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="gssdp_reserved2">
+        <callback name="gssdp_reserved2" c:type="_gssdp_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="gssdp_reserved3">
+        <callback name="gssdp_reserved3" c:type="_gssdp_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="gssdp_reserved4">
+        <callback name="gssdp_reserved4" c:type="_gssdp_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="ClientPrivate" c:type="GSSDPClientPrivate">
+    </record>
+    <enumeration name="Error"
+                 c:type="GSSDPError"
+                 glib:error-quark="gssdp_error_quark">
+      <member name="no_ip_address"
+              value="0"
+              c:identifier="GSSDP_ERROR_NO_IP_ADDRESS"/>
+      <member name="failed" value="1" c:identifier="GSSDP_ERROR_FAILED"/>
+    </enumeration>
+    <class name="ResourceBrowser"
+           c:type="GSSDPResourceBrowser"
+           parent="GObject.Object"
+           glib:type-name="GSSDPResourceBrowser"
+           glib:get-type="gssdp_resource_browser_get_type"
+           glib:type-struct="ResourceBrowserClass">
+      <constructor name="new" c:identifier="gssdp_resource_browser_new">
+        <return-value transfer-ownership="full">
+          <type name="ResourceBrowser" c:type="GSSDPResourceBrowser*"/>
+        </return-value>
+        <parameters>
+          <parameter name="client" transfer-ownership="none">
+            <type name="Client" c:type="GSSDPClient*"/>
+          </parameter>
+          <parameter name="target" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_client"
+              c:identifier="gssdp_resource_browser_get_client">
+        <return-value transfer-ownership="full">
+          <type name="Client" c:type="GSSDPClient*"/>
+        </return-value>
+      </method>
+      <method name="set_target"
+              c:identifier="gssdp_resource_browser_set_target">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="target" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_target"
+              c:identifier="gssdp_resource_browser_get_target">
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </return-value>
+      </method>
+      <method name="set_mx" c:identifier="gssdp_resource_browser_set_mx">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="mx" transfer-ownership="none">
+            <type name="ushort" c:type="gushort"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_mx" c:identifier="gssdp_resource_browser_get_mx">
+        <return-value transfer-ownership="none">
+          <type name="ushort" c:type="gushort"/>
+        </return-value>
+      </method>
+      <method name="set_active"
+              c:identifier="gssdp_resource_browser_set_active">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="active" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_active"
+              c:identifier="gssdp_resource_browser_get_active">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <property name="active" writable="1" transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="client"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="Client" c:type="GSSDPClient"/>
+      </property>
+      <property name="mx" writable="1" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <property name="target" writable="1" transfer-ownership="none">
+        <type name="utf8" c:type="gchararray"/>
+      </property>
+      <field name="parent">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="ResourceBrowserPrivate"
+              c:type="GSSDPResourceBrowserPrivate*"/>
+      </field>
+      <glib:signal name="resource-available">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="any" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="resource-unavailable">
+        <return-value transfer-ownership="full">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchararray"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <record name="ResourceBrowserClass"
+            c:type="GSSDPResourceBrowserClass"
+            glib:is-gtype-struct-for="ResourceBrowser">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="resource_available">
+        <callback name="resource_available" c:type="resource_available">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="resource_browser" transfer-ownership="none">
+              <type name="ResourceBrowser" c:type="GSSDPResourceBrowser*"/>
+            </parameter>
+            <parameter name="usn" transfer-ownership="none">
+              <type name="utf8" c:type="char*"/>
+            </parameter>
+            <parameter name="locations" transfer-ownership="none">
+              <type name="GLib.List" c:type="GList*">
+                <type name="any" c:type="gpointer"/>
+              </type>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="resource_unavailable">
+        <callback name="resource_unavailable" c:type="resource_unavailable">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="resource_browser" transfer-ownership="none">
+              <type name="ResourceBrowser" c:type="GSSDPResourceBrowser*"/>
+            </parameter>
+            <parameter name="usn" transfer-ownership="none">
+              <type name="utf8" c:type="char*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="gssdp_reserved1">
+        <callback name="gssdp_reserved1" c:type="_gssdp_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="gssdp_reserved2">
+        <callback name="gssdp_reserved2" c:type="_gssdp_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="gssdp_reserved3">
+        <callback name="gssdp_reserved3" c:type="_gssdp_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="gssdp_reserved4">
+        <callback name="gssdp_reserved4" c:type="_gssdp_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="ResourceBrowserPrivate" c:type="GSSDPResourceBrowserPrivate">
+    </record>
+    <class name="ResourceGroup"
+           c:type="GSSDPResourceGroup"
+           parent="GObject.Object"
+           glib:type-name="GSSDPResourceGroup"
+           glib:get-type="gssdp_resource_group_get_type"
+           glib:type-struct="ResourceGroupClass">
+      <constructor name="new" c:identifier="gssdp_resource_group_new">
+        <return-value transfer-ownership="full">
+          <type name="ResourceGroup" c:type="GSSDPResourceGroup*"/>
+        </return-value>
+        <parameters>
+          <parameter name="client" transfer-ownership="none">
+            <type name="Client" c:type="GSSDPClient*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_client" c:identifier="gssdp_resource_group_get_client">
+        <return-value transfer-ownership="full">
+          <type name="Client" c:type="GSSDPClient*"/>
+        </return-value>
+      </method>
+      <method name="set_max_age"
+              c:identifier="gssdp_resource_group_set_max_age">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="max_age" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_max_age"
+              c:identifier="gssdp_resource_group_get_max_age">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="set_available"
+              c:identifier="gssdp_resource_group_set_available">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="available" transfer-ownership="none">
+            <type name="boolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_available"
+              c:identifier="gssdp_resource_group_get_available">
+        <return-value transfer-ownership="none">
+          <type name="boolean" c:type="gboolean"/>
+        </return-value>
+      </method>
+      <method name="set_message_delay"
+              c:identifier="gssdp_resource_group_set_message_delay">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="message_delay" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_message_delay"
+              c:identifier="gssdp_resource_group_get_message_delay">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+      </method>
+      <method name="add_resource"
+              c:identifier="gssdp_resource_group_add_resource"
+              introspectable="0">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+        <parameters>
+          <parameter name="target" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="usn" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="locations" transfer-ownership="none">
+            <type name="GLib.List" c:type="GList*">
+              <type name="any" c:type="gpointer"/>
+            </type>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_resource_simple"
+              c:identifier="gssdp_resource_group_add_resource_simple">
+        <return-value transfer-ownership="none">
+          <type name="uint" c:type="guint"/>
+        </return-value>
+        <parameters>
+          <parameter name="target" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="usn" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+          <parameter name="location" transfer-ownership="none">
+            <type name="utf8" c:type="char*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove_resource"
+              c:identifier="gssdp_resource_group_remove_resource">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="resource_id" transfer-ownership="none">
+            <type name="uint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="available" writable="1" transfer-ownership="none">
+        <type name="boolean" c:type="gboolean"/>
+      </property>
+      <property name="client"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="Client" c:type="GSSDPClient"/>
+      </property>
+      <property name="max-age" writable="1" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <property name="message-delay" writable="1" transfer-ownership="none">
+        <type name="uint" c:type="guint"/>
+      </property>
+      <field name="parent">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="ResourceGroupPrivate" c:type="GSSDPResourceGroupPrivate*"/>
+      </field>
+    </class>
+    <record name="ResourceGroupClass"
+            c:type="GSSDPResourceGroupClass"
+            glib:is-gtype-struct-for="ResourceGroup">
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="gssdp_reserved1">
+        <callback name="gssdp_reserved1" c:type="_gssdp_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="gssdp_reserved2">
+        <callback name="gssdp_reserved2" c:type="_gssdp_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="gssdp_reserved3">
+        <callback name="gssdp_reserved3" c:type="_gssdp_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="gssdp_reserved4">
+        <callback name="gssdp_reserved4" c:type="_gssdp_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="ResourceGroupPrivate" c:type="GSSDPResourceGroupPrivate">
+    </record>
+  </namespace>
+</repository>
