@@ -1,0 +1,296 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.0"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="Clutter" version="1.0"/>
+  <include name="Cogl" version="1.0"/>
+  <include name="GL" version="1.0"/>
+  <include name="GLib" version="2.0"/>
+  <include name="GModule" version="2.0"/>
+  <include name="GObject" version="2.0"/>
+  <include name="Gst" version="0.10"/>
+  <include name="GstAudio" version="0.10"/>
+  <include name="GstBase" version="0.10"/>
+  <include name="GstInterfaces" version="0.10"/>
+  <include name="GstVideo" version="0.10"/>
+  <include name="Json" version="1.0"/>
+  <include name="Pango" version="1.0"/>
+  <include name="PangoCairo" version="1.0"/>
+  <include name="cairo" version="1.0"/>
+  <include name="libxml2" version="2.0"/>
+  <package name="clutter-1.0"/>
+  <package name="gobject-2.0"/>
+  <package name="gstreamer-0.10"/>
+  <package name="gstreamer-base-0.10"/>
+  <c:include name="clutter-gst/clutter-gst.h"/>
+  <namespace name="ClutterGst"
+             version="1.0"
+             shared-library="libclutter-gst-1.0.so.0"
+             c:prefix="ClutterGst">
+    <constant name="CLUTTER_GST_MAJOR_VERSION" value="1">
+      <type name="int"/>
+    </constant>
+    <constant name="CLUTTER_GST_MICRO_VERSION" value="0">
+      <type name="int"/>
+    </constant>
+    <constant name="CLUTTER_GST_MINOR_VERSION" value="0">
+      <type name="int"/>
+    </constant>
+    <constant name="CLUTTER_GST_VERSION_HEX" value="0">
+      <type name="int"/>
+    </constant>
+    <constant name="CLUTTER_GST_VERSION_S" value="1.0.0">
+      <type name="utf8"/>
+    </constant>
+    <class name="VideoSink"
+           c:type="ClutterGstVideoSink"
+           doc="Class implementing a GStreamer sink element for #ClutterTexture&lt;!-- --&gt;s.
+The #ClutterGstVideoSink structure contains only private data and should
+not be accessed directly."
+           parent="GstBase.BaseSink"
+           glib:type-name="ClutterGstVideoSink"
+           glib:get-type="clutter_gst_video_sink_get_type"
+           glib:type-struct="VideoSinkClass">
+      <constructor name="new"
+                   c:identifier="clutter_gst_video_sink_new"
+                   doc="Creates a new GStreamer video sink which uses @texture as the target
+for sinking a video stream from GStreamer.
+&lt;note&gt;This function has to be called from Clutter&apos;s main thread. While
+GStreamer will spawn threads to do its work, we want all the GL calls to
+happen in the same thread. Clutter-gst knows which thread it is by
+assuming this constructor is called from the Clutter thread.&lt;/note&gt;">
+        <return-value transfer-ownership="full">
+          <type name="VideoSink" c:type="GstElement*"/>
+        </return-value>
+        <parameters>
+          <parameter name="texture" transfer-ownership="none">
+            <type name="Clutter.Texture" c:type="ClutterTexture*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <property name="texture"
+                writable="1"
+                doc="This is the texture the video is decoded into. It can be any
+#ClutterTexture, however Cluter-Gst has a handy subclass,
+#ClutterGstVideoTexture, that implements the #ClutterMedia
+interface.">
+        <type name="Clutter.Texture" c:type="ClutterTexture"/>
+      </property>
+      <property name="update-priority"
+                writable="1"
+                doc="Clutter-Gst installs a #GSource to signal that a new frame is ready to
+the Clutter thread. This property allows to tweak the priority of the
+source (Lower value is higher priority).
+Since 1.0">
+        <type name="int" c:type="gint"/>
+      </property>
+      <field name="parent">
+        <type name="GstBase.BaseSink" c:type="GstBaseSink"/>
+      </field>
+      <field name="priv">
+        <type name="VideoSinkPrivate" c:type="ClutterGstVideoSinkPrivate*"/>
+      </field>
+    </class>
+    <record name="VideoSinkClass"
+            c:type="ClutterGstVideoSinkClass"
+            glib:is-gtype-struct-for="VideoSink"
+            doc="Base class for #ClutterGstVideoSink.">
+      <field name="parent_class">
+        <type name="GstBase.BaseSinkClass" c:type="GstBaseSinkClass"/>
+      </field>
+      <field name="clutter_reserved1">
+        <callback name="clutter_reserved1" c:type="_clutter_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="clutter_reserved2">
+        <callback name="clutter_reserved2" c:type="_clutter_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="clutter_reserved3">
+        <callback name="clutter_reserved3" c:type="_clutter_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="clutter_reserved4">
+        <callback name="clutter_reserved4" c:type="_clutter_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="clutter_reserved5">
+        <callback name="clutter_reserved5" c:type="_clutter_reserved5">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="clutter_reserved6">
+        <callback name="clutter_reserved6" c:type="_clutter_reserved6">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="VideoSinkPrivate" c:type="ClutterGstVideoSinkPrivate">
+    </record>
+    <class name="VideoTexture"
+           c:type="ClutterGstVideoTexture"
+           doc="Subclass of #ClutterTexture that displays videos using GStreamer.
+The #ClutterGstVideoTexture structure contains only private data and
+should not be accessed directly."
+           parent="Clutter.Texture"
+           glib:type-name="ClutterGstVideoTexture"
+           glib:get-type="clutter_gst_video_texture_get_type"
+           glib:type-struct="VideoTextureClass">
+      <implements name="Clutter.Media"/>
+      <implements name="Clutter.Scriptable"/>
+      <constructor name="new"
+                   c:identifier="clutter_gst_video_texture_new"
+                   doc="Creates a video texture.
+&lt;note&gt;This function has to be called from Clutter&apos;s main thread. While
+GStreamer will spawn threads to do its work, we want all the GL calls to
+happen in the same thread. Clutter-gst knows which thread it is by
+assuming this constructor is called from the Clutter thread.&lt;/note&gt;">
+        <return-value transfer-ownership="full">
+          <type name="VideoTexture" c:type="ClutterActor*"/>
+        </return-value>
+      </constructor>
+      <method name="get_pipeline"
+              c:identifier="clutter_gst_video_texture_get_pipeline"
+              doc="Retrieves the #GstPipeline used by the @texture, for direct use with
+GStreamer API.">
+        <return-value transfer-ownership="full">
+          <type name="Gst.Element" c:type="GstElement*"/>
+        </return-value>
+      </method>
+      <field name="parent">
+        <type name="Clutter.Texture" c:type="ClutterTexture"/>
+      </field>
+      <field name="priv">
+        <type name="VideoTexturePrivate"
+              c:type="ClutterGstVideoTexturePrivate*"/>
+      </field>
+    </class>
+    <record name="VideoTextureClass"
+            c:type="ClutterGstVideoTextureClass"
+            glib:is-gtype-struct-for="VideoTexture"
+            doc="Base class for #ClutterGstVideoTexture.">
+      <field name="parent_class">
+        <type name="Clutter.TextureClass" c:type="ClutterTextureClass"/>
+      </field>
+      <field name="clutter_reserved1">
+        <callback name="clutter_reserved1" c:type="_clutter_reserved1">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="clutter_reserved2">
+        <callback name="clutter_reserved2" c:type="_clutter_reserved2">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="clutter_reserved3">
+        <callback name="clutter_reserved3" c:type="_clutter_reserved3">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="clutter_reserved4">
+        <callback name="clutter_reserved4" c:type="_clutter_reserved4">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="clutter_reserved5">
+        <callback name="clutter_reserved5" c:type="_clutter_reserved5">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="clutter_reserved6">
+        <callback name="clutter_reserved6" c:type="_clutter_reserved6">
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="VideoTexturePrivate" c:type="ClutterGstVideoTexturePrivate">
+    </record>
+    <function name="init"
+              c:identifier="clutter_gst_init"
+              doc="Utility function to initialize both Clutter and GStreamer.
+This function should be called before calling any other GLib functions. If
+this is not an option, your program must initialise the GLib thread system
+using g_thread_init() before any other GLib functions are called.">
+      <return-value transfer-ownership="full">
+        <type name="Clutter.InitError" c:type="ClutterInitError"/>
+      </return-value>
+      <parameters>
+        <parameter name="argc" direction="out" transfer-ownership="full">
+          <type name="int" c:type="int*"/>
+        </parameter>
+        <parameter name="argv" transfer-ownership="none">
+          <type name="utf8" c:type="char***"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="init_with_args"
+              c:identifier="clutter_gst_init_with_args"
+              doc="the first line of &lt;option&gt;--help&lt;/option&gt; output, after
+&lt;literal&gt;&lt;replaceable&gt;programname&lt;/replaceable&gt; [OPTION...]&lt;/literal&gt;
+describing the options of your program
+the &lt;option&gt;--help&lt;/option&gt; output for the options in @entries
+with gettext(), or %NULL
+This function does the same work as clutter_gst_init(). Additionally, it
+allows you to add your own command line options, and it automatically
+generates nicely formatted --help output. Clutter&apos;s and GStreamer&apos;s
+#GOptionGroup&lt;!-- --&gt;s are added to the set of available options.
+Your program must initialise the GLib thread system using g_thread_init()
+before any other GLib functions are called.
+on failure."
+              version="1.0"
+              throws="1">
+      <return-value transfer-ownership="full">
+        <type name="Clutter.InitError" c:type="ClutterInitError"/>
+      </return-value>
+      <parameters>
+        <parameter name="argc" direction="out" transfer-ownership="full">
+          <type name="int" c:type="int*"/>
+        </parameter>
+        <parameter name="argv" transfer-ownership="none">
+          <type name="utf8" c:type="char***"/>
+        </parameter>
+        <parameter name="parameter_string" transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </parameter>
+        <parameter name="entries" transfer-ownership="none">
+          <type name="GLib.OptionEntry" c:type="GOptionEntry*"/>
+        </parameter>
+        <parameter name="translation_domain" transfer-ownership="none">
+          <type name="utf8" c:type="char*"/>
+        </parameter>
+      </parameters>
+    </function>
+  </namespace>
+</repository>
